@@ -1,0 +1,38 @@
+{
+  "classifier": "ProtocolSegmentClassifier",
+  "description": "Per-word logistic regression for protocol segment detection",
+  "features": [
+    "is_strong_protocol",
+    "is_weak_protocol",
+    "is_expanded_symbol",
+    "has_syntax_chars",
+    "word_length_norm",
+    "is_short_word",
+    "context_strong_density",
+    "context_any_density",
+    "left_is_strong",
+    "right_is_strong",
+    "is_number_like",
+    "strong_neighbor_count",
+    "is_all_lower",
+    "position_ratio"
+  ],
+  "weights": [
+    0.33411720958159186,
+    -0.01883618036579912,
+    0.0,
+    0.0,
+    -0.09512784613770699,
+    -0.27082908357760427,
+    0.2582600934920609,
+    0.24189819020570574,
+    0.3569088147419212,
+    0.33751703709094505,
+    0.09194955109384083,
+    1.0515119624353424,
+    -0.17715608130670168,
+    -0.11667765899752854
+  ],
+  "bias": -1.126425236495759,
+  "threshold": 0.5
+}

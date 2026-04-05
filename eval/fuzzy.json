@@ -1,0 +1,1202 @@
+[
+  {
+    "dictated": "git space push space dash u space origin space main",
+    "expected": "git push -u origin main",
+    "category": "git",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "docker space run space dash dash rm space dash p space eight zero eight zero colon eight zero space nginx",
+    "expected": "docker run --rm -p 8080:80 nginx",
+    "category": "docker",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "npm space install space dash capital D space typescript space at five",
+    "expected": "npm install -D typescript@5",
+    "category": "npm",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "ssh space dash i space tilde slash dot ssh slash id underscore rsa space root at one nine two dot one six eight dot one dot one",
+    "expected": "ssh -i ~/.ssh/id_rsa root@192.168.1.1",
+    "category": "ssh",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "curl space dash capital X space all caps POST space dash capital H space quote capital Content dash capital Type colon space application slash json quote space https colon slash slash api dot example dot com slash v one slash users",
+    "expected": "curl -X POST -H \"Content-Type: application/json\" https://api.example.com/v1/users",
+    "category": "curl",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "kubectl space get space pods space dash n space kube dash system",
+    "expected": "kubectl get pods -n kube-system",
+    "category": "kubectl",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "terraform space plan space dash var dash file equals production dot tfvars",
+    "expected": "terraform plan -var-file=production.tfvars",
+    "category": "terraform",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "chmod space zero seven five five space slash usr slash local slash bin slash deploy dot sh",
+    "expected": "chmod 0755 /usr/local/bin/deploy.sh",
+    "category": "filesystem",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "export space all caps DATABASE underscore URL equals quote postgres colon slash slash admin colon secret at localhost colon five four three two slash mydb quote",
+    "expected": "export DATABASE_URL=\"postgres://admin:secret@localhost:5432/mydb\"",
+    "category": "env",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "rsync space dash a v z space dash e space ssh space dot slash dist slash space user at one seven two dot sixteen dot zero dot one colon slash var slash www slash",
+    "expected": "rsync -avz -e ssh ./dist/ user@172.16.0.1:/var/www/",
+    "category": "rsync",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "psql space dash h space localhost space dash capital U space postgres space dash d space production",
+    "expected": "psql -h localhost -U postgres -d production",
+    "category": "psql",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "redis dash cli space dash h space one two seven dot zero dot zero dot one space dash p space six three seven nine space all caps PING",
+    "expected": "redis-cli -h 127.0.0.1 -p 6379 PING",
+    "category": "redis",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "brew space install space dash dash cask space visual dash studio dash code",
+    "expected": "brew install --cask visual-studio-code",
+    "category": "brew",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "systemctl space restart space nginx dot service",
+    "expected": "systemctl restart nginx.service",
+    "category": "systemctl",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "make space dash j space eight space all caps CC equals gcc space all caps CFLAGS equals quote dash capital O two dash capital Wall quote",
+    "expected": "make -j 8 CC=gcc CFLAGS=\"-O2 -Wall\"",
+    "category": "make",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "cargo space build space dash dash release space dash dash target space x eighty six underscore sixty four dash unknown dash linux dash gnu",
+    "expected": "cargo build --release --target x86_64-unknown-linux-gnu",
+    "category": "rust",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "go space build space dash o space bin slash server space dot slash cmd slash server",
+    "expected": "go build -o bin/server ./cmd/server",
+    "category": "go",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "swift space build space dash c space release space dash dash triple space arm sixty four dash apple dash macosx",
+    "expected": "swift build -c release --triple arm64-apple-macosx",
+    "category": "swift",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "aws space s three space cp space s three colon slash slash my dash bucket slash data dot csv space dot slash",
+    "expected": "aws s3 cp s3://my-bucket/data.csv ./",
+    "category": "aws",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "ffmpeg space dash i space input dot mp four space dash vf space quote scale equals one nine twenty colon one zero eighty quote space dash c colon a space copy space output dot mp four",
+    "expected": "ffmpeg -i input.mp4 -vf \"scale=1920:1080\" -c:a copy output.mp4",
+    "category": "ffmpeg",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "openssl space req space dash x five zero nine space dash newkey space rsa colon four zero nine six space dash keyout space key dot pem space dash out space cert dot pem space dash days space three six five",
+    "expected": "openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365",
+    "category": "openssl",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "camel case get user profile",
+    "expected": "getUserProfile",
+    "category": "casing",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "snake case api response handler",
+    "expected": "api_response_handler",
+    "category": "casing",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "pascal case user authentication service",
+    "expected": "UserAuthenticationService",
+    "category": "casing",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "kebab case my awesome component",
+    "expected": "my-awesome-component",
+    "category": "casing",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "git space log space dash dash oneline space dash dash graph space dash n space twenty",
+    "expected": "git log --oneline --graph -n 20",
+    "category": "git",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "docker space compose space dash f space docker dash compose dot prod dot yml space up space dash d",
+    "expected": "docker compose -f docker-compose.prod.yml up -d",
+    "category": "docker",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "python space dash m space venv space dot venv space ampersand ampersand space source space dot venv slash bin slash activate",
+    "expected": "python -m venv .venv && source .venv/bin/activate",
+    "category": "python",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "pip space install space dash r space requirements dot txt space dash dash upgrade",
+    "expected": "pip install -r requirements.txt --upgrade",
+    "category": "python",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "grep space dash r space dash n space dash i space quote all caps TODO quote space dot slash src slash",
+    "expected": "grep -r -n -i \"TODO\" ./src/",
+    "category": "grep",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "tar space dash x z f space archive dot tar dot gz space dash capital C space slash opt slash app",
+    "expected": "tar -xzf archive.tar.gz -C /opt/app",
+    "category": "filesystem",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "find space dot space dash name space quote star dot log quote space dash mtime space plus seven space dash delete",
+    "expected": "find . -name \"*.log\" -mtime +7 -delete",
+    "category": "filesystem",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "echo space dollar all caps HOME slash dot config slash app dot yml",
+    "expected": "echo $HOME/.config/app.yml",
+    "category": "shell",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "sed space dash i space quote s slash old dash text slash new dash text slash g quote space config dot yaml",
+    "expected": "sed -i \"s/old-text/new-text/g\" config.yaml",
+    "category": "sed",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "awk space quote open brace print space dollar two close brace quote space data dot tsv",
+    "expected": "awk \"{print $2}\" data.tsv",
+    "category": "awk",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "xcodebuild space dash workspace space capital Talkie dot xcworkspace space dash scheme space capital Talkie space dash configuration space capital Release",
+    "expected": "xcodebuild -workspace Talkie.xcworkspace -scheme Talkie -configuration Release",
+    "category": "xcode",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "git space remote space add space upstream space https colon slash slash github dot com slash owner slash repo dot git",
+    "expected": "git remote add upstream https://github.com/owner/repo.git",
+    "category": "git",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "scp space dash capital P space two two zero two space user at ten dot zero dot zero dot five colon slash tmp slash dump dot sql space dot slash",
+    "expected": "scp -P 2202 user@10.0.0.5:/tmp/dump.sql ./",
+    "category": "scp",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "cmake space dash capital B space build space dash capital D space all caps CMAKE underscore BUILD underscore TYPE equals capital Release",
+    "expected": "cmake -B build -D CMAKE_BUILD_TYPE=Release",
+    "category": "cmake",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "gradle space dash dash parallel space dash dash build dash cache space assembleRelease",
+    "expected": "gradle --parallel --build-cache assembleRelease",
+    "category": "gradle",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "convert space input dot png space dash resize space eight hundred x six hundred space dash quality space eighty five space output dot jpg",
+    "expected": "convert input.png -resize 800x600 -quality 85 output.jpg",
+    "category": "imagemagick",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "cat space slash etc slash hosts space pipe space grep space one nine two dot one six eight",
+    "expected": "cat /etc/hosts | grep 192.168",
+    "category": "shell",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "git space stash space push space dash m space quote wip colon space refactor auth quote",
+    "expected": "git stash push -m \"wip: refactor auth\"",
+    "category": "git",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "kubectl space apply space dash f space dash space less than space manifest dot yaml",
+    "expected": "kubectl apply -f - < manifest.yaml",
+    "category": "kubectl",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "npx space create dash next dash app at latest space my dash app space dash dash typescript space dash dash tailwind space dash dash eslint",
+    "expected": "npx create-next-app@latest my-app --typescript --tailwind --eslint",
+    "category": "npm",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "docker space build space dash t space my dash app colon v one dot two dot three space dash f space capital Dockerfile dot prod space dot",
+    "expected": "docker build -t my-app:v1.2.3 -f Dockerfile.prod .",
+    "category": "docker",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "git space rebase space dash dash onto space main space feature dash base space feature dash work",
+    "expected": "git rebase --onto main feature-base feature-work",
+    "category": "git",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "env space all caps NODE underscore ENV equals production space node space server dot js",
+    "expected": "env NODE_ENV=production node server.js",
+    "category": "env",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "aws space ec two space describe dash instances space dash dash filters space quote capital Name equals instance dash state dash name comma capital Values equals running quote space dash dash query space quote capital Reservations open bracket close bracket dot capital Instances open bracket close bracket dot capital Instance capital Id quote",
+    "expected": "aws ec2 describe-instances --filters \"Name=instance-state-name,Values=running\" --query \"Reservations[].Instances[].InstanceId\"",
+    "category": "aws",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "wc space dash l space less than space data dot csv space pipe space xargs space echo space quote total rows colon quote",
+    "expected": "wc -l < data.csv | xargs echo \"total rows:\"",
+    "category": "shell",
+    "difficulty": "clean"
+  },
+  {
+    "dictated": "git commit minus m quote fix login bug quote",
+    "expected": "git commit -m \"fix login bug\"",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "ls minus l minus a slash var slash log",
+    "expected": "ls -l -a /var/log",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "cat file period txt",
+    "expected": "cat file.txt",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "cd forward slash usr forward slash local forward slash bin",
+    "expected": "cd /usr/local/bin",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "python server period py double dash port eight thousand",
+    "expected": "python server.py --port 8000",
+    "category": "python",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "git push hyphen u origin main",
+    "expected": "git push -u origin main",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "grep asterisk period log forward slash var forward slash log forward slash",
+    "expected": "grep *.log /var/log/",
+    "category": "grep",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "npm install hyphen hyphen save dev eslint",
+    "expected": "npm install --save-dev eslint",
+    "category": "npm",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "echo hashtag this is a comment",
+    "expected": "echo # this is a comment",
+    "category": "shell",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "docker run minus minus rm minus it ubuntu",
+    "expected": "docker run --rm -it ubuntu",
+    "category": "docker",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "curl minus capital X capital POST minus capital H content hyphen type colon application forward slash json",
+    "expected": "curl -X POST -H Content-Type: application/json",
+    "category": "curl",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "ssh minus i tilde forward slash period ssh forward slash key period pem user at sign server",
+    "expected": "ssh -i ~/.ssh/key.pem user@server",
+    "category": "ssh",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "git diff double dash staged",
+    "expected": "git diff --staged",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "tar minus xzf backup period tar period gz",
+    "expected": "tar -xzf backup.tar.gz",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "find period minus name asterisk period py minus type f",
+    "expected": "find . -name *.py -type f",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "export capital NODE underscore capital ENV equals sign production",
+    "expected": "export NODE_ENV=production",
+    "category": "env",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "kubectl get pods minus n default double dash output json",
+    "expected": "kubectl get pods -n default --output json",
+    "category": "kubectl",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "chmod seven five five script period sh",
+    "expected": "chmod 755 script.sh",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "pip install flask equals sign equals sign two period zero period zero",
+    "expected": "pip install flask==2.0.0",
+    "category": "python",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "git checkout minus b feature forward slash auth",
+    "expected": "git checkout -b feature/auth",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "docker compose up minus d double dash build",
+    "expected": "docker compose up -d --build",
+    "category": "docker",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "psql minus capital U postgres minus d mydb minus c quote select asterisk from users quote",
+    "expected": "psql -U postgres -d mydb -c \"select * from users\"",
+    "category": "psql",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "scp file period txt user at sign one ninety two period one sixty eight period one period one hundred colon tilde forward slash",
+    "expected": "scp file.txt user@192.168.1.100:~/",
+    "category": "scp",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "git log double dash oneline minus n ten",
+    "expected": "git log --oneline -n 10",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "brew install double dash cask firefox",
+    "expected": "brew install --cask firefox",
+    "category": "brew",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "rsync minus avz period forward slash source forward slash user at sign host colon forward slash dest forward slash",
+    "expected": "rsync -avz ./source/ user@host:/dest/",
+    "category": "rsync",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "aws s3 sync period forward slash build forward slash s3 colon forward slash forward slash my hyphen bucket forward slash static",
+    "expected": "aws s3 sync ./build/ s3://my-bucket/static",
+    "category": "aws",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "camelcase handle form submit",
+    "expected": "handleFormSubmit",
+    "category": "casing",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "snake_case max retry count",
+    "expected": "max_retry_count",
+    "category": "casing",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "git stash pop at sign open brace zero close brace",
+    "expected": "git stash pop @{0}",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "backslash n backslash t hello world",
+    "expected": "\\n\\t hello world",
+    "category": "escape",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "echo dollar sign open parenthesis date close parenthesis",
+    "expected": "echo $(date)",
+    "category": "shell",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "ffmpeg minus i input period mov minus codec copy output period mp4",
+    "expected": "ffmpeg -i input.mov -codec copy output.mp4",
+    "category": "ffmpeg",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "terraform apply minus auto hyphen approve",
+    "expected": "terraform apply -auto-approve",
+    "category": "terraform",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "go test period forward slash period period period minus v minus race",
+    "expected": "go test ./... -v -race",
+    "category": "go",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "cargo run double dash double dash release",
+    "expected": "cargo run -- --release",
+    "category": "rust",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "git rebase minus minus interactive capital HEAD tilde three",
+    "expected": "git rebase --interactive HEAD~3",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "nginx minus t ampersand ampersand systemctl reload nginx",
+    "expected": "nginx -t && systemctl reload nginx",
+    "category": "systemctl",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "sed minus i quote s forward slash http forward slash https forward slash g quote config period yml",
+    "expected": "sed -i \"s/http/https/g\" config.yml",
+    "category": "sed",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "curl minus s minus o forward slash dev forward slash null minus w quote percent open brace http underscore code close brace quote http colon forward slash forward slash localhost colon three thousand",
+    "expected": "curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000",
+    "category": "curl",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "docker exec minus it container underscore name bash",
+    "expected": "docker exec -it container_name bash",
+    "category": "docker",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "openssl s underscore client minus connect example period com colon four four three",
+    "expected": "openssl s_client -connect example.com:443",
+    "category": "openssl",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "all-caps MAX underscore RETRIES equals sign five",
+    "expected": "MAX_RETRIES=5",
+    "category": "env",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "pascal-case user profile view model",
+    "expected": "UserProfileViewModel",
+    "category": "casing",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "kebab-case my react component",
+    "expected": "my-react-component",
+    "category": "casing",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "redis minus cli set my colon key quote hello world quote",
+    "expected": "redis-cli set my:key \"hello world\"",
+    "category": "redis",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "jq period data open bracket close bracket period name input period json",
+    "expected": "jq .data[].name input.json",
+    "category": "shell",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "okay so the command is git space push space dash u space origin space main",
+    "expected": "git push -u origin main",
+    "category": "git",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "I wanna set the variable name to camel case get user profile",
+    "expected": "getUserProfile",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "change that to snake case api response handler",
+    "expected": "api_response_handler",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the path should be slash usr slash local slash bin",
+    "expected": "/usr/local/bin",
+    "category": "filesystem",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "make it all caps DATABASE underscore URL",
+    "expected": "DATABASE_URL",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "can you type out docker space run space dash dash rm space nginx",
+    "expected": "docker run --rm nginx",
+    "category": "docker",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "so like the function name would be camel case handle click event",
+    "expected": "handleClickEvent",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "let's do npm space install space dash capital D space typescript",
+    "expected": "npm install -D typescript",
+    "category": "npm",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "um the flag is dash dash verbose",
+    "expected": "--verbose",
+    "category": "flags",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "and then pipe it to grep space dash i space error",
+    "expected": "| grep -i error",
+    "category": "shell",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "basically run git space fetch space dash dash all space ampersand ampersand space git space pull",
+    "expected": "git fetch --all && git pull",
+    "category": "git",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "I think we need kubectl space scale space deployment slash api space dash dash replicas equals three",
+    "expected": "kubectl scale deployment/api --replicas=3",
+    "category": "kubectl",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "right so set it to snake case max connection pool size",
+    "expected": "max_connection_pool_size",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "type out ssh space dash capital L space eight zero eight zero colon localhost colon five four three two space bastion",
+    "expected": "ssh -L 8080:localhost:5432 bastion",
+    "category": "ssh",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "so for the environment variable it's all caps AWS underscore SECRET underscore ACCESS underscore KEY",
+    "expected": "AWS_SECRET_ACCESS_KEY",
+    "category": "env",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the terraform command should be terraform space init space dash backend dash config equals quote key equals prod slash terraform dot tfstate quote",
+    "expected": "terraform init -backend-config=\"key=prod/terraform.tfstate\"",
+    "category": "terraform",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "okay let me type the curl command so it's curl space dash s space dash capital H space quote all caps Authorization colon space capital Bearer space dollar all caps TOKEN quote space https colon slash slash api dot example dot com slash me",
+    "expected": "curl -s -H \"Authorization: Bearer $TOKEN\" https://api.example.com/me",
+    "category": "curl",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "I want to run docker space exec space dash it space postgres underscore db space psql space dash capital U space admin",
+    "expected": "docker exec -it postgres_db psql -U admin",
+    "category": "docker",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "um so the function is called pascal case create payment intent",
+    "expected": "CreatePaymentIntent",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "let's see we need to do pip space install space dash e space dot open bracket dev close bracket",
+    "expected": "pip install -e .[dev]",
+    "category": "python",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the redis command I want is redis dash cli space dash dash scan space match space quote session colon star quote",
+    "expected": "redis-cli --scan --match \"session:*\"",
+    "category": "redis",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "so basically what we wanna run is git space cherry dash pick space dash dash no dash commit space abc one two three four",
+    "expected": "git cherry-pick --no-commit abc1234",
+    "category": "git",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "and the port number should be colon three thousand",
+    "expected": ":3000",
+    "category": "network",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "alright change the class name to pascal case authenticated user session",
+    "expected": "AuthenticatedUserSession",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "I need the output piped to jq space dot open bracket close bracket dot name",
+    "expected": "| jq .[].name",
+    "category": "shell",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "set the variable to dollar open brace all caps HOME close brace slash dot config slash app dot toml",
+    "expected": "${HOME}/.config/app.toml",
+    "category": "env",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "like the regex pattern is caret open bracket a dash z A dash Z close bracket plus dollar",
+    "expected": "^[a-zA-Z]+$",
+    "category": "regex",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "for the flag use dash dash dry dash run please",
+    "expected": "--dry-run",
+    "category": "flags",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "so the full path is tilde slash capital Library slash capital Application space capital Support slash capital Talkie slash talkie dot sqlite",
+    "expected": "~/Library/Application Support/Talkie/talkie.sqlite",
+    "category": "filesystem",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "go ahead and type git space reset space dash dash soft space capital HEAD tilde one",
+    "expected": "git reset --soft HEAD~1",
+    "category": "git",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "let me think um yeah the image tag is my dash registry dot io slash api colon v two dot one dash rc one",
+    "expected": "my-registry.io/api:v2.1-rc1",
+    "category": "docker",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "make it cargo space test space dash dash lib space dash dash space dash dash test dash threads space one",
+    "expected": "cargo test --lib -- --test-threads 1",
+    "category": "rust",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "we should set the cron to star space star slash two space star space star space star",
+    "expected": "* */2 * * *",
+    "category": "cron",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the nginx location block should match tilde space caret slash api slash v open bracket zero dash nine close bracket plus",
+    "expected": "~ ^/api/v[0-9]+",
+    "category": "regex",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "and at the end redirect with two greater than space slash dev slash null",
+    "expected": "2> /dev/null",
+    "category": "shell",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "I need to add the alias um alias space ll equals quote ls space dash la quote to my bashrc",
+    "expected": "alias ll=\"ls -la\"",
+    "category": "shell",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "run it with like xargs space dash capital I space open brace close brace space cp space open brace close brace space backup slash",
+    "expected": "xargs -I {} cp {} backup/",
+    "category": "shell",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the go struct tag should be json colon quote camel case user name comma omitempty quote",
+    "expected": "json:\"userName,omitempty\"",
+    "category": "go",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "so like make the webpack config output to dist slash open bracket name close bracket dot open bracket contenthash colon eight close bracket dot js",
+    "expected": "dist/[name].[contenthash:8].js",
+    "category": "webpack",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "we want to write iptables minus capital A capital INPUT minus p tcp double dash dport four four three minus j all caps ACCEPT",
+    "expected": "iptables -A INPUT -p tcp --dport 443 -j ACCEPT",
+    "category": "network",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "dash dash no wait just dash v",
+    "expected": "-v",
+    "category": "flags",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the API endpoint is slash api slash v two slash users slash colon id",
+    "expected": "/api/v2/users/:id",
+    "category": "url",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "so we need to... actually let's just do git stash",
+    "expected": "git stash",
+    "category": "git",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "type ssh at sign root at the server at one ninety two dot one sixty eight dot one dot fifty",
+    "expected": "ssh root@192.168.1.50",
+    "category": "ssh",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "run it on port three thousand",
+    "expected": "3000",
+    "category": "network",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "camel case is authenticated",
+    "expected": "isAuthenticated",
+    "category": "casing",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "just the flag dash dash dry dash run",
+    "expected": "--dry-run",
+    "category": "flags",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "open curly brace newline tab quote name quote colon quote capital John quote comma newline tab quote age quote colon twenty five newline close curly brace",
+    "expected": "{\n\t\"name\": \"John\",\n\t\"age\": 25\n}",
+    "category": "json",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "wait no not dash dash force I meant dash dash force dash with dash lease",
+    "expected": "--force-with-lease",
+    "category": "git",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the connection string is postgres colon slash slash wait what was the password oh right admin colon p at sign s s w zero r d at localhost colon five four three two slash production underscore db",
+    "expected": "postgres://admin:p@ssw0rd@localhost:5432/production_db",
+    "category": "database",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "kubectl get pods no actually I want kubectl get deployments dash o wide",
+    "expected": "kubectl get deployments -o wide",
+    "category": "kubectl",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "um okay so like the variable name should be um camel case handle submit and then no wait pascal case handle submit because it's a component",
+    "expected": "HandleSubmit",
+    "category": "casing",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "three files in the directory",
+    "expected": "three files in the directory",
+    "category": "ambiguous",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "port eighty four forty three I mean port eight four four three",
+    "expected": "8443",
+    "category": "network",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the address is like http no https colon slash slash api dot production dot our company dot com slash v three slash webhook",
+    "expected": "https://api.production.our-company.com/v3/webhook",
+    "category": "url",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "so I need to pipe it through like four commands cat the file then grep for errors then sort then unique with count so cat space log dot txt space pipe space grep space error space pipe space sort space pipe space uniq space dash c",
+    "expected": "cat log.txt | grep error | sort | uniq -c",
+    "category": "shell",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the docker tag is ghcr dot io slash my org slash my app colon sha dash wait how do you say git sha... the sha prefix",
+    "expected": "ghcr.io/my-org/my-app:sha-",
+    "category": "docker",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "okay write open bracket open bracket colon minus s colon minus d close bracket close bracket double ampersand echo pass pipe pipe echo fail",
+    "expected": "[[ -s -d ]] && echo pass || echo fail",
+    "category": "shell",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "no no no go back the command was git diff HEAD tilde two dot dot HEAD that's HEAD tilde the number two then two dots then HEAD",
+    "expected": "git diff HEAD~2..HEAD",
+    "category": "git",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "I need an awk command to... you know what just do awk space quote open brace if dollar three greater than one hundred print dollar zero close brace quote space data dot csv",
+    "expected": "awk \"{if $3 > 100 print $0}\" data.csv",
+    "category": "awk",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the method signature is func space camel case fetch user open paren underscore id colon capital String close paren space async space throws space dash greater than capital User",
+    "expected": "func fetchUser(_ id: String) async throws -> User",
+    "category": "swift",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "umm set the crontab to... it should run every fifteen minutes so star slash fifteen space star space star space star space star",
+    "expected": "*/15 * * * *",
+    "category": "cron",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the kubernetes label selector is app equals my dash app comma version in open paren v one comma v two close paren",
+    "expected": "app=my-app,version in (v1,v2)",
+    "category": "kubectl",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "type the regex... hmm it's like caret open bracket A dash Z close bracket open bracket a dash z A dash Z zero dash nine close bracket star at sign open bracket a dash z close bracket plus backslash dot open bracket a dash z close bracket open brace two comma close brace dollar",
+    "expected": "^[A-Z][a-zA-Z0-9]*@[a-z]+\\.[a-z]{2,}$",
+    "category": "regex",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "git rebase onto main the commit from tuesday I think it was like a b c one two three four five six seven",
+    "expected": "git rebase --onto main abc1234567",
+    "category": "git",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "webpack serve open paren or is it webpack dash dev dash server I always forget close paren with dash dash hot and dash dash port nine thousand",
+    "expected": "webpack serve --hot --port 9000",
+    "category": "webpack",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the nginx config upstream block upstream space my underscore backend space open curly brace newline space space server space one two seven dot zero dot zero dot one colon three thousand weight equals five semicolon newline space space server space one two seven dot zero dot zero dot one colon three thousand one weight equals three semicolon newline close curly brace",
+    "expected": "upstream my_backend {\n  server 127.0.0.1:3000 weight=5;\n  server 127.0.0.1:3001 weight=3;\n}",
+    "category": "nginx",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the TypeScript type is capital Record less than string comma Array less than open curly brace id colon number semicolon name colon string close curly brace greater than greater than",
+    "expected": "Record<string, Array<{id: number; name: string}>>",
+    "category": "typescript",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "wait I need to escape the dollar signs in the dockerfile so it's backslash dollar open paren cat slash run slash secrets slash db underscore password close paren",
+    "expected": "\\$(cat /run/secrets/db_password)",
+    "category": "docker",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "do the curl but like with retries so curl space dash dash retry space three space dash dash retry dash delay space two space then the url",
+    "expected": "curl --retry 3 --retry-delay 2",
+    "category": "curl",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the swift property wrapper at capital Published var camel case selected tab colon capital Tab equals dot home",
+    "expected": "@Published var selectedTab: Tab = .home",
+    "category": "swift",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "ssh minus capital J jump dash host user at final dash host so that's proxy jumping through the bastion",
+    "expected": "ssh -J jump-host user@final-host",
+    "category": "ssh",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "actually scratch what I said before just do a simple ls minus la slash tmp",
+    "expected": "ls -la /tmp",
+    "category": "filesystem",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the helm values should be set dash dash set image dot tag equals v one dot four dot two dash rc one and set dash dash set replicas equals three",
+    "expected": "--set image.tag=v1.4.2-rc1 --set replicas=3",
+    "category": "helm",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "open bracket dollar open paren date plus percent capital Y minus percent m minus percent d close paren close bracket underscore backup dot sql",
+    "expected": "[$(date +%Y-%m-%d)]_backup.sql",
+    "category": "shell",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the go generics syntax is func capital Map open bracket capital T any comma capital U any close bracket open paren slice open bracket close bracket capital T comma fn func open paren capital T close paren capital U close paren open bracket close bracket capital U",
+    "expected": "func Map[T any, U any](slice []T, fn func(T) U) []U",
+    "category": "go",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "I want to write the SQL query but like dynamically so select star from users where created underscore at greater than dollar one and status equals quote active quote order by id limit dollar two",
+    "expected": "select * from users where created_at > $1 and status = 'active' order by id limit $2",
+    "category": "sql",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the whole pipeline is cat access dot log pipe grep five hundred pipe awk open brace print dollar one close brace pipe sort pipe uniq minus c pipe sort minus r n pipe head minus five",
+    "expected": "cat access.log | grep 500 | awk {print $1} | sort | uniq -c | sort -rn | head -5",
+    "category": "shell",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "for the terraform block it's resource quote aws underscore lambda underscore function quote quote my underscore function quote",
+    "expected": "resource \"aws_lambda_function\" \"my_function\"",
+    "category": "terraform",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "I keep getting the args wrong okay the ffmpeg command is ffmpeg minus i concat colon file one dot ts pipe file two dot ts minus c copy output dot mp four",
+    "expected": "ffmpeg -i concat:file1.ts|file2.ts -c copy output.mp4",
+    "category": "ffmpeg",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "whoops I meant to say camel case not pascal case so it should be camel case on authentication state changed",
+    "expected": "onAuthenticationStateChanged",
+    "category": "casing",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "paste in the IP ten dot two forty four dot one thirty seven dot ninety two",
+    "expected": "10.244.137.92",
+    "category": "network",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the package json script is quote dev quote colon quote concurrently backslash quote next dev backslash quote backslash quote tailwind minus minus watch backslash quote quote",
+    "expected": "\"dev\": \"concurrently \\\"next dev\\\" \\\"tailwind --watch\\\"\"",
+    "category": "json",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "should I use single or double quotes whatever just do git commit minus m quote feat colon add user authentication quote",
+    "expected": "git commit -m \"feat: add user authentication\"",
+    "category": "git",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the makefile target is dot capital PHONY colon test newline test colon newline tab go test dot slash dot dot dot minus v minus count equals one",
+    "expected": ".PHONY: test\ntest:\n\tgo test ./... -v -count=1",
+    "category": "make",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "okay the whole thing end to end is curl minus s https colon slash slash api dot github dot com slash repos slash facebook slash react slash releases slash latest pipe jq minus r dot tag underscore name",
+    "expected": "curl -s https://api.github.com/repos/facebook/react/releases/latest | jq -r .tag_name",
+    "category": "curl",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "I need it to match like the group syntax so open paren question mark less than name greater than open bracket a dash z close bracket plus close paren at open bracket zero dash nine close bracket plus",
+    "expected": "(?<name>[a-z]+)@[0-9]+",
+    "category": "regex",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "my dot env file has like the whole nine yards so all caps REDIS underscore URL equals redis colon slash slash colon my password at redis dash primary dot internal colon six three seven nine slash zero",
+    "expected": "REDIS_URL=redis://:mypassword@redis-primary.internal:6379/0",
+    "category": "env",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "the github action step is uses colon actions slash checkout at v four with colon newline space space fetch dash depth colon zero",
+    "expected": "uses: actions/checkout@v4\nwith:\n  fetch-depth: 0",
+    "category": "yaml",
+    "difficulty": "chaotic"
+  },
+  {
+    "dictated": "git merge minus minus no minus ff feature forward slash payments",
+    "expected": "git merge --no-ff feature/payments",
+    "category": "git",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "mkdir minus p src forward slash components forward slash auth",
+    "expected": "mkdir -p src/components/auth",
+    "category": "filesystem",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "lsof minus i colon eight zero eight zero",
+    "expected": "lsof -i :8080",
+    "category": "network",
+    "difficulty": "fuzzy"
+  },
+  {
+    "dictated": "so for this one we want to type out camel case validate email address",
+    "expected": "validateEmailAddress",
+    "category": "casing",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "I want to set the environment variable to all caps NEXT underscore PUBLIC underscore API underscore URL equals https colon slash slash api dot useTalkie dot com",
+    "expected": "NEXT_PUBLIC_API_URL=https://api.useTalkie.com",
+    "category": "env",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "right so basically just add dash dash no dash cache to the docker build command",
+    "expected": "--no-cache",
+    "category": "docker",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the file glob should be star star slash star dot test dot ts",
+    "expected": "**/*.test.ts",
+    "category": "filesystem",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "use the flag dash capital R for recursive copy",
+    "expected": "-R",
+    "category": "flags",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "can you type kubectl space logs space dash f space dash l space app equals web space dash c space nginx",
+    "expected": "kubectl logs -f -l app=web -c nginx",
+    "category": "kubectl",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the version constraint is greater than equals two dot zero dot zero comma less than three dot zero dot zero",
+    "expected": ">=2.0.0,<3.0.0",
+    "category": "semver",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "so uh the test command would be pytest space dash v space dash dash cov equals src space tests slash",
+    "expected": "pytest -v --cov=src tests/",
+    "category": "python",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "just write out xattr space dash r space dash d space com dot apple dot quarantine space slash Applications slash capital My capital App dot app",
+    "expected": "xattr -r -d com.apple.quarantine /Applications/MyApp.app",
+    "category": "macos",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "oh and also add the flag dash dash prefer dash offline to the pnpm install",
+    "expected": "--prefer-offline",
+    "category": "npm",
+    "difficulty": "natural"
+  },
+  {
+    "dictated": "the whole thing is a mess but it should be something like docker run minus minus network equals host minus e all caps POSTGRES underscore PASSWORD equals not a real password minus d postgres colon sixteen dash alpine",
+    "expected": "docker run --network=host -e POSTGRES_PASSWORD=notarealpassword -d postgres:16-alpine",
+    "category": "docker",
+    "difficulty": "chaotic"
+  }
+]

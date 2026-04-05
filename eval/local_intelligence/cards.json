@@ -1,0 +1,1404 @@
+[
+  {
+    "id": "memo-auto-title",
+    "title": "Memo Auto-Title (<1s)",
+    "tier": "ship-soon",
+    "objective": "Generate specific memo titles that are useful in list view and search.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_0814",
+      "capturedAt": "2026-04-03T08:14:22-04:00",
+      "currentTitle": "New Memo",
+      "transcript": "Need to rewrite the launch page hero. Put proof first, then product shot, then pricing line. Also ask Nina for two customer quotes by Tuesday."
+    },
+    "prompt": {
+      "task": "Create one concise and specific title for a fresh memo.",
+      "system": "You write titles for Talkie voice memos.\nRules:\n- Return JSON only.\n- Title must be <= 48 characters.\n- Make it specific to the memo's core action.\n- Never output generic titles like \"Voice Memo\" or \"Thoughts\".",
+      "user": "Memo ID: {{memoId}}\nCaptured at: {{capturedAt}}\nCurrent title: {{currentTitle}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "title": "Launch hero: proof first, quotes by Tuesday",
+        "confidence": 0.92,
+        "rationale": "Memo focuses on landing page reorder and quote deadline."
+      }
+    },
+    "testCase": {
+      "name": "Avoid generic titles on clear action memo",
+      "input": {
+        "memoId": "memo_test_title_01",
+        "capturedAt": "2026-04-04T10:05:00-04:00",
+        "currentTitle": "Voice Memo",
+        "transcript": "Book dentist for Friday and email insurance form before noon."
+      },
+      "assertions": [
+        "title is not \"Voice Memo\"",
+        "title length <= 48",
+        "title contains either \"dentist\" or \"insurance\""
+      ]
+    }
+  },
+  {
+    "id": "memo-type-detection",
+    "title": "Memo Type Detection",
+    "tier": "ship-soon",
+    "objective": "Classify memo intent early so the right local workflow can run automatically.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_0918",
+      "transcript": "Need to lock April hiring plan: two backend roles, one designer, no contractor spend until Q3.",
+      "candidateTypes": [
+        "task",
+        "journal",
+        "meeting",
+        "idea",
+        "reference"
+      ]
+    },
+    "prompt": {
+      "task": "Classify memo into one primary type and optional secondary type.",
+      "system": "You are a routing classifier for Talkie.\nReturn JSON only.\nPick one primaryType from candidateTypes.\nIf confidence is below 0.65, set needsReview to true.",
+      "user": "Memo ID: {{memoId}}\nCandidate types: {{candidateTypes}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "primaryType": "meeting",
+        "secondaryType": "task",
+        "confidence": 0.88,
+        "suggestedWorkflow": "extract-action-items",
+        "needsReview": false
+      }
+    },
+    "testCase": {
+      "name": "Ambiguous personal reflection should not over-route",
+      "input": {
+        "memoId": "memo_test_type_01",
+        "transcript": "Felt scattered today. Might restructure mornings and maybe skip Slack until 10.",
+        "candidateTypes": [
+          "task",
+          "journal",
+          "meeting",
+          "idea",
+          "reference"
+        ]
+      },
+      "assertions": [
+        "primaryType is either \"journal\" or \"idea\"",
+        "confidence < 0.8",
+        "needsReview can be true when uncertainty is high"
+      ]
+    }
+  },
+  {
+    "id": "action-item-extraction",
+    "title": "Action Item Extraction With Confidence",
+    "tier": "ship-soon",
+    "objective": "Extract trackable tasks from natural speech while preserving evidence spans.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_1042",
+      "transcript": "By Monday, send revised onboarding doc to Priya. Also schedule 30 minutes with legal next week. I should probably clean up old Stripe test accounts too.",
+      "ownerDefault": "Arach"
+    },
+    "prompt": {
+      "task": "Extract explicit and implied action items from memo transcript.",
+      "system": "You extract tasks from speech.\nReturn JSON only.\nEach item needs: text, owner, dueDateISO (or null), confidence, evidence.\nDo not invent due dates if none are present.",
+      "user": "Memo ID: {{memoId}}\nOwner default: {{ownerDefault}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "items": [
+          {
+            "text": "Send revised onboarding doc to Priya",
+            "owner": "Arach",
+            "dueDateISO": "2026-04-06",
+            "confidence": 0.95,
+            "evidence": "By Monday, send revised onboarding doc to Priya."
+          },
+          {
+            "text": "Schedule 30 minute legal review",
+            "owner": "Arach",
+            "dueDateISO": null,
+            "confidence": 0.82,
+            "evidence": "schedule 30 minutes with legal next week"
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Low-confidence tasks remain extractable but marked",
+      "input": {
+        "memoId": "memo_test_tasks_01",
+        "transcript": "Maybe clean up the old docs folder sometime.",
+        "ownerDefault": "Arach"
+      },
+      "assertions": [
+        "items length >= 1",
+        "item confidence < 0.75 for vague tasks",
+        "evidence field is always present"
+      ]
+    }
+  },
+  {
+    "id": "transcript-cleanup-presets",
+    "title": "Transcript Cleanup Presets",
+    "tier": "ship-soon",
+    "objective": "Apply local rewrite modes without losing factual meaning from the source transcript.",
+    "inputExample": {
+      "memoId": "memo_2026_04_02_1831",
+      "preset": "executive-summary",
+      "transcript": "Um okay so the thing is we shipped the sync fix and uh support tickets dropped from nineteen to six, but we still have weird duplicate reminders for recurring tasks."
+    },
+    "prompt": {
+      "task": "Rewrite transcript according to preset while preserving concrete facts.",
+      "system": "You rewrite transcripts using style presets.\nReturn JSON only.\nNever change numbers, names, or dates.\nIf preset is executive-summary, use short declarative sentences.",
+      "user": "Preset: {{preset}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "cleanedText": "Shipped sync fix reduced support tickets from 19 to 6. Duplicate reminders still occur for recurring tasks.",
+        "preservedFacts": [
+          "support tickets dropped from 19 to 6",
+          "duplicate reminders remain"
+        ],
+        "removedFillers": [
+          "um",
+          "uh",
+          "okay"
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Fact preservation under rewrite",
+      "input": {
+        "memoId": "memo_test_cleanup_01",
+        "preset": "bullet-plan",
+        "transcript": "We spent 4 hours on export bugs and fixed 3 of 5 issues."
+      },
+      "assertions": [
+        "output contains number 4",
+        "output contains phrase 3 of 5",
+        "filler words are not introduced"
+      ]
+    }
+  },
+  {
+    "id": "what-matters-summary",
+    "title": "Top-3 What Matters Summary",
+    "tier": "ship-soon",
+    "objective": "Compress long voice notes into the three highest-signal points.",
+    "inputExample": {
+      "memoId": "memo_2026_04_01_0720",
+      "transcript": "Long ramble about launch prep, hiring plan, and a possible referral program. Final decisions: launch moved to May 10, defer referral until after analytics rewrite, and cut onboarding to three screens."
+    },
+    "prompt": {
+      "task": "Return exactly three highest-priority points from transcript.",
+      "system": "You produce high-signal summaries.\nReturn JSON only.\nOutput exactly 3 points.\nEach point must include evidence quote and priority score 1-100.",
+      "user": "Memo ID: {{memoId}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "topPoints": [
+          {
+            "point": "Launch date moved to May 10.",
+            "priority": 96,
+            "evidence": "launch moved to May 10"
+          },
+          {
+            "point": "Referral program deferred until analytics rewrite is done.",
+            "priority": 87,
+            "evidence": "defer referral until after analytics rewrite"
+          },
+          {
+            "point": "Onboarding flow reduced to three screens.",
+            "priority": 80,
+            "evidence": "cut onboarding to three screens"
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Summary must stay at exactly three points",
+      "input": {
+        "memoId": "memo_test_summary_01",
+        "transcript": "Decision one. Decision two. Decision three. Decision four."
+      },
+      "assertions": [
+        "topPoints length equals 3",
+        "priority values are numeric",
+        "each point includes evidence"
+      ]
+    }
+  },
+  {
+    "id": "calendar-intent-detection",
+    "title": "Calendar Intent Detection",
+    "tier": "ship-soon",
+    "objective": "Detect event-worthy language and produce structured event suggestions.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_1212",
+      "capturedAt": "2026-04-03T12:12:10-04:00",
+      "timezone": "America/Toronto",
+      "transcript": "Lunch with Dana next Tuesday at 1 at Canary. Also review roadmap with ops Thursday 4:30 PM for 45 minutes."
+    },
+    "prompt": {
+      "task": "Extract potential calendar events from transcript.",
+      "system": "You detect calendar intents.\nReturn JSON only.\nResolve relative dates using capturedAt and timezone.\nMark needsConfirmation true when date/time confidence is below 0.8.",
+      "user": "Captured at: {{capturedAt}}\nTimezone: {{timezone}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "events": [
+          {
+            "title": "Lunch with Dana",
+            "startAtISO": "2026-04-07T13:00:00-04:00",
+            "durationMinutes": 60,
+            "location": "Canary",
+            "confidence": 0.9,
+            "needsConfirmation": false
+          },
+          {
+            "title": "Roadmap review with Ops",
+            "startAtISO": "2026-04-09T16:30:00-04:00",
+            "durationMinutes": 45,
+            "location": null,
+            "confidence": 0.86,
+            "needsConfirmation": false
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Relative date resolution uses explicit timezone",
+      "input": {
+        "memoId": "memo_test_calendar_01",
+        "capturedAt": "2026-04-04T09:00:00-04:00",
+        "timezone": "America/Toronto",
+        "transcript": "Call Sam tomorrow at 2 PM."
+      },
+      "assertions": [
+        "startAtISO date is 2026-04-05",
+        "timezone offset in startAtISO is -04:00",
+        "event title mentions Sam"
+      ]
+    }
+  },
+  {
+    "id": "reminder-normalization",
+    "title": "Reminder Phrasing Normalization",
+    "tier": "ship-soon",
+    "objective": "Turn vague spoken reminders into clear and actionable reminder objects.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_1722",
+      "transcript": "Need to maybe ping Chris about the invoice thing before it gets weird.",
+      "userLocale": "en-CA"
+    },
+    "prompt": {
+      "task": "Normalize vague reminder speech into specific reminder text and metadata.",
+      "system": "You normalize reminders.\nReturn JSON only.\nReminder text should start with a strong verb.\nWhen due date is unclear, set dueDateISO to null and add followUpQuestion.",
+      "user": "Locale: {{userLocale}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "reminderText": "Message Chris for invoice status update",
+        "dueDateISO": null,
+        "confidence": 0.78,
+        "followUpQuestion": "When do you want this done?"
+      }
+    },
+    "testCase": {
+      "name": "Reminder text should be imperative and concrete",
+      "input": {
+        "memoId": "memo_test_reminder_01",
+        "transcript": "Maybe look into new card design at some point.",
+        "userLocale": "en-CA"
+      },
+      "assertions": [
+        "reminderText starts with a verb",
+        "reminderText does not contain \"maybe\"",
+        "followUpQuestion exists when due date is missing"
+      ]
+    }
+  },
+  {
+    "id": "private-redaction-pass",
+    "title": "Private Redaction Pass",
+    "tier": "ship-soon",
+    "objective": "Redact sensitive data locally before sharing, syncing, or cloud routing.",
+    "inputExample": {
+      "memoId": "memo_2026_04_02_1114",
+      "transcript": "Card ending 4821 failed again. Patient name is Mark Lavoie and policy number is HN-772-19.",
+      "policies": [
+        "mask-health-data",
+        "mask-financial-data"
+      ]
+    },
+    "prompt": {
+      "task": "Detect and mask sensitive entities while preserving memo readability.",
+      "system": "You redact sensitive entities.\nReturn JSON only.\nUse [REDACTED_TYPE] placeholders.\nInclude list of redacted entities with type and confidence.",
+      "user": "Policies: {{policies}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "redactedTranscript": "Card ending [REDACTED_FINANCIAL] failed again. Patient name is [REDACTED_PERSON] and policy number is [REDACTED_HEALTH_ID].",
+        "entities": [
+          {
+            "value": "4821",
+            "type": "financial",
+            "confidence": 0.94
+          },
+          {
+            "value": "Mark Lavoie",
+            "type": "person",
+            "confidence": 0.98
+          },
+          {
+            "value": "HN-772-19",
+            "type": "health-id",
+            "confidence": 0.92
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "No raw sensitive tokens remain in output",
+      "input": {
+        "memoId": "memo_test_redact_01",
+        "transcript": "SSN 555-44-9012 and account 00391299 should never leave device.",
+        "policies": [
+          "mask-financial-data"
+        ]
+      },
+      "assertions": [
+        "redactedTranscript does not contain 555-44-9012",
+        "redactedTranscript does not contain 00391299",
+        "entities length >= 2"
+      ]
+    }
+  },
+  {
+    "id": "writing-style-memory",
+    "title": "Per-User Writing Style Memory",
+    "tier": "local-first",
+    "objective": "Rewrite outputs in the user's preferred voice using local style profile memory.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_2010",
+      "styleProfile": {
+        "preferredTone": "direct",
+        "sentenceLength": "short",
+        "avoidWords": [
+          "leverage",
+          "synergy"
+        ],
+        "likesBullets": true
+      },
+      "transcript": "We need to change onboarding and probably reduce friction around account linking."
+    },
+    "prompt": {
+      "task": "Rewrite summary using stored user style profile.",
+      "system": "You are a personal style adapter.\nReturn JSON only.\nMatch styleProfile preferences.\nDo not alter factual meaning.",
+      "user": "Style profile:\n{{styleProfile}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "styledSummary": "Onboarding needs two changes:\n- Remove extra account-linking step\n- Reduce friction in first-run flow",
+        "styleChecks": {
+          "usedBullets": true,
+          "avoidedWords": [
+            "leverage",
+            "synergy"
+          ]
+        }
+      }
+    },
+    "testCase": {
+      "name": "Avoid banned style words",
+      "input": {
+        "memoId": "memo_test_style_01",
+        "styleProfile": {
+          "preferredTone": "direct",
+          "sentenceLength": "short",
+          "avoidWords": [
+            "utilize"
+          ],
+          "likesBullets": false
+        },
+        "transcript": "We should utilize a new onboarding flow."
+      },
+      "assertions": [
+        "styledSummary does not contain \"utilize\"",
+        "output preserves onboarding meaning"
+      ]
+    }
+  },
+  {
+    "id": "similar-memo-recall",
+    "title": "Find Similar Memo (Semantic Recall)",
+    "tier": "local-first",
+    "objective": "Retrieve related historical memos to improve continuity in decision-making.",
+    "inputExample": {
+      "memoId": "memo_2026_04_04_0740",
+      "queryTranscript": "Need to revisit referral program constraints before launch.",
+      "candidateMemos": [
+        {
+          "memoId": "memo_2026_03_21_0800",
+          "summary": "Deferred referral system until analytics migration."
+        },
+        {
+          "memoId": "memo_2026_03_28_0930",
+          "summary": "Updated website hero copy and social proof blocks."
+        },
+        {
+          "memoId": "memo_2026_04_01_1830",
+          "summary": "Defined invite-only referral pilot for power users."
+        }
+      ]
+    },
+    "prompt": {
+      "task": "Rank the most semantically related memos for current transcript.",
+      "system": "You are a memo recall ranker.\nReturn JSON only.\nSelect top 3 matches with relevance score and rationale.\nPrioritize decision continuity over keyword overlap.",
+      "user": "Current transcript:\n{{queryTranscript}}\nCandidates:\n{{candidateMemos}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "matches": [
+          {
+            "memoId": "memo_2026_03_21_0800",
+            "relevance": 0.93,
+            "rationale": "Same referral timing constraint."
+          },
+          {
+            "memoId": "memo_2026_04_01_1830",
+            "relevance": 0.89,
+            "rationale": "Directly discusses referral pilot scope."
+          },
+          {
+            "memoId": "memo_2026_03_28_0930",
+            "relevance": 0.34,
+            "rationale": "Marketing copy only; weak relation."
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Historical decision memo should rank above lexical overlap",
+      "input": {
+        "memoId": "memo_test_recall_01",
+        "queryTranscript": "Need to revisit cancellation policy and trials.",
+        "candidateMemos": [
+          {
+            "memoId": "a",
+            "summary": "Discussed trial cancellation policy and refund rules."
+          },
+          {
+            "memoId": "b",
+            "summary": "Discussed policy page typography updates."
+          }
+        ]
+      },
+      "assertions": [
+        "memoId \"a\" ranks first",
+        "top match relevance > 0.8"
+      ]
+    }
+  },
+  {
+    "id": "project-clustering",
+    "title": "Project Clustering From Voice History",
+    "tier": "local-first",
+    "objective": "Auto-group memos into evolving project threads without manual folders.",
+    "inputExample": {
+      "dateRange": "2026-03-20 to 2026-04-04",
+      "memos": [
+        {
+          "memoId": "m1",
+          "summary": "Refactor sync retry logic and duplicate reminders."
+        },
+        {
+          "memoId": "m2",
+          "summary": "Landing page social proof order and CTA copy."
+        },
+        {
+          "memoId": "m3",
+          "summary": "Recurring reminder bug root cause in scheduler."
+        },
+        {
+          "memoId": "m4",
+          "summary": "Launch announcement draft and waitlist email."
+        }
+      ]
+    },
+    "prompt": {
+      "task": "Cluster memo summaries into project-level threads.",
+      "system": "You cluster memos into project threads.\nReturn JSON only.\nEach cluster must have: clusterId, title, memoIds, confidence.\nCreate \"misc\" only when confidence is below 0.6.",
+      "user": "Date range: {{dateRange}}\nMemos:\n{{memos}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "clusters": [
+          {
+            "clusterId": "scheduler-reliability",
+            "title": "Scheduler reliability fixes",
+            "memoIds": [
+              "m1",
+              "m3"
+            ],
+            "confidence": 0.9
+          },
+          {
+            "clusterId": "launch-site-and-comms",
+            "title": "Launch site and communications",
+            "memoIds": [
+              "m2",
+              "m4"
+            ],
+            "confidence": 0.86
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Related bug memos should cluster together",
+      "input": {
+        "dateRange": "2026-04-01 to 2026-04-03",
+        "memos": [
+          {
+            "memoId": "a1",
+            "summary": "Crash in sync queue on reconnect."
+          },
+          {
+            "memoId": "a2",
+            "summary": "Retry strategy for sync queue and reconnect handling."
+          },
+          {
+            "memoId": "b1",
+            "summary": "Podcast notes and reading list."
+          }
+        ]
+      },
+      "assertions": [
+        "a1 and a2 share a clusterId",
+        "b1 may be separate or misc"
+      ]
+    }
+  },
+  {
+    "id": "next-step-suggestion-engine",
+    "title": "Next-Step Suggestion Engine",
+    "tier": "local-first",
+    "objective": "Recommend the best immediate action after transcription to reduce decision fatigue.",
+    "inputExample": {
+      "memoId": "memo_2026_04_04_0902",
+      "transcript": "I have three product ideas but no clear winner. Need a quick way to score them this week.",
+      "availableActions": [
+        "summarize",
+        "extract-tasks",
+        "schedule",
+        "draft-note",
+        "ask-clarifying-question"
+      ]
+    },
+    "prompt": {
+      "task": "Choose one best next action for the user right now.",
+      "system": "You are a next-step recommender.\nReturn JSON only.\nPick exactly one action from availableActions.\nPrefer actions that unblock momentum within 5 minutes.",
+      "user": "Available actions: {{availableActions}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "action": "ask-clarifying-question",
+        "reason": "User has options but no decision criteria; one clarifying question unlocks scoring.",
+        "confidence": 0.84
+      }
+    },
+    "testCase": {
+      "name": "Action choice reflects transcript uncertainty",
+      "input": {
+        "memoId": "memo_test_next_01",
+        "transcript": "Tomorrow 9 AM send invoice to Alex and set follow-up reminder for Friday.",
+        "availableActions": [
+          "summarize",
+          "extract-tasks",
+          "schedule",
+          "draft-note",
+          "ask-clarifying-question"
+        ]
+      },
+      "assertions": [
+        "action is either \"extract-tasks\" or \"schedule\"",
+        "reason references explicit deadline"
+      ]
+    }
+  },
+  {
+    "id": "follow-up-question-generator",
+    "title": "Follow-Up Question Generator",
+    "tier": "local-first",
+    "objective": "Ask minimal clarifying questions when memo intent is ambiguous.",
+    "inputExample": {
+      "memoId": "memo_2026_04_04_1011",
+      "transcript": "Need to get the partner thing moving again soon.",
+      "maxQuestions": 2
+    },
+    "prompt": {
+      "task": "Generate up to two high-value clarifying questions.",
+      "system": "You generate clarifying questions.\nReturn JSON only.\nAt most maxQuestions questions.\nQuestions must be answerable in one sentence.",
+      "user": "Max questions: {{maxQuestions}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "questions": [
+          "Which partner are you referring to?",
+          "What is the first concrete step you want to take this week?"
+        ],
+        "confidence": 0.79
+      }
+    },
+    "testCase": {
+      "name": "Do not exceed requested question count",
+      "input": {
+        "memoId": "memo_test_questions_01",
+        "transcript": "Should improve onboarding maybe.",
+        "maxQuestions": 1
+      },
+      "assertions": [
+        "questions length equals 1",
+        "question ends with ?"
+      ]
+    }
+  },
+  {
+    "id": "hybrid-model-router",
+    "title": "Hybrid Local/Cloud Router",
+    "tier": "local-first",
+    "objective": "Route requests to local first, escalating only when complexity requires cloud.",
+    "inputExample": {
+      "requestId": "req_2026_04_04_1115",
+      "taskType": "summary",
+      "transcriptLengthTokens": 420,
+      "requiresLongContext": false,
+      "privacyLevel": "high",
+      "localAvailability": true
+    },
+    "prompt": {
+      "task": "Decide whether to run local or cloud for this request.",
+      "system": "You are a model router.\nReturn JSON only.\nPrefer local when quality risk is acceptable.\nIf privacyLevel is high, local wins unless impossible.",
+      "user": "Request metadata:\n{{requestMetadata}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "route": "local",
+        "provider": "apple-foundation-model",
+        "reason": "Short summary task with high privacy requirement.",
+        "expectedLatencyMs": 700
+      }
+    },
+    "testCase": {
+      "name": "Long-context tasks escalate to cloud",
+      "input": {
+        "requestId": "req_test_router_01",
+        "taskType": "complex-reasoning",
+        "transcriptLengthTokens": 6400,
+        "requiresLongContext": true,
+        "privacyLevel": "medium",
+        "localAvailability": true
+      },
+      "assertions": [
+        "route equals \"cloud\"",
+        "reason mentions long context"
+      ]
+    }
+  },
+  {
+    "id": "context-packet-builder",
+    "title": "Context Packet Builder",
+    "tier": "local-first",
+    "objective": "Package just enough memory context for downstream steps without token bloat.",
+    "inputExample": {
+      "memoId": "memo_2026_04_04_1210",
+      "transcript": "Need to finalize waitlist flow and launch email sequence this week.",
+      "relatedMemos": [
+        {
+          "memoId": "m_prev_1",
+          "summary": "Chose ConvertKit for launch sequence."
+        },
+        {
+          "memoId": "m_prev_2",
+          "summary": "Waitlist conversion dropped after form change."
+        }
+      ],
+      "openTasks": [
+        {
+          "id": "t1",
+          "text": "Fix waitlist form validation",
+          "status": "in-progress"
+        },
+        {
+          "id": "t2",
+          "text": "Draft launch email 2",
+          "status": "todo"
+        }
+      ],
+      "tokenBudget": 800
+    },
+    "prompt": {
+      "task": "Build compact context packet for next LLM call.",
+      "system": "You build context packets.\nReturn JSON only.\nHonor tokenBudget.\nPrioritize decisions, active tasks, and unresolved questions.",
+      "user": "Token budget: {{tokenBudget}}\nCurrent transcript:\n{{transcript}}\nRelated memos:\n{{relatedMemos}}\nOpen tasks:\n{{openTasks}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "packet": {
+          "decisions": [
+            "ConvertKit selected for launch sequence."
+          ],
+          "activeTasks": [
+            "Fix waitlist form validation",
+            "Draft launch email 2"
+          ],
+          "openQuestions": [
+            "Did form change cause drop in conversion?"
+          ],
+          "relevantMemoIds": [
+            "m_prev_1",
+            "m_prev_2"
+          ]
+        },
+        "tokenEstimate": 96
+      }
+    },
+    "testCase": {
+      "name": "Context packet must stay under budget",
+      "input": {
+        "memoId": "memo_test_packet_01",
+        "transcript": "Need to plan hiring and launch and docs and support and pricing and analytics.",
+        "relatedMemos": [],
+        "openTasks": [],
+        "tokenBudget": 120
+      },
+      "assertions": [
+        "tokenEstimate <= 120",
+        "packet has at least one decision or openQuestion field"
+      ]
+    }
+  },
+  {
+    "id": "conversation-to-checklist",
+    "title": "Conversation To Checklist Transformer",
+    "tier": "local-first",
+    "objective": "Convert stream-of-consciousness transcripts into ordered execution checklists.",
+    "inputExample": {
+      "memoId": "memo_2026_04_04_1305",
+      "transcript": "For launch day: first QA the checkout flow, then schedule tweets, then send to press list after site is live.",
+      "ownerDefault": "Arach"
+    },
+    "prompt": {
+      "task": "Transform transcript into ordered checklist with dependencies.",
+      "system": "You convert speech to checklist.\nReturn JSON only.\nEach item needs: id, text, order, dependsOn, owner.\nPreserve execution order from transcript when explicit.",
+      "user": "Owner default: {{ownerDefault}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "checklist": [
+          {
+            "id": "c1",
+            "text": "QA checkout flow",
+            "order": 1,
+            "dependsOn": [],
+            "owner": "Arach"
+          },
+          {
+            "id": "c2",
+            "text": "Schedule launch tweets",
+            "order": 2,
+            "dependsOn": [
+              "c1"
+            ],
+            "owner": "Arach"
+          },
+          {
+            "id": "c3",
+            "text": "Send press list announcement",
+            "order": 3,
+            "dependsOn": [
+              "c1"
+            ],
+            "owner": "Arach"
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Dependency order matches explicit sequencing words",
+      "input": {
+        "memoId": "memo_test_checklist_01",
+        "transcript": "First export data. Then verify CSV. Finally email finance.",
+        "ownerDefault": "Arach"
+      },
+      "assertions": [
+        "order values are 1,2,3",
+        "item 2 depends on item 1",
+        "item 3 depends on item 2 or item 1"
+      ]
+    }
+  },
+  {
+    "id": "personal-knowledge-graph",
+    "title": "Personal Knowledge Graph From Voice",
+    "tier": "big-swings",
+    "objective": "Build a local graph of people, projects, decisions, and open questions over time.",
+    "inputExample": {
+      "memos": [
+        {
+          "memoId": "mkg1",
+          "transcript": "Dana owns launch email copy. We decided to postpone referral pilot to May."
+        },
+        {
+          "memoId": "mkg2",
+          "transcript": "Question still open: should we gate referral by invite code?"
+        }
+      ]
+    },
+    "prompt": {
+      "task": "Extract graph nodes and edges from memo batch.",
+      "system": "You construct a personal knowledge graph.\nReturn JSON only.\nNodes can be person, project, decision, question, artifact.\nEdges need type, sourceNodeId, targetNodeId, evidenceMemoId.",
+      "user": "Memos:\n{{memos}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "nodes": [
+          {
+            "id": "person_dana",
+            "type": "person",
+            "label": "Dana"
+          },
+          {
+            "id": "project_launch_email",
+            "type": "project",
+            "label": "Launch email copy"
+          },
+          {
+            "id": "decision_referral_may",
+            "type": "decision",
+            "label": "Postpone referral pilot to May"
+          },
+          {
+            "id": "question_referral_gate",
+            "type": "question",
+            "label": "Gate referral by invite code?"
+          }
+        ],
+        "edges": [
+          {
+            "type": "owns",
+            "sourceNodeId": "person_dana",
+            "targetNodeId": "project_launch_email",
+            "evidenceMemoId": "mkg1"
+          },
+          {
+            "type": "decides",
+            "sourceNodeId": "project_launch_email",
+            "targetNodeId": "decision_referral_may",
+            "evidenceMemoId": "mkg1"
+          },
+          {
+            "type": "raises",
+            "sourceNodeId": "project_launch_email",
+            "targetNodeId": "question_referral_gate",
+            "evidenceMemoId": "mkg2"
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Duplicate entity names should be merged",
+      "input": {
+        "memos": [
+          {
+            "memoId": "a",
+            "transcript": "Talk to Chris about pricing."
+          },
+          {
+            "memoId": "b",
+            "transcript": "Chris confirmed pricing test."
+          }
+        ]
+      },
+      "assertions": [
+        "only one node labeled Chris",
+        "edges reference merged Chris node id"
+      ]
+    }
+  },
+  {
+    "id": "catch-me-up-daily-brief",
+    "title": "Catch Me Up Daily Brief",
+    "tier": "big-swings",
+    "objective": "Produce a private daily narrative from memos, tasks, and decisions.",
+    "inputExample": {
+      "date": "2026-04-04",
+      "memos": [
+        {
+          "memoId": "d1",
+          "summary": "Launch date locked for May 10."
+        },
+        {
+          "memoId": "d2",
+          "summary": "Need legal review on revised terms."
+        }
+      ],
+      "completedTasks": [
+        "Draft launch email 1",
+        "Fix duplicate reminders bug"
+      ],
+      "openTasks": [
+        "Schedule legal review"
+      ]
+    },
+    "prompt": {
+      "task": "Generate concise daily brief with wins, risks, and next actions.",
+      "system": "You write daily briefs.\nReturn JSON only.\nSections required: wins, risks, nextActions.\nKeep each section under 3 bullets.",
+      "user": "Date: {{date}}\nMemos: {{memos}}\nCompleted tasks: {{completedTasks}}\nOpen tasks: {{openTasks}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "wins": [
+          "Launch date finalized for May 10.",
+          "Duplicate reminders bug fixed."
+        ],
+        "risks": [
+          "Legal review still pending for terms update."
+        ],
+        "nextActions": [
+          "Book legal review slot by Monday."
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Daily brief includes all required sections",
+      "input": {
+        "date": "2026-04-04",
+        "memos": [
+          {
+            "memoId": "x",
+            "summary": "Mostly planning chatter."
+          }
+        ],
+        "completedTasks": [],
+        "openTasks": [
+          "Finalize budget"
+        ]
+      },
+      "assertions": [
+        "wins section exists",
+        "risks section exists",
+        "nextActions section exists"
+      ]
+    }
+  },
+  {
+    "id": "contradiction-drift-detection",
+    "title": "Contradiction And Drift Detection",
+    "tier": "big-swings",
+    "objective": "Detect conflicts between new memos and prior decisions.",
+    "inputExample": {
+      "newMemo": {
+        "memoId": "new1",
+        "transcript": "Let us launch on April 28 instead of May 10."
+      },
+      "priorDecisions": [
+        {
+          "decisionId": "dec_12",
+          "text": "Launch date is May 10, approved in planning meeting.",
+          "date": "2026-04-01"
+        }
+      ]
+    },
+    "prompt": {
+      "task": "Flag contradictions or strategic drift against known decisions.",
+      "system": "You detect contradictions.\nReturn JSON only.\nFor each conflict include severity, conflictingDecisionId, and explanation.\nNo conflict should be returned as empty array.",
+      "user": "New memo:\n{{newMemo}}\nPrior decisions:\n{{priorDecisions}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "conflicts": [
+          {
+            "conflictingDecisionId": "dec_12",
+            "severity": "high",
+            "explanation": "New memo proposes April 28 while approved date is May 10.",
+            "recommendation": "Request explicit decision override before updating timeline."
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Date conflict should be high severity",
+      "input": {
+        "newMemo": {
+          "memoId": "new_test_01",
+          "transcript": "Move quarterly review from June 20 to June 2."
+        },
+        "priorDecisions": [
+          {
+            "decisionId": "d9",
+            "text": "Quarterly review date fixed to June 20.",
+            "date": "2026-03-30"
+          }
+        ]
+      },
+      "assertions": [
+        "conflicts length >= 1",
+        "first conflict severity equals high"
+      ]
+    }
+  },
+  {
+    "id": "momentum-scoring",
+    "title": "Momentum Scoring",
+    "tier": "big-swings",
+    "objective": "Quantify execution momentum from spoken intents versus completed outcomes.",
+    "inputExample": {
+      "periodDays": 14,
+      "intents": [
+        {
+          "text": "Ship waitlist flow",
+          "firstSeen": "2026-03-24",
+          "repeats": 4
+        },
+        {
+          "text": "Book legal review",
+          "firstSeen": "2026-03-29",
+          "repeats": 3
+        }
+      ],
+      "completions": [
+        {
+          "text": "Ship waitlist flow",
+          "completedAt": "2026-04-02"
+        }
+      ]
+    },
+    "prompt": {
+      "task": "Compute momentum score and explain key drivers.",
+      "system": "You score execution momentum.\nReturn JSON only.\nScore is 0-100.\nPenalize repeated unresolved intents.\nReward completed intents within period.",
+      "user": "Period days: {{periodDays}}\nIntents:\n{{intents}}\nCompletions:\n{{completions}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "momentumScore": 62,
+        "trend": "flat",
+        "drivers": [
+          "One high-repeat intent completed (waitlist flow).",
+          "Legal review intent remains unresolved with 3 repeats."
+        ],
+        "unresolvedHotspots": [
+          "Book legal review"
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Score drops when repeats rise without completion",
+      "input": {
+        "periodDays": 14,
+        "intents": [
+          {
+            "text": "Fix onboarding bug",
+            "firstSeen": "2026-03-20",
+            "repeats": 6
+          }
+        ],
+        "completions": []
+      },
+      "assertions": [
+        "momentumScore < 50",
+        "unresolvedHotspots includes \"Fix onboarding bug\""
+      ]
+    }
+  },
+  {
+    "id": "local-agent-loop",
+    "title": "Local Agent Loop For Memo Processing",
+    "tier": "big-swings",
+    "objective": "Run a deterministic local chain: classify, extract, summarize, route, verify.",
+    "inputExample": {
+      "memoId": "memo_2026_04_04_1430",
+      "transcript": "Need to reschedule partner demo to Wednesday and send revised deck tonight.",
+      "enabledSteps": [
+        "classify",
+        "extract",
+        "summarize",
+        "route",
+        "verify"
+      ]
+    },
+    "prompt": {
+      "task": "Produce outputs for each pipeline step and final state.",
+      "system": "You orchestrate a local memo pipeline.\nReturn JSON only.\nEmit per-step outputs and final status.\nIf verify fails, finalStatus must be \"needs-review\".",
+      "user": "Memo ID: {{memoId}}\nEnabled steps: {{enabledSteps}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "steps": {
+          "classify": {
+            "primaryType": "task",
+            "confidence": 0.9
+          },
+          "extract": {
+            "items": [
+              "Reschedule partner demo to Wednesday",
+              "Send revised deck tonight"
+            ]
+          },
+          "summarize": {
+            "text": "Two immediate partner follow-ups identified."
+          },
+          "route": {
+            "workflow": "task-and-calendar"
+          },
+          "verify": {
+            "passed": true,
+            "issues": []
+          }
+        },
+        "finalStatus": "ready"
+      }
+    },
+    "testCase": {
+      "name": "Failed verify step blocks auto-execution",
+      "input": {
+        "memoId": "memo_test_loop_01",
+        "transcript": "Maybe move something around at some point.",
+        "enabledSteps": [
+          "classify",
+          "extract",
+          "summarize",
+          "route",
+          "verify"
+        ]
+      },
+      "assertions": [
+        "verify.passed can be false for vague memo",
+        "finalStatus equals \"needs-review\" when verify fails"
+      ]
+    }
+  },
+  {
+    "id": "meeting-live-structure",
+    "title": "Meeting Mode Live Rolling Structure",
+    "tier": "big-swings",
+    "objective": "Maintain a live structured view of agenda, decisions, questions, and actions while speaking.",
+    "inputExample": {
+      "meetingId": "meeting_2026_04_04_prod",
+      "chunkIndex": 5,
+      "chunkText": "Decision: cut scope to onboarding and billing. Open question: who owns docs migration?",
+      "currentState": {
+        "agenda": [
+          "Release planning"
+        ],
+        "decisions": [],
+        "openQuestions": [],
+        "actionItems": []
+      }
+    },
+    "prompt": {
+      "task": "Update meeting state from new transcript chunk.",
+      "system": "You maintain rolling meeting structure.\nReturn JSON only.\nUpdate state incrementally.\nDo not duplicate existing items.\nTag new items with chunkIndex.",
+      "user": "Meeting ID: {{meetingId}}\nChunk index: {{chunkIndex}}\nChunk text:\n{{chunkText}}\nCurrent state:\n{{currentState}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "updatedState": {
+          "agenda": [
+            "Release planning"
+          ],
+          "decisions": [
+            {
+              "text": "Cut scope to onboarding and billing",
+              "chunkIndex": 5
+            }
+          ],
+          "openQuestions": [
+            {
+              "text": "Who owns docs migration?",
+              "chunkIndex": 5
+            }
+          ],
+          "actionItems": []
+        }
+      }
+    },
+    "testCase": {
+      "name": "Repeated decision text should not duplicate",
+      "input": {
+        "meetingId": "meeting_test_live_01",
+        "chunkIndex": 8,
+        "chunkText": "Decision: keep beta closed for now.",
+        "currentState": {
+          "agenda": [],
+          "decisions": [
+            {
+              "text": "Keep beta closed for now.",
+              "chunkIndex": 2
+            }
+          ],
+          "openQuestions": [],
+          "actionItems": []
+        }
+      },
+      "assertions": [
+        "updatedState.decisions length stays 1",
+        "existing decision remains unchanged"
+      ]
+    }
+  },
+  {
+    "id": "intent-trend-alerts",
+    "title": "Intent Trend Alerts",
+    "tier": "big-swings",
+    "objective": "Detect recurring spoken intents that are not converting into completed work.",
+    "inputExample": {
+      "lookbackDays": 30,
+      "intentSeries": [
+        {
+          "intent": "Fix onboarding analytics",
+          "mentionCount": 7,
+          "completionCount": 0
+        },
+        {
+          "intent": "Ship billing retry update",
+          "mentionCount": 3,
+          "completionCount": 2
+        }
+      ],
+      "alertThreshold": {
+        "minMentions": 4,
+        "maxCompletions": 0
+      }
+    },
+    "prompt": {
+      "task": "Generate alerts for unresolved repeated intents.",
+      "system": "You detect intent trends.\nReturn JSON only.\nAlert when mentionCount meets threshold and completionCount is low.\nInclude one suggested intervention per alert.",
+      "user": "Lookback: {{lookbackDays}} days\nIntent series:\n{{intentSeries}}\nThreshold:\n{{alertThreshold}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "alerts": [
+          {
+            "intent": "Fix onboarding analytics",
+            "severity": "medium",
+            "reason": "Mentioned 7 times with 0 completions in 30 days.",
+            "suggestedIntervention": "Schedule 45-minute focused block and define done criteria."
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Threshold logic gates alert emission",
+      "input": {
+        "lookbackDays": 30,
+        "intentSeries": [
+          {
+            "intent": "Refactor UI",
+            "mentionCount": 2,
+            "completionCount": 0
+          }
+        ],
+        "alertThreshold": {
+          "minMentions": 4,
+          "maxCompletions": 0
+        }
+      },
+      "assertions": [
+        "alerts length equals 0"
+      ]
+    }
+  },
+  {
+    "id": "voice-os-command-layer",
+    "title": "Voice-Based Operating Layer",
+    "tier": "big-swings",
+    "objective": "Translate natural speech into structured executable commands with safety gates.",
+    "inputExample": {
+      "utterance": "Open the latest launch notes, append today's blockers, and share with Dana in Slack.",
+      "environment": {
+        "apps": [
+          "notes",
+          "slack",
+          "finder"
+        ],
+        "safetyMode": "confirm-destructive"
+      }
+    },
+    "prompt": {
+      "task": "Convert spoken instruction into structured command plan.",
+      "system": "You convert voice commands to structured actions.\nReturn JSON only.\nUse steps with app, action, args.\nMark requiresConfirmation true for risky operations.",
+      "user": "Utterance:\n{{utterance}}\nEnvironment:\n{{environment}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "intent": "multi-step-automation",
+        "steps": [
+          {
+            "app": "notes",
+            "action": "open_latest",
+            "args": {
+              "notebook": "launch-notes"
+            }
+          },
+          {
+            "app": "notes",
+            "action": "append_text",
+            "args": {
+              "section": "blockers",
+              "source": "today_summary"
+            }
+          },
+          {
+            "app": "slack",
+            "action": "share_note",
+            "args": {
+              "recipient": "Dana"
+            }
+          }
+        ],
+        "requiresConfirmation": false
+      }
+    },
+    "testCase": {
+      "name": "Dangerous file actions require explicit confirmation",
+      "input": {
+        "utterance": "Delete the old exports folder and empty trash.",
+        "environment": {
+          "apps": [
+            "finder"
+          ],
+          "safetyMode": "confirm-destructive"
+        }
+      },
+      "assertions": [
+        "requiresConfirmation equals true",
+        "at least one step action is marked destructive"
+      ]
+    }
+  }
+]

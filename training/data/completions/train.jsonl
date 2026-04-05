@@ -1,0 +1,491 @@
+{"prompt": "pascal case floating pill", "completion": "FloatingPill"}
+{"prompt": "two fifty six", "completion": "256"}
+{"prompt": "X plus equals one", "completion": "x+=1"}
+{"prompt": "four zero nine six", "completion": "4096"}
+{"prompt": "dot dot slash dot dot slash dot dot slash config", "completion": "../../../config"}
+{"prompt": "dot dot slash dot dot slash dot dot slash", "completion": "../../../"}
+{"prompt": "space separated A B C", "completion": "A B C"}
+{"prompt": "camel case on submit", "completion": "onSubmit"}
+{"prompt": "dot dot slash", "completion": "../"}
+{"prompt": "at types slash node", "completion": "@types/node"}
+{"prompt": "git reset dash dash soft all caps HEAD tilde one", "completion": "git reset --soft HEAD~1"}
+{"prompt": "at escaping open paren close paren arrow capital void", "completion": "@escaping () -> Void"}
+{"prompt": "async function camel case inference call open paren method colon string close paren", "completion": "async function inferenceCall(method: string)"}
+{"prompt": "quote service bridge quote", "completion": "\"ServiceBridge\""}
+{"prompt": "hello at world", "completion": "hello@world"}
+{"prompt": "camel case set value", "completion": "setValue"}
+{"prompt": "test dash D dot venv and and source dot venv slash bin slash activate", "completion": "test -d .venv && source .venv/bin/activate"}
+{"prompt": "if X equals equals equals Y", "completion": "if x === y"}
+{"prompt": "pascal case app delegate", "completion": "AppDelegate"}
+{"prompt": "X dash equals one", "completion": "x-=1"}
+{"prompt": "GH PR view dash dash web", "completion": "gh pr view --web"}
+{"prompt": "dash dash title quote fix inference latency quote", "completion": "--title \"fix inference latency\""}
+{"prompt": "underscore underscore init underscore underscore", "completion": "__init__"}
+{"prompt": "no space hello world", "completion": "helloworld"}
+{"prompt": "at OpenAI slash codex", "completion": "@openai/codex"}
+{"prompt": "SSH user at host dash P two two two two", "completion": "ssh user@host -p 2222"}
+{"prompt": "A plus B star C", "completion": "a + b * c"}
+{"prompt": "A and and B", "completion": "a && b"}
+{"prompt": "if X less than Y", "completion": "if x < y"}
+{"prompt": "at main actor", "completion": "@MainActor"}
+{"prompt": "zero", "completion": "0"}
+{"prompt": "forty two", "completion": "42"}
+{"prompt": "typeof X equals equals equals single quote string single quote", "completion": "typeof x === 'string'"}
+{"prompt": "docker run dash D dash P four four three colon four four three nginx colon alpine", "completion": "docker run -d -p 443:443 nginx:alpine"}
+{"prompt": "GH PR create dash dash title quote fix inference latency quote dash dash body quote added TTFT tracking and latency instrumentation quote", "completion": "gh pr create --title \"fix inference latency\" --body \"Added TTFT tracking and latency instrumentation\""}
+{"prompt": "dot dot slash dot dot slash dot dot slash dot dot slash", "completion": "../../../../"}
+{"prompt": "for I in star dot log semicolon do echo dollar I semicolon done", "completion": "for i in *.log; do echo $i; done"}
+{"prompt": "git log dash dash oneline dash N ten", "completion": "git log --oneline -n 10"}
+{"prompt": "pip install dash E dot", "completion": "pip install -e ."}
+{"prompt": "one point zero", "completion": "1.0"}
+{"prompt": "A question mark dot B", "completion": "a?.b"}
+{"prompt": "dash dash verbose", "completion": "--verbose"}
+{"prompt": "open angle T colon pascal case codable close angle", "completion": "<T: Codable>"}
+{"prompt": "open bracket colon colon dash one close bracket", "completion": "[::-1]"}
+{"prompt": "launch D dot S H", "completion": "launchd.sh"}
+{"prompt": "SSH dash P two two two two user at server", "completion": "ssh -p 2222 user@server"}
+{"prompt": "HTTPS colon slash slash example dot com slash page hash section", "completion": "https://example.com/page#section"}
+{"prompt": "hash if all caps DEBUG", "completion": "#if DEBUG"}
+{"prompt": "const camel case bridge port equals one nine eight two two", "completion": "const bridgePort = 19822"}
+{"prompt": "dot frame open paren width colon two hundred comma height colon one hundred close paren", "completion": ".frame(width: 200, height: 100)"}
+{"prompt": "open brace close brace", "completion": "{}"}
+{"prompt": "dot P Y", "completion": ".py"}
+{"prompt": "dot next", "completion": ".next"}
+{"prompt": "A pipe greater than B", "completion": "a |> b"}
+{"prompt": "pascal case user defaults", "completion": "UserDefaults"}
+{"prompt": "camel case will appear", "completion": "willAppear"}
+{"prompt": "private var camel case is recording equals false", "completion": "private var isRecording = false"}
+{"prompt": "pascal case notch composer", "completion": "NotchComposer"}
+{"prompt": "HTTPS colon slash slash N P M J S dot com slash package slash commander", "completion": "https://npmjs.com/package/commander"}
+{"prompt": "X star equals two", "completion": "x*=2"}
+{"prompt": "all caps hello", "completion": "HELLO"}
+{"prompt": "open bracket pascal case int close bracket", "completion": "[Int]"}
+{"prompt": "document dot camel case query selector open paren single quote dot container single quote close paren", "completion": "document.querySelector('.container')"}
+{"prompt": "vercel dash labs slash agent dash skills", "completion": "vercel-labs/agent-skills"}
+{"prompt": "VM map dash summary dollar open paren P grep dash X talkie close paren two greater than slash dev slash null pipe head dash twenty five", "completion": "vmmap -summary $(pgrep -x Talkie) 2>/dev/null | head -25"}
+{"prompt": "dash dash body quote added TTFT tracking quote", "completion": "--body \"Added TTFT tracking\""}
+{"prompt": "hello pipe world", "completion": "hello|world"}
+{"prompt": "dot dot slash dot dot slash dot dot slash utils", "completion": "../../../utils"}
+{"prompt": "A pipe pipe B", "completion": "a || b"}
+{"prompt": "dash F S S L", "completion": "-fsSL"}
+{"prompt": "dash dash since", "completion": "--since"}
+{"prompt": "docker exec dash I T container underscore name bash", "completion": "docker exec -it container_name bash"}
+{"prompt": "index dot T S", "completion": "index.ts"}
+{"prompt": "forward slash", "completion": "/"}
+{"prompt": "open paren close paren arrow capital void", "completion": "() -> Void"}
+{"prompt": "func camel case view did load open paren close paren", "completion": "func viewDidLoad()"}
+{"prompt": "screaming snake case default timeout", "completion": "DEFAULT_TIMEOUT"}
+{"prompt": "try await container dot perform", "completion": "try await container.perform"}
+{"prompt": "if X equals equals Y", "completion": "if x == y"}
+{"prompt": "dot dot slash configs", "completion": "../configs"}
+{"prompt": "hello dash world", "completion": "hello-world"}
+{"prompt": "import open brace camel case use effect close brace from single quote react single quote", "completion": "import { useEffect } from 'react'"}
+{"prompt": "console dot error open paren quote failed quote close paren", "completion": "console.error(\"failed\")"}
+{"prompt": "if X greater than or equal Y", "completion": "if x >= y"}
+{"prompt": "guard let X equals Y else", "completion": "guard let x = y else"}
+{"prompt": "dot dot slash dot dot slash assets", "completion": "../../assets"}
+{"prompt": "dot dot slash dot dot slash dot dot slash index dot T S", "completion": "../../../index.ts"}
+{"prompt": "python three dash M HTTP dot server eighty eighty", "completion": "python3 -m http.server 8080"}
+{"prompt": "dot dot slash dot dot slash src", "completion": "../../src"}
+{"prompt": "kebab case hello world", "completion": "hello-world"}
+{"prompt": "dot S H", "completion": ".sh"}
+{"prompt": "at types slash react", "completion": "@types/react"}
+{"prompt": "at user", "completion": "@user"}
+{"prompt": "kebab case file upload", "completion": "file-upload"}
+{"prompt": "quote hello world quote", "completion": "\"hello world\""}
+{"prompt": "open bracket dash Z dollar all caps API underscore KEY close bracket and and echo quote missing key quote", "completion": "[ -z $API_KEY ] && echo \"missing key\""}
+{"prompt": "HTTPS colon slash slash my dot use talkie dot com slash account", "completion": "https://my.useTalkie.com/account"}
+{"prompt": "all caps API", "completion": "API"}
+{"prompt": "snake case file path", "completion": "file_path"}
+{"prompt": "screaming snake case launch daemon", "completion": "LAUNCH_DAEMON"}
+{"prompt": "dash dash model", "completion": "--model"}
+{"prompt": "git clone git at GitHub dot com colon arach slash use talkie dot com dot git tilde slash dev slash use talkie dot com", "completion": "git clone git@github.com:arach/usetalkie.com.git ~/dev/usetalkie.com"}
+{"prompt": "slash dev slash null", "completion": "/dev/null"}
+{"prompt": "single quote hello world single quote", "completion": "'hello world'"}
+{"prompt": "snake case max tokens", "completion": "max_tokens"}
+{"prompt": "star slash", "completion": "*/"}
+{"prompt": "at objc", "completion": "@objc"}
+{"prompt": "HTTPS colon slash slash API dot github dot com slash repos", "completion": "https://api.github.com/repos"}
+{"prompt": "open bracket one colon five close bracket", "completion": "[1:5]"}
+{"prompt": "no space time stamp", "completion": "timestamp"}
+{"prompt": "curl dash F S S L HTTPS colon slash slash example dot com slash install dot S H pipe bash", "completion": "curl -fsSL https://example.com/install.sh | bash"}
+{"prompt": "dash dash no dash verify", "completion": "--no-verify"}
+{"prompt": "arach at tchoupani dot com", "completion": "arach@tchoupani.com"}
+{"prompt": "dash A", "completion": "-A"}
+{"prompt": "swift build dash C release", "completion": "swift build -c release"}
+{"prompt": "X slash equals two", "completion": "x/=2"}
+{"prompt": "tilde slash dot SSH slash config", "completion": "~/.ssh/config"}
+{"prompt": "LS dash L A pipe grep dot swift", "completion": "ls -la | grep .swift"}
+{"prompt": "backtick hello world backtick", "completion": "`hello world`"}
+{"prompt": "dot dot less than", "completion": "..<"}
+{"prompt": "M K dir dash P SRC slash components and and touch SRC slash components slash button dot T S X", "completion": "mkdir -p src/components && touch src/components/Button.tsx"}
+{"prompt": "plus plus", "completion": "++"}
+{"prompt": "echo quote hello world quote pipe P B copy", "completion": "echo \"hello world\" | pbcopy"}
+{"prompt": "single quote UTF dash eight single quote", "completion": "'utf-8'"}
+{"prompt": "hash selector open paren camel case handle tap open paren underscore colon close paren close paren", "completion": "#selector(handleTap(_:))"}
+{"prompt": "question mark colon", "completion": "?:"}
+{"prompt": "kebab case web design guidelines", "completion": "web-design-guidelines"}
+{"prompt": "quote hello comma world quote", "completion": "\"hello, world\""}
+{"prompt": "one twenty eight", "completion": "128"}
+{"prompt": "hello plus world", "completion": "hello+world"}
+{"prompt": "dash dash skill", "completion": "--skill"}
+{"prompt": "git at GitHub dot com colon arach slash use talkie dot com dot git", "completion": "git@github.com:arach/usetalkie.com.git"}
+{"prompt": "dot E N V", "completion": ".env"}
+{"prompt": "pipe pipe", "completion": "||"}
+{"prompt": "star dot swift", "completion": "*.swift"}
+{"prompt": "docker run dash D dash P eighty eighty colon eighty eighty nginx", "completion": "docker run -d -p 8080:8080 nginx"}
+{"prompt": "bang equals equals", "completion": "!=="}
+{"prompt": "hello underscore world", "completion": "hello_world"}
+{"prompt": "one nine two dot one six eight dot one dot one", "completion": "192.168.1.1"}
+{"prompt": "J Q single quote dot name single quote package dot JSON", "completion": "jq '.name' package.json"}
+{"prompt": "screaming snake case base URL", "completion": "BASE_URL"}
+{"prompt": "snake case user id", "completion": "user_id"}
+{"prompt": "dollar open paren PWD close paren", "completion": "$(pwd)"}
+{"prompt": "if open bracket dash F config dot yaml close bracket semicolon then source config dot yaml semicolon fi", "completion": "if [ -f config.yaml ]; then source config.yaml; fi"}
+{"prompt": "hello question mark world", "completion": "hello?world"}
+{"prompt": "zero X F F", "completion": "0xFF"}
+{"prompt": "X ampersand Y", "completion": "x & y"}
+{"prompt": "camel case on change", "completion": "onChange"}
+{"prompt": "open bracket one comma two comma three close bracket", "completion": "[1, 2, 3]"}
+{"prompt": "hello exclamation point world", "completion": "hello!world"}
+{"prompt": "node dash dash max dash old dash space dash size equals four zero nine six", "completion": "node --max-old-space-size=4096"}
+{"prompt": "dash P", "completion": "-p"}
+{"prompt": "A pipe pipe B pipe pipe C", "completion": "a || b || c"}
+{"prompt": "screaming snake case hello world", "completion": "HELLO_WORLD"}
+{"prompt": "kebab case search results", "completion": "search-results"}
+{"prompt": "less than", "completion": "<"}
+{"prompt": "python three dash M pip install dash dash upgrade pip", "completion": "python3 -m pip install --upgrade pip"}
+{"prompt": "export all caps NODE underscore ENV equals quote production quote", "completion": "export NODE_ENV=\"production\""}
+{"prompt": "try await self dot camel case load model open paren close paren", "completion": "try await self.loadModel()"}
+{"prompt": "process dot exit open paren one close paren", "completion": "process.exit(1)"}
+{"prompt": "arach slash clipper", "completion": "arach/clipper"}
+{"prompt": "open bracket pascal case string close bracket", "completion": "[String]"}
+{"prompt": "no space host name", "completion": "hostname"}
+{"prompt": "open angle pascal case input comma pascal case output close angle", "completion": "<Input, Output>"}
+{"prompt": "A W K single quote open brace print dollar one close brace single quote", "completion": "awk '{print $1}'"}
+{"prompt": "slash slash", "completion": "//"}
+{"prompt": "git add dash A and and git commit dash M quote fix typo quote and and git push", "completion": "git add -A && git commit -m \"fix typo\" && git push"}
+{"prompt": "snake case learning rate", "completion": "learning_rate"}
+{"prompt": "backtick dollar open brace name close brace backtick", "completion": "`${name}`"}
+{"prompt": "eight thousand", "completion": "8000"}
+{"prompt": "pascal case table view", "completion": "TableView"}
+{"prompt": "X dot dot less than Y", "completion": "x..<y"}
+{"prompt": "at binding var text colon pascal case string", "completion": "@Binding var text: String"}
+{"prompt": "pascal case inference model catalog", "completion": "InferenceModelCatalog"}
+{"prompt": "thirty D", "completion": "30d"}
+{"prompt": "five M", "completion": "5m"}
+{"prompt": "quote content dash type quote", "completion": "\"content-type\""}
+{"prompt": "zero point five", "completion": "0.5"}
+{"prompt": "echo dollar all caps HOME", "completion": "echo $HOME"}
+{"prompt": "try question mark X", "completion": "try? x"}
+{"prompt": "git at GitHub dot com colon arach slash clipper dot git", "completion": "git@github.com:arach/clipper.git"}
+{"prompt": "hello percent world", "completion": "hello%world"}
+{"prompt": "package dot JSON", "completion": "package.json"}
+{"prompt": "three thousand", "completion": "3000"}
+{"prompt": "dash dash port", "completion": "--port"}
+{"prompt": "nine zero nine zero", "completion": "9090"}
+{"prompt": "no space data base", "completion": "database"}
+{"prompt": "camel case did finish loading", "completion": "didFinishLoading"}
+{"prompt": "func camel case get status open paren close paren arrow pascal case inference status", "completion": "func getStatus() -> InferenceStatus"}
+{"prompt": "hash mark dash life cycle", "completion": "// MARK: - Life Cycle"}
+{"prompt": "git checkout dash B feature slash add dash auth", "completion": "git checkout -b feature/add-auth"}
+{"prompt": "dot T X T", "completion": ".txt"}
+{"prompt": "tilde slash dot SSH slash ID underscore RSA", "completion": "~/.ssh/id_rsa"}
+{"prompt": "snake case bridge port", "completion": "bridge_port"}
+{"prompt": "camel case view model", "completion": "viewModel"}
+{"prompt": "slash usr slash local slash bin", "completion": "/usr/local/bin"}
+{"prompt": "dollar zero", "completion": "$0"}
+{"prompt": "talkie dash dev dev rebuild agent", "completion": "talkie-dev dev rebuild agent"}
+{"prompt": "hello semicolon world", "completion": "hello;world"}
+{"prompt": "slash star", "completion": "/*"}
+{"prompt": "cat package dot JSON pipe python three dash C quote import JSON semicolon print open paren JSON dot load open paren open open paren quote R quote close paren close paren close paren quote", "completion": "cat package.json | python3 -c \"import json; print(json.load(open('r')))\""}
+{"prompt": "JSON dot stringify open paren obj close paren", "completion": "JSON.stringify(obj)"}
+{"prompt": "PS aux pipe grep node", "completion": "ps aux | grep node"}
+{"prompt": "const camel case fetch data equals async open paren close paren fat arrow", "completion": "const fetchData = async () =>"}
+{"prompt": "open bracket pascal case string colon any close bracket", "completion": "[String: Any]"}
+{"prompt": "A question mark question mark B", "completion": "a ?? b"}
+{"prompt": "quote quote", "completion": "\"\""}
+{"prompt": "open bracket colon five close bracket", "completion": "[:5]"}
+{"prompt": "camel case should auto rotate", "completion": "shouldAutoRotate"}
+{"prompt": "slash usr slash local slash bin slash python three", "completion": "/usr/local/bin/python3"}
+{"prompt": "quote star dot log quote", "completion": "\"*.log\""}
+{"prompt": "zero point seven", "completion": "0.7"}
+{"prompt": "no space code base", "completion": "codebase"}
+{"prompt": "dash dash system", "completion": "--system"}
+{"prompt": "hello asterisk world", "completion": "hello*world"}
+{"prompt": "empty string", "completion": "\"\""}
+{"prompt": "HTTPS colon slash slash example dot com slash API slash V one slash users", "completion": "https://example.com/api/v1/users"}
+{"prompt": "equals equals equals", "completion": "==="}
+{"prompt": "zero dot zero dot zero dot zero colon eighty eighty", "completion": "0.0.0.0:8080"}
+{"prompt": "X equals five", "completion": "x=5"}
+{"prompt": "triple backtick python", "completion": "```python"}
+{"prompt": "X question mark dot Y question mark dot Z", "completion": "x?.y?.z"}
+{"prompt": "tilde slash dot bash profile", "completion": "~/.bash_profile"}
+{"prompt": "slash tmp", "completion": "/tmp"}
+{"prompt": "HTTPS colon slash slash hugging face dot co slash MLX dash community", "completion": "https://huggingface.co/mlx-community"}
+{"prompt": "X less than less than Y", "completion": "x << y"}
+{"prompt": "docker run dash P three thousand colon three thousand redis", "completion": "docker run -p 3000:3000 redis"}
+{"prompt": "JDI dot talkie dot inference dot dev", "completion": "jdi.talkie.inference.dev"}
+{"prompt": "if X greater than Y", "completion": "if x > y"}
+{"prompt": "dot dot slash dot dot slash lib", "completion": "../../lib"}
+{"prompt": "open bracket zero colon close bracket", "completion": "[0:]"}
+{"prompt": "sixty four", "completion": "64"}
+{"prompt": "HTTPS colon slash slash cloud dot use talkie dot com", "completion": "https://cloud.useTalkie.com"}
+{"prompt": "NPM install dash capital D typescript", "completion": "npm install -D typescript"}
+{"prompt": "SRC slash utils slash index dot T S", "completion": "src/utils/index.ts"}
+{"prompt": "and and", "completion": "&&"}
+{"prompt": "HTTPS colon slash slash API dot use talkie dot com slash API slash user", "completion": "https://api.useTalkie.com/api/user"}
+{"prompt": "camel case get user name", "completion": "getUserName"}
+{"prompt": "dash dash help", "completion": "--help"}
+{"prompt": "mac OS slash talkie kit slash", "completion": "macOS/TalkieKit/"}
+{"prompt": "dash G", "completion": "-g"}
+{"prompt": "all caps PORT equals three thousand", "completion": "PORT=3000"}
+{"prompt": "for file in star dot log semicolon do RM dollar file semicolon done", "completion": "for file in *.log; do rm $file; done"}
+{"prompt": "no space drop down", "completion": "dropdown"}
+{"prompt": "snake case hello world", "completion": "hello_world"}
+{"prompt": "equals equals", "completion": "=="}
+{"prompt": "sed single quote S slash old slash new slash G single quote file dot T X T", "completion": "sed 's/old/new/g' file.txt"}
+{"prompt": "open paren A comma B close paren arrow pascal case int", "completion": "(a, b) -> Int"}
+{"prompt": "X bang", "completion": "x!"}
+{"prompt": "X dot dot dot Y", "completion": "x...y"}
+{"prompt": "HTTPS colon slash slash accounts dot use talkie dot com slash sign dash in", "completion": "https://accounts.useTalkie.com/sign-in"}
+{"prompt": "one two seven dot zero dot zero dot one", "completion": "127.0.0.1"}
+{"prompt": "slash users slash arach slash dev slash dot E N V", "completion": "/Users/arach/dev/.env"}
+{"prompt": "bang equals", "completion": "!="}
+{"prompt": "screaming snake case bundle ID", "completion": "BUNDLE_ID"}
+{"prompt": "dash dash temp", "completion": "--temp"}
+{"prompt": "new line A new line B new line C", "completion": "A\nB\nC"}
+{"prompt": "S equals S open bracket colon colon dash one close bracket", "completion": "s = s[::-1]"}
+{"prompt": "MLX dash community slash Qwen two point five dash zero point five B dash instruct dash four bit", "completion": "mlx-community/Qwen2.5-0.5B-Instruct-4bit"}
+{"prompt": "dot dot slash SRC", "completion": "../src"}
+{"prompt": "localhost colon eighty eighty", "completion": "localhost:8080"}
+{"prompt": "WC dash L star dot swift", "completion": "wc -l *.swift"}
+{"prompt": "one hundred K", "completion": "100k"}
+{"prompt": "quote application slash JSON quote", "completion": "\"application/json\""}
+{"prompt": "new line hello new line world", "completion": "hello\nworld"}
+{"prompt": "double greater than", "completion": ">>"}
+{"prompt": "not equals", "completion": "!="}
+{"prompt": "shebang slash bin slash bash", "completion": "#!/bin/bash"}
+{"prompt": "at available open paren mac OS thirteen comma star close paren", "completion": "@available(macOS 13, *)"}
+{"prompt": "quote fix colon improve performance quote", "completion": "\"fix: improve performance\""}
+{"prompt": "quote chore colon update dependencies quote", "completion": "\"chore: update dependencies\""}
+{"prompt": "import pascal case talkie kit", "completion": "import TalkieKit"}
+{"prompt": "X percent Y", "completion": "x % y"}
+{"prompt": "A comma B comma C", "completion": "A, B, C"}
+{"prompt": "dot T S X", "completion": ".tsx"}
+{"prompt": "X args dash I open brace close brace echo open brace close brace", "completion": "xargs -I {} echo {}"}
+{"prompt": "camel case hello world", "completion": "helloWorld"}
+{"prompt": "open angle T close angle", "completion": "<T>"}
+{"prompt": "chmod plus X install dot S H", "completion": "chmod +x install.sh"}
+{"prompt": "open bracket weak self close bracket", "completion": "[weak self]"}
+{"prompt": "GH API repos slash arach slash talkie slash pulls", "completion": "gh api repos/arach/talkie/pulls"}
+{"prompt": "hello caret world", "completion": "hello^world"}
+{"prompt": "slash var slash log", "completion": "/var/log"}
+{"prompt": "plus equals", "completion": "+="}
+{"prompt": "com dot JDI dot talkie", "completion": "com.jdi.talkie"}
+{"prompt": "all caps HTTP", "completion": "HTTP"}
+{"prompt": "dash M", "completion": "-m"}
+{"prompt": "one hundred", "completion": "100"}
+{"prompt": "open bracket zero close bracket", "completion": "[0]"}
+{"prompt": "two point five", "completion": "2.5"}
+{"prompt": "dollar open paren P grep dash X talkie close paren", "completion": "$(pgrep -x Talkie)"}
+{"prompt": "git push dash U origin feature slash my dash feature", "completion": "git push -u origin feature/my-feature"}
+{"prompt": "dot dot slash utils", "completion": "../utils"}
+{"prompt": "JSON dot parse open paren data close paren", "completion": "JSON.parse(data)"}
+{"prompt": "case dot camel case success open paren let value close paren", "completion": "case .success(let value)"}
+{"prompt": "no space name space", "completion": "namespace"}
+{"prompt": "greater than", "completion": ">"}
+{"prompt": "no space git hub", "completion": "github"}
+{"prompt": "open brace quote model quote colon quote llama quote close brace", "completion": "{\"model\": \"llama\"}"}
+{"prompt": "require open paren single quote path single quote close paren", "completion": "require('path')"}
+{"prompt": "hello backslash world", "completion": "hello\\world"}
+{"prompt": "no space java script", "completion": "javascript"}
+{"prompt": "no space H top", "completion": "htop"}
+{"prompt": "open paren X close paren fat arrow open brace close brace", "completion": "(x) => {}"}
+{"prompt": "array open angle string close angle", "completion": "Array<string>"}
+{"prompt": "slash etc slash hosts", "completion": "/etc/hosts"}
+{"prompt": "dash dash temp zero point seven dash dash tokens five twelve", "completion": "--temp 0.7 --tokens 512"}
+{"prompt": "no space work space", "completion": "workspace"}
+{"prompt": "camel case text field", "completion": "textField"}
+{"prompt": "MLX dash community slash llama dash three dot two dash one B dash instruct dash four bit", "completion": "mlx-community/Llama-3.2-1B-Instruct-4bit"}
+{"prompt": "dollar open brace one colon dash default close brace", "completion": "${1:-default}"}
+{"prompt": "export all caps DATABASE underscore URL equals quote postgres colon slash slash localhost slash DB quote", "completion": "export DATABASE_URL=\"postgres://localhost/db\""}
+{"prompt": "slash users slash arach slash dev slash vif slash scripts slash launch D dot S H", "completion": "/Users/arach/dev/vif/scripts/launchd.sh"}
+{"prompt": "hello hash world", "completion": "hello#world"}
+{"prompt": "single quote W single quote", "completion": "'w'"}
+{"prompt": "git diff dash dash staged", "completion": "git diff --staged"}
+{"prompt": "arrow", "completion": "->"}
+{"prompt": "X greater than greater than Y", "completion": "x >> y"}
+{"prompt": "find dot dash name quote star dot swift quote", "completion": "find . -name \"*.swift\""}
+{"prompt": "five twelve", "completion": "512"}
+{"prompt": "dot swift", "completion": ".swift"}
+{"prompt": "self dot camel case loaded model ID", "completion": "self.loadedModelId"}
+{"prompt": "quote star dot T S quote", "completion": "\"*.ts\""}
+{"prompt": "alias L L equals single quote LS dash L A single quote", "completion": "alias ll='ls -la'"}
+{"prompt": "dollar open brace all caps API underscore KEY close brace", "completion": "${API_KEY}"}
+{"prompt": "pipe tee output dot log", "completion": "| tee output.log"}
+{"prompt": "pascal case shared settings", "completion": "SharedSettings"}
+{"prompt": "docker compose up dash D", "completion": "docker compose up -d"}
+{"prompt": "no space web pack", "completion": "webpack"}
+{"prompt": "open paren X close paren", "completion": "(x)"}
+{"prompt": "cargo build dash dash release", "completion": "cargo build --release"}
+{"prompt": "node underscore modules slash dot bin", "completion": "node_modules/.bin"}
+{"prompt": "zero point zero one", "completion": "0.01"}
+{"prompt": "fat arrow", "completion": "=>"}
+{"prompt": "import open brace camel case use state close brace from single quote react single quote", "completion": "import { useState } from 'react'"}
+{"prompt": "greater than greater than greater than", "completion": ">>>"}
+{"prompt": "four four three", "completion": "443"}
+{"prompt": "dollar open brace all caps HOME close brace slash dot config", "completion": "${HOME}/.config"}
+{"prompt": "open angle pascal case string comma pascal case string close angle", "completion": "<String, String>"}
+{"prompt": "X caret Y", "completion": "x ^ y"}
+{"prompt": "snake case updated at", "completion": "updated_at"}
+{"prompt": "X question mark", "completion": "x?"}
+{"prompt": "pipe head dash twenty five", "completion": "| head -25"}
+{"prompt": "pascal case audio recorder", "completion": "AudioRecorder"}
+{"prompt": "install dot S H", "completion": "install.sh"}
+{"prompt": "X as bang Y", "completion": "x as! y"}
+{"prompt": "percent S", "completion": "%s"}
+{"prompt": "snake case num layers", "completion": "num_layers"}
+{"prompt": "output dot T X T", "completion": "output.txt"}
+{"prompt": "security unlock dash keychain tilde slash library slash keychains slash login dot keychain dash DB", "completion": "security unlock-keychain ~/Library/Keychains/login.keychain-db"}
+{"prompt": "talkie dash dev dev logs agent dash dash since ten M", "completion": "talkie-dev dev logs agent --since 10m"}
+{"prompt": "dot dot slash models", "completion": "../models"}
+{"prompt": "dollar open brace", "completion": "${"}
+{"prompt": "dot dot slash tests", "completion": "../tests"}
+{"prompt": "hello ampersand world", "completion": "hello&world"}
+{"prompt": "A and and B and and C", "completion": "a && b && c"}
+{"prompt": "pascal case hello world", "completion": "HelloWorld"}
+{"prompt": "let result colon pascal case result open angle pascal case string comma pascal case error close angle", "completion": "let result: Result<String, Error>"}
+{"prompt": "dot M D", "completion": ".md"}
+{"prompt": "quote feat colon add dark mode quote", "completion": "\"feat: add dark mode\""}
+{"prompt": "HTTPS colon slash slash open code dot AI slash install", "completion": "https://opencode.ai/install"}
+{"prompt": "X arrow Y", "completion": "x -> y"}
+{"prompt": "dash I", "completion": "-i"}
+{"prompt": "module dot exports equals open brace close brace", "completion": "module.exports = {}"}
+{"prompt": "at observable", "completion": "@Observable"}
+{"prompt": "dot dot slash scripts", "completion": "../scripts"}
+{"prompt": "dash dash no dash verify", "completion": "--no-verify"}
+{"prompt": "dot JSON", "completion": ".json"}
+{"prompt": "underscore", "completion": "_"}
+{"prompt": "all caps JSON", "completion": "JSON"}
+{"prompt": "dot dot slash dot dot slash", "completion": "../../"}
+{"prompt": "dash dash since five M two greater than ampersand one pipe grep error", "completion": "--since 5m 2>&1 | grep error"}
+{"prompt": "camel case model container", "completion": "modelContainer"}
+{"prompt": "dot git ignore", "completion": ".gitignore"}
+{"prompt": "localhost colon three thousand", "completion": "localhost:3000"}
+{"prompt": "hello slash world", "completion": "hello/world"}
+{"prompt": "talkie colon slash slash dictate", "completion": "talkie://dictate"}
+{"prompt": "dash R", "completion": "-r"}
+{"prompt": "launch CTL load tilde slash library slash launch agents slash com dot JDI dot talkie dot plist", "completion": "launchctl load ~/Library/LaunchAgents/com.jdi.talkie.plist"}
+{"prompt": "open bracket close bracket", "completion": "[]"}
+{"prompt": "left paren right paren", "completion": "()"}
+{"prompt": "CLI slash SRC slash commands slash inference dot T S", "completion": "cli/src/commands/inference.ts"}
+{"prompt": "kebab case my component", "completion": "my-component"}
+{"prompt": "tilde slash dot config", "completion": "~/.config"}
+{"prompt": "dot T S", "completion": ".ts"}
+{"prompt": "git branch dash capital D feature slash fix dash typo", "completion": "git branch -D feature/fix-typo"}
+{"prompt": "all caps XPC", "completion": "XPC"}
+{"prompt": "WS colon slash slash one twenty seven dot zero dot zero dot one colon one nine eight two two", "completion": "ws://127.0.0.1:19822"}
+{"prompt": "backtick dollar open brace camel case user name close brace backtick", "completion": "`${userName}`"}
+{"prompt": "open bracket open bracket test close bracket close bracket", "completion": "[[test]]"}
+{"prompt": "echo dollar all caps PATH", "completion": "echo $PATH"}
+{"prompt": "talkie colon slash slash auth slash callback", "completion": "talkie://auth/callback"}
+{"prompt": "open dash A pascal case safari HTTPS colon slash slash example dot com", "completion": "open -a Safari https://example.com"}
+{"prompt": "star star slash star dot T S X", "completion": "**/*.tsx"}
+{"prompt": "dash dash verbose", "completion": "--verbose"}
+{"prompt": "let camel case max tokens colon all caps int equals five twelve", "completion": "let maxTokens: Int = 512"}
+{"prompt": "tab A tab B tab C", "completion": "A\tB\tC"}
+{"prompt": "no space open code", "completion": "opencode"}
+{"prompt": "dollar one", "completion": "$1"}
+{"prompt": "no space key chain", "completion": "keychain"}
+{"prompt": "at state private var camel case is showing equals false", "completion": "@State private var isShowing = false"}
+{"prompt": "dash dash resume", "completion": "--resume"}
+{"prompt": "git config dash dash global user dot email quote arach at tchoupani dot com quote", "completion": "git config --global user.email \"arach@tchoupani.com\""}
+{"prompt": "dollar open paren", "completion": "$("}
+{"prompt": "N C dash Z localhost eighty eighty and and echo quote up quote", "completion": "nc -z localhost 8080 && echo \"up\""}
+{"prompt": "camel case file manager", "completion": "fileManager"}
+{"prompt": "dot E N V dot local", "completion": ".env.local"}
+{"prompt": "kill dash nine dollar open paren P grep node close paren", "completion": "kill -9 $(pgrep node)"}
+{"prompt": "camel case handle request", "completion": "handleRequest"}
+{"prompt": "docker run dash P five four three two colon five four three two postgres", "completion": "docker run -p 5432:5432 postgres"}
+{"prompt": "dot slash SRC", "completion": "./src"}
+{"prompt": "screaming snake case max retry count", "completion": "MAX_RETRY_COUNT"}
+{"prompt": "back tick", "completion": "`"}
+{"prompt": "dot slash scripts slash sync dash xcode dash files dot P Y", "completion": "./scripts/sync-xcode-files.py"}
+{"prompt": "X pipe Y", "completion": "x | y"}
+{"prompt": "open paren A plus B close paren star C", "completion": "(a + b) * c"}
+{"prompt": "J Q single quote dot data open bracket close bracket single quote response dot JSON", "completion": "jq '.data[]' response.json"}
+{"prompt": "open angle T colon pascal case comparable close angle", "completion": "<T: Comparable>"}
+{"prompt": "zero X zero zero", "completion": "0x00"}
+{"prompt": "if let X equals Y", "completion": "if let x = y"}
+{"prompt": "lowercase HELLO", "completion": "hello"}
+{"prompt": "dollar all caps SHELL", "completion": "$SHELL"}
+{"prompt": "dash dash dry dash run", "completion": "--dry-run"}
+{"prompt": "backtick camel case is loading backtick", "completion": "`isLoading`"}
+{"prompt": "talkie dash dev dev logs inference dash dash since five M two greater than ampersand one pipe head dash twenty", "completion": "talkie-dev dev logs inference --since 5m 2>&1 | head -20"}
+{"prompt": "hello tilde world", "completion": "hello~world"}
+{"prompt": "tilde slash library slash application support slash talkie", "completion": "~/Library/Application Support/Talkie"}
+{"prompt": "tilde slash dot zshrc", "completion": "~/.zshrc"}
+{"prompt": "MK dir dash P SRC slash lib and and touch SRC slash lib slash utils dot T S", "completion": "mkdir -p src/lib && touch src/lib/utils.ts"}
+{"prompt": "dot dot", "completion": ".."}
+{"prompt": "open paren A comma B comma C close paren", "completion": "(a, b, c)"}
+{"prompt": "sort dash U pipe head dash ten", "completion": "sort -u | head -10"}
+{"prompt": "map open angle string comma number close angle", "completion": "Map<string, number>"}
+{"prompt": "HTTPS colon slash slash pypi dot org slash project slash torch", "completion": "https://pypi.org/project/torch"}
+{"prompt": "two greater than ampersand one", "completion": "2>&1"}
+{"prompt": "NPX skills add HTTPS colon slash slash GitHub dot com slash vercel dash labs slash agent dash skills dash dash skill web dash design dash guidelines", "completion": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines"}
+{"prompt": "dot P B X proj", "completion": ".pbxproj"}
+{"prompt": "X as question mark Y", "completion": "x as? y"}
+{"prompt": "hello dot world", "completion": "hello.world"}
+{"prompt": "three point one four", "completion": "3.14"}
+{"prompt": "triple backtick swift", "completion": "```swift"}
+{"prompt": "single quote use strict single quote", "completion": "'use strict'"}
+{"prompt": "two zero four eight", "completion": "2048"}
+{"prompt": "say dash V ava dash R two eighty quote hi I'm your new premium voice quote", "completion": "say -v ava -r 280 \"Hi, I'm your new premium voice\""}
+{"prompt": "hash one", "completion": "#1"}
+{"prompt": "dollar dollar", "completion": "$$"}
+{"prompt": "star dot star", "completion": "*.*"}
+{"prompt": "backtick echo dollar all caps HOME backtick", "completion": "`echo $HOME`"}
+{"prompt": "defaults write com dot apple dot dock camel case auto hide dash bool true", "completion": "defaults write com.apple.dock autohide -bool true"}
+{"prompt": "export default function pascal case app open paren close paren", "completion": "export default function App()"}
+{"prompt": "open paren underscore colon pascal case string close paren", "completion": "(_: String)"}
+{"prompt": "console dot log open paren quote hello quote close paren", "completion": "console.log(\"hello\")"}
+{"prompt": "GH release create V one dot zero dot zero dash dash notes quote first release quote", "completion": "gh release create v1.0.0 --notes \"first release\""}
+{"prompt": "open paren close paren fat arrow open brace close brace", "completion": "() => {}"}
+{"prompt": "tab separated hello world", "completion": "hello\tworld"}
+{"prompt": "tilde slash", "completion": "~/"}
+{"prompt": "star star slash star dot T S", "completion": "**/*.ts"}
+{"prompt": "open bracket dash one close bracket", "completion": "[-1]"}
+{"prompt": "services slash talkie dash API", "completion": "services/talkie-api"}
+{"prompt": "try bang X", "completion": "try! x"}
+{"prompt": "no space user name", "completion": "username"}
+{"prompt": "source dot venv slash bin slash activate", "completion": "source .venv/bin/activate"}
+{"prompt": "fetch open paren quote slash API slash data quote close paren", "completion": "fetch(\"/api/data\")"}
+{"prompt": "hello colon world", "completion": "hello:world"}
+{"prompt": "app delegate dot swift", "completion": "AppDelegate.swift"}
+{"prompt": "camel case load model", "completion": "loadModel"}
+{"prompt": "HTTPS colon slash slash GitHub dot com slash arach slash talkie", "completion": "https://github.com/arach/talkie"}
+{"prompt": "git push origin main colon main", "completion": "git push origin main:main"}
+{"prompt": "ten twenty four", "completion": "1024"}
+{"prompt": "tar dash X Z F archive dot tar dot G Z", "completion": "tar -xzf archive.tar.gz"}
+{"prompt": "python three dash C quote import sys semicolon print open paren sys dot version close paren quote", "completion": "python3 -c \"import sys; print(sys.version)\""}
+{"prompt": "guard let self else open brace return close brace", "completion": "guard let self else { return }"}
+{"prompt": "pascal case recording overlay", "completion": "RecordingOverlay"}
+{"prompt": "server dot T S", "completion": "server.ts"}
+{"prompt": "dot dot slash index dot T S", "completion": "../index.ts"}
+{"prompt": "dash dash body", "completion": "--body"}
+{"prompt": "packages slash talkie kit slash sources", "completion": "Packages/TalkieKit/Sources"}
+{"prompt": "case dot camel case failure open paren let error close paren", "completion": "case .failure(let error)"}
+{"prompt": "dash N", "completion": "-n"}
+{"prompt": "dash C", "completion": "-c"}
+{"prompt": "kebab case dark mode toggle", "completion": "dark-mode-toggle"}
+{"prompt": "pascal case screen capture", "completion": "ScreenCapture"}
+{"prompt": "three dot two", "completion": "3.2"}
+{"prompt": "hash bang", "completion": "#!"}
+{"prompt": "git tag dash A V one dot zero dot zero dash M quote initial release quote", "completion": "git tag -a v1.0.0 -m \"initial release\""}
+{"prompt": "at published", "completion": "@Published"}
+{"prompt": "RM dash R F node underscore modules and and RM package dash lock dot JSON", "completion": "rm -rf node_modules && rm package-lock.json"}
+{"prompt": "inference service dot swift", "completion": "InferenceService.swift"}
+{"prompt": "P N P M add dash capital D eslint", "completion": "pnpm add -D eslint"}
+{"prompt": "quote dot slash SRC quote", "completion": "\"./src\""}
+{"prompt": "pascal case view controller", "completion": "ViewController"}

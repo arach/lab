@@ -1,0 +1,72 @@
+{
+  "version": "core_eval_v2_draft",
+  "updated_at": "2026-04-05",
+  "core_cards": [
+    {
+      "id": "memo-auto-title",
+      "category": "capture",
+      "notes": "Keep as-is with semantic title checks."
+    },
+    {
+      "id": "memo-type-detection",
+      "category": "capture",
+      "notes": "Relax confidence threshold logic; treat uncertainty representation separately from correctness."
+    },
+    {
+      "id": "transcript-cleanup-presets",
+      "category": "capture",
+      "notes": "Judge preserved facts rather than exact phrase shape."
+    },
+    {
+      "id": "private-redaction-pass",
+      "category": "capture",
+      "notes": "Keep entity coverage and transcript redaction checks."
+    },
+    {
+      "id": "action-item-extraction",
+      "category": "action",
+      "notes": "Keep evidence requirement; soften exact confidence expectation."
+    },
+    {
+      "id": "reminder-normalization",
+      "category": "action",
+      "notes": "Keep as core ambiguity-handling task."
+    },
+    {
+      "id": "calendar-intent-detection",
+      "category": "action",
+      "notes": "Accept multiple usable scheduling packet representations."
+    },
+    {
+      "id": "follow-up-question-generator",
+      "category": "action",
+      "notes": "Keep as 'ask instead of hallucinate' signal."
+    },
+    {
+      "id": "similar-memo-recall",
+      "category": "context",
+      "notes": "Accept multiple ranking schemas if the right memo is retrieved."
+    },
+    {
+      "id": "context-packet-builder",
+      "category": "context",
+      "notes": "Score compactness, decisions/tasks/questions, and usability separately."
+    }
+  ],
+  "stretch_cards": [
+    "what-matters-summary",
+    "project-clustering",
+    "next-step-suggestion-engine",
+    "hybrid-model-router",
+    "conversation-to-checklist",
+    "writing-style-memory",
+    "personal-knowledge-graph",
+    "catch-me-up-daily-brief",
+    "contradiction-drift-detection",
+    "momentum-scoring",
+    "local-agent-loop",
+    "meeting-live-structure",
+    "intent-trend-alerts",
+    "voice-os-command-layer"
+  ]
+}

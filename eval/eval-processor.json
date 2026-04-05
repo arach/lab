@@ -1,0 +1,980 @@
+[
+  {
+    "dictated": "git space push space dash u space origin space main",
+    "expected": "git push -u origin main",
+    "category": "git",
+    "tags": ["basic", "flags"]
+  },
+  {
+    "dictated": "git space commit space dash m space quote fix space login space bug quote",
+    "expected": "git commit -m \"fix login bug\"",
+    "category": "git",
+    "tags": ["basic", "flags", "quoting"]
+  },
+  {
+    "dictated": "git space log space dash dash oneline space dash n space ten",
+    "expected": "git log --oneline -n 10",
+    "category": "git",
+    "tags": ["long-flags", "flags", "numbers"]
+  },
+  {
+    "dictated": "git space stash space pop",
+    "expected": "git stash pop",
+    "category": "git",
+    "tags": ["basic"]
+  },
+  {
+    "dictated": "git space checkout space dash b space feature slash auth",
+    "expected": "git checkout -b feature/auth",
+    "category": "git",
+    "tags": ["basic", "flags", "paths"]
+  },
+  {
+    "dictated": "git space diff space dash dash staged space dot",
+    "expected": "git diff --staged .",
+    "category": "git",
+    "tags": ["long-flags", "special-chars"]
+  },
+  {
+    "dictated": "git space rebase space dash i space capital h capital e capital a capital d tilde three",
+    "expected": "git rebase -i HEAD~3",
+    "category": "git",
+    "tags": ["flags", "casing", "numbers", "special-chars"]
+  },
+  {
+    "dictated": "git space remote space add space origin space git at github dot com colon user slash repo dot git",
+    "expected": "git remote add origin git@github.com:user/repo.git",
+    "category": "git",
+    "tags": ["urls", "colons", "special-chars"]
+  },
+  {
+    "dictated": "docker space run space dash dash rm space dash p space eight zero eight zero colon eight zero space nginx",
+    "expected": "docker run --rm -p 8080:80 nginx",
+    "category": "docker",
+    "tags": ["long-flags", "flags", "numbers", "colons"]
+  },
+  {
+    "dictated": "docker space compose space up space dash d",
+    "expected": "docker compose up -d",
+    "category": "docker",
+    "tags": ["basic", "flags"]
+  },
+  {
+    "dictated": "docker space build space dash t space my dash app colon latest space dot",
+    "expected": "docker build -t my-app:latest .",
+    "category": "docker",
+    "tags": ["flags", "colons", "compound-words"]
+  },
+  {
+    "dictated": "docker space exec space dash i t space my dash container space bash",
+    "expected": "docker exec -it my-container bash",
+    "category": "docker",
+    "tags": ["multi-char-flags", "compound-words"]
+  },
+  {
+    "dictated": "docker space logs space dash f space dash dash tail space one hundred space web",
+    "expected": "docker logs -f --tail 100 web",
+    "category": "docker",
+    "tags": ["flags", "long-flags", "numbers"]
+  },
+  {
+    "dictated": "docker space ps space dash a",
+    "expected": "docker ps -a",
+    "category": "docker",
+    "tags": ["basic", "flags"]
+  },
+  {
+    "dictated": "docker space system space prune space dash dash all space dash f",
+    "expected": "docker system prune --all -f",
+    "category": "docker",
+    "tags": ["long-flags", "flags"]
+  },
+  {
+    "dictated": "kubectl space get space pods space dash n space production",
+    "expected": "kubectl get pods -n production",
+    "category": "kubernetes",
+    "tags": ["basic", "flags"]
+  },
+  {
+    "dictated": "kubectl space apply space dash f space deployment dot yaml",
+    "expected": "kubectl apply -f deployment.yaml",
+    "category": "kubernetes",
+    "tags": ["flags", "paths"]
+  },
+  {
+    "dictated": "kubectl space logs space dash f space dash l space app equals api space dash n space default",
+    "expected": "kubectl logs -f -l app=api -n default",
+    "category": "kubernetes",
+    "tags": ["flags", "special-chars"]
+  },
+  {
+    "dictated": "kubectl space describe space pod space my dash pod dash one two three",
+    "expected": "kubectl describe pod my-pod-123",
+    "category": "kubernetes",
+    "tags": ["basic", "numbers", "compound-words"]
+  },
+  {
+    "dictated": "kubectl space scale space deployment slash web space dash dash replicas equals three",
+    "expected": "kubectl scale deployment/web --replicas=3",
+    "category": "kubernetes",
+    "tags": ["long-flags", "numbers", "paths"]
+  },
+  {
+    "dictated": "npm space install space dash capital d space typescript",
+    "expected": "npm install -D typescript",
+    "category": "npm",
+    "tags": ["basic", "flags", "casing"]
+  },
+  {
+    "dictated": "npx space create dash next dash app at latest space my dash app",
+    "expected": "npx create-next-app@latest my-app",
+    "category": "npm",
+    "tags": ["compound-words", "special-chars"]
+  },
+  {
+    "dictated": "pnpm space add space dash capital d space eslint space prettier",
+    "expected": "pnpm add -D eslint prettier",
+    "category": "npm",
+    "tags": ["basic", "flags", "casing"]
+  },
+  {
+    "dictated": "npm space run space build space and and space npm space test",
+    "expected": "npm run build && npm test",
+    "category": "npm",
+    "tags": ["basic", "special-chars"]
+  },
+  {
+    "dictated": "curl space dash s capital l space https colon slash slash api dot github dot com slash repos",
+    "expected": "curl -sL https://api.github.com/repos",
+    "category": "curl",
+    "tags": ["multi-char-flags", "urls", "casing"]
+  },
+  {
+    "dictated": "curl space dash capital x space all caps post space dash capital h space quote capital content dash capital type colon space application slash json quote space dash d space single quote open brace quote key quote colon quote value quote close brace single quote space http colon slash slash localhost colon three thousand",
+    "expected": "curl -X POST -H \"Content-Type: application/json\" -d '{\"key\":\"value\"}' http://localhost:3000",
+    "category": "curl",
+    "tags": ["casing", "quoting", "nested-quotes", "urls", "numbers", "complex"]
+  },
+  {
+    "dictated": "curl space dash o space file dot zip space dash capital l space https colon slash slash example dot com slash download",
+    "expected": "curl -o file.zip -L https://example.com/download",
+    "category": "curl",
+    "tags": ["flags", "urls", "casing"]
+  },
+  {
+    "dictated": "curl space dash i space dash capital x space all caps delete space https colon slash slash api dot example dot com slash users slash four two",
+    "expected": "curl -i -X DELETE https://api.example.com/users/42",
+    "category": "curl",
+    "tags": ["flags", "urls", "numbers"]
+  },
+  {
+    "dictated": "ssh space dash i space tilde slash dot ssh slash id underscore rsa space ubuntu at one nine two dot one six eight dot one dot one hundred",
+    "expected": "ssh -i ~/.ssh/id_rsa ubuntu@192.168.1.100",
+    "category": "ssh",
+    "tags": ["flags", "paths", "ip-addresses", "numbers", "underscores"]
+  },
+  {
+    "dictated": "ssh space dash capital l space eight zero eight zero colon localhost colon five four three two space user at bastion dot example dot com",
+    "expected": "ssh -L 8080:localhost:5432 user@bastion.example.com",
+    "category": "ssh",
+    "tags": ["flags", "casing", "numbers", "colons", "urls"]
+  },
+  {
+    "dictated": "scp space dash r space user at host colon slash var slash log slash space dot slash logs slash",
+    "expected": "scp -r user@host:/var/log/ ./logs/",
+    "category": "ssh",
+    "tags": ["flags", "paths", "colons"]
+  },
+  {
+    "dictated": "ls space dash l a h",
+    "expected": "ls -lah",
+    "category": "filesystem",
+    "tags": ["basic", "multi-char-flags"]
+  },
+  {
+    "dictated": "find space dot space dash name space quote star dot ts quote space dash not space dash path space quote star slash node underscore modules slash star quote",
+    "expected": "find . -name \"*.ts\" -not -path \"*/node_modules/*\"",
+    "category": "filesystem",
+    "tags": ["quoting", "paths", "underscores", "special-chars"]
+  },
+  {
+    "dictated": "chmod space seven five five space script dot sh",
+    "expected": "chmod 755 script.sh",
+    "category": "filesystem",
+    "tags": ["basic", "numbers"]
+  },
+  {
+    "dictated": "chown space dash capital r space www dash data colon www dash data space slash var slash www",
+    "expected": "chown -R www-data:www-data /var/www",
+    "category": "filesystem",
+    "tags": ["flags", "casing", "colons", "compound-words", "paths"]
+  },
+  {
+    "dictated": "mkdir space dash p space src slash components slash ui",
+    "expected": "mkdir -p src/components/ui",
+    "category": "filesystem",
+    "tags": ["basic", "flags", "paths"]
+  },
+  {
+    "dictated": "tar space dash x z f space archive dot tar dot gz space dash capital c space slash tmp",
+    "expected": "tar -xzf archive.tar.gz -C /tmp",
+    "category": "filesystem",
+    "tags": ["multi-char-flags", "casing", "paths"]
+  },
+  {
+    "dictated": "du space dash s h space star space pipe space sort space dash h r space pipe space head space dash n space ten",
+    "expected": "du -sh * | sort -hr | head -n 10",
+    "category": "filesystem",
+    "tags": ["multi-char-flags", "pipes", "numbers"]
+  },
+  {
+    "dictated": "cp space dash r space src slash space dist slash",
+    "expected": "cp -r src/ dist/",
+    "category": "filesystem",
+    "tags": ["basic", "flags", "paths"]
+  },
+  {
+    "dictated": "python space dash m space venv space dot venv",
+    "expected": "python -m venv .venv",
+    "category": "python",
+    "tags": ["basic", "flags"]
+  },
+  {
+    "dictated": "pip space install space dash r space requirements dot txt",
+    "expected": "pip install -r requirements.txt",
+    "category": "python",
+    "tags": ["basic", "flags", "paths"]
+  },
+  {
+    "dictated": "python space dash c space quote import space sys semicolon space print open paren sys dot version close paren quote",
+    "expected": "python -c \"import sys; print(sys.version)\"",
+    "category": "python",
+    "tags": ["flags", "quoting", "special-chars"]
+  },
+  {
+    "dictated": "pytest space dash v space dash x space tests slash",
+    "expected": "pytest -v -x tests/",
+    "category": "python",
+    "tags": ["basic", "flags", "paths"]
+  },
+  {
+    "dictated": "pip space install space dash e space dot open bracket dev close bracket",
+    "expected": "pip install -e .[dev]",
+    "category": "python",
+    "tags": ["flags", "special-chars"]
+  },
+  {
+    "dictated": "uvicorn space main colon app space dash dash reload space dash dash port space eight thousand",
+    "expected": "uvicorn main:app --reload --port 8000",
+    "category": "python",
+    "tags": ["long-flags", "colons", "numbers"]
+  },
+  {
+    "dictated": "cargo space build space dash dash release",
+    "expected": "cargo build --release",
+    "category": "rust",
+    "tags": ["basic", "long-flags"]
+  },
+  {
+    "dictated": "cargo space test space dash dash space dash dash nocapture",
+    "expected": "cargo test -- --nocapture",
+    "category": "rust",
+    "tags": ["long-flags"]
+  },
+  {
+    "dictated": "cargo space add space serde space dash capital f space derive",
+    "expected": "cargo add serde -F derive",
+    "category": "rust",
+    "tags": ["basic", "flags", "casing"]
+  },
+  {
+    "dictated": "export space all caps database underscore all caps url equals quote postgres colon slash slash user colon pass at localhost colon five four three two slash mydb quote",
+    "expected": "export DATABASE_URL=\"postgres://user:pass@localhost:5432/mydb\"",
+    "category": "env",
+    "tags": ["casing", "env-vars", "quoting", "urls", "numbers"]
+  },
+  {
+    "dictated": "export space all caps path equals dollar all caps path colon slash usr slash local slash bin",
+    "expected": "export PATH=$PATH:/usr/local/bin",
+    "category": "env",
+    "tags": ["casing", "env-vars", "paths"]
+  },
+  {
+    "dictated": "echo space dollar all caps home",
+    "expected": "echo $HOME",
+    "category": "env",
+    "tags": ["basic", "casing", "env-vars"]
+  },
+  {
+    "dictated": "all caps node underscore all caps env equals production space node space server dot js",
+    "expected": "NODE_ENV=production node server.js",
+    "category": "env",
+    "tags": ["casing", "env-vars", "underscores"]
+  },
+  {
+    "dictated": "env space pipe space grep space dash i space all caps aws",
+    "expected": "env | grep -i AWS",
+    "category": "env",
+    "tags": ["pipes", "flags", "casing"]
+  },
+  {
+    "dictated": "brew space install space dash dash cask space visual dash studio dash code",
+    "expected": "brew install --cask visual-studio-code",
+    "category": "brew",
+    "tags": ["long-flags", "compound-words"]
+  },
+  {
+    "dictated": "brew space upgrade space and and space brew space cleanup",
+    "expected": "brew upgrade && brew cleanup",
+    "category": "brew",
+    "tags": ["basic", "special-chars"]
+  },
+  {
+    "dictated": "brew space services space start space postgresql at fifteen",
+    "expected": "brew services start postgresql@15",
+    "category": "brew",
+    "tags": ["basic", "numbers", "special-chars"]
+  },
+  {
+    "dictated": "brew space tap space homebrew slash cask dash fonts",
+    "expected": "brew tap homebrew/cask-fonts",
+    "category": "brew",
+    "tags": ["basic", "paths", "compound-words"]
+  },
+  {
+    "dictated": "grep space dash r n space quote all caps todo quote space dash dash include equals quote star dot swift quote space dot",
+    "expected": "grep -rn \"TODO\" --include=\"*.swift\" .",
+    "category": "grep",
+    "tags": ["multi-char-flags", "casing", "quoting", "long-flags"]
+  },
+  {
+    "dictated": "grep space dash capital e space quote caret open bracket hash close bracket quote space config dot yaml",
+    "expected": "grep -E \"^[#]\" config.yaml",
+    "category": "grep",
+    "tags": ["flags", "casing", "quoting", "special-chars"]
+  },
+  {
+    "dictated": "grep space dash v space quote caret dollar quote space file dot txt space pipe space wc space dash l",
+    "expected": "grep -v \"^$\" file.txt | wc -l",
+    "category": "grep",
+    "tags": ["flags", "quoting", "pipes", "special-chars"]
+  },
+  {
+    "dictated": "swift space build space dash c space release",
+    "expected": "swift build -c release",
+    "category": "swift",
+    "tags": ["basic", "flags"]
+  },
+  {
+    "dictated": "swift space test space dash dash filter space capital my capital tests",
+    "expected": "swift test --filter MyTests",
+    "category": "swift",
+    "tags": ["long-flags", "casing"]
+  },
+  {
+    "dictated": "swift space package space init space dash dash name space capital my capital package space dash dash type space library",
+    "expected": "swift package init --name MyPackage --type library",
+    "category": "swift",
+    "tags": ["long-flags", "casing"]
+  },
+  {
+    "dictated": "xcodebuild space dash scheme space capital talkie space dash configuration space capital release space build",
+    "expected": "xcodebuild -scheme Talkie -configuration Release build",
+    "category": "xcode",
+    "tags": ["flags", "casing"]
+  },
+  {
+    "dictated": "xcodebuild space dash project space capital my capital app dot xcodeproj space dash list",
+    "expected": "xcodebuild -project MyApp.xcodeproj -list",
+    "category": "xcode",
+    "tags": ["flags", "casing", "paths"]
+  },
+  {
+    "dictated": "xcrun space simctl space boot space quote i capital phone space fifteen quote",
+    "expected": "xcrun simctl boot \"iPhone 15\"",
+    "category": "xcode",
+    "tags": ["quoting", "casing", "numbers"]
+  },
+  {
+    "dictated": "psql space dash capital u space postgres space dash d space mydb space dash c space quote all caps select space star  space all caps from space  users semicolon quote",
+    "expected": "psql -U postgres -d mydb -c \"SELECT * FROM users;\"",
+    "category": "database",
+    "tags": ["flags", "casing", "quoting", "special-chars"]
+  },
+  {
+    "dictated": "redis dash cli space dash h space one two seven dot zero dot zero dot one space dash p space six three seven nine space ping",
+    "expected": "redis-cli -h 127.0.0.1 -p 6379 ping",
+    "category": "database",
+    "tags": ["ip-addresses", "numbers", "flags"]
+  },
+  {
+    "dictated": "pg underscore dump space dash capital f c space dash d space mydb space redirect space backup dot dump",
+    "expected": "pg_dump -Fc -d mydb > backup.dump",
+    "category": "database",
+    "tags": ["underscores", "flags", "casing", "redirects"]
+  },
+  {
+    "dictated": "sed space dash i space single quote single quote space single quote s slash old slash new slash g single quote space file dot txt",
+    "expected": "sed -i '' 's/old/new/g' file.txt",
+    "category": "sed",
+    "tags": ["flags", "quoting", "nested-quotes", "special-chars"]
+  },
+  {
+    "dictated": "awk space single quote open brace print space dollar one comma space dollar three close brace single quote space data dot csv",
+    "expected": "awk '{print $1, $3}' data.csv",
+    "category": "awk",
+    "tags": ["quoting", "special-chars"]
+  },
+  {
+    "dictated": "cat space access dot log space pipe space awk space single quote open brace print space dollar one close brace single quote space pipe space sort space pipe space uniq space dash c space pipe space sort space dash r n",
+    "expected": "cat access.log | awk '{print $1}' | sort | uniq -c | sort -rn",
+    "category": "pipeline",
+    "tags": ["pipes", "quoting", "special-chars", "complex"]
+  },
+  {
+    "dictated": "ps space aux space pipe space grep space node space pipe space grep space dash v space grep",
+    "expected": "ps aux | grep node | grep -v grep",
+    "category": "pipeline",
+    "tags": ["pipes", "flags"]
+  },
+  {
+    "dictated": "echo space quote hello quote space append space output dot log",
+    "expected": "echo \"hello\" >> output.log",
+    "category": "redirect",
+    "tags": ["quoting", "redirects"]
+  },
+  {
+    "dictated": "cat space error dot log space redirect space slash dev slash null",
+    "expected": "cat error.log > /dev/null",
+    "category": "redirect",
+    "tags": ["redirects", "paths"]
+  },
+  {
+    "dictated": "make space dash j space four space and and space make space install",
+    "expected": "make -j 4 && make install",
+    "category": "build",
+    "tags": ["flags", "numbers", "special-chars"]
+  },
+  {
+    "dictated": "cmake space dash capital b space build space dash capital d all caps cmake underscore all caps build underscore all caps type equals all caps release",
+    "expected": "cmake -B build -DCMAKE_BUILD_TYPE=RELEASE",
+    "category": "build",
+    "tags": ["flags", "casing", "underscores"]
+  },
+  {
+    "dictated": "go space build space dash o space bin slash server space dot slash cmd slash server",
+    "expected": "go build -o bin/server ./cmd/server",
+    "category": "go",
+    "tags": ["flags", "paths"]
+  },
+  {
+    "dictated": "go space test space dash v space dash race space dot slash dot dot dot",
+    "expected": "go test -v -race ./...",
+    "category": "go",
+    "tags": ["flags", "paths", "special-chars"]
+  },
+  {
+    "dictated": "go space mod space tidy",
+    "expected": "go mod tidy",
+    "category": "go",
+    "tags": ["basic"]
+  },
+  {
+    "dictated": "terraform space plan space dash var space quote region equals us dash west dash two quote",
+    "expected": "terraform plan -var \"region=us-west-2\"",
+    "category": "terraform",
+    "tags": ["flags", "quoting", "compound-words"]
+  },
+  {
+    "dictated": "terraform space apply space dash auto dash approve",
+    "expected": "terraform apply -auto-approve",
+    "category": "terraform",
+    "tags": ["compound-words"]
+  },
+  {
+    "dictated": "aws space s three space cp space dash dash recursive space s three colon slash slash my dash bucket slash data slash space dot slash data slash",
+    "expected": "aws s3 cp --recursive s3://my-bucket/data/ ./data/",
+    "category": "aws",
+    "tags": ["long-flags", "urls", "paths", "compound-words"]
+  },
+  {
+    "dictated": "aws space ec two space describe dash instances space dash dash filters space quote capital name equals tag colon capital name comma capital values equals prod quote",
+    "expected": "aws ec2 describe-instances --filters \"Name=tag:Name,Values=prod\"",
+    "category": "aws",
+    "tags": ["long-flags", "casing", "quoting", "colons", "complex"]
+  },
+  {
+    "dictated": "gh space pr space create space dash dash title space quote fix space auth space bug quote space dash dash draft",
+    "expected": "gh pr create --title \"fix auth bug\" --draft",
+    "category": "github",
+    "tags": ["long-flags", "quoting"]
+  },
+  {
+    "dictated": "gh space issue space list space dash dash label space bug space dash dash state space open",
+    "expected": "gh issue list --label bug --state open",
+    "category": "github",
+    "tags": ["long-flags"]
+  },
+  {
+    "dictated": "rsync space dash a v z space dash dash progress space src slash space user at host colon slash backup slash",
+    "expected": "rsync -avz --progress src/ user@host:/backup/",
+    "category": "network",
+    "tags": ["multi-char-flags", "long-flags", "paths", "colons"]
+  },
+  {
+    "dictated": "ping space dash c space four space eight dot eight dot eight dot eight",
+    "expected": "ping -c 4 8.8.8.8",
+    "category": "network",
+    "tags": ["flags", "numbers", "ip-addresses"]
+  },
+  {
+    "dictated": "dig space plus short space example dot com space all caps a",
+    "expected": "dig +short example.com A",
+    "category": "network",
+    "tags": ["special-chars", "urls", "casing"]
+  },
+  {
+    "dictated": "openssl space s underscore client space dash connect space example dot com colon four four three",
+    "expected": "openssl s_client -connect example.com:443",
+    "category": "network",
+    "tags": ["underscores", "urls", "numbers", "colons"]
+  },
+  {
+    "dictated": "systemctl space status space nginx dot service",
+    "expected": "systemctl status nginx.service",
+    "category": "systemd",
+    "tags": ["basic"]
+  },
+  {
+    "dictated": "journalctl space dash u space docker space dash dash since space quote one space hour space ago quote",
+    "expected": "journalctl -u docker --since \"1 hour ago\"",
+    "category": "systemd",
+    "tags": ["flags", "long-flags", "quoting", "numbers"]
+  },
+  {
+    "dictated": "bun space run space dash dash watch space src slash server dot ts",
+    "expected": "bun run --watch src/server.ts",
+    "category": "bun",
+    "tags": ["long-flags", "paths"]
+  },
+  {
+    "dictated": "bun space add space at hono slash hono",
+    "expected": "bun add @hono/hono",
+    "category": "bun",
+    "tags": ["basic", "special-chars", "paths"]
+  },
+  {
+    "dictated": "deno space run space dash dash allow dash net space dash dash allow dash read space server dot ts",
+    "expected": "deno run --allow-net --allow-read server.ts",
+    "category": "deno",
+    "tags": ["long-flags", "compound-words"]
+  },
+  {
+    "dictated": "ffmpeg space dash i space input dot mp four space dash c colon v space libx two six four space dash crf space twenty three space output dot mp four",
+    "expected": "ffmpeg -i input.mp4 -c:v libx264 -crf 23 output.mp4",
+    "category": "media",
+    "tags": ["flags", "colons", "numbers"]
+  },
+  {
+    "dictated": "convert space input dot png space dash resize space fifty percent space output dot png",
+    "expected": "convert input.png -resize 50% output.png",
+    "category": "media",
+    "tags": ["flags", "numbers", "special-chars"]
+  },
+  {
+    "dictated": "jq space single quote dot data open bracket close bracket space pipe space dot name single quote space response dot json",
+    "expected": "jq '.data[] | .name' response.json",
+    "category": "json",
+    "tags": ["quoting", "pipes", "special-chars"]
+  },
+  {
+    "dictated": "cat space config dot json space pipe space jq space single quote dot dot dependencies single quote",
+    "expected": "cat config.json | jq '..dependencies'",
+    "category": "json",
+    "tags": ["pipes", "quoting", "special-chars"]
+  },
+  {
+    "dictated": "wrangler space deploy space dash dash env space production",
+    "expected": "wrangler deploy --env production",
+    "category": "cloudflare",
+    "tags": ["long-flags"]
+  },
+  {
+    "dictated": "camel case get user profile",
+    "expected": "getUserProfile",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "snake case api key",
+    "expected": "api_key",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "pascal case my component",
+    "expected": "MyComponent",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "kebab case is active",
+    "expected": "is-active",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "screaming case max retries",
+    "expected": "MAX_RETRIES",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "export space camel case on click handler equals quote true quote",
+    "expected": "export onClickHandler=\"true\"",
+    "category": "casing",
+    "tags": ["casing-directives", "quoting"]
+  },
+  {
+    "dictated": "let space x space equals space pascal case app delegate",
+    "expected": "let x = AppDelegate",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "screaming case node env equals production",
+    "expected": "NODE_ENV=production",
+    "category": "casing",
+    "tags": ["casing-directives", "env-vars"]
+  },
+  {
+    "dictated": "snake case user id equals forty two",
+    "expected": "user_id=42",
+    "category": "casing",
+    "tags": ["casing-directives", "numbers"]
+  },
+  {
+    "dictated": "kebab case my cool component",
+    "expected": "my-cool-component",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "camel case handle submit form",
+    "expected": "handleSubmitForm",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "pascal case http response handler",
+    "expected": "HttpResponseHandler",
+    "category": "casing",
+    "tags": ["casing-directives"]
+  },
+  {
+    "dictated": "two redirect ampersand one",
+    "expected": "2>&1",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "command space two redirect ampersand one space redirect space slash dev slash null",
+    "expected": "command 2>&1 > /dev/null",
+    "category": "redirect",
+    "tags": ["special-chars", "redirects", "paths"]
+  },
+  {
+    "dictated": "my dash script space two redirect ampersand one space pipe space tee space output dot log",
+    "expected": "my-script 2>&1 | tee output.log",
+    "category": "redirect",
+    "tags": ["special-chars", "redirects", "pipes"]
+  },
+  {
+    "dictated": "one nine two dot one six eight dot one dot one",
+    "expected": "192.168.1.1",
+    "category": "network",
+    "tags": ["ip-addresses", "numbers"]
+  },
+  {
+    "dictated": "one zero dot zero dot zero dot one",
+    "expected": "10.0.0.1",
+    "category": "network",
+    "tags": ["ip-addresses", "numbers"]
+  },
+  {
+    "dictated": "two five five dot two five five dot two five five dot zero",
+    "expected": "255.255.255.0",
+    "category": "network",
+    "tags": ["ip-addresses", "numbers"]
+  },
+  {
+    "dictated": "three thousand",
+    "expected": "3000",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "one hundred",
+    "expected": "100",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "eight thousand",
+    "expected": "8000",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "five hundred",
+    "expected": "500",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "forty two",
+    "expected": "42",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "twenty three",
+    "expected": "23",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "sixty four",
+    "expected": "64",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "ninety nine",
+    "expected": "99",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "dash dash port space three thousand",
+    "expected": "--port 3000",
+    "category": "numbers",
+    "tags": ["long-flags", "numbers"]
+  },
+  {
+    "dictated": "chmod space six four four space file dot txt",
+    "expected": "chmod 644 file.txt",
+    "category": "filesystem",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "one two three four",
+    "expected": "1234",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "zero zero one",
+    "expected": "001",
+    "category": "numbers",
+    "tags": ["numbers"]
+  },
+  {
+    "dictated": "open paren close paren",
+    "expected": "()",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "open bracket close bracket",
+    "expected": "[]",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "open brace close brace",
+    "expected": "{}",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "question mark",
+    "expected": "?",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "new line",
+    "expected": "\n",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "less than",
+    "expected": "<",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "open angle close angle",
+    "expected": "<>",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "single quote hello single quote",
+    "expected": "'hello'",
+    "category": "quoting",
+    "tags": ["quoting"]
+  },
+  {
+    "dictated": "quote hello space world quote",
+    "expected": "\"hello world\"",
+    "category": "quoting",
+    "tags": ["quoting"]
+  },
+  {
+    "dictated": "quote the space quick space brown space fox quote",
+    "expected": "\"the quick brown fox\"",
+    "category": "quoting",
+    "tags": ["quoting"]
+  },
+  {
+    "dictated": "single quote single quote",
+    "expected": "''",
+    "category": "quoting",
+    "tags": ["quoting"]
+  },
+  {
+    "dictated": "echo space quote hello space world space one space two space three quote",
+    "expected": "echo \"hello world 1 2 3\"",
+    "category": "quoting",
+    "tags": ["quoting", "numbers"]
+  },
+  {
+    "dictated": "dot dot slash dot dot slash src",
+    "expected": "../../src",
+    "category": "paths",
+    "tags": ["paths", "special-chars"]
+  },
+  {
+    "dictated": "cd space dot dot",
+    "expected": "cd ..",
+    "category": "paths",
+    "tags": ["basic", "special-chars"]
+  },
+  {
+    "dictated": "cd space dot dot slash dot dot slash",
+    "expected": "cd ../../",
+    "category": "paths",
+    "tags": ["paths", "special-chars"]
+  },
+  {
+    "dictated": "pipe pipe",
+    "expected": "||",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "command one space pipe pipe space command two",
+    "expected": "command1 || command2",
+    "category": "pipeline",
+    "tags": ["special-chars", "pipes"]
+  },
+  {
+    "dictated": "test space dash f space file dot txt space and and space echo space quote exists quote space pipe pipe space echo space quote missing quote",
+    "expected": "test -f file.txt && echo \"exists\" || echo \"missing\"",
+    "category": "pipeline",
+    "tags": ["flags", "special-chars", "quoting", "pipes", "complex"]
+  },
+  {
+    "dictated": "hello",
+    "expected": "hello",
+    "category": "edge",
+    "tags": ["basic"]
+  },
+  {
+    "dictated": "dash",
+    "expected": "-",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "dot",
+    "expected": ".",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "star",
+    "expected": "*",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "dash dash dash",
+    "expected": "---",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "dot dot dot",
+    "expected": "...",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "slash slash",
+    "expected": "//",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "bang bang",
+    "expected": "!!",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "equals equals",
+    "expected": "==",
+    "category": "edge",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "forward slash",
+    "expected": "/",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "back slash",
+    "expected": "\\",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "double dash version",
+    "expected": "--version",
+    "category": "symbols",
+    "tags": ["long-flags"]
+  },
+  {
+    "dictated": "at sign",
+    "expected": "@",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "dollar sign",
+    "expected": "$",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  },
+  {
+    "dictated": "equals sign",
+    "expected": "=",
+    "category": "symbols",
+    "tags": ["special-chars"]
+  }
+]

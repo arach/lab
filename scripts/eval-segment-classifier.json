@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "text": "According to the installation guide you need to run sudo apt get install dash y build dash essential",
+    "natural": "According to the installation guide you need to run",
+    "protocol": "sudo apt get install dash y build dash essential",
+    "note": "Documentation-style intro + package install"
+  },
+  {
+    "id": 2,
+    "text": "The troubleshooting section recommends checking the logs with tail dash f slash var slash log slash syslog",
+    "natural": "The troubleshooting section recommends checking the logs with",
+    "protocol": "tail dash f slash var slash log slash syslog",
+    "note": "Manual reference + log tailing"
+  },
+  {
+    "id": 3,
+    "text": "Before deploying to production make sure the tests pass by running npm space test space dash dash coverage",
+    "natural": "Before deploying to production make sure the tests pass by running",
+    "protocol": "npm space test space dash dash coverage",
+    "note": "Process instruction + npm command"
+  },
+  {
+    "id": 4,
+    "text": "The quarterly revenue exceeded expectations by a significant margin and the board was pleased with the results",
+    "natural": "The quarterly revenue exceeded expectations by a significant margin and the board was pleased with the results",
+    "protocol": "",
+    "note": "Pure business English"
+  },
+  {
+    "id": 5,
+    "text": "First clone the repository with git space clone space https colon slash slash github dot com slash user slash repo",
+    "natural": "First clone the repository with",
+    "protocol": "git space clone space https colon slash slash github dot com slash user slash repo",
+    "note": "Setup instruction + git clone with URL"
+  },
+  {
+    "id": 6,
+    "text": "I was reading the man page and it says you should use grep dash r dash i space quote pattern quote space dot",
+    "natural": "I was reading the man page and it says you should use",
+    "protocol": "grep dash r dash i space quote pattern quote space dot",
+    "note": "Casual reference to documentation + grep"
+  },
+  {
+    "id": 7,
+    "text": "Please ensure that all participants have signed the non disclosure agreement before the meeting on Thursday",
+    "natural": "Please ensure that all participants have signed the non disclosure agreement before the meeting on Thursday",
+    "protocol": "",
+    "note": "Pure business/legal English"
+  },
+  {
+    "id": 8,
+    "text": "The user manual states that the default configuration file is located at tilde slash dot config slash app slash settings dot yaml",
+    "natural": "The user manual states that the default configuration file is located at",
+    "protocol": "tilde slash dot config slash app slash settings dot yaml",
+    "note": "Manual reference + config path"
+  },
+  {
+    "id": 9,
+    "text": "If the service is unresponsive try restarting it with systemctl space restart space nginx",
+    "natural": "If the service is unresponsive try restarting it with",
+    "protocol": "systemctl space restart space nginx",
+    "note": "Troubleshooting instruction + systemctl"
+  },
+  {
+    "id": 10,
+    "text": "According to the latest market analysis the demand for renewable energy solutions has increased by twelve percent year over year",
+    "natural": "According to the latest market analysis the demand for renewable energy solutions has increased by twelve percent year over year",
+    "protocol": "",
+    "note": "Market analysis with 'percent' used naturally"
+  },
+  {
+    "id": 11,
+    "text": "To check disk usage across all mounted volumes run df space dash h space pipe space sort space dash k space two",
+    "natural": "To check disk usage across all mounted volumes run",
+    "protocol": "df space dash h space pipe space sort space dash k space two",
+    "note": "Instruction + piped df command"
+  },
+  {
+    "id": 12,
+    "text": "The firmware update procedure requires you to first back up your settings and then flash the device using dd space if equals slash dev slash sda space of equals slash dev slash sdb space bs equals four capital M",
+    "natural": "The firmware update procedure requires you to first back up your settings and then flash the device using",
+    "protocol": "dd space if equals slash dev slash sda space of equals slash dev slash sdb space bs equals four capital M",
+    "note": "Technical manual + dd command"
+  },
+  {
+    "id": 13,
+    "text": "Our team has been working on improving the customer onboarding experience and we expect to see a measurable impact by the end of the quarter",
+    "natural": "Our team has been working on improving the customer onboarding experience and we expect to see a measurable impact by the end of the quarter",
+    "protocol": "",
+    "note": "Pure corporate English"
+  },
+  {
+    "id": 14,
+    "text": "Set the environment variable by adding export space all caps NODE underscore ENV equals production to your shell profile",
+    "natural": "Set the environment variable by adding ||| to your shell profile",
+    "protocol": "export space all caps NODE underscore ENV equals production",
+    "note": "Instruction + export command"
+  },
+  {
+    "id": 15,
+    "text": "The warranty does not cover damage caused by improper handling or exposure to extreme temperatures as outlined in section three point two",
+    "natural": "The warranty does not cover damage caused by improper handling or exposure to extreme temperatures as outlined in section three point two",
+    "protocol": "",
+    "note": "Legal/warranty language with 'three point two' naturally"
+  },
+  {
+    "id": 16,
+    "text": "I need to find all the large files so let me run find space dot space dash type space f space dash size space plus one hundred capital M",
+    "natural": "I need to find all the large files so let me run",
+    "protocol": "find space dot space dash type space f space dash size space plus one hundred capital M",
+    "note": "Conversational + find command"
+  },
+  {
+    "id": 17,
+    "text": "chmod space seven five five space slash usr slash local slash bin slash deploy dot sh and then run it with dot slash deploy dot sh",
+    "natural": "and then run it with",
+    "protocol": "chmod space seven five five space slash usr slash local slash bin slash deploy dot sh ||| dot slash deploy dot sh",
+    "note": "Two commands with natural bridge"
+  },
+  {
+    "id": 18,
+    "text": "The safety data sheet indicates that the chemical should be stored at temperatures between two and eight degrees celsius in a well ventilated area",
+    "natural": "The safety data sheet indicates that the chemical should be stored at temperatures between two and eight degrees celsius in a well ventilated area",
+    "protocol": "",
+    "note": "Safety manual with numbers naturally"
+  },
+  {
+    "id": 19,
+    "text": "To connect to the database use psql space dash h space localhost space dash capital U space postgres space dash d space mydb",
+    "natural": "To connect to the database use",
+    "protocol": "psql space dash h space localhost space dash capital U space postgres space dash d space mydb",
+    "note": "Instruction + psql command"
+  },
+  {
+    "id": 20,
+    "text": "The annual performance review cycle begins in January and all managers should complete their assessments by the end of February",
+    "natural": "The annual performance review cycle begins in January and all managers should complete their assessments by the end of February",
+    "protocol": "",
+    "note": "HR/corporate with 'all' naturally"
+  },
+  {
+    "id": 21,
+    "text": "You can check the container status with docker space ps space dash a and remove stopped ones with docker space container space prune",
+    "natural": "You can check the container status with ||| and remove stopped ones with",
+    "protocol": "docker space ps space dash a ||| docker space container space prune",
+    "note": "Two docker commands with natural bridge"
+  },
+  {
+    "id": 22,
+    "text": "The operating instructions state that the device should be powered off before opening the case and all four screws must be removed carefully",
+    "natural": "The operating instructions state that the device should be powered off before opening the case and all four screws must be removed carefully",
+    "protocol": "",
+    "note": "Hardware manual with 'opening', 'case', 'all', 'four' naturally"
+  },
+  {
+    "id": 23,
+    "text": "Let me SSH into the server real quick ssh space dash i space tilde slash dot ssh slash id underscore rsa space ubuntu at one nine two dot one six eight dot one dot one zero",
+    "natural": "Let me SSH into the server real quick",
+    "protocol": "ssh space dash i space tilde slash dot ssh slash id underscore rsa space ubuntu at one nine two dot one six eight dot one dot one zero",
+    "note": "Casual intro + SSH with key and IP"
+  },
+  {
+    "id": 24,
+    "text": "According to the employee handbook all new hires must complete the security training within their first two weeks and sign the acceptable use policy",
+    "natural": "According to the employee handbook all new hires must complete the security training within their first two weeks and sign the acceptable use policy",
+    "protocol": "",
+    "note": "HR policy with 'all', 'new', 'sign', 'two' naturally"
+  },
+  {
+    "id": 25,
+    "text": "The API documentation says to authenticate with curl space dash capital X space all caps POST space dash capital H space quote Authorization colon space Bearer space dollar token quote space https colon slash slash api dot example dot com slash auth",
+    "natural": "The API documentation says to authenticate with",
+    "protocol": "curl space dash capital X space all caps POST space dash capital H space quote Authorization colon space Bearer space dollar token quote space https colon slash slash api dot example dot com slash auth",
+    "note": "Doc reference + complex curl"
+  },
+  {
+    "id": 26,
+    "text": "The research paper concludes that there is a statistically significant correlation between sleep quality and cognitive performance across all age groups",
+    "natural": "The research paper concludes that there is a statistically significant correlation between sleep quality and cognitive performance across all age groups",
+    "protocol": "",
+    "note": "Academic English with 'all' naturally"
+  },
+  {
+    "id": 27,
+    "text": "To watch the logs in real time use kubectl space logs space dash f space dash n space default space pod slash my dash app",
+    "natural": "To watch the logs in real time use",
+    "protocol": "kubectl space logs space dash f space dash n space default space pod slash my dash app",
+    "note": "Instruction + kubectl logs"
+  },
+  {
+    "id": 28,
+    "text": "I think the issue is that the firewall is blocking port eight zero eight zero so try iptables space dash capital A space INPUT space dash p space tcp space dash dash dport space eight zero eight zero space dash j space ACCEPT",
+    "natural": "I think the issue is that the firewall is blocking port eight zero eight zero so try",
+    "protocol": "iptables space dash capital A space INPUT space dash p space tcp space dash dash dport space eight zero eight zero space dash j space ACCEPT",
+    "note": "Diagnostic reasoning + iptables"
+  },
+  {
+    "id": 29,
+    "text": "The building code requires that all electrical installations comply with the national standards and be inspected by a certified professional within thirty days",
+    "natural": "The building code requires that all electrical installations comply with the national standards and be inspected by a certified professional within thirty days",
+    "protocol": "",
+    "note": "Building regulations with 'all', 'code' naturally"
+  },
+  {
+    "id": 30,
+    "text": "Create a compressed archive with tar space dash czvf space backup dot tar dot gz space slash home slash user slash documents",
+    "natural": "Create a compressed archive with",
+    "protocol": "tar space dash czvf space backup dot tar dot gz space slash home slash user slash documents",
+    "note": "Short instruction + tar command"
+  },
+  {
+    "id": 31,
+    "text": "The product recall affects all units manufactured between March and June of last year and customers should contact support for a replacement",
+    "natural": "The product recall affects all units manufactured between March and June of last year and customers should contact support for a replacement",
+    "protocol": "",
+    "note": "Product recall notice"
+  },
+  {
+    "id": 32,
+    "text": "First I want to list everything in the directory ls dash la and then after that we need to discuss the project timeline for next quarter",
+    "natural": "First I want to list everything in the directory ||| and then after that we need to discuss the project timeline for next quarter",
+    "protocol": "ls dash la",
+    "note": "Command sandwiched between two natural segments"
+  },
+  {
+    "id": 33,
+    "text": "The maintenance schedule requires that all HVAC systems be serviced twice a year with filters replaced at each visit",
+    "natural": "The maintenance schedule requires that all HVAC systems be serviced twice a year with filters replaced at each visit",
+    "protocol": "",
+    "note": "Maintenance manual with 'all', 'at' naturally"
+  },
+  {
+    "id": 34,
+    "text": "Generate a new SSH key with ssh dash keygen space dash t space ed two five five one nine space dash capital C space quote your email at example dot com quote",
+    "natural": "Generate a new SSH key with",
+    "protocol": "ssh dash keygen space dash t space ed two five five one nine space dash capital C space quote your email at example dot com quote",
+    "note": "Instruction + ssh-keygen with email"
+  },
+  {
+    "id": 35,
+    "text": "The clinical trial demonstrated that the new treatment reduced symptoms in approximately sixty five percent of participants compared to the placebo group",
+    "natural": "The clinical trial demonstrated that the new treatment reduced symptoms in approximately sixty five percent of participants compared to the placebo group",
+    "protocol": "",
+    "note": "Medical/clinical with 'new', 'five', 'percent' naturally"
+  },
+  {
+    "id": 36,
+    "text": "Add the upstream remote with git space remote space add space upstream space https colon slash slash github dot com slash original slash repo dot git",
+    "natural": "Add the upstream remote with",
+    "protocol": "git space remote space add space upstream space https colon slash slash github dot com slash original slash repo dot git",
+    "note": "Git instruction + remote add"
+  },
+  {
+    "id": 37,
+    "text": "The lease agreement stipulates that the tenant is responsible for all utilities including water gas and electricity and must maintain the property in good condition",
+    "natural": "The lease agreement stipulates that the tenant is responsible for all utilities including water gas and electricity and must maintain the property in good condition",
+    "protocol": "",
+    "note": "Legal/lease with 'all' naturally"
+  },
+  {
+    "id": 38,
+    "text": "I want to search through the codebase so do grep space dash rn space quote TODO quote space dash dash include equals star dot ts space dot and then pipe that to wc space dash l to count them",
+    "natural": "I want to search through the codebase so do ||| and then pipe that to ||| to count them",
+    "protocol": "grep space dash rn space quote TODO quote space dash dash include equals star dot ts space dot ||| wc space dash l",
+    "note": "Conversational with two commands and natural bridges"
+  },
+  {
+    "id": 39,
+    "text": "The insurance policy covers all pre existing conditions after a waiting period of ninety days and copayments are set at twenty dollars per visit",
+    "natural": "The insurance policy covers all pre existing conditions after a waiting period of ninety days and copayments are set at twenty dollars per visit",
+    "protocol": "",
+    "note": "Insurance language with 'all', 'at', 'dollars' naturally"
+  },
+  {
+    "id": 40,
+    "text": "Alright so the deployment script needs to run rsync space dash avz space dash e space ssh space dot slash build slash space deploy at prod dot example dot com colon slash var slash www slash html slash",
+    "natural": "Alright so the deployment script needs to run",
+    "protocol": "rsync space dash avz space dash e space ssh space dot slash build slash space deploy at prod dot example dot com colon slash var slash www slash html slash",
+    "note": "Casual intro + rsync deployment"
+  },
+  {
+    "id": 41,
+    "text": "The zoning regulations require that all new construction projects obtain a permit from the planning commission before breaking ground",
+    "natural": "The zoning regulations require that all new construction projects obtain a permit from the planning commission before breaking ground",
+    "protocol": "",
+    "note": "Municipal regulations with 'all', 'new' naturally"
+  },
+  {
+    "id": 42,
+    "text": "Check if the process is running with ps space aux space pipe space grep space node and kill it with kill space dash nine space followed by the PID",
+    "natural": "Check if the process is running with ||| and kill it with ||| followed by the PID",
+    "protocol": "ps space aux space pipe space grep space node ||| kill space dash nine",
+    "note": "Two commands with natural connectors"
+  },
+  {
+    "id": 43,
+    "text": "The nutritional information on the label shows that one serving contains approximately two hundred and fifty calories with twelve grams of protein",
+    "natural": "The nutritional information on the label shows that one serving contains approximately two hundred and fifty calories with twelve grams of protein",
+    "protocol": "",
+    "note": "Nutrition label language with numbers naturally"
+  },
+  {
+    "id": 44,
+    "text": "Set up the cron job with crontab space dash e and add the line star space slash five space star space star space star space star space slash usr slash local slash bin slash backup dot sh",
+    "natural": "Set up the cron job with ||| and add the line",
+    "protocol": "crontab space dash e ||| star space slash five space star space star space star space star space slash usr slash local slash bin slash backup dot sh",
+    "note": "Crontab setup with two protocol segments"
+  },
+  {
+    "id": 45,
+    "text": "The terms of service prohibit the redistribution of content without prior written consent from the copyright holder as outlined in article seven",
+    "natural": "The terms of service prohibit the redistribution of content without prior written consent from the copyright holder as outlined in article seven",
+    "protocol": "",
+    "note": "Legal TOS with 'seven' naturally"
+  },
+  {
+    "id": 46,
+    "text": "To extract the archive use tar space dash xzvf space archive dot tar dot gz space dash capital C space slash opt slash app",
+    "natural": "To extract the archive use",
+    "protocol": "tar space dash xzvf space archive dot tar dot gz space dash capital C space slash opt slash app",
+    "note": "Instruction + tar extract"
+  },
+  {
+    "id": 47,
+    "text": "The environmental impact assessment found that the proposed development would affect three protected habitats and recommended additional mitigation measures",
+    "natural": "The environmental impact assessment found that the proposed development would affect three protected habitats and recommended additional mitigation measures",
+    "protocol": "",
+    "note": "Environmental report with 'three' naturally"
+  },
+  {
+    "id": 48,
+    "text": "Spin up a quick web server with python space dash m space http dot server space eight zero eight zero and then open your browser to localhost colon eight zero eight zero",
+    "natural": "Spin up a quick web server with ||| and then open your browser to",
+    "protocol": "python space dash m space http dot server space eight zero eight zero ||| localhost colon eight zero eight zero",
+    "note": "Python http server + localhost reference"
+  },
+  {
+    "id": 49,
+    "text": "The board of directors unanimously approved the merger and all outstanding shares will be converted at a ratio of one point five to one",
+    "natural": "The board of directors unanimously approved the merger and all outstanding shares will be converted at a ratio of one point five to one",
+    "protocol": "",
+    "note": "Corporate/financial with 'all', 'at', 'one', 'point', 'five' naturally"
+  },
+  {
+    "id": 50,
+    "text": "Mount the network share with mount space dash t space nfs space one nine two dot one six eight dot one dot ten colon slash exports slash data space slash mnt slash network",
+    "natural": "Mount the network share with",
+    "protocol": "mount space dash t space nfs space one nine two dot one six eight dot one dot ten colon slash exports slash data space slash mnt slash network",
+    "note": "Instruction + NFS mount with IP"
+  },
+  {
+    "id": 51,
+    "text": "The man page says that rsync can transfer files to or from a remote host using SSH so you would type rsync space dash avz space dash e space quote ssh space dash p space two two two two quote space host colon slash path slash to slash source space slash path slash to slash destination",
+    "natural": "The man page says that rsync can transfer files to or from a remote host using SSH so you would type",
+    "protocol": "rsync space dash avz space dash e space quote ssh space dash p space two two two two quote space host colon slash path slash to slash source space slash path slash to slash destination",
+    "note": "Man page reference + rsync over custom SSH port"
+  },
+  {
+    "id": 52,
+    "text": "Agent forwarding should be enabled with caution since users with the ability to bypass file permissions on the remote host can access the local agent through the forwarded connection",
+    "natural": "Agent forwarding should be enabled with caution since users with the ability to bypass file permissions on the remote host can access the local agent through the forwarded connection",
+    "protocol": "",
+    "note": "SSH man page prose — security warning, no commands"
+  },
+  {
+    "id": 53,
+    "text": "To use archive mode which recursively copies directories and preserves permissions run rsync space dash a space slash path slash to slash source space slash path slash to slash destination",
+    "natural": "To use archive mode which recursively copies directories and preserves permissions run",
+    "protocol": "rsync space dash a space slash path slash to slash source space slash path slash to slash destination",
+    "note": "tldr-style explanation + rsync archive"
+  },
+  {
+    "id": 54,
+    "text": "An input line is normally made up of fields separated by white space or by the regular expression assigned to the field separator variable",
+    "natural": "An input line is normally made up of fields separated by white space or by the regular expression assigned to the field separator variable",
+    "protocol": "",
+    "note": "awk man page prose — 'line', 'space' used in CS context naturally"
+  },
+  {
+    "id": 55,
+    "text": "You can download a file and save it with the name from the URL by running curl space dash capital O space https colon slash slash example dot com slash filename dot zip",
+    "natural": "You can download a file and save it with the name from the URL by running",
+    "protocol": "curl space dash capital O space https colon slash slash example dot com slash filename dot zip",
+    "note": "tldr curl + download"
+  },
+  {
+    "id": 56,
+    "text": "The sed utility reads the specified files or the standard input if no files are specified modifying the input as specified by a list of commands",
+    "natural": "The sed utility reads the specified files or the standard input if no files are specified modifying the input as specified by a list of commands",
+    "protocol": "",
+    "note": "sed man page prose — technical but no protocol"
+  },
+  {
+    "id": 57,
+    "text": "For SSH tunneling with dynamic port forwarding which creates a SOCKS proxy on localhost port one zero eight zero use ssh space dash capital D space one zero eight zero space username at remote underscore host",
+    "natural": "For SSH tunneling with dynamic port forwarding which creates a SOCKS proxy on localhost port one zero eight zero use",
+    "protocol": "ssh space dash capital D space one zero eight zero space username at remote underscore host",
+    "note": "SSH tunneling explanation + command"
+  },
+  {
+    "id": 58,
+    "text": "This option is equivalent to setting the GIT_NO_LAZY_FETCH environment variable to one and is useful together with git cat file to see if an object is locally available",
+    "natural": "This option is equivalent to setting the GIT_NO_LAZY_FETCH environment variable to one and is useful together with git cat file to see if an object is locally available",
+    "protocol": "",
+    "note": "git man page prose — mentions commands inline but as references not dictated"
+  },
+  {
+    "id": 59,
+    "text": "Send JSON data to an API endpoint with curl space dash d space quote open brace quote name quote colon quote bob quote close brace quote space dash capital H space quote Content dash Type colon space application slash json quote space https colon slash slash example dot com slash users",
+    "natural": "Send JSON data to an API endpoint with",
+    "protocol": "curl space dash d space quote open brace quote name quote colon quote bob quote close brace quote space dash capital H space quote Content dash Type colon space application slash json quote space https colon slash slash example dot com slash users",
+    "note": "Complex curl with JSON body and headers"
+  },
+  {
+    "id": 60,
+    "text": "The chmod utility exits zero on success and greater than zero if an error occurs and only the owner of a file or the super user is permitted to change the mode",
+    "natural": "The chmod utility exits zero on success and greater than zero if an error occurs and only the owner of a file or the super user is permitted to change the mode",
+    "protocol": "",
+    "note": "chmod man page prose — technical description no commands"
+  },
+  {
+    "id": 61,
+    "text": "To create a gzipped archive from a directory using relative paths run tar space dash czf space target dot tar dot gz space dash capital C space slash path slash to slash directory space dot",
+    "natural": "To create a gzipped archive from a directory using relative paths run",
+    "protocol": "tar space dash czf space target dot tar dot gz space dash capital C space slash path slash to slash directory space dot",
+    "note": "tldr tar + relative path archive"
+  },
+  {
+    "id": 62,
+    "text": "Grep is used for simple patterns and basic regular expressions whereas egrep can handle extended regular expressions and fgrep is quicker but can only handle fixed patterns",
+    "natural": "Grep is used for simple patterns and basic regular expressions whereas egrep can handle extended regular expressions and fgrep is quicker but can only handle fixed patterns",
+    "protocol": "",
+    "note": "grep man page description — technical prose no protocol"
+  },
+  {
+    "id": 63,
+    "text": "To connect to a remote server using a specific identity file and a non standard port use ssh space dash i space tilde slash dot ssh slash my underscore key space dash p space two two two two space user at example dot com",
+    "natural": "To connect to a remote server using a specific identity file and a non standard port use",
+    "protocol": "ssh space dash i space tilde slash dot ssh slash my underscore key space dash p space two two two two space user at example dot com",
+    "note": "SSH connection with identity file and custom port"
+  },
+  {
+    "id": 64,
+    "text": "The find utility recursively descends the directory tree for each path listed evaluating an expression in terms of each file in the tree",
+    "natural": "The find utility recursively descends the directory tree for each path listed evaluating an expression in terms of each file in the tree",
+    "protocol": "",
+    "note": "find man page prose — no commands"
+  },
+  {
+    "id": 65,
+    "text": "Use the dry run flag to simulate the transfer before actually running it rsync space dash dash dry dash run space dash avz space source slash space destination slash",
+    "natural": "Use the dry run flag to simulate the transfer before actually running it",
+    "protocol": "rsync space dash dash dry dash run space dash avz space source slash space destination slash",
+    "note": "rsync dry-run from tldr"
+  },
+  {
+    "id": 66,
+    "text": "The contract shall remain in force for a period of twenty four months from the date of execution unless terminated earlier by either party with thirty days written notice",
+    "natural": "The contract shall remain in force for a period of twenty four months from the date of execution unless terminated earlier by either party with thirty days written notice",
+    "protocol": "",
+    "note": "Legal contract with numbers naturally"
+  },
+  {
+    "id": 67,
+    "text": "To forward a local port to a remote service through an SSH tunnel without opening a shell use ssh space dash capital L space nine nine nine nine colon localhost colon eighty space dash capital N space dash capital T space user at remote underscore host",
+    "natural": "To forward a local port to a remote service through an SSH tunnel without opening a shell use",
+    "protocol": "ssh space dash capital L space nine nine nine nine colon localhost colon eighty space dash capital N space dash capital T space user at remote underscore host",
+    "note": "SSH local port forwarding from tldr"
+  },
+  {
+    "id": 68,
+    "text": "Curl attempts to reuse connections when doing multiple transfers so that getting many files from the same server does not use multiple connects and setup handshakes which improves speed",
+    "natural": "Curl attempts to reuse connections when doing multiple transfers so that getting many files from the same server does not use multiple connects and setup handshakes which improves speed",
+    "protocol": "",
+    "note": "curl man page prose — technical explanation no commands"
+  },
+  {
+    "id": 69,
+    "text": "Delete files on the destination that don't exist on the source by using rsync space dash r space dash dash delete space rsync colon slash slash host colon slash path slash to slash source space slash path slash to slash destination",
+    "natural": "Delete files on the destination that don't exist on the source by using",
+    "protocol": "rsync space dash r space dash dash delete space rsync colon slash slash host colon slash path slash to slash source space slash path slash to slash destination",
+    "note": "rsync with delete and rsync protocol URL"
+  },
+  {
+    "id": 70,
+    "text": "The municipal water treatment facility processes approximately four point five million gallons per day and must maintain compliance with all federal and state regulations",
+    "natural": "The municipal water treatment facility processes approximately four point five million gallons per day and must maintain compliance with all federal and state regulations",
+    "protocol": "",
+    "note": "Government/utility with 'point', 'all' naturally"
+  },
+  {
+    "id": 71,
+    "text": "Pass a configuration parameter to git by using the dash c flag for example git space dash c space user dot name equals quote John Doe quote space commit",
+    "natural": "Pass a configuration parameter to git by using the dash c flag for example",
+    "protocol": "git space dash c space user dot name equals quote John Doe quote space commit",
+    "note": "git man page example + config parameter"
+  },
+  {
+    "id": 72,
+    "text": "Specifying the location of the git directory using the git dir option turns off repository discovery that tries to find a directory with a git subdirectory",
+    "natural": "Specifying the location of the git directory using the git dir option turns off repository discovery that tries to find a directory with a git subdirectory",
+    "protocol": "",
+    "note": "git man page prose — mentions 'git dir' naturally not as command"
+  },
+  {
+    "id": 73,
+    "text": "To send form encoded data as a POST request use curl space dash capital X space POST space dash d space quote name equals bob quote space http colon slash slash example dot com slash form",
+    "natural": "To send form encoded data as a POST request use",
+    "protocol": "curl space dash capital X space POST space dash d space quote name equals bob quote space http colon slash slash example dot com slash form",
+    "note": "curl POST from tldr"
+  },
+  {
+    "id": 74,
+    "text": "The school district requires that all students in grades three through eight take the standardized assessment each spring and results are shared with parents within six weeks",
+    "natural": "The school district requires that all students in grades three through eight take the standardized assessment each spring and results are shared with parents within six weeks",
+    "protocol": "",
+    "note": "Education policy with 'all', 'three', 'eight', 'six' naturally"
+  },
+  {
+    "id": 75,
+    "text": "Extract files matching a specific pattern from a tar archive using tar space dash xf space source dot tar space dash dash wildcards space quote star dot html quote",
+    "natural": "Extract files matching a specific pattern from a tar archive using",
+    "protocol": "tar space dash xf space source dot tar space dash dash wildcards space quote star dot html quote",
+    "note": "tar wildcard extraction from tldr"
+  },
+  {
+    "id": 76,
+    "text": "The prescription requires the patient to take one tablet twice daily with food and return for a follow up appointment in four weeks to assess progress",
+    "natural": "The prescription requires the patient to take one tablet twice daily with food and return for a follow up appointment in four weeks to assess progress",
+    "protocol": "",
+    "note": "Medical prescription with 'one', 'four' naturally"
+  },
+  {
+    "id": 77,
+    "text": "You can also use SSH jumping to connect through a jump host to a remote server ssh space dash capital J space user at jump underscore host space user at remote underscore host",
+    "natural": "You can also use SSH jumping to connect through a jump host to a remote server",
+    "protocol": "ssh space dash capital J space user at jump underscore host space user at remote underscore host",
+    "note": "SSH jump host from tldr"
+  },
+  {
+    "id": 78,
+    "text": "The restaurant inspection report noted three minor violations including improper food storage temperature and recommended a follow up inspection within fourteen days",
+    "natural": "The restaurant inspection report noted three minor violations including improper food storage temperature and recommended a follow up inspection within fourteen days",
+    "protocol": "",
+    "note": "Health inspection with 'three' naturally"
+  },
+  {
+    "id": 79,
+    "text": "Run git as if it was started in a different path by using the dash capital C flag git space dash capital C space slash path slash to slash repo space status",
+    "natural": "Run git as if it was started in a different path by using the dash capital C flag",
+    "protocol": "git space dash capital C space slash path slash to slash repo space status",
+    "note": "git -C from man page"
+  },
+  {
+    "id": 80,
+    "text": "The homeowners association bylaws state that exterior modifications require written approval from the architectural review committee and work must be completed within ninety days of approval",
+    "natural": "The homeowners association bylaws state that exterior modifications require written approval from the architectural review committee and work must be completed within ninety days of approval",
+    "protocol": "",
+    "note": "HOA bylaws with no protocol"
+  },
+  {
+    "id": 81,
+    "text": "Resolve a hostname to a custom IP address for testing with curl space dash v space dash dash resolve space example dot com colon eighty colon one two seven dot zero dot zero dot one space http colon slash slash example dot com",
+    "natural": "Resolve a hostname to a custom IP address for testing with",
+    "protocol": "curl space dash v space dash dash resolve space example dot com colon eighty colon one two seven dot zero dot zero dot one space http colon slash slash example dot com",
+    "note": "curl resolve from tldr — complex with IP"
+  },
+  {
+    "id": 82,
+    "text": "The fire marshal determined that the maximum occupancy for the conference room is seventy five persons and all exits must remain unobstructed at all times during events",
+    "natural": "The fire marshal determined that the maximum occupancy for the conference room is seventy five persons and all exits must remain unobstructed at all times during events",
+    "protocol": "",
+    "note": "Fire safety with 'all', 'at', 'five' naturally"
+  },
+  {
+    "id": 83,
+    "text": "If the regular expression matches a portion of the input the matching line will be printed to standard output along with any context lines specified by the dash A and dash B options",
+    "natural": "If the regular expression matches a portion of the input the matching line will be printed to standard output along with any context lines specified by the dash A and dash B options",
+    "protocol": "",
+    "note": "grep man page prose — mentions 'dash A' but as inline reference not dictated command"
+  },
+  {
+    "id": 84,
+    "text": "List the contents of a tar file verbosely with tar space dash tvf space slash path slash to slash archive dot tar",
+    "natural": "List the contents of a tar file verbosely with",
+    "protocol": "tar space dash tvf space slash path slash to slash archive dot tar",
+    "note": "tldr tar list"
+  },
+  {
+    "id": 85,
+    "text": "The grant application must be submitted by March fifteenth and all supporting documentation including letters of recommendation must be received no later than April first",
+    "natural": "The grant application must be submitted by March fifteenth and all supporting documentation including letters of recommendation must be received no later than April first",
+    "protocol": "",
+    "note": "Academic grant with 'all' naturally"
+  },
+  {
+    "id": 86,
+    "text": "To pass client certificate and key for mutual TLS authentication use curl space dash capital E space client dot pem space dash dash key space key dot pem space dash k space https colon slash slash example dot com",
+    "natural": "To pass client certificate and key for mutual TLS authentication use",
+    "protocol": "curl space dash capital E space client dot pem space dash dash key space key dot pem space dash k space https colon slash slash example dot com",
+    "note": "curl mTLS from tldr"
+  },
+  {
+    "id": 87,
+    "text": "The vehicle recall notice indicates that approximately twelve thousand units are affected and owners should schedule service at their nearest authorized dealer within the next sixty days",
+    "natural": "The vehicle recall notice indicates that approximately twelve thousand units are affected and owners should schedule service at their nearest authorized dealer within the next sixty days",
+    "protocol": "",
+    "note": "Vehicle recall with 'at' naturally"
+  },
+  {
+    "id": 88,
+    "text": "Pipe all git output into less if standard output is a terminal by using git space dash p space log or equivalently git space dash dash paginate space log",
+    "natural": "Pipe all git output into less if standard output is a terminal by using ||| or equivalently",
+    "protocol": "git space dash p space log ||| git space dash dash paginate space log",
+    "note": "git pager options — two equivalent commands"
+  },
+  {
+    "id": 89,
+    "text": "The archaeological survey identified artifacts dating back approximately two thousand three hundred years and the site has been designated as a protected cultural heritage area",
+    "natural": "The archaeological survey identified artifacts dating back approximately two thousand three hundred years and the site has been designated as a protected cultural heritage area",
+    "protocol": "",
+    "note": "Archaeology with 'two', 'three' naturally"
+  },
+  {
+    "id": 90,
+    "text": "Change the mode of a file hierarchy recursively with chmod space dash capital R space seven five five space slash var slash www slash html and use the dash v flag to see what changed",
+    "natural": "Change the mode of a file hierarchy recursively with ||| and use the dash v flag to see what changed",
+    "protocol": "chmod space dash capital R space seven five five space slash var slash www slash html",
+    "note": "chmod recursive from man page"
+  },
+  {
+    "id": 91,
+    "text": "In an emergency all personnel must evacuate through the nearest marked exit and proceed to the designated assembly point in the north parking lot",
+    "natural": "In an emergency all personnel must evacuate through the nearest marked exit and proceed to the designated assembly point in the north parking lot",
+    "protocol": "",
+    "note": "Emergency procedures with 'all', 'point' naturally"
+  },
+  {
+    "id": 92,
+    "text": "The permit application requires three copies of the site plan and all adjacent property owners within two hundred feet must be notified by certified mail at least ten days before the hearing",
+    "natural": "The permit application requires three copies of the site plan and all adjacent property owners within two hundred feet must be notified by certified mail at least ten days before the hearing",
+    "protocol": "",
+    "note": "Zoning permit with 'three', 'all', 'two', 'ten', 'at' naturally"
+  },
+  {
+    "id": 93,
+    "text": "Use sed to replace all occurrences of a pattern in a file by running sed space dash i space quote s slash old slash new slash g quote space filename dot txt",
+    "natural": "Use sed to replace all occurrences of a pattern in a file by running",
+    "protocol": "sed space dash i space quote s slash old slash new slash g quote space filename dot txt",
+    "note": "sed in-place replacement"
+  },
+  {
+    "id": 94,
+    "text": "The flight departs at seven forty five in the morning from gate B twelve and passengers should arrive at least two hours before departure for international travel",
+    "natural": "The flight departs at seven forty five in the morning from gate B twelve and passengers should arrive at least two hours before departure for international travel",
+    "protocol": "",
+    "note": "Travel with 'at', 'seven', 'five', 'two' naturally"
+  },
+  {
+    "id": 95,
+    "text": "Print the number of lines words and bytes in each file with wc space dash lwc space star dot txt and sort the results by running pipe space sort space dash n",
+    "natural": "Print the number of lines words and bytes in each file with ||| and sort the results by running",
+    "protocol": "wc space dash lwc space star dot txt ||| pipe space sort space dash n",
+    "note": "wc + sort piped"
+  },
+  {
+    "id": 96,
+    "text": "The laboratory safety protocol mandates that all chemicals must be stored in properly labeled containers and material safety data sheets must be available within ten feet of the storage area",
+    "natural": "The laboratory safety protocol mandates that all chemicals must be stored in properly labeled containers and material safety data sheets must be available within ten feet of the storage area",
+    "protocol": "",
+    "note": "Lab safety with 'all', 'ten' naturally"
+  },
+  {
+    "id": 97,
+    "text": "To search for a pattern recursively while ignoring case and showing line numbers use grep space dash rni space quote error quote space slash var slash log slash",
+    "natural": "To search for a pattern recursively while ignoring case and showing line numbers use",
+    "protocol": "grep space dash rni space quote error quote space slash var slash log slash",
+    "note": "grep recursive from man page"
+  },
+  {
+    "id": 98,
+    "text": "The city council voted six to three in favor of the rezoning proposal and all affected residents will receive written notification within fifteen business days",
+    "natural": "The city council voted six to three in favor of the rezoning proposal and all affected residents will receive written notification within fifteen business days",
+    "protocol": "",
+    "note": "City council with 'six', 'three', 'all' naturally"
+  },
+  {
+    "id": 99,
+    "text": "Find all files modified in the last seven days with find space dot space dash type space f space dash mtime space dash seven and then delete them by piping to xargs space rm",
+    "natural": "Find all files modified in the last seven days with ||| and then delete them by piping to",
+    "protocol": "find space dot space dash type space f space dash mtime space dash seven ||| xargs space rm",
+    "note": "find + xargs piped — two protocol segments"
+  },
+  {
+    "id": 100,
+    "text": "The annual report indicates that revenue grew by eight point two percent compared to the previous fiscal year and operating expenses remained flat at approximately thirty four million dollars",
+    "natural": "The annual report indicates that revenue grew by eight point two percent compared to the previous fiscal year and operating expenses remained flat at approximately thirty four million dollars",
+    "protocol": "",
+    "note": "Financial report with 'eight', 'point', 'two', 'percent', 'four', 'at' naturally"
+  }
+]

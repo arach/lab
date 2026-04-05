@@ -1,0 +1,666 @@
+{
+  "meta": {
+    "name": "dictation-to-bash",
+    "version": "1.0",
+    "description": "Round-trip test: spoken bash commands → reconstructed syntax. Each entry has the original bash command, how a transcription engine (Whisper/Parakeet) would capture it when spoken aloud, and the expected reconstructed output.",
+    "categories": {
+      "nav": "Directory navigation (cd, pwd, ls)",
+      "git": "Git operations",
+      "flags": "Commands with single/double dash flags",
+      "paths": "Commands with complex paths (tilde, dots, escaping)",
+      "pipes": "Piped and chained commands (|, &&, ;)",
+      "quotes": "Commands with quoted arguments",
+      "numbers": "Spoken numbers, decimals, units",
+      "redirects": "Output redirection (>, >>, 2>&1)",
+      "compound": "Multi-part commands combining several syntax patterns",
+      "tools": "Project-specific CLI tools (talkie-dev, bun, brew, etc.)"
+    },
+    "difficulty_levels": {
+      "easy": "Single command, minimal syntax transformation",
+      "medium": "One or two syntax transformations needed",
+      "hard": "Multiple transformations, complex syntax, easy to get wrong"
+    }
+  },
+  "entries": [
+    {
+      "id": 1,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd ..",
+      "dictated": "CD dot dot",
+      "notes": "Basic parent directory navigation"
+    },
+    {
+      "id": 2,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd ../dev",
+      "dictated": "CD dot dot slash dev",
+      "notes": "Relative path with parent"
+    },
+    {
+      "id": 3,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd ../talkie",
+      "dictated": "CD dot dot slash talkie",
+      "notes": "Sibling directory"
+    },
+    {
+      "id": 4,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "pwd",
+      "dictated": "PWD",
+      "notes": "Single command, all caps in speech"
+    },
+    {
+      "id": 5,
+      "category": "nav",
+      "difficulty": "medium",
+      "bash": "cd dev/talkie",
+      "dictated": "CD dev slash talkie",
+      "notes": "Forward path"
+    },
+    {
+      "id": 6,
+      "category": "nav",
+      "difficulty": "medium",
+      "bash": "cd ~/dev/talkie",
+      "dictated": "CD tilde slash dev slash talkie",
+      "notes": "Home directory expansion"
+    },
+    {
+      "id": 7,
+      "category": "nav",
+      "difficulty": "medium",
+      "bash": "cd services/talkie-api",
+      "dictated": "CD services slash talkie dash API",
+      "notes": "Hyphenated directory name"
+    },
+    {
+      "id": 8,
+      "category": "flags",
+      "difficulty": "easy",
+      "bash": "ls -l",
+      "dictated": "LS dash L",
+      "notes": "Single flag"
+    },
+    {
+      "id": 9,
+      "category": "flags",
+      "difficulty": "easy",
+      "bash": "ls -la",
+      "dictated": "LS dash LA",
+      "notes": "Combined flags"
+    },
+    {
+      "id": 10,
+      "category": "flags",
+      "difficulty": "medium",
+      "bash": "rm -rf .next",
+      "dictated": "RM dash RF dot next",
+      "notes": "Destructive command with dot-prefixed dir"
+    },
+    {
+      "id": 11,
+      "category": "flags",
+      "difficulty": "medium",
+      "bash": "rm -rf .next/",
+      "dictated": "RM dash RF dot next slash",
+      "notes": "Trailing slash variant"
+    },
+    {
+      "id": 12,
+      "category": "git",
+      "difficulty": "easy",
+      "bash": "git status",
+      "dictated": "git status",
+      "notes": "No transformation needed — baseline"
+    },
+    {
+      "id": 13,
+      "category": "git",
+      "difficulty": "easy",
+      "bash": "git pull",
+      "dictated": "git pull",
+      "notes": "Baseline"
+    },
+    {
+      "id": 14,
+      "category": "git",
+      "difficulty": "easy",
+      "bash": "git push origin master",
+      "dictated": "git push origin master",
+      "notes": "Multi-word, no syntax transformation"
+    },
+    {
+      "id": 15,
+      "category": "git",
+      "difficulty": "medium",
+      "bash": "git add -A",
+      "dictated": "git add dash A",
+      "notes": "Flag with uppercase letter"
+    },
+    {
+      "id": 16,
+      "category": "git",
+      "difficulty": "medium",
+      "bash": "git clone git@github.com:arach/clipper.git",
+      "dictated": "git clone git at GitHub dot com colon arach slash clipper dot git",
+      "notes": "SSH URL with special characters"
+    },
+    {
+      "id": 17,
+      "category": "quotes",
+      "difficulty": "medium",
+      "bash": "git commit -m \"fix latency\"",
+      "dictated": "git commit dash M quote fix latency quote",
+      "notes": "Quoted commit message"
+    },
+    {
+      "id": 18,
+      "category": "quotes",
+      "difficulty": "medium",
+      "bash": "git commit -m \"update model catalog\"",
+      "dictated": "git commit dash M quote update model catalog quote",
+      "notes": "Longer quoted message"
+    },
+    {
+      "id": 19,
+      "category": "quotes",
+      "difficulty": "hard",
+      "bash": "git commit -m \"fix: resolve XPC timeout on cold start\"",
+      "dictated": "git commit dash M quote fix colon resolve XPC timeout on cold start quote",
+      "notes": "Quoted message with colon and abbreviation"
+    },
+    {
+      "id": 20,
+      "category": "quotes",
+      "difficulty": "medium",
+      "bash": "say -v ava \"Hi, I'm your new premium voice\"",
+      "dictated": "say dash V ava quote hi I'm your new premium voice quote",
+      "notes": "Quoted string with apostrophe"
+    },
+    {
+      "id": 21,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "bun run dev",
+      "dictated": "bun run dev",
+      "notes": "No transformation"
+    },
+    {
+      "id": 22,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "bun install",
+      "dictated": "bun install",
+      "notes": "No transformation"
+    },
+    {
+      "id": 23,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "bun dev",
+      "dictated": "bun dev",
+      "notes": "Shorthand"
+    },
+    {
+      "id": 24,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "bun run dev --port 5189",
+      "dictated": "bun run dev dash dash port 5189",
+      "notes": "Double dash flag with number"
+    },
+    {
+      "id": 25,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "brew install age",
+      "dictated": "brew install age",
+      "notes": "No transformation"
+    },
+    {
+      "id": 26,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "brew upgrade gh",
+      "dictated": "brew upgrade GH",
+      "notes": "Abbreviation casing"
+    },
+    {
+      "id": 27,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "npm i -g @openai/codex",
+      "dictated": "NPM I dash G at OpenAI slash codex",
+      "notes": "Scoped package with @ symbol"
+    },
+    {
+      "id": 28,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "npx vercel --prod",
+      "dictated": "NPX vercel dash dash prod",
+      "notes": "Double dash flag"
+    },
+    {
+      "id": 29,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "talkie-dev dev rebuild inference",
+      "dictated": "talkie dash dev dev rebuild inference",
+      "notes": "Hyphenated tool name"
+    },
+    {
+      "id": 30,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "talkie-dev dev status",
+      "dictated": "talkie dash dev dev status",
+      "notes": "Hyphenated tool name"
+    },
+    {
+      "id": 31,
+      "category": "tools",
+      "difficulty": "hard",
+      "bash": "talkie-dev dev logs inference --since 5m",
+      "dictated": "talkie dash dev dev logs inference dash dash since five M",
+      "notes": "Hyphenated tool, double dash flag, spoken number with unit"
+    },
+    {
+      "id": 32,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "talkie inference generate \"hello\" --verbose",
+      "dictated": "talkie inference generate quote hello quote dash dash verbose",
+      "notes": "Quoted arg and double dash flag"
+    },
+    {
+      "id": 33,
+      "category": "numbers",
+      "difficulty": "medium",
+      "bash": "talkie inference generate \"test\" --temp 0.7",
+      "dictated": "talkie inference generate quote test quote dash dash temp zero point seven",
+      "notes": "Decimal number from speech"
+    },
+    {
+      "id": 34,
+      "category": "numbers",
+      "difficulty": "medium",
+      "bash": "talkie inference generate \"test\" --tokens 512",
+      "dictated": "talkie inference generate quote test quote dash dash tokens five twelve",
+      "notes": "Spoken number — ambiguous (512 vs 'five twelve')"
+    },
+    {
+      "id": 35,
+      "category": "numbers",
+      "difficulty": "medium",
+      "bash": "talkie inference generate \"test\" --tokens 100",
+      "dictated": "talkie inference generate quote test quote dash dash tokens one hundred",
+      "notes": "Spoken number"
+    },
+    {
+      "id": 36,
+      "category": "numbers",
+      "difficulty": "hard",
+      "bash": "say -v ava -r 280 \"hello world\"",
+      "dictated": "say dash V ava dash R two eighty quote hello world quote",
+      "notes": "Multiple flags with spoken number and quoted string"
+    },
+    {
+      "id": 37,
+      "category": "pipes",
+      "difficulty": "medium",
+      "bash": "ps aux | grep bun",
+      "dictated": "PS aux pipe grep bun",
+      "notes": "Single pipe"
+    },
+    {
+      "id": 38,
+      "category": "pipes",
+      "difficulty": "medium",
+      "bash": "cd cli && bun run build",
+      "dictated": "CD CLI and and bun run build",
+      "notes": "Double ampersand from 'and and'"
+    },
+    {
+      "id": 39,
+      "category": "pipes",
+      "difficulty": "medium",
+      "bash": "cd landing; bun run dev",
+      "dictated": "CD landing semicolon bun run dev",
+      "notes": "Semicolon separator"
+    },
+    {
+      "id": 40,
+      "category": "pipes",
+      "difficulty": "hard",
+      "bash": "git add -A && git commit -m \"fix typo\" && git push",
+      "dictated": "git add dash A and and git commit dash M quote fix typo quote and and git push",
+      "notes": "Triple chained with quotes"
+    },
+    {
+      "id": 41,
+      "category": "paths",
+      "difficulty": "medium",
+      "bash": "ls ~/Library/Application\\ Support/Talkie/",
+      "dictated": "LS tilde slash library slash application support slash talkie slash",
+      "notes": "Escaped space in path, home directory"
+    },
+    {
+      "id": 42,
+      "category": "paths",
+      "difficulty": "medium",
+      "bash": "cat .env",
+      "dictated": "cat dot E N V",
+      "notes": "Dot-prefixed hidden file, spelled out"
+    },
+    {
+      "id": 43,
+      "category": "paths",
+      "difficulty": "medium",
+      "bash": "vim .env.local",
+      "dictated": "vim dot E N V dot local",
+      "notes": "Multiple dots in filename"
+    },
+    {
+      "id": 44,
+      "category": "paths",
+      "difficulty": "medium",
+      "bash": "cat demo-typing.md",
+      "dictated": "cat demo dash typing dot MD",
+      "notes": "Hyphenated filename with extension"
+    },
+    {
+      "id": 45,
+      "category": "paths",
+      "difficulty": "hard",
+      "bash": "less package.json",
+      "dictated": "less package dot JSON",
+      "notes": "Dot-separated filename"
+    },
+    {
+      "id": 46,
+      "category": "paths",
+      "difficulty": "hard",
+      "bash": "/Users/arach/dev/vif/scripts/launchd.sh restart",
+      "dictated": "slash users slash arach slash dev slash vif slash scripts slash launch D dot SH restart",
+      "notes": "Absolute path with many segments"
+    },
+    {
+      "id": 47,
+      "category": "quotes",
+      "difficulty": "hard",
+      "bash": "grep -r \"ServiceBridge\" macOS/TalkieKit/",
+      "dictated": "grep dash R quote service bridge quote mac OS slash talkie kit slash",
+      "notes": "CamelCase inside quotes, compound path"
+    },
+    {
+      "id": 48,
+      "category": "compound",
+      "difficulty": "hard",
+      "bash": "vmmap -summary $(pgrep -x Talkie) 2>/dev/null | head -25",
+      "dictated": "VM map dash summary dollar paren P grep dash X talkie close paren two greater than slash dev slash null pipe head dash twenty five",
+      "notes": "Command substitution, stderr redirect, pipe"
+    },
+    {
+      "id": 49,
+      "category": "compound",
+      "difficulty": "hard",
+      "bash": "vmmap $(pgrep -x Talkie) | grep \"Physical footprint\"",
+      "dictated": "VM map dollar paren P grep dash X talkie close paren pipe grep quote physical footprint quote",
+      "notes": "Command substitution with pipe and quoted grep"
+    },
+    {
+      "id": 50,
+      "category": "redirects",
+      "difficulty": "medium",
+      "bash": "echo \"hello\" > output.txt",
+      "dictated": "echo quote hello quote greater than output dot TXT",
+      "notes": "Simple redirect to file"
+    },
+    {
+      "id": 51,
+      "category": "redirects",
+      "difficulty": "medium",
+      "bash": "echo \"hello\" >> output.txt",
+      "dictated": "echo quote hello quote double greater than output dot TXT",
+      "notes": "Append redirect"
+    },
+    {
+      "id": 52,
+      "category": "compound",
+      "difficulty": "hard",
+      "bash": "curl -fsSL https://opencode.ai/install | bash",
+      "dictated": "curl dash F S S L HTTPS colon slash slash open code dot AI slash install pipe bash",
+      "notes": "URL with protocol, piped to bash"
+    },
+    {
+      "id": 53,
+      "category": "git",
+      "difficulty": "hard",
+      "bash": "git clone git@github.com:arach/usetalkie.com.git ~/dev/usetalkie.com",
+      "dictated": "git clone git at GitHub dot com colon arach slash use talkie dot com dot git tilde slash dev slash use talkie dot com",
+      "notes": "SSH clone with dots in repo name and custom destination"
+    },
+    {
+      "id": 54,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "npx skills add arach/arc",
+      "dictated": "NPX skills add arach slash arc",
+      "notes": "Slash-separated argument"
+    },
+    {
+      "id": 55,
+      "category": "tools",
+      "difficulty": "hard",
+      "bash": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines",
+      "dictated": "NPX skills add HTTPS colon slash slash GitHub dot com slash vercel dash labs slash agent dash skills dash dash skill web dash design dash guidelines",
+      "notes": "URL argument with double dash flag and hyphenated value"
+    },
+    {
+      "id": 56,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "claude --resume",
+      "dictated": "claude dash dash resume",
+      "notes": "Double dash flag"
+    },
+    {
+      "id": 57,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "htop",
+      "dictated": "H top",
+      "notes": "Single word, might be transcribed with space"
+    },
+    {
+      "id": 58,
+      "category": "tools",
+      "difficulty": "easy",
+      "bash": "top",
+      "dictated": "top",
+      "notes": "Baseline — no transformation"
+    },
+    {
+      "id": 59,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd www",
+      "dictated": "CD www",
+      "notes": "Simple directory"
+    },
+    {
+      "id": 60,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd web",
+      "dictated": "CD web",
+      "notes": "Simple directory"
+    },
+    {
+      "id": 61,
+      "category": "tools",
+      "difficulty": "hard",
+      "bash": "security unlock-keychain ~/Library/Keychains/login.keychain-db",
+      "dictated": "security unlock dash keychain tilde slash library slash keychains slash login dot keychain dash DB",
+      "notes": "Long compound path with hyphens and dots"
+    },
+    {
+      "id": 62,
+      "category": "pipes",
+      "difficulty": "hard",
+      "bash": "ps aux | grep Talkie | grep -v grep",
+      "dictated": "PS aux pipe grep talkie pipe grep dash V grep",
+      "notes": "Double pipe chain with flag"
+    },
+    {
+      "id": 63,
+      "category": "flags",
+      "difficulty": "medium",
+      "bash": "claude -h",
+      "dictated": "claude dash H",
+      "notes": "Single letter flag"
+    },
+    {
+      "id": 64,
+      "category": "paths",
+      "difficulty": "hard",
+      "bash": "vim /Users/arach/dev/.env",
+      "dictated": "vim slash users slash arach slash dev slash dot E N V",
+      "notes": "Absolute path to hidden file"
+    },
+    {
+      "id": 65,
+      "category": "compound",
+      "difficulty": "hard",
+      "bash": "pgrep -x TalkieAgent | xargs kill -9",
+      "dictated": "P grep dash X talkie agent pipe X args kill dash nine",
+      "notes": "Pipe with signal number"
+    },
+    {
+      "id": 66,
+      "category": "redirects",
+      "difficulty": "hard",
+      "bash": "talkie-dev dev logs inference --since 5m 2>&1 | grep error",
+      "dictated": "talkie dash dev dev logs inference dash dash since five M two greater than ampersand one pipe grep error",
+      "notes": "stderr redirect merged with pipe"
+    },
+    {
+      "id": 67,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "talkie inference load mlx-community/Llama-3.2-1B-Instruct-4bit",
+      "dictated": "talkie inference load MLX dash community slash llama dash three dot two dash one B dash instruct dash four bit",
+      "notes": "HuggingFace model ID with many hyphens and dots"
+    },
+    {
+      "id": 68,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "talkie inference unload",
+      "dictated": "talkie inference unload",
+      "notes": "No transformation"
+    },
+    {
+      "id": 69,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "talkie inference status --json",
+      "dictated": "talkie inference status dash dash JSON",
+      "notes": "Double dash flag"
+    },
+    {
+      "id": 70,
+      "category": "compound",
+      "difficulty": "hard",
+      "bash": "cd cli && bun run build && talkie inference status",
+      "dictated": "CD CLI and and bun run build and and talkie inference status",
+      "notes": "Triple chain with 'and and'"
+    },
+    {
+      "id": 71,
+      "category": "git",
+      "difficulty": "medium",
+      "bash": "gh repo clone arach/clipper",
+      "dictated": "GH repo clone arach slash clipper",
+      "notes": "GitHub CLI with slash"
+    },
+    {
+      "id": 72,
+      "category": "git",
+      "difficulty": "hard",
+      "bash": "gh pr create --title \"fix inference latency\" --body \"Added TTFT tracking\"",
+      "dictated": "GH PR create dash dash title quote fix inference latency quote dash dash body quote added TTFT tracking quote",
+      "notes": "Multiple double dash flags with quoted values"
+    },
+    {
+      "id": 73,
+      "category": "numbers",
+      "difficulty": "hard",
+      "bash": "talkie inference generate \"test\" --temp 0.7 --tokens 512 --model mlx-community/Qwen2.5-0.5B-Instruct-4bit",
+      "dictated": "talkie inference generate quote test quote dash dash temp zero point seven dash dash tokens five hundred twelve dash dash model MLX dash community slash Qwen two point five dash zero point five B dash instruct dash four bit",
+      "notes": "Multiple numeric conversions and complex model ID"
+    },
+    {
+      "id": 74,
+      "category": "pipes",
+      "difficulty": "medium",
+      "bash": "cat package.json | python3 -c \"import sys,json; print(json.load(sys.stdin))\"",
+      "dictated": "cat package dot JSON pipe python three dash C quote import sys comma JSON semicolon print open paren JSON dot load open paren sys dot stdin close paren close paren quote",
+      "notes": "Inline Python with nested parens — probably too hard for any small model"
+    },
+    {
+      "id": 75,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd ../dewey",
+      "dictated": "CD dot dot slash Dewey",
+      "notes": "Sibling directory"
+    },
+    {
+      "id": 76,
+      "category": "nav",
+      "difficulty": "easy",
+      "bash": "cd ../vif",
+      "dictated": "CD dot dot slash VIF",
+      "notes": "Sibling directory, short name"
+    },
+    {
+      "id": 77,
+      "category": "nav",
+      "difficulty": "medium",
+      "bash": "cd dewey/www",
+      "dictated": "CD Dewey slash www",
+      "notes": "Nested path"
+    },
+    {
+      "id": 78,
+      "category": "tools",
+      "difficulty": "medium",
+      "bash": "opencode auth login",
+      "dictated": "open code auth login",
+      "notes": "Tool name that Whisper might split into two words"
+    },
+    {
+      "id": 79,
+      "category": "flags",
+      "difficulty": "hard",
+      "bash": "curl -fsSL https://example.com/install.sh",
+      "dictated": "curl dash F S S L HTTPS colon slash slash example dot com slash install dot SH",
+      "notes": "Packed flags and URL"
+    },
+    {
+      "id": 80,
+      "category": "compound",
+      "difficulty": "hard",
+      "bash": "mkdir -p src/components && touch src/components/Button.tsx",
+      "dictated": "M K dir dash P SRC slash components and and touch SRC slash components slash button dot TSX",
+      "notes": "mkdir + touch chain, CamelCase filename"
+    }
+  ]
+}

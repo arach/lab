@@ -1,0 +1,43 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+.venv/
+
+# Node
+node_modules/
+.next/
+.env.local
+
+# Secrets
+.hf
+.env
+
+# Large model files
+*.safetensors
+*.bin
+*.gguf
+
+# NL2Bash source (download separately)
+nl2bash-repo/
+
+# Adapter weights (track configs, not weights)
+training/adapters/*/adapter.safetensors
+training/adapters/*/model.safetensors.index.json
+
+# Generated finetune outputs and local training artifacts
+training/finetune/.venv/
+training/finetune/adapters/
+training/finetune/**/train.jsonl
+training/finetune/**/valid.jsonl
+training/finetune/**/test.jsonl
+training/finetune/**/preview.txt
+
+# Local eval outputs
+eval/local_intelligence/results/*.json
+
+out/
+.vercel

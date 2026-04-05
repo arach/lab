@@ -1,0 +1,66 @@
+{"prompt": "X percent equals two", "completion": "x%=2"}
+{"prompt": "button dot T S X", "completion": "Button.tsx"}
+{"prompt": "triple backtick", "completion": "```"}
+{"prompt": "hello equals world", "completion": "hello=world"}
+{"prompt": "find dot dash name quote star dot T S X quote dash delete", "completion": "find . -name \"*.tsx\" -delete"}
+{"prompt": "ten S", "completion": "10s"}
+{"prompt": "if X bang equals equals Y", "completion": "if x !== y"}
+{"prompt": "no space fire base", "completion": "firebase"}
+{"prompt": "HTTP colon slash slash one two seven dot zero dot zero dot one colon three thousand", "completion": "http://127.0.0.1:3000"}
+{"prompt": "dot yaml", "completion": ".yaml"}
+{"prompt": "NPM run build and and NPM run test", "completion": "npm run build && npm run test"}
+{"prompt": "set dash E and and set dash O camel case pipe fail", "completion": "set -e && set -o pipefail"}
+{"prompt": "dot slash", "completion": "./"}
+{"prompt": "quote test dash value quote", "completion": "\"test-value\""}
+{"prompt": "let camel case file URL colon all caps URL", "completion": "let fileURL: URL"}
+{"prompt": "open paren close paren", "completion": "()"}
+{"prompt": "no space type script", "completion": "typescript"}
+{"prompt": "zero point nine nine", "completion": "0.99"}
+{"prompt": "one two seven dot zero dot zero dot one colon five four three two", "completion": "127.0.0.1:5432"}
+{"prompt": "double colon", "completion": "::"}
+{"prompt": "SSH dash I tilde slash dot SSH slash ID underscore RSA user at one nine two dot one six eight dot one dot one", "completion": "ssh -i ~/.ssh/id_rsa user@192.168.1.1"}
+{"prompt": "HTTPS colon slash slash example dot com slash search question mark Q equals hello", "completion": "https://example.com/search?q=hello"}
+{"prompt": "A question mark B colon C", "completion": "a ? b : c"}
+{"prompt": "ten dot zero dot zero dot one", "completion": "10.0.0.1"}
+{"prompt": "snake case created at", "completion": "created_at"}
+{"prompt": "pipe grep quote physical footprint quote", "completion": "| grep \"Physical footprint\""}
+{"prompt": "record open angle string comma unknown close angle", "completion": "Record<string, unknown>"}
+{"prompt": "dash L A", "completion": "-la"}
+{"prompt": "if X not equals Y", "completion": "if x != y"}
+{"prompt": "mac OS slash talkie slash app slash app delegate dot swift", "completion": "macOS/Talkie/App/AppDelegate.swift"}
+{"prompt": "hello comma world", "completion": "hello, world"}
+{"prompt": "eighty eighty", "completion": "8080"}
+{"prompt": "one word hello world", "completion": "helloworld"}
+{"prompt": "demo dash typing dot M D", "completion": "demo-typing.md"}
+{"prompt": "docker run dash D dash P nine zero nine zero colon nine zero nine zero grafana", "completion": "docker run -d -p 9090:9090 grafana"}
+{"prompt": "git stash push dash M quote work in progress quote", "completion": "git stash push -m \"work in progress\""}
+{"prompt": "dash X", "completion": "-x"}
+{"prompt": "camel case content view", "completion": "contentView"}
+{"prompt": "percent D", "completion": "%d"}
+{"prompt": "two greater than slash dev slash null", "completion": "2>/dev/null"}
+{"prompt": "const camel case app equals express open paren close paren", "completion": "const app = express()"}
+{"prompt": "star star", "completion": "**"}
+{"prompt": "camel case get value", "completion": "getValue"}
+{"prompt": "brew install dash dash cask visual dash studio dash code", "completion": "brew install --cask visual-studio-code"}
+{"prompt": "open paren X colon pascal case int comma Y colon pascal case int close paren", "completion": "(x: Int, y: Int)"}
+{"prompt": "open angle close angle", "completion": "<>"}
+{"prompt": "docker build dash T my dash app colon latest dot", "completion": "docker build -t my-app:latest ."}
+{"prompt": "dot dot slash dev", "completion": "../dev"}
+{"prompt": "dash dash tokens", "completion": "--tokens"}
+{"prompt": "CD dot dot", "completion": "cd .."}
+{"prompt": "A semicolon B semicolon C", "completion": "A; B; C"}
+{"prompt": "dot dot slash dot dot slash node underscore modules", "completion": "../../node_modules"}
+{"prompt": "dot star", "completion": ".*"}
+{"prompt": "double quote hello world double quote", "completion": "\"hello world\""}
+{"prompt": "snake case batch size", "completion": "batch_size"}
+{"prompt": "dollar all caps USER", "completion": "$USER"}
+{"prompt": "snake case total tokens generated", "completion": "total_tokens_generated"}
+{"prompt": "dot dot slash packages", "completion": "../packages"}
+{"prompt": "dash dash prod", "completion": "--prod"}
+{"prompt": "export all caps API underscore KEY equals quote my dash key dash one two three quote", "completion": "export API_KEY=\"my-key-123\""}
+{"prompt": "colon equals", "completion": ":="}
+{"prompt": "SRC slash components slash button dot T S X", "completion": "src/components/Button.tsx"}
+{"prompt": "if X less than or equal Y", "completion": "if x <= y"}
+{"prompt": "pip install dash R requirements dot T X T", "completion": "pip install -r requirements.txt"}
+{"prompt": "capital hello", "completion": "Hello"}
+{"prompt": "pascal case debug kit", "completion": "DebugKit"}

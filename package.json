@@ -5,9 +5,12 @@
   "scripts": {
     "generate:og": "bun scripts/generate-og-images.mjs",
     "og:generate": "bun scripts/generate-og-images.mjs",
+    "og:validate": "bun scripts/validate-og-images.mjs",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "publish": "bun scripts/publish.mjs",
+    "ship": "bun run publish"
   },
   "dependencies": {
     "@arach/og": "github:arach/og",

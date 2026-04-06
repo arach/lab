@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "generate:og": "bun scripts/generate-og-images.mjs",
+    "og:generate": "bun scripts/generate-og-images.mjs",
     "dev": "next dev",
-    "prebuild": "bun scripts/prebuild.mjs",
     "build": "next build",
     "start": "next start"
   },

@@ -10,9 +10,10 @@ import BenchmarkSnapshot from '../../../components/BenchmarkSnapshot'
 import BenchmarkRepairPanel from '../../../components/BenchmarkRepairPanel'
 import SemanticEvalPanel from '../../../components/SemanticEvalPanel'
 import ArticleSidebar from '../../../components/ArticleSidebar'
+import ArticleSeriesRail from '../../../components/ArticleSeriesRail'
 import ScorePill from '../../../components/ScorePill'
 import StatGrid from '../../../components/StatGrid'
-import { getAllSlugs, getIdeaBySlug } from '../../../lib/blog-content'
+import { getAllSlugs, getIdeaBySlug, getIdeaOgImagePath } from '../../../lib/blog-content'
 import {
   getBenchmarkRepairSummary,
   getCoreEvalCardsPreview,
@@ -83,13 +84,16 @@ export async function generateMetadata({ params, searchParams }) {
   }
 
   const page = resolvedSearchParams?.page
-  const pageSuffix = slug === 'designing-a-semantic-eval-for-tiny-models' && page ? ` (Page ${page})` : ''
+  const articlePages = buildArticlePages(slug, idea.content)
+  const pageNumber = Math.max(1, Number.parseInt(page || '1', 10) || 1)
+  const hasMultiplePages = articlePages.length > 1
+  const pageSuffix = hasMultiplePages && pageNumber <= articlePages.length ? ` (Page ${pageNumber})` : ''
 
   return createLabMetadata({
     title: `${idea.title}${pageSuffix} - Training Lab`,
     description: idea.description,
     pathname: `/ideas/${slug}`,
-    imagePath: `/og/lab/ideas/${idea.slug}.png`,
+    imagePath: getIdeaOgImagePath(idea.slug),
     type: 'article',
   })
 }
@@ -130,6 +134,38 @@ function extractHeadings(content) {
   return headings
 }
 
+function extractPageLabel(content, number) {
+  const kickerMatch = content.match(/<div class="article-page-kicker">([\s\S]*?)<\/div>/)
+  const label = kickerMatch?.[1]?.replace(/<[^>]+>/g, '').trim()
+  return label || `Page ${number}`
+}
+
+function extractPageTitle(content, number) {
+  const headingMatch = content.match(/<h2>([\s\S]*?)<\/h2>/)
+  const title = headingMatch?.[1]
+    ?.replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .trim()
+  return title || `Page ${number}`
+}
+
+function buildArticlePages(slug, content) {
+  const sections = extractArticlePages(content)
+  if (sections.length <= 1) {
+    return []
+  }
+
+  return sections.map((section, index) => {
+    const number = index + 1
+    return {
+      href: `/ideas/${slug}?page=${number}`,
+      label: extractPageLabel(section, number),
+      title: extractPageTitle(section, number),
+      number,
+    }
+  })
+}
+
 export default async function IdeaPage({ params, searchParams }) {
   const { slug } = await params
   const resolvedSearchParams = await searchParams
@@ -143,18 +179,14 @@ export default async function IdeaPage({ params, searchParams }) {
     slug === 'designing-evals-for-small-workflow-intelligence'
   const showRepairPanel = slug === 'fixing-v1-with-v1-1'
   const showSemanticPanel = slug === 'designing-a-semantic-eval-for-tiny-models'
-  const semanticPageNumber = Math.max(1, Number.parseInt(resolvedSearchParams?.page || '1', 10) || 1)
-  const semanticPages = [
-    { href: `/ideas/${slug}?page=1`, label: 'Part I', title: 'Why this eval exists', number: 1 },
-    { href: `/ideas/${slug}?page=2`, label: 'Part II', title: 'How the scores work', number: 2 },
-    { href: `/ideas/${slug}?page=3`, label: 'Part III', title: 'What the local runs show', number: 3 },
-  ]
-  const semanticSections = showSemanticPanel ? extractArticlePages(idea.content) : []
-  const semanticIndex = Math.min(semanticSections.length, semanticPageNumber) - 1
-  const articleContent = showSemanticPanel ? semanticSections[semanticIndex] : idea.content
+  const articlePages = buildArticlePages(slug, idea.content)
+  const pageNumber = Math.max(1, Number.parseInt(resolvedSearchParams?.page || '1', 10) || 1)
+  const articleSections = articlePages.length ? extractArticlePages(idea.content) : []
+  const pageIndex = articleSections.length ? Math.min(articleSections.length, pageNumber) - 1 : 0
+  const articleContent = articleSections.length ? articleSections[pageIndex] : idea.content
   const articleHeadings = extractHeadings(articleContent)
-  const previousPage = showSemanticPanel && semanticPageNumber > 1 ? semanticPages[semanticPageNumber - 2] : null
-  const nextPage = showSemanticPanel && semanticPageNumber < semanticPages.length ? semanticPages[semanticPageNumber] : null
+  const previousPage = articlePages.length && pageNumber > 1 ? articlePages[pageNumber - 2] : null
+  const nextPage = articlePages.length && pageNumber < articlePages.length ? articlePages[pageNumber] : null
 
   return (
     <IdeaArticleLayout
@@ -166,6 +198,11 @@ export default async function IdeaPage({ params, searchParams }) {
       status={idea.status}
       readingTime={idea.readingTime}
       showEvalPanels={showEvalPanels || showRepairPanel || showSemanticPanel}
+      seriesNav={
+        articlePages.length ? (
+          <ArticleSeriesRail pages={articlePages} currentPage={pageNumber} />
+        ) : null
+      }
       aside={
         <ArticleSidebar headings={articleHeadings} />
       }
@@ -189,29 +226,8 @@ export default async function IdeaPage({ params, searchParams }) {
       >
         {articleContent}
       </ReactMarkdown>
-      {showSemanticPanel ? (
-        <section className="article-series-strip" aria-label="Series navigation">
-          <div className="article-series-strip-meta">
-            <span className="section-kicker">Series</span>
-            <h2>Continue this multipart piece</h2>
-            <p>
-              Three short pages, one connected essay. Jump directly to the part
-              you want.
-            </p>
-          </div>
-          <div className="article-series-strip-grid">
-            {semanticPages.map((page) => (
-              <Link
-                key={page.number}
-                href={page.href}
-                className={`article-series-card${semanticPageNumber === page.number ? ' article-series-card-active' : ''}`}
-              >
-                <span className="article-series-card-label">{page.label}</span>
-                <span className="article-series-card-title">{page.title}</span>
-              </Link>
-            ))}
-          </div>
-          <div className="article-series-footer">
+      {articlePages.length ? (
+        <nav className="article-series-footer" aria-label="Series footer navigation">
             {previousPage ? (
               <Link href={previousPage.href} className="article-series-link">
                 ← {previousPage.label}
@@ -226,8 +242,7 @@ export default async function IdeaPage({ params, searchParams }) {
             ) : (
               <span className="article-series-link article-series-link-muted">End</span>
             )}
-          </div>
-        </section>
+        </nav>
       ) : null}
     </IdeaArticleLayout>
   )

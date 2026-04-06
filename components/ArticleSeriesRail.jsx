@@ -1,25 +1,26 @@
 import Link from 'next/link'
 
-export default function ArticleSeriesRail({ pages, currentPage }) {
+export default function ArticleSeriesRail({ pages = [], currentPage }) {
+  if (!pages.length) {
+    return null
+  }
+
   return (
-    <aside className="article-series-rail">
-      <div className="article-sidebar-sticky">
-        <div className="article-sidebar-card article-sidebar-card-series">
-          <p className="section-kicker">Series</p>
-          <div className="article-sidebar-list">
-            {pages.map((page) => (
-              <Link
-                key={page.number}
-                href={page.href}
-                className={`article-sidebar-link article-sidebar-link-series${currentPage === page.number ? ' article-sidebar-link-active' : ''}`}
-              >
-                <span className="article-sidebar-link-label">{page.label}</span>
-                <span className="article-sidebar-link-title">{page.title}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
+    <nav className="article-series-rail" aria-label="Article series">
+      <p className="section-kicker">Series</p>
+      <div className="article-series-rail-row">
+        {pages.map((page) => (
+          <Link
+            key={page.number}
+            href={page.href}
+            className={`article-series-rail-link${currentPage === page.number ? ' article-series-rail-link-active' : ''}`}
+            aria-current={currentPage === page.number ? 'page' : undefined}
+          >
+            <span className="article-series-rail-label">{page.label}</span>
+            <span className="article-series-rail-title">{page.title}</span>
+          </Link>
+        ))}
       </div>
-    </aside>
+    </nav>
   )
 }

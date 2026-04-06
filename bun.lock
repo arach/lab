@@ -6,7 +6,7 @@
       "name": "training-lab-site",
       "dependencies": {
         "@arach/og": "github:arach/og",
-        "next": "^16.2.2",
+        "next": "16.2.2",
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
         "react-markdown": "10.1.0",
@@ -149,7 +149,7 @@
 
     "bare-url": ["bare-url@2.4.0", "", { "dependencies": { "bare-path": "^3.0.0" } }, "sha512-NSTU5WN+fy/L0DDenfE8SXQna4voXuW0FHM7wH8i3/q9khUSchfPbPezO4zSFMnDGIf9YE+mt/RWhZgNRKRIXA=="],
 
-    "baseline-browser-mapping": ["baseline-browser-mapping@2.10.15", "", { "bin": { "baseline-browser-mapping": "dist/cli.cjs" } }, "sha512-1nfKCq9wuAZFTkA2ey/3OXXx7GzFjLdkTiFVNwlJ9WqdI706CZRIhEqjuwanjMIja+84jDLa9rcyZDPDiVkASQ=="],
+    "baseline-browser-mapping": ["baseline-browser-mapping@2.10.16", "", { "bin": { "baseline-browser-mapping": "dist/cli.cjs" } }, "sha512-Lyf3aK28zpsD1yQMiiHD4RvVb6UdMoo8xzG2XzFIfR9luPzOpcBlAsT/qfB1XWS1bxWT+UtE4WmQgsp297FYOA=="],
 
     "basic-ftp": ["basic-ftp@5.2.0", "", {}, "sha512-VoMINM2rqJwJgfdHq6RiUudKt2BV+FY5ZFezP/ypmwayk68+NzzAQy4XXLlqsGD4MCzq3DrmNFD/uUmBJuGoXw=="],
 

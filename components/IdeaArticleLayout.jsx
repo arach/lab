@@ -17,6 +17,7 @@ export default function IdeaArticleLayout({
   status,
   readingTime,
   evalPanels,
+  seriesNav,
   aside,
   children,
 }) {
@@ -37,25 +38,28 @@ export default function IdeaArticleLayout({
 
       <section className="article-hero-wrap">
         <div className="article-hero">
-          <div className="hero-meta">
-            <span className="meta-pill">{sectionLabel}</span>
-            {status ? <span className="meta-pill">{status}</span> : null}
-            {tags.map((tag) => (
-              <span key={tag} className="meta-pill">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <h1>{title}</h1>
-          {description ? <p>{description}</p> : null}
-          {date ? (
-            <div className="article-meta">
-              <span className="date-chip">{formatDate(date)}</span>
-              {readingTime ? (
-                <span className="date-chip">{readingTime} min read</span>
-              ) : null}
+          <div className="article-hero-inner">
+            <div className="hero-meta">
+              <span className="meta-pill">{sectionLabel}</span>
+              {status ? <span className="meta-pill">{status}</span> : null}
+              {tags.map((tag) => (
+                <span key={tag} className="meta-pill">
+                  {tag}
+                </span>
+              ))}
             </div>
-          ) : null}
+            <h1>{title}</h1>
+            {description ? <p>{description}</p> : null}
+            {date ? (
+              <div className="article-meta">
+                <span className="date-chip">{formatDate(date)}</span>
+                {readingTime ? (
+                  <span className="date-chip">{readingTime} min read</span>
+                ) : null}
+              </div>
+            ) : null}
+            {seriesNav ? <div className="article-hero-series">{seriesNav}</div> : null}
+          </div>
         </div>
       </section>
 

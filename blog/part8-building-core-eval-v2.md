@@ -7,8 +7,11 @@ slug: building-core-eval-v2
 date: 2026-04-05
 tags: evals, benchmark-design, calibration, structured-output, local-intelligence
 author: Arach
-hidden: true
+description: The practical design document behind core_eval_v2, from product truth and scoring layers to calibration rules and what still feels unfinished.
 -->
+
+<section id="page-1" class="article-page-section">
+<div class="article-page-kicker">Part I</div>
 
 ## Why this post exists
 
@@ -183,6 +186,10 @@ This split matters because it keeps us from mixing:
 - research-y ambition
 
 into one misleading blended score.
+</section>
+
+<section id="page-2" class="article-page-section">
+<div class="article-page-kicker">Part II</div>
 
 ## The actual core cards
 
@@ -303,6 +310,10 @@ and that tells us something practical:
 > needs normalization work.
 
 That is a much better insight than a flat “fail.”
+</section>
+
+<section id="page-3" class="article-page-section">
+<div class="article-page-kicker">Part III</div>
 
 ## The acceptance rules we had to loosen
 
@@ -446,3 +457,4 @@ Not settle the whole question of intelligence.
 Just tell the truth about a small workflow product.
 
 And honestly, that is already hard enough.
+</section>

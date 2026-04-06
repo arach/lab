@@ -8,6 +8,8 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  VERCEL_ORG_ID: team_4idZYM1vtyLD2utSda9Sl8sy
+  VERCEL_PROJECT_ID: prj_lrIsjCLBflosQdFRMn0A0VsLnlrN
 
 jobs:
   deploy:
@@ -21,6 +23,13 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+
+      - name: Link correct Vercel project
+        run: |
+          mkdir -p .vercel
+          cat > .vercel/project.json <<'EOF'
+          {"projectId":"prj_lrIsjCLBflosQdFRMn0A0VsLnlrN","orgId":"team_4idZYM1vtyLD2utSda9Sl8sy","projectName":"training-lab"}
+          EOF
 
       - name: Deploy to Vercel
         env:

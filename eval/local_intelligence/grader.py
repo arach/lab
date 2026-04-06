@@ -21,6 +21,13 @@ def normalize_raw_output(raw_text: str) -> str:
     return candidate
 
 
+def normalize_text_output(raw_text: str) -> str:
+    candidate = normalize_raw_output(raw_text)
+    candidate = re.sub(r"<think>.*?</think>", "", candidate, flags=re.DOTALL | re.IGNORECASE).strip()
+    candidate = re.sub(r"\n{3,}", "\n\n", candidate)
+    return candidate.strip()
+
+
 def parse_json_output(raw_text: str) -> tuple[Any, str | None, str]:
     candidate = raw_text.strip()
     try:
@@ -30,14 +37,53 @@ def parse_json_output(raw_text: str) -> tuple[Any, str | None, str]:
         try:
             return json.loads(normalized), None, "normalized"
         except json.JSONDecodeError:
+            decoder = json.JSONDecoder()
+            values = []
+            index = 0
+            try:
+                while index < len(normalized):
+                    while index < len(normalized) and normalized[index].isspace():
+                        index += 1
+                    if index >= len(normalized):
+                        break
+                    value, next_index = decoder.raw_decode(normalized, index)
+                    values.append(value)
+                    index = next_index
+                if values:
+                    return values, None, "normalized"
+            except json.JSONDecodeError:
+                pass
             return None, str(exc), "failed"
 
 
 def normalize_card_output(card: dict, parsed: Any) -> Any:
     card_id = card["id"]
 
+    if card_id == "memo-auto-title" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "title" not in parsed and "suggested_title" in parsed:
+            parsed["title"] = parsed["suggested_title"]
+        if "title" not in parsed and "suggestedTitle" in parsed:
+            parsed["title"] = parsed["suggestedTitle"]
+        return parsed
+
     if card_id == "action-item-extraction" and isinstance(parsed, list):
         return {"items": parsed}
+
+    if card_id == "action-item-extraction" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "items" not in parsed and isinstance(parsed.get("tasks"), list):
+            items = []
+            for item in parsed["tasks"]:
+                if not isinstance(item, dict):
+                    continue
+                normalized_item = dict(item)
+                confidence = normalized_item.get("confidence")
+                if isinstance(confidence, (int, float)) and confidence > 1 and confidence <= 5:
+                    normalized_item["confidence"] = round(confidence / 5, 4)
+                items.append(normalized_item)
+            parsed["items"] = items
+        return parsed
 
     if card_id == "what-matters-summary" and isinstance(parsed, dict):
         if "topPoints" not in parsed and "summary" in parsed:
@@ -49,6 +95,17 @@ def normalize_card_output(card: dict, parsed: Any) -> Any:
                     "evidence": item.get("evidence"),
                 }
                 for item in parsed.get("summary", [])
+                if isinstance(item, dict)
+            ]
+        if "topPoints" not in parsed and "points" in parsed:
+            parsed = dict(parsed)
+            parsed["topPoints"] = [
+                {
+                    "point": item.get("point", item.get("text")),
+                    "priority": item.get("priority", item.get("rank")),
+                    "evidence": item.get("evidence", item.get("quote")),
+                }
+                for item in parsed.get("points", [])
                 if isinstance(item, dict)
             ]
         return parsed
@@ -73,6 +130,17 @@ def normalize_card_output(card: dict, parsed: Any) -> Any:
         if "styledSummary" not in parsed and "rewritten_text" in parsed:
             parsed = dict(parsed)
             parsed["styledSummary"] = parsed["rewritten_text"]
+        if "styledSummary" not in parsed and "response" in parsed:
+            parsed = dict(parsed)
+            parsed["styledSummary"] = parsed["response"]
+        return parsed
+
+    if card_id == "transcript-cleanup-presets" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "cleanedText" not in parsed and "rewritten" in parsed:
+            parsed["cleanedText"] = parsed["rewritten"]
+        if "cleanedText" not in parsed and "rewritten_text" in parsed:
+            parsed["cleanedText"] = parsed["rewritten_text"]
         return parsed
 
     if card_id == "similar-memo-recall" and isinstance(parsed, dict):
@@ -85,6 +153,17 @@ def normalize_card_output(card: dict, parsed: Any) -> Any:
                     "rationale": item.get("rationale"),
                 }
                 for item in parsed.get("top_matches", [])
+                if isinstance(item, dict)
+            ]
+        if "matches" not in parsed and "topMatches" in parsed:
+            parsed = dict(parsed)
+            parsed["matches"] = [
+                {
+                    "memoId": item.get("memoId", item.get("id")),
+                    "relevance": item.get("relevance", item.get("relevance_score", item.get("relevanceScore"))),
+                    "rationale": item.get("rationale"),
+                }
+                for item in parsed.get("topMatches", [])
                 if isinstance(item, dict)
             ]
         return parsed
@@ -101,11 +180,48 @@ def normalize_card_output(card: dict, parsed: Any) -> Any:
             if contact and start_at:
                 parsed["title"] = parsed.get("title") or f"Call {contact}"
                 parsed["startAtISO"] = start_at
+        if "events" not in parsed and isinstance(parsed.get("calendarEvent"), dict):
+            event = parsed["calendarEvent"]
+            title = event.get("title") or event.get("name")
+            start_at = event.get("startAtISO") or event.get("time")
+            needs_confirmation = None
+            if isinstance(parsed.get("datetime"), dict):
+                needs_confirmation = parsed["datetime"].get("needsConfirmation")
+                if start_at is None:
+                    start_at = parsed["datetime"].get("value")
+            parsed["events"] = [
+                {
+                    "title": title,
+                    "startAtISO": start_at,
+                    "durationMinutes": event.get("durationMinutes") or event.get("duration"),
+                    "location": event.get("location"),
+                    "needsConfirmation": needs_confirmation,
+                }
+            ]
+        return parsed
+
+    if card_id == "reminder-normalization" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "reminderText" not in parsed and isinstance(parsed.get("reminder"), dict):
+            reminder = parsed["reminder"]
+            parsed["reminderText"] = reminder.get("text")
+            if "dueDateISO" not in parsed:
+                parsed["dueDateISO"] = reminder.get("dueDateISO")
+            if "followUpQuestion" not in parsed:
+                parsed["followUpQuestion"] = reminder.get("followUpQuestion")
         return parsed
 
     if card_id == "context-packet-builder" and isinstance(parsed, dict):
         parsed = dict(parsed)
         packet = parsed.get("packet")
+        if packet is None and any(key in parsed for key in ("decisions", "openTasks", "unresolvedQuestions", "relatedMemos")):
+            packet = {
+                "decisions": parsed.get("decisions", []),
+                "activeTasks": parsed.get("activeTasks", parsed.get("openTasks", [])),
+                "openQuestions": parsed.get("openQuestions", parsed.get("unresolvedQuestions", [])),
+                "relevantMemoIds": parsed.get("relevantMemoIds", [item.get("memoId") for item in parsed.get("relatedMemos", []) if isinstance(item, dict)]),
+            }
+            parsed["packet"] = packet
         if packet is None and isinstance(parsed.get("context_packet"), dict):
             context_packet = parsed["context_packet"]
             packet = {
@@ -119,10 +235,79 @@ def normalize_card_output(card: dict, parsed: Any) -> Any:
             parsed["tokenEstimate"] = len(json.dumps(packet, ensure_ascii=True).split())
         return parsed
 
+    if card_id == "personal-knowledge-graph" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if isinstance(parsed.get("nodes"), list):
+            parsed["nodes"] = [
+                {
+                    "id": item.get("id", item.get("nodeId")),
+                    "label": item.get("label", item.get("name")),
+                    "type": item.get("type"),
+                }
+                for item in parsed["nodes"]
+                if isinstance(item, dict)
+            ]
+        if isinstance(parsed.get("edges"), list):
+            parsed["edges"] = [
+                {
+                    "source": item.get("source", item.get("sourceNodeId")),
+                    "target": item.get("target", item.get("targetNodeId")),
+                    "label": item.get("label", item.get("type")),
+                    "type": item.get("type"),
+                }
+                for item in parsed["edges"]
+                if isinstance(item, dict)
+            ]
+        return parsed
+
+    if card_id == "contradiction-drift-detection" and isinstance(parsed, list):
+        return {"conflicts": parsed}
+
+    if card_id == "momentum-scoring" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "momentumScore" not in parsed and "score" in parsed:
+            parsed["momentumScore"] = parsed["score"]
+        return parsed
+
     if card_id == "local-agent-loop" and isinstance(parsed, dict):
         parsed = dict(parsed)
         if "verify" not in parsed and isinstance(parsed.get("steps"), dict):
             parsed["verify"] = parsed["steps"].get("verify")
+        return parsed
+
+    if card_id == "local-agent-loop" and isinstance(parsed, list):
+        normalized_steps = []
+        merged: dict[str, Any] = {"steps": normalized_steps}
+        for item in parsed:
+            if not isinstance(item, dict):
+                continue
+            if "step" in item:
+                normalized_steps.append(item)
+                if item.get("step") == "verify":
+                    merged["verify"] = item.get("output")
+            if "finalStatus" in item:
+                merged["finalStatus"] = item.get("finalStatus")
+                merged["finalOutput"] = item.get("finalOutput")
+        return merged
+
+    if card_id == "meeting-live-structure" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "updatedState" not in parsed and any(key in parsed for key in ("agenda", "decisions", "openQuestions", "actionItems")):
+            parsed["updatedState"] = {
+                "agenda": parsed.get("agenda", []),
+                "decisions": parsed.get("decisions", []),
+                "openQuestions": parsed.get("openQuestions", []),
+                "actionItems": parsed.get("actionItems", []),
+            }
+        return parsed
+
+    if card_id == "voice-os-command-layer" and isinstance(parsed, dict):
+        parsed = dict(parsed)
+        if "requiresConfirmation" not in parsed and isinstance(parsed.get("steps"), list):
+            parsed["requiresConfirmation"] = any(
+                isinstance(step, dict) and step.get("requiresConfirmation") is True
+                for step in parsed["steps"]
+            )
         return parsed
 
     return parsed
@@ -240,6 +425,10 @@ def _check_v2(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[
         value = str(_get(output, "title", ""))
         return bool(value) and len(value) <= 48, f"len(title)={len(value)}"
 
+    if assertion == "contract title length <= 60":
+        value = str(_get(output, "title", ""))
+        return bool(value) and len(value) <= 60, f"len(title)={len(value)}"
+
     if assertion == "confidence is numeric":
         value = _truthy_field(output, "confidence")
         return isinstance(value, (int, float)), f"confidence={value!r}"
@@ -325,6 +514,12 @@ def _check_v2(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[
         value = first.get("text") if isinstance(first, dict) else None
         return isinstance(value, str) and bool(value.strip()), f"text={value!r}"
 
+    if assertion == "first item due date absent when not stated":
+        items = output if isinstance(output, list) else _get(output, "items", [])
+        first = items[0] if isinstance(items, list) and items else {}
+        value = first.get("dueDateISO") if isinstance(first, dict) else None
+        return value in (None, ""), f"dueDateISO={value!r}"
+
     if assertion == "contract items field exists":
         value = _get(output, "items")
         return isinstance(value, list), f"items={value!r}"
@@ -357,6 +552,11 @@ def _check_v2(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[
         events = _event_candidates(output)
         return bool(events), f"events={events!r}"
 
+    if assertion == "calendar participant or title mentions Sam":
+        events = _event_candidates(output)
+        ok = any("sam" in json.dumps(event, ensure_ascii=True).lower() for event in events)
+        return ok, f"events={events!r}"
+
     if assertion == "contract startAtISO field exists or events array exists":
         events = _get(output, "events")
         start_at = _get(output, "startAtISO")
@@ -387,9 +587,59 @@ def _check_v2(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[
         value = _get(output, "matches")
         return isinstance(value, list), f"matches={value!r}"
 
+    if assertion == "styledSummary field exists":
+        value = _truthy_field(output, "styledSummary")
+        return value is not None, f"styledSummary={value!r}"
+
+    if assertion == "contract styledSummary field exists":
+        value = _get(output, "styledSummary")
+        return isinstance(value, str), f"styledSummary={value!r}"
+
+    if assertion == "clusters usable field exists":
+        value = _truthy_field(output, "clusters", "assignments")
+        return value is not None, f"clusters={value!r}"
+
+    if assertion == "contract clusters field exists":
+        value = _get(output, "clusters")
+        return isinstance(value, list), f"clusters={value!r}"
+
+    if assertion == "reason field exists":
+        value = _truthy_field(output, "reason")
+        return value is not None, f"reason={value!r}"
+
+    if assertion == "contract action field exists":
+        value = _get(output, "action")
+        return isinstance(value, str), f"action={value!r}"
+
+    if assertion == "route or routing policy exists":
+        route = _get(output, "route")
+        rules = _get(output, "routing_rules")
+        return isinstance(route, str) or isinstance(rules, list), f"route={route!r} rules={rules!r}"
+
+    if assertion == "router selects remote for long context":
+        route = str(_get(output, "route", "")).lower()
+        if route in {"cloud", "remote"}:
+            return True, f"route={route!r}"
+        rules = _get(output, "routing_rules", [])
+        ok = isinstance(rules, list) and any(
+            isinstance(rule, dict) and "remote" in str(rule.get("action", "")).lower()
+            for rule in rules
+        )
+        return ok, f"route={route!r} rules={rules!r}"
+
+    if assertion == "contract route field exists or routing_rules exists":
+        route = _get(output, "route")
+        rules = _get(output, "routing_rules")
+        ok = isinstance(route, str) or isinstance(rules, list)
+        return ok, f"route={route!r} rules={rules!r}"
+
     if assertion == "context packet usable field exists":
         value = _truthy_field(output, "packet", "context_packet")
         return value is not None, f"packet={value!r}"
+
+    if assertion == "summary usable field exists":
+        value = _truthy_field(output, "topPoints", "summary", "points")
+        return value is not None, f"summary={value!r}"
 
     if assertion == "contract packet field exists":
         value = _get(output, "packet")
@@ -398,6 +648,89 @@ def _check_v2(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[
     if assertion == "contract tokenEstimate field exists":
         value = _get(output, "tokenEstimate")
         return isinstance(value, (int, float)), f"tokenEstimate={value!r}"
+
+    if assertion == "checklist usable field exists":
+        value = _truthy_field(output, "checklist", "items")
+        return value is not None, f"checklist={value!r}"
+
+    if assertion == "contract checklist field exists":
+        value = _get(output, "checklist")
+        return isinstance(value, list), f"checklist={value!r}"
+
+    if assertion == "graph nodes and edges exist":
+        nodes = _get(output, "nodes", [])
+        edges = _get(output, "edges", [])
+        ok = isinstance(nodes, list) and len(nodes) >= 1 and isinstance(edges, list) and len(edges) >= 1
+        return ok, f"nodes={nodes!r} edges={edges!r}"
+
+    if assertion == "contract nodes and edges exist":
+        nodes = _get(output, "nodes")
+        edges = _get(output, "edges")
+        ok = isinstance(nodes, list) and isinstance(edges, list)
+        return ok, f"nodes={nodes!r} edges={edges!r}"
+
+    if assertion == "conflicts usable field exists":
+        value = _truthy_field(output, "conflicts")
+        return value is not None, f"conflicts={value!r}"
+
+    if assertion == "contract conflicts field exists":
+        value = _get(output, "conflicts")
+        return isinstance(value, list), f"conflicts={value!r}"
+
+    if assertion == "momentum score usable field exists":
+        value = _truthy_field(output, "momentumScore")
+        return value is not None, f"momentumScore={value!r}"
+
+    if assertion == "contract momentumScore field exists":
+        value = _get(output, "momentumScore")
+        return isinstance(value, (int, float)), f"momentumScore={value!r}"
+
+    if assertion == "agent loop has verify step":
+        verify = _get(output, "verify")
+        steps = _get(output, "steps", [])
+        ok = verify not in (None, "") or any(isinstance(step, dict) and step.get("step") == "verify" for step in steps)
+        return ok, f"verify={verify!r} steps={steps!r}"
+
+    if assertion == "agent loop has final status":
+        status = _get(output, "finalStatus")
+        return isinstance(status, str) and bool(status.strip()), f"finalStatus={status!r}"
+
+    if assertion == "local agent final output exists":
+        value = _truthy_field(output, "finalOutput", "reason")
+        return value is not None, f"finalOutput={_get(output, 'finalOutput')!r} reason={_get(output, 'reason')!r}"
+
+    if assertion == "contract finalStatus field exists":
+        value = _get(output, "finalStatus")
+        return isinstance(value, str), f"finalStatus={value!r}"
+
+    if assertion == "meeting state usable field exists":
+        value = _truthy_field(output, "updatedState")
+        return value is not None, f"updatedState={value!r}"
+
+    if assertion == "contract updatedState field exists":
+        value = _get(output, "updatedState")
+        return isinstance(value, dict), f"updatedState={value!r}"
+
+    if assertion == "alerts field exists":
+        value = _get(output, "alerts")
+        return isinstance(value, list), f"alerts={value!r}"
+
+    if assertion == "alerts length >= 1":
+        alerts = _get(output, "alerts", [])
+        return isinstance(alerts, list) and len(alerts) >= 1, f"alerts={alerts!r}"
+
+    if assertion == 'alert mentions "Refactor UI"':
+        alerts = _get(output, "alerts", [])
+        ok = any("refactor ui" in json.dumps(alert, ensure_ascii=True).lower() for alert in alerts if isinstance(alert, dict))
+        return ok, f"alerts={alerts!r}"
+
+    if assertion == "steps usable field exists":
+        value = _get(output, "steps")
+        return isinstance(value, list), f"steps={value!r}"
+
+    if assertion == "contract steps field exists":
+        value = _get(output, "steps")
+        return isinstance(value, list), f"steps={value!r}"
 
     return _check(assertion, output, test_input)
 
@@ -414,6 +747,95 @@ def _score_assertions(assertions: list[str], output: Any, test_input: dict[str, 
         "passed": passed_count == total,
         "assertions": results,
     }
+
+
+def _count_question_marks(text: str) -> int:
+    return text.count("?")
+
+
+def _count_words(text: str) -> int:
+    return len(re.findall(r"\b[\w'-]+\b", text))
+
+
+def _bullet_lines(text: str) -> list[str]:
+    return [
+        line.strip()
+        for line in text.splitlines()
+        if re.match(r"^(\-|\*|\d+\.)\s+\S", line.strip())
+    ]
+
+
+def _check_semantic_text(assertion: str, text: str, test_input: dict[str, Any]) -> tuple[bool, str]:
+    lowered = text.lower()
+
+    if assertion == "text is non-empty":
+        return bool(text.strip()), f"text={text!r}"
+
+    if assertion.startswith("word count <= "):
+        limit = int(assertion.rsplit(" ", 1)[1])
+        count = _count_words(text)
+        return count <= limit, f"word_count={count}"
+
+    if assertion.startswith("word count >= "):
+        limit = int(assertion.rsplit(" ", 1)[1])
+        count = _count_words(text)
+        return count >= limit, f"word_count={count}"
+
+    if assertion.startswith("contains any of: "):
+        options = [item.strip().lower() for item in assertion.split(": ", 1)[1].split("|")]
+        ok = any(option and option in lowered for option in options)
+        return ok, f"text={text!r}"
+
+    if assertion.startswith("contains all of: "):
+        options = [item.strip().lower() for item in assertion.split(": ", 1)[1].split("|")]
+        ok = all(option and option in lowered for option in options)
+        return ok, f"text={text!r}"
+
+    if assertion.startswith("contains at least "):
+        match = re.match(r"contains at least (\d+) of:\s*(.+)", assertion)
+        if not match:
+            return False, f"bad assertion={assertion!r}"
+        required = int(match.group(1))
+        options = [item.strip().lower() for item in match.group(2).split("|")]
+        hits = sum(1 for option in options if option and option in lowered)
+        return hits >= required, f"hits={hits} text={text!r}"
+
+    if assertion.startswith("does not contain any of: "):
+        options = [item.strip().lower() for item in assertion.split(": ", 1)[1].split("|")]
+        ok = all(option not in lowered for option in options if option)
+        return ok, f"text={text!r}"
+
+    if assertion == "ends with question mark":
+        return text.rstrip().endswith("?"), f"text={text!r}"
+
+    if assertion == "contains exactly one question":
+        count = _count_question_marks(text)
+        return count == 1, f"question_marks={count}"
+
+    if assertion == "starts with yes":
+        return lowered.startswith("yes"), f"text={text!r}"
+
+    if assertion == "starts with no":
+        return lowered.startswith("no"), f"text={text!r}"
+
+    if assertion.startswith("mentions memo id "):
+        memo_id = assertion.split("mentions memo id ", 1)[1].strip().lower()
+        return memo_id in lowered, f"text={text!r}"
+
+    if assertion == "bullet count >= 3":
+        bullets = _bullet_lines(text)
+        return len(bullets) >= 3, f"bullets={bullets!r}"
+
+    if assertion == "no filler words introduced":
+        ok = all(f" {word} " not in f" {lowered} " for word in FILLER_WORDS)
+        return ok, f"text={text!r}"
+
+    if assertion == "starts with an imperative verb":
+        first = text.strip().split()[0].lower() if text.strip() else ""
+        first = re.sub(r"[^a-z-]", "", first)
+        return first in VERBISH_STARTERS, f"first_word={first!r}"
+
+    return False, f"unsupported semantic assertion: {assertion}"
 
 
 def _check(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[bool, str]:
@@ -497,8 +919,10 @@ def _check(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[boo
         return str(value).endswith(expected), f"startAtISO={value!r}"
 
     if assertion == "event title mentions Sam":
+        events = _event_candidates(output)
         value = _get(output, "title", "")
-        return "sam" in str(value).lower(), f"title={value!r}"
+        ok = "sam" in str(value).lower() or any("sam" in json.dumps(event, ensure_ascii=True).lower() for event in events)
+        return ok, f"title={value!r} events={events!r}"
 
     if assertion == "reminderText starts with a verb":
         value = str(_get(output, "reminderText", "")).strip()
@@ -669,10 +1093,12 @@ def _check(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[boo
         return isinstance(decisions, list) and len(decisions) == 1, f"decisions={decisions!r}"
 
     if assertion == "existing decision remains unchanged":
-        original = json.dumps(test_input, ensure_ascii=True).lower()
-        decisions = json.dumps(_get(output, "updatedState.decisions", []), ensure_ascii=True).lower()
-        preserved = "referral" in original and "referral" in decisions
-        return preserved, f"decisions={decisions!r}"
+        current_state = _get(test_input, "currentState.decisions", [])
+        decisions = _get(output, "updatedState.decisions", [])
+        original_texts = {str(item.get("text", "")).strip().lower() for item in current_state if isinstance(item, dict)}
+        new_texts = {str(item.get("text", "")).strip().lower() for item in decisions if isinstance(item, dict)}
+        preserved = bool(original_texts) and original_texts.issubset(new_texts)
+        return preserved, f"original={sorted(original_texts)!r} decisions={sorted(new_texts)!r}"
 
     if assertion == "alerts length equals 0":
         alerts = _get(output, "alerts", [])
@@ -699,6 +1125,42 @@ def _check(assertion: str, output: Any, test_input: dict[str, Any]) -> tuple[boo
 
 
 def grade_card(card: dict, raw_text: str) -> dict[str, Any]:
+    if card.get("evaluationMode") == "semantic_text":
+        text = normalize_text_output(raw_text)
+        dimensions = {
+            name: _score_assertions(assertions, text, card["testCase"]["input"], _check_semantic_text)
+            for name, assertions in card.get("scoreConfig", {}).items()
+        }
+        if dimensions:
+            primary_name = next(iter(dimensions.keys()))
+            primary_dimension = dimensions[primary_name]
+            remaining_names = [name for name in dimensions.keys() if name != primary_name]
+            remaining_scores = [dimensions[name]["score"] for name in remaining_names]
+            supporting_score = (sum(remaining_scores) / len(remaining_scores)) if remaining_scores else 1.0
+            overall_score = round((primary_dimension["score"] * 0.75) + (supporting_score * 0.25), 4)
+            passed = primary_dimension["passed"] and supporting_score >= 0.5
+            return {
+                "passed": passed,
+                "score": overall_score,
+                "parse_error": None,
+                "parse_mode": "plain_text",
+                "format_recovered": False,
+                "failure_kind": None if passed else "semantic",
+                "dimensions": dimensions,
+                "assertions": primary_dimension["assertions"],
+                "parsed": {"text": text},
+            }
+        return {
+            "passed": bool(text.strip()),
+            "score": 1.0 if text.strip() else 0.0,
+            "parse_error": None,
+            "parse_mode": "plain_text",
+            "format_recovered": False,
+            "failure_kind": None if text.strip() else "semantic",
+            "assertions": [],
+            "parsed": {"text": text},
+        }
+
     parsed, parse_error, parse_mode = parse_json_output(raw_text)
     if parse_error is not None:
         if card.get("scoreConfig"):

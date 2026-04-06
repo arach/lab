@@ -5,6 +5,7 @@ slug: model-calibration-and-benchmark-sanity
 date: 2026-04-05
 tags: evals, calibration, github-models, openrouter, nous, gemma
 author: Arach
+hidden: true
 -->
 
 ## What Changed

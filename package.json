@@ -3,16 +3,22 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
+    "generate:og": "bun scripts/generate-og-images.mjs",
     "dev": "next dev",
+    "prebuild": "bun run generate:og",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@arach/og": "github:arach/og",
     "next": "^16.2.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-markdown": "10.1.0",
     "rehype-raw": "7.0.0",
     "remark-gfm": "4.0.1"
-  }
+  },
+  "trustedDependencies": [
+    "puppeteer"
+  ]
 }

@@ -17,8 +17,16 @@ export default function IdeaArticleLayout({
   status,
   readingTime,
   evalPanels,
+  leftAside,
+  aside,
   children,
 }) {
+  const layoutClassName = leftAside && aside
+    ? 'article-main-grid article-main-grid-three-up'
+    : aside || leftAside
+      ? 'article-main-grid'
+      : 'article-content-single'
+
   return (
     <div className="site-shell">
       <header className="topbar">
@@ -57,10 +65,20 @@ export default function IdeaArticleLayout({
       </section>
 
       <main className="article-body">
-        {evalPanels ? (
-          <div className="article-panels">{evalPanels}</div>
-        ) : null}
-        <article className="article-prose">{children}</article>
+        <div className={layoutClassName}>
+          {leftAside ? (
+            <div className="article-left-rail-column">{leftAside}</div>
+          ) : null}
+          <div className="article-main-column">
+            {evalPanels ? (
+              <div className="article-panels">{evalPanels}</div>
+            ) : null}
+            <article className="article-prose">{children}</article>
+          </div>
+          {aside ? (
+            <div className="article-rail-column">{aside}</div>
+          ) : null}
+        </div>
       </main>
 
       <footer className="site-footer">

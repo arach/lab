@@ -1,0 +1,292 @@
+[
+  {
+    "id": "semantic-title",
+    "title": "Give This Memo A Useful Title",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether a tiny model can turn a raw memo into a recognizably useful title.",
+    "prompt": {
+      "task": "Write one short title for this memo.",
+      "system": "You help label voice memos. Return plain text only. Write a short title the user would recognize later. Do not use quotes. Do not explain your answer.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "Okay I need to book the dentist for Friday and send the insurance form before noon."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "text is non-empty",
+        "contains any of: dentist|insurance"
+      ],
+      "clarity": [
+        "word count <= 10",
+        "no filler words introduced"
+      ],
+      "discipline": [
+        "does not contain any of: \"|title:|here's"
+      ]
+    }
+  },
+  {
+    "id": "semantic-memo-type",
+    "title": "What Kind Of Memo Is This?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can identify the memo's main mode in natural language.",
+    "prompt": {
+      "task": "Say what kind of memo this is.",
+      "system": "You classify short voice memos. Return plain text only. Use a short phrase like task, reminder, calendar, brainstorm, meeting note, or personal note, followed by a very short reason.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "We decided to keep the beta closed another week, and Maya will rewrite the onboarding email before Thursday."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains any of: meeting|meeting note",
+        "contains any of: decided|decision|rewrite"
+      ],
+      "clarity": [
+        "word count <= 18",
+        "text is non-empty"
+      ],
+      "discipline": [
+        "no filler words introduced"
+      ]
+    }
+  },
+  {
+    "id": "semantic-next-action",
+    "title": "What Should The User Do Next?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can identify the practical next step from a memo.",
+    "prompt": {
+      "task": "Describe the main next action for the user.",
+      "system": "You help turn voice memos into action. Return plain text only. Give one clear next action, not a list.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "Tomorrow at nine send Alex the invoice, then remind myself on Friday if he hasn't replied."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains all of: alex|invoice",
+        "contains any of: send|email"
+      ],
+      "clarity": [
+        "starts with an imperative verb",
+        "word count <= 18"
+      ],
+      "discipline": [
+        "does not contain any of: maybe|might"
+      ]
+    }
+  },
+  {
+    "id": "semantic-cleanup",
+    "title": "Rewrite This Memo More Clearly",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can clean up a transcript without losing key facts.",
+    "prompt": {
+      "task": "Rewrite this memo so it is cleaner and easier to read.",
+      "system": "You rewrite messy transcripts. Return plain text only. Preserve the facts. Do not add bullet points unless the memo clearly needs them.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "Um okay so the thing is we shipped the sync fix and uh support tickets dropped from nineteen to six, but we still have weird duplicate reminders for recurring tasks."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains all of: sync|duplicate reminders",
+        "contains any of: nineteen|19",
+        "contains any of: six|6"
+      ],
+      "clarity": [
+        "does not contain any of: um|uh",
+        "word count <= 30"
+      ],
+      "discipline": [
+        "text is non-empty"
+      ]
+    }
+  },
+  {
+    "id": "semantic-summary",
+    "title": "What Matters Most?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can prioritize the most important ideas in a memo.",
+    "prompt": {
+      "task": "List the two or three most important points.",
+      "system": "You summarize voice memos. Return plain text only. Use short bullet points. Focus on the most important things, not every detail.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "Launch date is May tenth. Legal still needs to approve the revised terms. The waitlist form conversion fell after the new design, and I want a fix before the announcement draft goes out."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "bullet count >= 3",
+        "contains any of: may tenth|may 10|launch date",
+        "contains any of: legal|terms",
+        "contains any of: waitlist|conversion"
+      ],
+      "clarity": [
+        "word count <= 45",
+        "text is non-empty"
+      ],
+      "discipline": [
+        "no filler words introduced"
+      ]
+    }
+  },
+  {
+    "id": "semantic-reminder",
+    "title": "Should This Become A Reminder?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can recognize reminder intent and restate it cleanly.",
+    "prompt": {
+      "task": "Decide whether this should become a reminder and say what the reminder should be.",
+      "system": "You help convert spoken notes into reminders. Return plain text only. If it sounds like a reminder, write one clear reminder sentence. If not, say why not.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "Need to maybe ping Chris about the invoice thing before it gets weird."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains all of: chris|invoice",
+        "contains any of: yes|reminder|message|ping"
+      ],
+      "clarity": [
+        "does not contain any of: maybe",
+        "word count <= 18"
+      ],
+      "discipline": [
+        "text is non-empty"
+      ]
+    }
+  },
+  {
+    "id": "semantic-calendar",
+    "title": "Should This Become A Calendar Event?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can recognize scheduling intent in plain language.",
+    "prompt": {
+      "task": "Say whether this sounds like a calendar event.",
+      "system": "You help decide whether a voice memo should become a calendar event. Return plain text only. Start with Yes or No, then one short sentence.",
+      "user": "Captured at: {{capturedAt}}\nTimezone: {{timezone}}\nTranscript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "capturedAt": "2026-04-04T10:00:00-04:00",
+        "timezone": "America/Toronto",
+        "transcript": "Call Sam tomorrow at 2 about the contractor quote."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "starts with yes",
+        "contains all of: sam|2",
+        "contains any of: tomorrow|april 5|call"
+      ],
+      "clarity": [
+        "word count <= 22",
+        "text is non-empty"
+      ],
+      "discipline": [
+        "no filler words introduced"
+      ]
+    }
+  },
+  {
+    "id": "semantic-follow-up",
+    "title": "What Follow-Up Question Should We Ask?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can ask the single best missing-information question.",
+    "prompt": {
+      "task": "Ask the single best follow-up question, if one is needed.",
+      "system": "You help clarify ambiguous memos. Return plain text only. Ask one question if something important is missing. If nothing important is missing, say 'No follow-up needed.'",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "input": {
+        "transcript": "Remind me to send the deck to Priya."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains any of: when|what time"
+      ],
+      "clarity": [
+        "ends with question mark",
+        "contains exactly one question",
+        "word count <= 16"
+      ],
+      "discipline": [
+        "text is non-empty"
+      ]
+    }
+  },
+  {
+    "id": "semantic-recall",
+    "title": "Which Old Memo Is Most Similar?",
+    "tier": "core",
+    "benchmarkVersion": "semantic-core-v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Test whether the model can make a semantically useful recall choice in plain language.",
+    "prompt": {
+      "task": "Choose the most relevant earlier memo and say why.",
+      "system": "You help find the most relevant previous memo. Return plain text only. Start with the memo id, then one short reason.",
+      "user": "New memo:\n{{query}}\n\nCandidates:\n{{candidates}}"
+    },
+    "testCase": {
+      "input": {
+        "query": "We should keep the referral program invite-only until analytics migration is done.",
+        "candidates": [
+          {"memoId": "a", "summary": "Deferred referral system until analytics migration."},
+          {"memoId": "b", "summary": "Updated website hero copy and social proof blocks."},
+          {"memoId": "c", "summary": "Need to book dentist and send insurance form."}
+        ]
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "mentions memo id a",
+        "contains any of: analytics|referral|migration"
+      ],
+      "clarity": [
+        "word count <= 22",
+        "text is non-empty"
+      ],
+      "discipline": [
+        "no filler words introduced"
+      ]
+    }
+  }
+]

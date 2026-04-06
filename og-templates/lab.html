@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at top right, rgba(12, 138, 99, 0.18), transparent 34%),
+        radial-gradient(circle at left center, rgba(25, 22, 16, 0.06), transparent 42%),
+        #f5f4ef;
+      color: #191610;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+    }
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(25, 22, 16, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(25, 22, 16, 0.06) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: 0.45;
+    }
+    .frame {
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(25, 22, 16, 0.12);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.64));
+      box-shadow: 0 18px 60px rgba(32, 25, 16, 0.08);
+    }
+    .accent {
+      position: absolute;
+      left: 36px;
+      right: 36px;
+      top: 34px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0c8a63 0%, #47c79c 72%, rgba(71, 199, 156, 0.35) 100%);
+    }
+    .shell {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 68px 74px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #0c8a63;
+      background: rgba(12, 138, 99, 0.1);
+      border: 1px solid rgba(12, 138, 99, 0.16);
+    }
+    .chip-muted {
+      color: rgba(25, 22, 16, 0.62);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(25, 22, 16, 0.1);
+    }
+    .title {
+      max-width: 920px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 76px;
+      line-height: 0.97;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+      color: #191610;
+      margin-bottom: 24px;
+      text-wrap: balance;
+    }
+    .subtitle {
+      max-width: 760px;
+      font-size: 28px;
+      line-height: 1.45;
+      color: rgba(25, 22, 16, 0.72);
+      text-wrap: balance;
+    }
+    .footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      color: rgba(25, 22, 16, 0.78);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #0c8a63;
+      box-shadow: 0 0 0 8px rgba(12, 138, 99, 0.12);
+    }
+    .path {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 16, 0.46);
+    }
+    .side-note {
+      max-width: 240px;
+      text-align: right;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(25, 22, 16, 0.54);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="frame"></div>
+  <div class="accent"></div>
+  <div class="shell">
+    <div>
+      <div class="meta">
+        <div class="chip">{{eyebrow}}</div>
+        <div class="chip chip-muted">{{section}}</div>
+      </div>
+      <h1 class="title">{{title}}</h1>
+      <p class="subtitle">{{subtitle}}</p>
+    </div>
+    <div class="footer">
+      <div class="brand">
+        <div class="brand-mark">
+          <span class="dot"></span>
+          <span>Training Lab</span>
+        </div>
+        <div class="path">{{path}}</div>
+      </div>
+      <div class="side-note">{{sideNote}}</div>
+    </div>
+  </div>
+</body>
+</html>

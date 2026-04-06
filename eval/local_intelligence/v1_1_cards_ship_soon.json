@@ -1,0 +1,513 @@
+[
+  {
+    "id": "memo-auto-title",
+    "title": "Memo Auto-Title (<1s)",
+    "tier": "ship-soon",
+    "objective": "Generate specific memo titles that are useful in list view and search.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_0814",
+      "capturedAt": "2026-04-03T08:14:22-04:00",
+      "currentTitle": "New Memo",
+      "transcript": "Need to rewrite the launch page hero. Put proof first, then product shot, then pricing line. Also ask Nina for two customer quotes by Tuesday."
+    },
+    "prompt": {
+      "task": "Create one concise and specific title for a fresh memo.",
+      "system": "You write titles for Talkie voice memos.\nRules:\n- Return JSON only.\n- Title must be <= 48 characters.\n- Make it specific to the memo's core action.\n- Never output generic titles like \"Voice Memo\" or \"Thoughts\".",
+      "user": "Memo ID: {{memoId}}\nCaptured at: {{capturedAt}}\nCurrent title: {{currentTitle}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "title": "Launch hero: proof first, quotes by Tuesday",
+        "confidence": 0.92,
+        "rationale": "Memo focuses on landing page reorder and quote deadline."
+      }
+    },
+    "testCase": {
+      "name": "Avoid generic titles on clear action memo",
+      "input": {
+        "memoId": "memo_test_title_01",
+        "capturedAt": "2026-04-04T10:05:00-04:00",
+        "currentTitle": "Voice Memo",
+        "transcript": "Book dentist for Friday and email insurance form before noon."
+      },
+      "assertions": [
+        "title is not \"Voice Memo\"",
+        "title length <= 48",
+        "title contains either \"dentist\" or \"insurance\""
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "title is specific not generic",
+        "title contains either \"dentist\" or \"insurance\"",
+        "title length <= 60"
+      ],
+      "usable": [
+        "title field exists",
+        "title is non-empty"
+      ],
+      "contract": [
+        "contract title field exists",
+        "contract title length <= 60"
+      ]
+    }
+  },
+  {
+    "id": "memo-type-detection",
+    "title": "Memo Type Detection",
+    "tier": "ship-soon",
+    "objective": "Classify memo intent early so the right local workflow can run automatically.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_0918",
+      "transcript": "Need to lock April hiring plan: two backend roles, one designer, no contractor spend until Q3.",
+      "candidateTypes": [
+        "task",
+        "journal",
+        "meeting",
+        "idea",
+        "reference"
+      ]
+    },
+    "prompt": {
+      "task": "Classify memo into one primary type and optional secondary type.",
+      "system": "You are a routing classifier for Talkie.\nReturn JSON only.\nPick one primaryType from candidateTypes.\nIf confidence is below 0.65, set needsReview to true.",
+      "user": "Memo ID: {{memoId}}\nCandidate types: {{candidateTypes}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "primaryType": "meeting",
+        "secondaryType": "task",
+        "confidence": 0.88,
+        "suggestedWorkflow": "extract-action-items",
+        "needsReview": false
+      }
+    },
+    "testCase": {
+      "name": "Ambiguous personal reflection should not over-route",
+      "input": {
+        "memoId": "memo_test_type_01",
+        "transcript": "Felt scattered today. Might restructure mornings and maybe skip Slack until 10.",
+        "candidateTypes": [
+          "task",
+          "journal",
+          "meeting",
+          "idea",
+          "reference"
+        ]
+      },
+      "assertions": [
+        "primaryType is either \"journal\" or \"idea\"",
+        "confidence < 0.8",
+        "needsReview can be true when uncertainty is high"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "primaryType is either \"journal\" or \"idea\"",
+        "confidence is numeric"
+      ],
+      "usable": [
+        "primaryType usable field exists",
+        "needsReview or confidence exists"
+      ],
+      "contract": [
+        "contract primaryType field exists",
+        "contract confidence field exists",
+        "contract needsReview field exists"
+      ]
+    }
+  },
+  {
+    "id": "action-item-extraction",
+    "title": "Action Item Extraction With Confidence",
+    "tier": "ship-soon",
+    "objective": "Extract trackable tasks from natural speech while preserving evidence spans.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_1042",
+      "transcript": "By Monday, send revised onboarding doc to Priya. Also schedule 30 minutes with legal next week. I should probably clean up old Stripe test accounts too.",
+      "ownerDefault": "Arach"
+    },
+    "prompt": {
+      "task": "Extract explicit and implied action items from memo transcript.",
+      "system": "You extract tasks from speech.\nReturn JSON only.\nEach item needs: text, owner, dueDateISO (or null), confidence, evidence.\nDo not invent due dates if none are present.",
+      "user": "Memo ID: {{memoId}}\nOwner default: {{ownerDefault}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "items": [
+          {
+            "text": "Send revised onboarding doc to Priya",
+            "owner": "Arach",
+            "dueDateISO": "2026-04-06",
+            "confidence": 0.95,
+            "evidence": "By Monday, send revised onboarding doc to Priya."
+          },
+          {
+            "text": "Schedule 30 minute legal review",
+            "owner": "Arach",
+            "dueDateISO": null,
+            "confidence": 0.82,
+            "evidence": "schedule 30 minutes with legal next week"
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Low-confidence tasks remain extractable but marked",
+      "input": {
+        "memoId": "memo_test_tasks_01",
+        "transcript": "Maybe clean up the old docs folder sometime.",
+        "ownerDefault": "Arach"
+      },
+      "assertions": [
+        "items length >= 1",
+        "item confidence < 0.75 for vague tasks",
+        "evidence field is always present"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "items length >= 1",
+        "first item has text",
+        "evidence field is always present",
+        "first item due date absent when not stated"
+      ],
+      "usable": [
+        "items usable field exists",
+        "vague task confidence is not overconfident"
+      ],
+      "contract": [
+        "contract items field exists"
+      ]
+    }
+  },
+  {
+    "id": "transcript-cleanup-presets",
+    "title": "Transcript Cleanup Presets",
+    "tier": "ship-soon",
+    "objective": "Apply local rewrite modes without losing factual meaning from the source transcript.",
+    "inputExample": {
+      "memoId": "memo_2026_04_02_1831",
+      "preset": "executive-summary",
+      "transcript": "Um okay so the thing is we shipped the sync fix and uh support tickets dropped from nineteen to six, but we still have weird duplicate reminders for recurring tasks."
+    },
+    "prompt": {
+      "task": "Rewrite transcript according to preset while preserving concrete facts.",
+      "system": "You rewrite transcripts using style presets.\nReturn JSON only.\nNever change numbers, names, or dates.\nIf preset is executive-summary, use short declarative sentences.",
+      "user": "Preset: {{preset}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "cleanedText": "Shipped sync fix reduced support tickets from 19 to 6. Duplicate reminders still occur for recurring tasks.",
+        "preservedFacts": [
+          "support tickets dropped from 19 to 6",
+          "duplicate reminders remain"
+        ],
+        "removedFillers": [
+          "um",
+          "uh",
+          "okay"
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Fact preservation under rewrite",
+      "input": {
+        "memoId": "memo_test_cleanup_01",
+        "preset": "bullet-plan",
+        "transcript": "We spent 4 hours on export bugs and fixed 3 of 5 issues."
+      },
+      "assertions": [
+        "output contains number 4",
+        "output contains phrase 3 of 5",
+        "filler words are not introduced"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "output contains number 4",
+        "output preserves ratio 3 of 5",
+        "filler words are not introduced"
+      ],
+      "usable": [
+        "cleaned transcript field exists",
+        "cleaned transcript is non-empty"
+      ],
+      "contract": [
+        "contract cleanedText field exists"
+      ]
+    }
+  },
+  {
+    "id": "what-matters-summary",
+    "title": "Top-3 What Matters Summary",
+    "tier": "ship-soon",
+    "objective": "Compress long voice notes into the three highest-signal points.",
+    "inputExample": {
+      "memoId": "memo_2026_04_01_0720",
+      "transcript": "Long ramble about launch prep, hiring plan, and a possible referral program. Final decisions: launch moved to May 10, defer referral until after analytics rewrite, and cut onboarding to three screens."
+    },
+    "prompt": {
+      "task": "Return exactly three highest-priority points from transcript.",
+      "system": "You produce high-signal summaries.\nReturn JSON only.\nOutput exactly 3 points.\nEach point must include evidence quote and priority score 1-100.",
+      "user": "Memo ID: {{memoId}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "topPoints": [
+          {
+            "point": "Launch date moved to May 10.",
+            "priority": 96,
+            "evidence": "launch moved to May 10"
+          },
+          {
+            "point": "Referral program deferred until analytics rewrite is done.",
+            "priority": 87,
+            "evidence": "defer referral until after analytics rewrite"
+          },
+          {
+            "point": "Onboarding flow reduced to three screens.",
+            "priority": 80,
+            "evidence": "cut onboarding to three screens"
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Summary must stay at exactly three points",
+      "input": {
+        "memoId": "memo_test_summary_01",
+        "transcript": "Decision one. Decision two. Decision three. Decision four."
+      },
+      "assertions": [
+        "topPoints length equals 3",
+        "priority values are numeric",
+        "each point includes evidence"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "topPoints length equals 3",
+        "priority values are numeric",
+        "each point includes evidence"
+      ],
+      "usable": [
+        "summary usable field exists"
+      ],
+      "contract": [
+        "topPoints length equals 3"
+      ]
+    }
+  },
+  {
+    "id": "calendar-intent-detection",
+    "title": "Calendar Intent Detection",
+    "tier": "ship-soon",
+    "objective": "Detect event-worthy language and produce structured event suggestions.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_1212",
+      "capturedAt": "2026-04-03T12:12:10-04:00",
+      "timezone": "America/Toronto",
+      "transcript": "Lunch with Dana next Tuesday at 1 at Canary. Also review roadmap with ops Thursday 4:30 PM for 45 minutes."
+    },
+    "prompt": {
+      "task": "Extract potential calendar events from transcript.",
+      "system": "You detect calendar intents.\nReturn JSON only.\nResolve relative dates using capturedAt and timezone.\nMark needsConfirmation true when date/time confidence is below 0.8.",
+      "user": "Captured at: {{capturedAt}}\nTimezone: {{timezone}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "events": [
+          {
+            "title": "Lunch with Dana",
+            "startAtISO": "2026-04-07T13:00:00-04:00",
+            "durationMinutes": 60,
+            "location": "Canary",
+            "confidence": 0.9,
+            "needsConfirmation": false
+          },
+          {
+            "title": "Roadmap review with Ops",
+            "startAtISO": "2026-04-09T16:30:00-04:00",
+            "durationMinutes": 45,
+            "location": null,
+            "confidence": 0.86,
+            "needsConfirmation": false
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "Relative date resolution uses explicit timezone",
+      "input": {
+        "memoId": "memo_test_calendar_01",
+        "capturedAt": "2026-04-04T09:00:00-04:00",
+        "timezone": "America/Toronto",
+        "transcript": "Call Sam tomorrow at 2 PM."
+      },
+      "assertions": [
+        "startAtISO date is 2026-04-05",
+        "timezone offset in startAtISO is -04:00",
+        "event title mentions Sam"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "calendar date resolves to 2026-04-05",
+        "calendar participant or title mentions Sam"
+      ],
+      "usable": [
+        "calendar packet usable field exists",
+        "calendar time resolves to 2 PM local"
+      ],
+      "contract": [
+        "contract startAtISO field exists or events array exists"
+      ]
+    }
+  },
+  {
+    "id": "reminder-normalization",
+    "title": "Reminder Phrasing Normalization",
+    "tier": "ship-soon",
+    "objective": "Turn vague spoken reminders into clear and actionable reminder objects.",
+    "inputExample": {
+      "memoId": "memo_2026_04_03_1722",
+      "transcript": "Need to maybe ping Chris about the invoice thing before it gets weird.",
+      "userLocale": "en-CA"
+    },
+    "prompt": {
+      "task": "Normalize vague reminder speech into specific reminder text and metadata.",
+      "system": "You normalize reminders.\nReturn JSON only.\nReminder text should start with a strong verb.\nWhen due date is unclear, set dueDateISO to null and add followUpQuestion.",
+      "user": "Locale: {{userLocale}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "reminderText": "Message Chris for invoice status update",
+        "dueDateISO": null,
+        "confidence": 0.78,
+        "followUpQuestion": "When do you want this done?"
+      }
+    },
+    "testCase": {
+      "name": "Reminder text should be imperative and concrete",
+      "input": {
+        "memoId": "memo_test_reminder_01",
+        "transcript": "Maybe look into new card design at some point.",
+        "userLocale": "en-CA"
+      },
+      "assertions": [
+        "reminderText starts with a verb",
+        "reminderText does not contain \"maybe\"",
+        "followUpQuestion exists when due date is missing"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "reminderText does not contain \"maybe\"",
+        "followUpQuestion exists when due date is missing"
+      ],
+      "usable": [
+        "reminder text usable field exists",
+        "follow-up or due date exists"
+      ],
+      "contract": [
+        "contract reminderText field exists"
+      ]
+    }
+  },
+  {
+    "id": "private-redaction-pass",
+    "title": "Private Redaction Pass",
+    "tier": "ship-soon",
+    "objective": "Redact sensitive data locally before sharing, syncing, or cloud routing.",
+    "inputExample": {
+      "memoId": "memo_2026_04_02_1114",
+      "transcript": "Card ending 4821 failed again. Patient name is Mark Lavoie and policy number is HN-772-19.",
+      "policies": [
+        "mask-health-data",
+        "mask-financial-data"
+      ]
+    },
+    "prompt": {
+      "task": "Detect and mask sensitive entities while preserving memo readability.",
+      "system": "You redact sensitive entities.\nReturn JSON only.\nUse [REDACTED_TYPE] placeholders.\nInclude list of redacted entities with type and confidence.",
+      "user": "Policies: {{policies}}\nTranscript:\n{{transcript}}"
+    },
+    "expectedOutput": {
+      "format": "json",
+      "example": {
+        "redactedTranscript": "Card ending [REDACTED_FINANCIAL] failed again. Patient name is [REDACTED_PERSON] and policy number is [REDACTED_HEALTH_ID].",
+        "entities": [
+          {
+            "value": "4821",
+            "type": "financial",
+            "confidence": 0.94
+          },
+          {
+            "value": "Mark Lavoie",
+            "type": "person",
+            "confidence": 0.98
+          },
+          {
+            "value": "HN-772-19",
+            "type": "health-id",
+            "confidence": 0.92
+          }
+        ]
+      }
+    },
+    "testCase": {
+      "name": "No raw sensitive tokens remain in output",
+      "input": {
+        "memoId": "memo_test_redact_01",
+        "transcript": "SSN 555-44-9012 and account 00391299 should never leave device.",
+        "policies": [
+          "mask-financial-data"
+        ]
+      },
+      "assertions": [
+        "redactedTranscript does not contain 555-44-9012",
+        "redactedTranscript does not contain 00391299",
+        "entities length >= 2"
+      ]
+    },
+    "benchmarkVersion": "v1.1",
+    "benchmarkCategory": "ship-soon",
+    "scoreConfig": {
+      "task": [
+        "redactedTranscript does not contain 555-44-9012",
+        "redactedTranscript does not contain 00391299",
+        "entities length >= 2"
+      ],
+      "usable": [
+        "redaction transcript field exists",
+        "redaction entities field exists"
+      ],
+      "contract": [
+        "contract redactedTranscript field exists",
+        "contract entities field exists"
+      ]
+    }
+  }
+]

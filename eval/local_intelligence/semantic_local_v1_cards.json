@@ -1,0 +1,263 @@
+[
+  {
+    "id": "semantic-title",
+    "title": "Plain-Text Memo Title",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can a tiny local model produce a useful title without any schema requirement?",
+    "prompt": {
+      "task": "Write the best short title for this memo.",
+      "system": "You write helpful titles for voice memos. Return plain text only. No JSON. No quotation marks. Keep it short and specific.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Title should capture the concrete action",
+      "input": {
+        "transcript": "Book dentist for Friday and email insurance form before noon."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "text is non-empty",
+        "contains any of: dentist|insurance",
+        "does not contain any of: voice memo|new memo|thoughts"
+      ],
+      "helpful": [
+        "word count <= 10",
+        "no filler words introduced"
+      ]
+    }
+  },
+  {
+    "id": "semantic-next-step",
+    "title": "Single Best Next Step",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model identify the one thing the user most likely wants to do next?",
+    "prompt": {
+      "task": "State the single best next step for the app or the user.",
+      "system": "You help a voice memo app decide what to do next. Return plain text only. One short sentence.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Vague reminder should still yield a concrete next step",
+      "input": {
+        "transcript": "Need to maybe ping Chris about the invoice thing before it gets weird."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "text is non-empty",
+        "contains all of: chris|invoice"
+      ],
+      "helpful": [
+        "starts with an imperative verb",
+        "word count <= 14"
+      ]
+    }
+  },
+  {
+    "id": "semantic-routing-intent",
+    "title": "User Intent In Plain English",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model say what kind of help the user wants without a routing schema?",
+    "prompt": {
+      "task": "What does the user most likely want help with?",
+      "system": "Describe the user's intent in plain English. Return plain text only. Keep it brief.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Scheduling intent should be obvious",
+      "input": {
+        "transcript": "Tomorrow at 2 I should call Sam about the contractor agreement."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "text is non-empty",
+        "contains any of: schedule|calendar|reminder|call sam"
+      ],
+      "helpful": [
+        "word count <= 14"
+      ]
+    }
+  },
+  {
+    "id": "semantic-cleanup",
+    "title": "Readable Rewrite",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model clean up a transcript while preserving the facts?",
+    "prompt": {
+      "task": "Rewrite this note clearly while preserving the facts.",
+      "system": "Rewrite spoken notes into clean written text. Return plain text only. Do not change numbers or named facts.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Rewrite should keep the core numbers",
+      "input": {
+        "transcript": "Um we spent 4 hours on export bugs and fixed 3 of 5 issues."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains any of: 4",
+        "contains any of: 3 of 5|3 out of 5"
+      ],
+      "helpful": [
+        "no filler words introduced",
+        "word count <= 20"
+      ]
+    }
+  },
+  {
+    "id": "semantic-summary",
+    "title": "One-Sentence Catch-Up",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model summarize the highest-signal decisions in one sentence?",
+    "prompt": {
+      "task": "Summarize what matters in one sentence.",
+      "system": "Summarize the important decisions and outcomes. Return plain text only. One sentence.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Summary should capture the major decisions",
+      "input": {
+        "transcript": "Long ramble about launch prep, hiring plan, and a possible referral program. Final decisions: launch moved to May 10, defer referral until after analytics rewrite, and cut onboarding to three screens."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains at least 2 of: may 10|referral|three screens|onboarding"
+      ],
+      "helpful": [
+        "word count <= 26",
+        "no filler words introduced"
+      ]
+    }
+  },
+  {
+    "id": "semantic-follow-up-question",
+    "title": "Clarifying Question",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model ask a good follow-up when the note is underspecified?",
+    "prompt": {
+      "task": "Ask the single best follow-up question.",
+      "system": "Ask one clarifying question that would make the note actionable. Return plain text only.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Question should clarify timing",
+      "input": {
+        "transcript": "Need to maybe move lunch with Dana to sometime next week."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "ends with question mark",
+        "contains any of: what day|which day|what time|when|schedule"
+      ],
+      "helpful": [
+        "contains exactly one question",
+        "word count <= 16"
+      ]
+    }
+  },
+  {
+    "id": "semantic-related-memo",
+    "title": "Related Memo Choice",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model pick the most relevant previous note from a short set?",
+    "prompt": {
+      "task": "Pick the most related earlier memo and explain why.",
+      "system": "Choose the best related memo from the options. Return plain text only. Mention the memo id.",
+      "user": "Current memo:\n{{currentMemo}}\n\nEarlier memos:\n{{earlierMemos}}"
+    },
+    "testCase": {
+      "name": "Referral planning should match prior referral note",
+      "input": {
+        "currentMemo": "Maybe we should keep the referral pilot invite-only for power users first.",
+        "earlierMemos": [
+          "a: Discussed trial cancellation policy and refund rules.",
+          "b: Defined invite-only referral pilot for power users.",
+          "c: Updated landing page hero copy and social proof blocks."
+        ]
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "mentions memo id b",
+        "contains any of: referral|pilot|power users"
+      ],
+      "helpful": [
+        "word count <= 20"
+      ]
+    }
+  },
+  {
+    "id": "semantic-sensitive-note",
+    "title": "Sensitive Note Detection",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model recognize when a note contains sensitive personal information?",
+    "prompt": {
+      "task": "Should this note be treated as sensitive? Answer briefly.",
+      "system": "Answer in plain text only. Start with yes or no, then a short reason.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Insurance ID and phone number should be flagged",
+      "input": {
+        "transcript": "My new insurance member ID is ZX-4421 and the dentist office can call me at 416-555-0192."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "starts with yes"
+      ],
+      "helpful": [
+        "contains any of: insurance|member id|phone|416",
+        "word count <= 18"
+      ]
+    }
+  },
+  {
+    "id": "semantic-reflection-vs-task",
+    "title": "Reflection Or Task",
+    "tier": "semantic-core",
+    "benchmarkVersion": "semantic_local_v1",
+    "evaluationMode": "semantic_text",
+    "objective": "Can the model distinguish a reflective note from an action note in simple language?",
+    "prompt": {
+      "task": "Is this mostly a reflection note or an action note?",
+      "system": "Answer in plain text only with a short phrase.",
+      "user": "Transcript:\n{{transcript}}"
+    },
+    "testCase": {
+      "name": "Personal reflection should not be mistaken for a task list",
+      "input": {
+        "transcript": "I keep replaying the investor meeting in my head. I felt more anxious than I expected and I want to think about why."
+      }
+    },
+    "scoreConfig": {
+      "task": [
+        "contains any of: reflect|reflection|journal|personal|emotion"
+      ],
+      "helpful": [
+        "word count <= 14"
+      ]
+    }
+  }
+]

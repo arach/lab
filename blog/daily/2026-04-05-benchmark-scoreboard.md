@@ -5,6 +5,7 @@ slug: benchmark-scoreboard
 date: 2026-04-05
 tags: evals, scoreboard, calibration, v2, gemma, github-models, nous, openrouter
 author: Arach
+hidden: true
 -->
 
 ## What Changed

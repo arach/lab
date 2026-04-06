@@ -1,14 +1,13 @@
-# Part 7: Designing Evals for Small Workflow Intelligence
+# Designing Evals for Small Workflow Intelligence
 
 > If a strong mainstream model can't clearly do well, the benchmark is wrong.
 
 <!-- METADATA
 slug: designing-evals-for-small-workflow-intelligence
-series: teaching-a-tiny-model-to-hear-bash
-part: 7
 date: 2026-04-05
 tags: evals, benchmark-design, structured-output, local-intelligence, model-evaluation
 author: Arach
+hidden: true
 -->
 
 ## The turn

@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import { createLabMetadata } from '../lib/site-metadata'
+
+export const metadata = createLabMetadata({
+  title: 'Training Lab',
+  description: 'Field notes for models, evals, and tiny systems.',
+  pathname: '',
+  imagePath: '/og/lab/index.png',
+})
 
 export default function HomePage() {
   return (

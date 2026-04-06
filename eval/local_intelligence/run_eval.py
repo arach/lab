@@ -153,11 +153,19 @@ def main() -> int:
         "parse_failure_rate": round(parse_failure_count / len(rows), 4),
     }
 
-    dimension_names = ["task", "usable", "contract"]
     if any("dimensions" in row["grade"] for row in rows):
+        dimension_names: list[str] = []
+        for row in rows:
+            for dimension in row["grade"].get("dimensions", {}).keys():
+                if dimension not in dimension_names:
+                    dimension_names.append(dimension)
         dimension_scores = {}
         for dimension in dimension_names:
-            present = [row["grade"]["dimensions"][dimension]["score"] for row in rows if "dimensions" in row["grade"] and dimension in row["grade"]["dimensions"]]
+            present = [
+                row["grade"]["dimensions"][dimension]["score"]
+                for row in rows
+                if "dimensions" in row["grade"] and dimension in row["grade"]["dimensions"]
+            ]
             if present:
                 dimension_scores[f"{dimension}_score"] = round(sum(present) / len(present), 4)
         summary.update(dimension_scores)

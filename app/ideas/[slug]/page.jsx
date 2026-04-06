@@ -10,7 +10,6 @@ import BenchmarkSnapshot from '../../../components/BenchmarkSnapshot'
 import BenchmarkRepairPanel from '../../../components/BenchmarkRepairPanel'
 import SemanticEvalPanel from '../../../components/SemanticEvalPanel'
 import ArticleSidebar from '../../../components/ArticleSidebar'
-import ArticleMetaRail from '../../../components/ArticleMetaRail'
 import ScorePill from '../../../components/ScorePill'
 import StatGrid from '../../../components/StatGrid'
 import { getAllSlugs, getIdeaBySlug } from '../../../lib/blog-content'
@@ -167,7 +166,6 @@ export default async function IdeaPage({ params, searchParams }) {
       status={idea.status}
       readingTime={idea.readingTime}
       showEvalPanels={showEvalPanels || showRepairPanel || showSemanticPanel}
-      leftAside={<ArticleMetaRail idea={idea} pages={showSemanticPanel ? semanticPages : []} currentPage={semanticPageNumber} />}
       aside={
         <ArticleSidebar headings={articleHeadings} />
       }
@@ -192,22 +190,44 @@ export default async function IdeaPage({ params, searchParams }) {
         {articleContent}
       </ReactMarkdown>
       {showSemanticPanel ? (
-        <div className="article-series-footer">
-          {previousPage ? (
-            <Link href={previousPage.href} className="article-series-link">
-              ← {previousPage.label}
-            </Link>
-          ) : (
-            <span className="article-series-link article-series-link-muted">Start</span>
-          )}
-          {nextPage ? (
-            <Link href={nextPage.href} className="article-series-link">
-              {nextPage.label} →
-            </Link>
-          ) : (
-            <span className="article-series-link article-series-link-muted">End</span>
-          )}
-        </div>
+        <section className="article-series-strip" aria-label="Series navigation">
+          <div className="article-series-strip-meta">
+            <span className="section-kicker">Series</span>
+            <h2>Continue this multipart piece</h2>
+            <p>
+              Three short pages, one connected essay. Jump directly to the part
+              you want.
+            </p>
+          </div>
+          <div className="article-series-strip-grid">
+            {semanticPages.map((page) => (
+              <Link
+                key={page.number}
+                href={page.href}
+                className={`article-series-card${semanticPageNumber === page.number ? ' article-series-card-active' : ''}`}
+              >
+                <span className="article-series-card-label">{page.label}</span>
+                <span className="article-series-card-title">{page.title}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="article-series-footer">
+            {previousPage ? (
+              <Link href={previousPage.href} className="article-series-link">
+                ← {previousPage.label}
+              </Link>
+            ) : (
+              <span className="article-series-link article-series-link-muted">Start</span>
+            )}
+            {nextPage ? (
+              <Link href={nextPage.href} className="article-series-link">
+                {nextPage.label} →
+              </Link>
+            ) : (
+              <span className="article-series-link article-series-link-muted">End</span>
+            )}
+          </div>
+        </section>
       ) : null}
     </IdeaArticleLayout>
   )

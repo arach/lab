@@ -17,15 +17,10 @@ export default function IdeaArticleLayout({
   status,
   readingTime,
   evalPanels,
-  leftAside,
   aside,
   children,
 }) {
-  const layoutClassName = leftAside && aside
-    ? 'article-main-grid article-main-grid-three-up'
-    : aside || leftAside
-      ? 'article-main-grid'
-      : 'article-content-single'
+  const layoutClassName = aside ? 'article-main-grid' : 'article-content-single'
 
   return (
     <div className="site-shell">
@@ -66,9 +61,6 @@ export default function IdeaArticleLayout({
 
       <main className="article-body">
         <div className={layoutClassName}>
-          {leftAside ? (
-            <div className="article-left-rail-column">{leftAside}</div>
-          ) : null}
           <div className="article-main-column">
             {evalPanels ? (
               <div className="article-panels">{evalPanels}</div>

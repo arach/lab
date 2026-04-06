@@ -11,7 +11,7 @@ description: A reader-first walkthrough of a new semantic eval for tiny local mo
 -->
 
 <section id="page-1" class="article-page-section">
-  <div class="article-page-kicker">Page 1</div>
+  <div class="article-page-kicker">Part 1</div>
   <h2>What this eval is for</h2>
 
   <p>
@@ -91,7 +91,7 @@ description: A reader-first walkthrough of a new semantic eval for tiny local mo
 </section>
 
 <section id="page-2" class="article-page-section">
-  <div class="article-page-kicker">Page 2</div>
+  <div class="article-page-kicker">Part 2</div>
   <h2>How the scores work</h2>
 
   <p>
@@ -209,7 +209,7 @@ description: A reader-first walkthrough of a new semantic eval for tiny local mo
 </section>
 
 <section id="page-3" class="article-page-section">
-  <div class="article-page-kicker">Page 3</div>
+  <div class="article-page-kicker">Part 3</div>
   <h2>What the first local runs show</h2>
 
   <p>

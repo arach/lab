@@ -15,8 +15,10 @@ export default function ArticleSeriesRail({ pages = [], currentPage }) {
             href={page.href}
             className={`article-series-rail-link${currentPage === page.number ? ' article-series-rail-link-active' : ''}`}
             aria-current={currentPage === page.number ? 'page' : undefined}
+            title={`${page.label}: ${page.title}`}
           >
-            <span className="article-series-rail-label">{page.label}</span>
+            <span className="article-series-rail-label article-series-rail-label-long">{page.label}</span>
+            <span className="article-series-rail-label article-series-rail-label-short">{page.shortLabel}</span>
             <span className="article-series-rail-title">{page.title}</span>
           </Link>
         ))}

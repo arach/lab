@@ -11,7 +11,7 @@ description: The practical design document behind core_eval_v2, from product tru
 -->
 
 <section id="page-1" class="article-page-section">
-<div class="article-page-kicker">Part I</div>
+<div class="article-page-kicker">Part 1</div>
 
 ## Why this post exists
 
@@ -189,7 +189,7 @@ into one misleading blended score.
 </section>
 
 <section id="page-2" class="article-page-section">
-<div class="article-page-kicker">Part II</div>
+<div class="article-page-kicker">Part 2</div>
 
 ## The actual core cards
 
@@ -313,7 +313,7 @@ That is a much better insight than a flat “fail.”
 </section>
 
 <section id="page-3" class="article-page-section">
-<div class="article-page-kicker">Part III</div>
+<div class="article-page-kicker">Part 3</div>
 
 ## The acceptance rules we had to loosen
 

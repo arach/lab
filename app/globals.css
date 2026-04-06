@@ -11,7 +11,7 @@
   --display: var(--font-display), "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --body: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: var(--font-mono), "SF Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
-  --article-measure: 72ch;
+  --article-measure: 78ch;
   --article-rail-width: 280px;
   --article-grid-gap: 2.75rem;
 }
@@ -443,9 +443,11 @@ img {
 
 .article-series-rail-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  flex-wrap: nowrap;
+  gap: 0.55rem;
   align-items: stretch;
+  width: 100%;
+  min-width: 0;
 }
 
 .article-series-rail-link {
@@ -453,6 +455,8 @@ img {
   align-items: center;
   gap: 0.55rem;
   min-height: 2.75rem;
+  min-width: 0;
+  flex: 1 1 0;
   padding: 0.7rem 0.95rem;
   border: 1px solid color-mix(in srgb, var(--line) 90%, transparent);
   border-radius: 999px;
@@ -477,16 +481,25 @@ img {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
+  white-space: nowrap;
 }
 
 .article-series-rail-title {
   font-size: 0.96rem;
   line-height: 1.25;
   color: var(--ink);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .article-series-rail-link-active .article-series-rail-title {
   font-weight: 600;
+}
+
+.article-series-rail-label-short {
+  display: none;
 }
 
 .article-sidebar-list {
@@ -1339,8 +1352,50 @@ img {
     align-items: flex-start;
   }
 
+  .article-series-rail-link {
+    justify-content: center;
+    padding-inline: 0.75rem;
+  }
+
+  .article-series-rail-label-long {
+    display: none;
+  }
+
+  .article-series-rail-label-short {
+    display: inline;
+  }
+
+  .article-series-rail-title {
+    display: none;
+  }
+
   .repair-delta-main {
     gap: 0.5rem;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1080px) {
+  .article-series-rail-row {
+    gap: 0.45rem;
+  }
+
+  .article-series-rail-link {
+    gap: 0.45rem;
+    padding: 0.68rem 0.82rem;
+    justify-content: center;
+  }
+
+  .article-series-rail-title {
+    display: none;
+  }
+
+  .article-series-rail-link-active {
+    flex: 1.4 1 0;
+    justify-content: flex-start;
+  }
+
+  .article-series-rail-link-active .article-series-rail-title {
+    display: inline;
   }
 }

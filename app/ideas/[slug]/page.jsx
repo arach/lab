@@ -87,7 +87,7 @@ export async function generateMetadata({ params, searchParams }) {
   const articlePages = buildArticlePages(slug, idea.content)
   const pageNumber = Math.max(1, Number.parseInt(page || '1', 10) || 1)
   const hasMultiplePages = articlePages.length > 1
-  const pageSuffix = hasMultiplePages && pageNumber <= articlePages.length ? ` (Page ${pageNumber})` : ''
+  const pageSuffix = hasMultiplePages && pageNumber <= articlePages.length ? ` (Part ${pageNumber})` : ''
 
   return createLabMetadata({
     title: `${idea.title}${pageSuffix} - Training Lab`,
@@ -135,9 +135,7 @@ function extractHeadings(content) {
 }
 
 function extractPageLabel(content, number) {
-  const kickerMatch = content.match(/<div class="article-page-kicker">([\s\S]*?)<\/div>/)
-  const label = kickerMatch?.[1]?.replace(/<[^>]+>/g, '').trim()
-  return label || `Page ${number}`
+  return `Part ${number}`
 }
 
 function extractPageTitle(content, number) {
@@ -160,6 +158,7 @@ function buildArticlePages(slug, content) {
     return {
       href: `/ideas/${slug}?page=${number}`,
       label: extractPageLabel(section, number),
+      shortLabel: String(number),
       title: extractPageTitle(section, number),
       number,
     }

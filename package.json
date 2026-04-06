@@ -5,7 +5,7 @@
   "scripts": {
     "generate:og": "bun scripts/generate-og-images.mjs",
     "dev": "next dev",
-    "prebuild": "bun run generate:og",
+    "prebuild": "bun scripts/prebuild.mjs",
     "build": "next build",
     "start": "next start"
   },

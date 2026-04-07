@@ -11,7 +11,7 @@
   --display: var(--font-display), "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --body: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: var(--font-mono), "SF Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
-  --article-measure: 78ch;
+  --article-measure: 94ch;
   --article-rail-width: 280px;
   --article-grid-gap: 2.75rem;
 }
@@ -216,6 +216,7 @@ img {
 
 .article-hero-series {
   margin-top: 1.7rem;
+  max-width: 100%;
 }
 
 .meta-pill,
@@ -373,10 +374,35 @@ img {
 }
 
 .article-prose {
-  max-width: var(--article-measure);
+  max-width: min(100%, var(--article-measure));
   width: 100%;
   font-size: 1.075rem;
   line-height: 1.82;
+}
+
+.article-context-wrap {
+  width: min(100%, 78rem);
+}
+
+.article-prose > h2,
+.article-prose > h3,
+.article-prose > h4,
+.article-prose > .article-page-section,
+.article-prose > .article-series-footer,
+.article-prose > .article-context-section,
+.article-prose > .article-context-toggle {
+  max-width: 100%;
+}
+
+.article-prose > p,
+.article-prose > ul,
+.article-prose > ol,
+.article-prose > blockquote,
+.article-prose > pre,
+.article-prose > .prose-table-wrap,
+.article-prose > details,
+.article-prose > hr {
+  max-width: 72ch;
 }
 
 .article-page-section {
@@ -957,6 +983,57 @@ img {
 }
 
 .semantic-model-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.article-context-section {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.article-context-section-header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.article-context-section-header p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+.article-context-toggle {
+  margin-top: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
+  overflow: hidden;
+}
+
+.article-context-toggle summary {
+  padding: 1rem 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.article-context-toggle summary::before {
+  margin-right: 0.45rem;
+}
+
+.article-context-toggle-body {
+  display: grid;
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+}
+
+.article-context-toggle-copy {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;

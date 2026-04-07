@@ -17,6 +17,8 @@ export default function IdeaArticleLayout({
   status,
   readingTime,
   evalPanels,
+  postArticleNav,
+  afterContent,
   seriesNav,
   aside,
   children,
@@ -70,6 +72,10 @@ export default function IdeaArticleLayout({
               <div className="article-panels">{evalPanels}</div>
             ) : null}
             <article className="article-prose">{children}</article>
+            {afterContent ? (
+              <div className="article-context-wrap">{afterContent}</div>
+            ) : null}
+            {postArticleNav}
           </div>
           {aside ? (
             <div className="article-rail-column">{aside}</div>

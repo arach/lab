@@ -186,6 +186,33 @@ export default async function IdeaPage({ params, searchParams }) {
   const articleHeadings = extractHeadings(articleContent)
   const previousPage = articlePages.length && pageNumber > 1 ? articlePages[pageNumber - 2] : null
   const nextPage = articlePages.length && pageNumber < articlePages.length ? articlePages[pageNumber] : null
+  const semanticSummary = showSemanticPanel ? getSemanticEvalSummary() : null
+  const semanticContext =
+    showSemanticPanel && semanticSummary ? (
+      pageNumber === 1 ? (
+        <section className="article-context-section" aria-label="Semantic eval context">
+          <div className="article-context-section-header">
+            <p className="section-kicker">Semantic Eval Context</p>
+            <p>
+              This supporting benchmark panel sits below the essay so the article
+              can introduce itself before dropping into the scorecard.
+            </p>
+          </div>
+          <SemanticEvalPanel summary={semanticSummary} />
+        </section>
+      ) : (
+        <details className="article-context-toggle">
+          <summary>Open semantic eval context</summary>
+          <div className="article-context-toggle-body">
+            <p className="article-context-toggle-copy">
+              The full benchmark panel is still here if you want to cross-check
+              the framing while reading later parts.
+            </p>
+            <SemanticEvalPanel summary={semanticSummary} />
+          </div>
+        </details>
+      )
+    ) : null
 
   return (
     <IdeaArticleLayout
@@ -205,28 +232,9 @@ export default async function IdeaPage({ params, searchParams }) {
       aside={
         <ArticleSidebar headings={articleHeadings} />
       }
-      evalPanels={
-        showSemanticPanel ? (
-          <SemanticEvalPanel summary={getSemanticEvalSummary()} />
-        ) : showRepairPanel ? (
-          <BenchmarkRepairPanel summary={getBenchmarkRepairSummary()} />
-        ) : showEvalPanels ? (
-          <>
-            <EvalIntroPanel cards={getCoreEvalCardsPreview()} />
-            <BenchmarkSnapshot summary={getV2AnchorSummary()} v1Rows={getV1ScoreRows()} />
-          </>
-        ) : null
-      }
-    >
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
-        components={createMarkdownComponents()}
-      >
-        {articleContent}
-      </ReactMarkdown>
-      {articlePages.length ? (
-        <nav className="article-series-footer" aria-label="Series footer navigation">
+      postArticleNav={
+        articlePages.length ? (
+          <nav className="article-series-footer" aria-label="Series footer navigation">
             {previousPage ? (
               <Link href={previousPage.href} className="article-series-link">
                 ← {previousPage.label}
@@ -241,8 +249,28 @@ export default async function IdeaPage({ params, searchParams }) {
             ) : (
               <span className="article-series-link article-series-link-muted">End</span>
             )}
-        </nav>
-      ) : null}
+          </nav>
+        ) : null
+      }
+      evalPanels={
+        showRepairPanel ? (
+          <BenchmarkRepairPanel summary={getBenchmarkRepairSummary()} />
+        ) : showEvalPanels ? (
+          <>
+            <EvalIntroPanel cards={getCoreEvalCardsPreview()} />
+            <BenchmarkSnapshot summary={getV2AnchorSummary()} v1Rows={getV1ScoreRows()} />
+          </>
+        ) : null
+      }
+      afterContent={semanticContext}
+    >
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        components={createMarkdownComponents()}
+      >
+        {articleContent}
+      </ReactMarkdown>
     </IdeaArticleLayout>
   )
 }

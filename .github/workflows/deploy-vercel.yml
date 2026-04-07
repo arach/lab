@@ -9,7 +9,7 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   VERCEL_ORG_ID: team_4idZYM1vtyLD2utSda9Sl8sy
-  VERCEL_PROJECT_ID: prj_lrIsjCLBflosQdFRMn0A0VsLnlrN
+  VERCEL_PROJECT_ID: prj_51EhobbWf1TEWjpD9yrvShJcxloH
 
 jobs:
   deploy:
@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p .vercel
           cat > .vercel/project.json <<'EOF'
-          {"projectId":"prj_lrIsjCLBflosQdFRMn0A0VsLnlrN","orgId":"team_4idZYM1vtyLD2utSda9Sl8sy","projectName":"training-lab"}
+          {"projectId":"prj_51EhobbWf1TEWjpD9yrvShJcxloH","orgId":"team_4idZYM1vtyLD2utSda9Sl8sy","projectName":"lab"}
           EOF
 
       - name: Deploy to Vercel

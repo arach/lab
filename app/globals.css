@@ -249,9 +249,9 @@ img {
 
 .article-hero h1 {
   font-family: var(--display);
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
   font-weight: 400;
-  line-height: 1.04;
+  line-height: 1.06;
   letter-spacing: -0.03em;
   margin: 0.6rem 0 1rem;
   max-width: 22ch;
@@ -260,8 +260,8 @@ img {
 .lede,
 .hero p,
 .article-hero p {
-  font-size: clamp(1.08rem, 1.4vw, 1.3rem);
-  line-height: 1.75;
+  font-size: clamp(1rem, 1.15vw, 1.16rem);
+  line-height: 1.68;
   color: var(--muted);
   max-width: 46rem;
 }
@@ -473,8 +473,8 @@ img {
 .article-prose {
   max-width: min(100%, var(--article-measure));
   width: 100%;
-  font-size: 1.075rem;
-  line-height: 1.82;
+  font-size: 1rem;
+  line-height: 1.76;
 }
 
 .article-context-wrap {
@@ -495,11 +495,14 @@ img {
 .article-prose > ul,
 .article-prose > ol,
 .article-prose > blockquote,
-.article-prose > pre,
-.article-prose > .prose-table-wrap,
-.article-prose > details,
-.article-prose > hr {
+ .article-prose > .prose-table-wrap,
+ .article-prose > details,
+ .article-prose > hr {
   max-width: 72ch;
+}
+
+.article-prose > pre {
+  max-width: 82ch;
 }
 
 .article-page-section {
@@ -1221,15 +1224,15 @@ img {
 }
 
 .article-prose h2 {
-  font-size: 1.8rem;
-  margin-top: 3.2rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.62rem;
+  margin-top: 3rem;
+  margin-bottom: 0.72rem;
 }
 
 .article-prose h3 {
-  font-size: 1.3rem;
-  margin-top: 2.4rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.18rem;
+  margin-top: 2.2rem;
+  margin-bottom: 0.55rem;
 }
 
 .article-prose h4 {
@@ -1331,14 +1334,19 @@ img {
 
 .article-prose pre {
   overflow-x: auto;
-  padding: 1.2rem 1.4rem;
+  display: inline-block;
+  max-width: min(100%, 82ch);
+  width: max-content;
+  min-width: min(100%, 32rem);
+  padding: 1rem 1.15rem;
   border-radius: 14px;
   border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
   background: #16150f;
   color: #e8e2d5;
-  font-size: 0.88rem;
-  line-height: 1.68;
+  font-size: 0.84rem;
+  line-height: 1.58;
   margin: 1.4rem 0;
+  white-space: pre;
 }
 
 @media (prefers-color-scheme: dark) {

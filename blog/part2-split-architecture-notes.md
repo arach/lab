@@ -3,6 +3,14 @@
 > Follow-up to "Teaching a Tiny Model to Hear Bash"
 > Working title — refine before publishing
 
+<!-- METADATA
+slug: when-fine-tuning-isnt-the-answer-yet
+date: 2026-03-05
+tags: on-device-ml, fine-tuning, architecture, bash, voice
+author: Arach
+description: Follow-up notes on why end-to-end fine-tuning was not the right next step, and how the split architecture emerged instead.
+-->
+
 ## Narrative arc
 
 Part 1 ended on a high: 97% accuracy, 3GB RAM, under a second. But there's a catch we glossed over — that 97% is on **clean protocol input**. When users speak naturally ("okay so the command is...") or make corrections mid-sentence ("dash dash no wait just dash v"), the model falls apart.

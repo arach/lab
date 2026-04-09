@@ -1,0 +1,345 @@
+{
+  "pack": "title_intent_v1",
+  "focus": "Auto-title plus tiny intent extraction for short voice notes.",
+  "outputContract": {
+    "title": "One concise, specific note title.",
+    "intent": [
+      "none",
+      "research",
+      "email",
+      "call",
+      "schedule"
+    ],
+    "target": "Only fill when the action target is explicit in the note. Otherwise return an empty string."
+  },
+  "cards": [
+    {
+      "id": "title-launch-pricing-order",
+      "packSlice": "title",
+      "objective": "Reward titles that capture the real subject of a product note without inventing a task.",
+      "input": {
+        "memoId": "title_01",
+        "transcript": "For the pricing page I think the order should be proof first, then the team plan, then the annual savings callout because right now it reads too flat."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "pricing page",
+          "proof first",
+          "annual savings"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Voice Memo",
+          "Thoughts",
+          "Pricing"
+        ]
+      },
+      "whyItMatters": "This is the common list-view problem: the note has a clear subject but not a clean title."
+    },
+    {
+      "id": "title-morning-routine-reflection",
+      "packSlice": "title",
+      "objective": "Keep reflective notes browsable without turning them into fake action items.",
+      "input": {
+        "memoId": "title_02",
+        "transcript": "I do better work when I leave the phone in the kitchen for the first hour. The mornings only really go off the rails once Slack starts."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "mornings",
+          "phone in the kitchen",
+          "Slack"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Work note",
+          "Idea",
+          "Routine"
+        ]
+      },
+      "whyItMatters": "A useful title should help the user find the note later without pretending it is an explicit task."
+    },
+    {
+      "id": "title-podcast-clip-observation",
+      "packSlice": "title",
+      "objective": "Handle spoken, descriptive notes that are more about an observation than an action.",
+      "input": {
+        "memoId": "title_03",
+        "transcript": "The best part of that interview clip is where she says small teams need a shared language before they need more process. That's the line I want to keep."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "shared language",
+          "interview clip",
+          "small teams"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Interview",
+          "Clip",
+          "Quote"
+        ]
+      },
+      "whyItMatters": "Good titles make reference notes feel curated instead of like raw transcripts."
+    },
+    {
+      "id": "title-travel-memory-fragment",
+      "packSlice": "title",
+      "objective": "Reward titles that summarize a note fragment cleanly even when it sounds like a thought-in-progress.",
+      "input": {
+        "memoId": "title_04",
+        "transcript": "Need to remember that tiny bookstore in Montreal with the green awning because it had exactly the mood I want for the next shoot."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "Montreal bookstore",
+          "green awning",
+          "next shoot"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Reminder",
+          "Store",
+          "Shoot idea"
+        ]
+      },
+      "whyItMatters": "Many good voice notes are memory anchors, not commands."
+    },
+    {
+      "id": "intent-research-desk-mics",
+      "packSlice": "intent",
+      "objective": "Catch explicit research intent and keep the target concrete.",
+      "input": {
+        "memoId": "intent_01",
+        "transcript": "Can you look into desk microphones that sound good in a small untreated office before I order anything."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "desk microphones",
+          "small office audio",
+          "research desk mics"
+        ],
+        "acceptedIntents": [
+          "research"
+        ],
+        "acceptedTargets": [
+          "desk microphones for a small untreated office",
+          "desk microphones for a small office",
+          "small-office desk microphones"
+        ],
+        "titleAvoid": [
+          "Microphones",
+          "Audio",
+          "Voice memo"
+        ]
+      },
+      "whyItMatters": "This is the cleanest version of a useful action note: obvious intent, obvious target."
+    },
+    {
+      "id": "intent-email-landlord-addendum",
+      "packSlice": "intent",
+      "objective": "Detect explicit email intent instead of broad 'follow up' language.",
+      "input": {
+        "memoId": "intent_02",
+        "transcript": "Email the landlord tomorrow and ask whether the lease addendum covers subletting for the summer."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "lease addendum",
+          "email landlord",
+          "subletting"
+        ],
+        "acceptedIntents": [
+          "email"
+        ],
+        "acceptedTargets": [
+          "landlord about lease addendum and summer subletting",
+          "landlord about subletting in the lease addendum",
+          "landlord re summer subletting"
+        ],
+        "titleAvoid": [
+          "Lease",
+          "Question",
+          "Tomorrow"
+        ]
+      },
+      "whyItMatters": "The benchmark should reward concrete communication intent, not generic task labeling."
+    },
+    {
+      "id": "intent-call-mom-passport",
+      "packSlice": "intent",
+      "objective": "Separate a direct call intent from generic personal planning.",
+      "input": {
+        "memoId": "intent_03",
+        "transcript": "Call Mom tonight and ask whether she already mailed the passport renewal forms."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "passport renewal",
+          "call Mom",
+          "renewal forms"
+        ],
+        "acceptedIntents": [
+          "call"
+        ],
+        "acceptedTargets": [
+          "Mom about the passport renewal forms",
+          "Mom about whether she mailed the passport forms",
+          "Mom re passport renewal forms"
+        ],
+        "titleAvoid": [
+          "Family",
+          "Passport",
+          "Tonight"
+        ]
+      },
+      "whyItMatters": "Direct call notes are common and should not need a large agent loop to be useful."
+    },
+    {
+      "id": "intent-schedule-dentist-cleaning",
+      "packSlice": "intent",
+      "objective": "Reward clean schedule intent when the note clearly asks for an appointment.",
+      "input": {
+        "memoId": "intent_04",
+        "transcript": "Schedule a dentist cleaning for next Thursday afternoon if they still have anything open."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "dentist cleaning",
+          "next Thursday",
+          "schedule dentist"
+        ],
+        "acceptedIntents": [
+          "schedule"
+        ],
+        "acceptedTargets": [
+          "dentist cleaning next Thursday afternoon",
+          "dentist cleaning appointment for next Thursday afternoon",
+          "dentist cleaning"
+        ],
+        "titleAvoid": [
+          "Appointment",
+          "Thursday",
+          "Cleaning"
+        ]
+      },
+      "whyItMatters": "This keeps the intent label set tiny while still covering a high-frequency note type."
+    },
+    {
+      "id": "restraint-investor-update-vague",
+      "packSlice": "restraint",
+      "objective": "Do not guess an action type from a vague pressure note.",
+      "input": {
+        "memoId": "restraint_01",
+        "transcript": "Need to figure out the investor update soon because I keep putting it off and the story still feels muddy."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "investor update",
+          "muddy story",
+          "putting off investor update"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Email investors",
+          "Research investors",
+          "Schedule update"
+        ]
+      },
+      "whyItMatters": "The note has pressure but not a clear next action. Good models should resist over-routing."
+    },
+    {
+      "id": "restraint-dentist-blocked-by-insurance",
+      "packSlice": "restraint",
+      "objective": "Prefer restraint when the user explicitly backs away from the action.",
+      "input": {
+        "memoId": "restraint_02",
+        "transcript": "Book the dentist... actually wait, don't do that yet. I need to check whether the new insurance even kicked in."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "dentist insurance check",
+          "wait on dentist booking",
+          "new insurance"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Schedule dentist",
+          "Book dentist",
+          "Dental appointment"
+        ]
+      },
+      "whyItMatters": "This is exactly the kind of spoken correction that weak evals often mishandle."
+    },
+    {
+      "id": "restraint-email-or-call-unclear",
+      "packSlice": "restraint",
+      "objective": "Do not force an intent when the note itself leaves the action channel unresolved.",
+      "input": {
+        "memoId": "restraint_03",
+        "transcript": "Need to talk to Maya about the deck or maybe just send it over first, I'm not sure which is less annoying."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "Maya deck follow-up",
+          "how to send Maya the deck",
+          "deck follow-up for Maya"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Call Maya",
+          "Email Maya",
+          "Send deck"
+        ]
+      },
+      "whyItMatters": "The benchmark should give credit for saying 'not enough signal yet.'"
+    },
+    {
+      "id": "restraint-multi-thread-scene-note",
+      "packSlice": "restraint",
+      "objective": "Keep descriptive, multi-thread notes from being mistaken for operational actions.",
+      "input": {
+        "memoId": "restraint_04",
+        "transcript": "The cafe lighting felt perfect for the interview shoot and the guest kept leaning into the window side, which actually looked way better than the clean setup."
+      },
+      "gold": {
+        "titleMustMentionAny": [
+          "cafe lighting",
+          "interview shoot setup",
+          "window side looked better"
+        ],
+        "acceptedIntents": [
+          "none"
+        ],
+        "targetMustBeEmpty": true,
+        "titleAvoid": [
+          "Schedule shoot",
+          "Research lighting",
+          "Email guest"
+        ]
+      },
+      "whyItMatters": "Descriptive notes are part of the product surface. They should stay useful without being forced into action labels."
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "provider": "github_models",
+    "model": "openai/gpt-4o-mini",
+    "pack": "title_intent_v1",
+    "cards": 3,
+    "passed": 2,
+    "pass_rate": 0.6667,
+    "average_score": 0.9,
+    "median_latency_ms": 1924.2,
+    "exact_parse_rate": 1.0,
+    "normalized_parse_rate": 0.0,
+    "parse_failure_rate": 0.0,
+    "title_task_score": 0.8,
+    "intent_task_score": 1.0,
+    "restraint_score": 1.0,
+    "title_slice_score": 0.9,
+    "title_slice_pass_rate": 0.6667
+  },
+  "rows": [
+    {
+      "card_id": "title-launch-pricing-order",
+      "slice": "title",
+      "provider": "github_models",
+      "model": "openai/gpt-4o-mini",
+      "latency_ms": 2589.91,
+      "raw_text": "{\n  \"title\": \"Reorder Pricing Page Elements\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "openai/gpt-4o-mini"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Reorder Pricing Page Elements' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Reorder Pricing Page Elements",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-morning-routine-reflection",
+      "slice": "title",
+      "provider": "github_models",
+      "model": "openai/gpt-4o-mini",
+      "latency_ms": 1924.2,
+      "raw_text": "{\n  \"title\": \"Improve Morning Focus\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "openai/gpt-4o-mini"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.7,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 0.4,
+            "details": "title='Improve Morning Focus' overlap=0.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Improve Morning Focus",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-podcast-clip-observation",
+      "slice": "title",
+      "provider": "github_models",
+      "model": "openai/gpt-4o-mini",
+      "latency_ms": 1536.63,
+      "raw_text": "{\n  \"title\": \"Highlight from Interview Clip\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "openai/gpt-4o-mini"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Highlight from Interview Clip' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Highlight from Interview Clip",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    }
+  ]
+}

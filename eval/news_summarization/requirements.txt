@@ -1,0 +1,6 @@
+bert-score
+rouge-score
+torch
+transformers
+accelerate
+sentencepiece

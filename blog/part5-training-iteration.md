@@ -6,7 +6,7 @@
 slug: from-18-to-79-in-an-afternoon
 series: teaching-a-tiny-model-to-hear-bash
 part: 5
-date: TBD
+date: 2026-03-08
 tags: fine-tuning, mlx, lora, training-data, on-device-ml, voice, dictation
 author: Arach
 -->

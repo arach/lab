@@ -1,0 +1,94 @@
+{
+  "summary": {
+    "provider": "github_models",
+    "model": "openai/gpt-4.1-mini",
+    "pack": "title_intent_v1",
+    "cards": 2,
+    "passed": 2,
+    "pass_rate": 1.0,
+    "average_score": 1.0,
+    "median_latency_ms": 1589.8,
+    "exact_parse_rate": 1.0,
+    "normalized_parse_rate": 0.0,
+    "parse_failure_rate": 0.0,
+    "title_task_score": 1.0,
+    "intent_task_score": 1.0,
+    "restraint_score": 1.0,
+    "title_slice_score": 1.0,
+    "title_slice_pass_rate": 1.0
+  },
+  "rows": [
+    {
+      "card_id": "title-launch-pricing-order",
+      "slice": "title",
+      "provider": "github_models",
+      "model": "openai/gpt-4.1-mini",
+      "latency_ms": 1636.54,
+      "raw_text": "{\n  \"title\": \"Reorder pricing page sections for better flow\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "openai/gpt-4.1-mini"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Reorder pricing page sections for better flow' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Reorder pricing page sections for better flow",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-morning-routine-reflection",
+      "slice": "title",
+      "provider": "github_models",
+      "model": "openai/gpt-4.1-mini",
+      "latency_ms": 1543.06,
+      "raw_text": "{\n  \"title\": \"Improve morning focus by leaving phone in kitchen\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "openai/gpt-4.1-mini"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Improve morning focus by leaving phone in kitchen' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Improve morning focus by leaving phone in kitchen",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    }
+  ]
+}

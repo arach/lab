@@ -84,7 +84,8 @@ export async function generateMetadata({ params, searchParams }) {
   }
 
   const page = resolvedSearchParams?.page
-  const articlePages = buildArticlePages(slug, idea.content)
+  const normalizedContent = stripLeadMatter(idea.content)
+  const articlePages = buildArticlePages(slug, normalizedContent)
   const pageNumber = Math.max(1, Number.parseInt(page || '1', 10) || 1)
   const hasMultiplePages = articlePages.length > 1
   const pageSuffix = hasMultiplePages && pageNumber <= articlePages.length ? ` (Part ${pageNumber})` : ''
@@ -101,6 +102,22 @@ export async function generateMetadata({ params, searchParams }) {
 function extractArticlePages(content) {
   const matches = content.match(/<section id="page-\d+" class="article-page-section">[\s\S]*?<\/section>/g)
   return matches && matches.length ? matches : [content]
+}
+
+function stripLeadMatter(content) {
+  return content
+    .replace(/^#\s+.+\n+/, '')
+    .replace(/^>\s+.+\n+/, '')
+    .trim()
+}
+
+function wordCount(content) {
+  return content
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length
 }
 
 function extractHeadings(content) {
@@ -144,12 +161,18 @@ function extractPageTitle(content, number) {
     ?.replace(/<[^>]+>/g, '')
     .replace(/&amp;/g, '&')
     .trim()
-  return title || `Page ${number}`
+  return title || `Part ${number}`
 }
 
 function buildArticlePages(slug, content) {
   const sections = extractArticlePages(content)
   if (sections.length <= 1) {
+    return []
+  }
+
+  const minimumPartWords = 450
+  const significantSections = sections.every((section) => wordCount(section) >= minimumPartWords)
+  if (!significantSections) {
     return []
   }
 
@@ -178,11 +201,12 @@ export default async function IdeaPage({ params, searchParams }) {
     slug === 'designing-evals-for-small-workflow-intelligence'
   const showRepairPanel = slug === 'fixing-v1-with-v1-1'
   const showSemanticPanel = slug === 'designing-a-semantic-eval-for-tiny-models'
-  const articlePages = buildArticlePages(slug, idea.content)
+  const normalizedContent = stripLeadMatter(idea.content)
+  const articlePages = buildArticlePages(slug, normalizedContent)
   const pageNumber = Math.max(1, Number.parseInt(resolvedSearchParams?.page || '1', 10) || 1)
-  const articleSections = articlePages.length ? extractArticlePages(idea.content) : []
+  const articleSections = articlePages.length ? extractArticlePages(normalizedContent) : []
   const pageIndex = articleSections.length ? Math.min(articleSections.length, pageNumber) - 1 : 0
-  const articleContent = articleSections.length ? articleSections[pageIndex] : idea.content
+  const articleContent = articleSections.length ? articleSections[pageIndex] : normalizedContent
   const articleHeadings = extractHeadings(articleContent)
   const previousPage = articlePages.length && pageNumber > 1 ? articlePages[pageNumber - 2] : null
   const nextPage = articlePages.length && pageNumber < articlePages.length ? articlePages[pageNumber] : null

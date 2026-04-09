@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "google/gemma-4-31b-it",
+    "pack": "title_intent_v1",
+    "cards": 4,
+    "passed": 3,
+    "pass_rate": 0.75,
+    "average_score": 0.9131,
+    "median_latency_ms": 3039.41,
+    "exact_parse_rate": 0.0,
+    "normalized_parse_rate": 1.0,
+    "parse_failure_rate": 0.0,
+    "title_task_score": 0.925,
+    "intent_task_score": 0.9125,
+    "restraint_score": 0.875,
+    "title_slice_score": 0.9131,
+    "title_slice_pass_rate": 0.75
+  },
+  "rows": [
+    {
+      "card_id": "title-launch-pricing-order",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-31b-it",
+      "latency_ms": 13425.16,
+      "raw_text": "```json\n{\n  \"title\": \"Pricing Page Layout Adjustments\",\n  \"intent\": \"none\",\n  \"target\": \"pricing page\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-31b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8025,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Pricing Page Layout Adjustments' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.65,
+            "details": "intent='none' target='pricing page' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.5,
+            "details": "intent='none' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Pricing Page Layout Adjustments",
+          "intent": "none",
+          "target": "pricing page"
+        }
+      }
+    },
+    {
+      "card_id": "title-morning-routine-reflection",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-31b-it",
+      "latency_ms": 3330.29,
+      "raw_text": "```json\n{\n  \"title\": \"Morning Productivity and Phone Habits\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-31b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.85,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 0.7,
+            "details": "title='Morning Productivity and Phone Habits' overlap=0.50 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Morning Productivity and Phone Habits",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-podcast-clip-observation",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-31b-it",
+      "latency_ms": 2748.53,
+      "raw_text": "```json\n{\n  \"title\": \"Interview Clip: Shared Language Quote\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-31b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Interview Clip: Shared Language Quote' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Interview Clip: Shared Language Quote",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-travel-memory-fragment",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-31b-it",
+      "latency_ms": 2348.13,
+      "raw_text": "```json\n{\n  \"title\": \"Montreal Bookstore for Shoot Mood\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-31b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Montreal Bookstore for Shoot Mood' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Montreal Bookstore for Shoot Mood",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    }
+  ]
+}

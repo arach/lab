@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "x-ai/grok-3-mini",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 3,
+    "average_token_f1": 0.5588,
+    "average_rouge_l_f1_approx": 0.3508,
+    "average_word_count": 73.33,
+    "median_latency_ms": 5165.91,
+    "average_rouge1_f1": 0.5898,
+    "average_rouge2_f1": 0.2852,
+    "average_rougeL_f1": 0.3618,
+    "average_bertscore_f1": 0.9181
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir features in a new documentary titled 'Omarsson' that explores her pregnancy experiences and the support she received from her club, showcasing her journey as an elite footballer and mother. The film has been praised by teammates like Katrina Gorry for highlighting the challenges and joys of motherhood in sports, inspiring a shift towards greater support for athletes balancing family and professional careers.",
+      "source_url": null,
+      "latency_ms": 5165.91,
+      "scores": {
+        "token_f1": 0.5865,
+        "rouge_l_f1_approx": 0.4211,
+        "rouge1_f1": 0.6222,
+        "rouge2_f1": 0.2707,
+        "rougeL_f1": 0.4296,
+        "word_count": 67,
+        "bertscore_f1": 0.9221
+      },
+      "provider_metadata": {
+        "model": "x-ai/grok-3-mini"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "US authorities have charged Takeshi Ebisawa, a 60-year-old senior figure in the Japanese Yakuza, with conspiring to traffic nuclear materials, including uranium and weapons-grade plutonium from Myanmar, which he allegedly attempted to sell to an undercover DEA agent posing as a trafficker linked to Iran. Ebisawa, who also faces accusations of seeking military-grade weapons for a Myanmar rebel group and is held in Brooklyn jail, could face life imprisonment if convicted, alongside his Thai co-defendant Somphop Singhasiri on related charges.",
+      "source_url": null,
+      "latency_ms": 5324.55,
+      "scores": {
+        "token_f1": 0.6,
+        "rouge_l_f1_approx": 0.4,
+        "rouge1_f1": 0.6404,
+        "rouge2_f1": 0.4091,
+        "rougeL_f1": 0.4157,
+        "word_count": 80,
+        "bertscore_f1": 0.9325
+      },
+      "provider_metadata": {
+        "model": "x-ai/grok-3-mini"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 6612,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "The Israeli military has encircled Khan Younis in southern Gaza, advancing deeper into the city amid heavy fighting around hospitals like al-Amal, where shelling has caused casualties and blocked evacuation routes for residents. The conflict has resulted in 24 Israeli soldiers and at least 195 Palestinians killed in the past day, bringing the total Palestinian death toll to over 25,400, as international calls for a humanitarian ceasefire intensify with negotiations underway in Cairo.",
+      "source_url": null,
+      "latency_ms": 5019.65,
+      "scores": {
+        "token_f1": 0.4898,
+        "rouge_l_f1_approx": 0.2313,
+        "rouge1_f1": 0.5067,
+        "rouge2_f1": 0.1757,
+        "rougeL_f1": 0.24,
+        "word_count": 73,
+        "bertscore_f1": 0.8996
+      },
+      "provider_metadata": {
+        "model": "x-ai/grok-3-mini"
+      }
+    }
+  ]
+}

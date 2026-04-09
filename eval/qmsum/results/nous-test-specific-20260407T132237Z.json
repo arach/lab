@@ -1,0 +1,74 @@
+{
+  "summary": {
+    "provider": "nous",
+    "model": "Hermes-4-70B",
+    "split": "test",
+    "query_mode": "specific",
+    "cases": 2,
+    "average_token_f1": 0.3367,
+    "average_rouge_l_f1_approx": 0.1809,
+    "median_latency_ms": 1672.18,
+    "average_rouge1_f1": 0.3565,
+    "average_rouge2_f1": 0.0748,
+    "average_rougeL_f1": 0.1947,
+    "average_bertscore_f1": 0.864
+  },
+  "rows": [
+    {
+      "case_id": "0033-specific-0",
+      "meeting_id": "0033",
+      "query_mode": "specific",
+      "query": "What did the team decide on in the last meeting?",
+      "gold_answer": "Teletext will not be used and there will not be a control for everything. The buttons should be easy to find. The image of the company is to be incorporated in the design and a flip design is decided. Voice recognition is left out. The shape of the remote will be different than normal, like a shell or something along those lines. An alarm will be added in case the remote is lost. The target market will be young business people.",
+      "prediction": "In the last meeting, the team decided to leave out voice recognition, incorporate a flip design, use a different shape from what's normal (possibly a shell), and target a young, business-oriented market. They also planned to look into rechargeable batteries, a port, and an alarm for preventing loss.",
+      "transcript_turns": 11,
+      "transcript_excerpt": "Industrial Designer: Etcetera .\nMarketing: Mm-hmm .\nProject Manager: So I think we've touched on a few things to do with that already , but we'll just go over it . Um the minutes from the last time . Um we had a couple of um changes in our plans in that we couldn't use teletext , it wasn't gonna be a control for everything um and that we had to incorporate the image of the company into it somehow . Um we have decided on a {disfmarker} leaving out the voice recognition , we've decided on there being a flip design and um a different shape from what's normal . We were thinking a shell , but something along those lines , just a different shape from what's normal , um . You were going to look into the rechargeable batteries\nIndustrial Designer: Yeah .\nProject Manager: and we were gonna think about the port and an alarm for getting it lost ,\nUser Interface: {gap}\nProject Manager: things like that ,\nIndustrial Designer: Yeah .\nProject Manager: um and our market was going to be young , business , kind of range .\nUser Interface: 'Kay .\nProject Manager: Okay , so shall we start with the first presentation ?",
+      "metadata": {
+        "span_range": [
+          21,
+          31
+        ]
+      },
+      "latency_ms": 1672.18,
+      "scores": {
+        "token_f1": 0.4031,
+        "rouge_l_f1_approx": 0.186,
+        "rouge1_f1": 0.4427,
+        "rouge2_f1": 0.1085,
+        "rougeL_f1": 0.2137,
+        "bertscore_f1": 0.8811
+      },
+      "provider_metadata": {
+        "model": "Hermes-4-70B"
+      }
+    },
+    {
+      "case_id": "0014-specific-8",
+      "meeting_id": "0014",
+      "query_mode": "specific",
+      "query": "What did the meeting discuss about the innovation schools?",
+      "gold_answer": "Kirsty Williams AM pointed out that all schools that had previously been pioneers were invited to apply to morph into innovation schools, as the next phase. There would be both a downside and an upside for the programme of innovation schools. At this stage, it should be better to move away from the original 's AM concluded that pioneers were looking at specific aspects of the curriculum. In this case, school with a specific aspect of strength should be encouraged to apply.",
+      "prediction": "The meeting discussed the selection of 16 innovation schools from 60 applicants, which were chosen based on their ability to practically implement the curriculum in the round, considering their sector, linguistic background, and type of school. These schools are tasked with working on the final refinements to the curriculum content, assessment, and accountability issues, and providing practical feedback on how to realize the curriculum in schools.",
+      "transcript_turns": 8,
+      "transcript_excerpt": "Kirsty Williams AM: The money that was agreed was for a two-year period and, clearly, I continue to have conversations with the Minister for Finance and the First Minister around future allocations for professional learning, and I'm sure this committee and, indeed, members of this committee could help me in that task.\nDawn Bowden AM: Okay, fine. Can you tell us a bit about the innovation schools\u2014the 16 innovation schools\u2014and how you've made your decisions about who they might be, across which sectors, in primary, secondary and so on? So, basically, how they were selected and what you're expecting of them.\nKirsty Williams AM: Okay. So, all of our schools that had previously been pioneers were invited to apply to morph into the next phase, which is innovation schools, and they were asked to apply and there was a discussion held both internally within Welsh Government and with the consortia about which schools were best placed to be able to do that role and to continue to work with us, going forward. I think one of the lessons learned, and this was said in the committee, was that there was an upside to having pioneer schools, but there was a downside to having pioneer schools, and I think, at this stage of the game, we need to move away from that model and to really get the message to everybody that they all had to be pioneers now\u2014everybody had to be a pioneer\u2014because this is coming down the track and we don't want anybody just sitting there waiting until September 2022 and saying, 'Oh, gosh. I've got to do something new today'. Not that they would have done that, but\u2014. So, the move away is partly to engender within the sector the fact that we've all got to engage in this now. The innovation schools have led to a very specific piece of work as we do the final refinement, and their main role is working with us on these final refinements to the content but also to the assessment issues and accountability issues. Steve.\nSteve Davies: Yes. There were 60 applicants from 170 previous pioneer schools. We've had 16\u2014four per region. It was important that we engaged with the regions to get their view, and we've had evaluation being carried out\u2014\nClaire Bennett: Yes. So, during the first term of work, we asked them to really look at the curriculum as a whole\u2014so, take the whole curriculum guidance and then think, 'How would I apply that in the school?, Does it make sense?, Can we work with it?, What are the issues?, What are the questions that arise for us for assessment?', and each of the schools produced a report setting out their reflections on, 'If I were putting this into practice\u2014'. So, it's slightly different to the feedback we've had from other people, which has been more, 'Maybe you should emphasise this or change that wording' and kind of quite practical, and really about how you would realise this curriculum in a school. That's been drawn together into an overall report, drawing out the themes, by Wavehill, who are a kind of research company. It's been really useful, and the innovation schools met as part of the workshops last week. Having 16 headteachers in a room talking about how they see this curriculum and the way in which they would practically engage with it has been invaluable, in just making us think, even with all the practitioners that have been involved, 'How do we make this work for schools?', given that we've got schools and headteachers really engaging in the detail of how they would use it practically. So, it's been invaluable, and they're continuing on that work now this term to keep making sure that what we're doing is something that schools can actually realise practically.\nKirsty Williams AM: If you think of the pioneer model, pioneers were looking at specific aspects of the curriculum. So, you might have been a pioneer school because you had particular strengths in health and well-being, or you might have been a pioneer schools because you were particularly looking at professional learning needs to support the curriculum. This is about, at this stage, where we have a high degree of certainty about what it's going to look like, 'Actually, how do I as a school practically implement this in the round?', and the schools were chosen because of their ability to do that. But also we did need a mix of sector\u2014secondary, primary\u2014but also linguistically, to just try to make sure that this works in all the different types of schools we've got. Faith schools, as well, are involved. So, just trying the practical implementation now, now that we know exactly\u2014not exactly\u2014 but we have a good idea what it's actually going to look like, so, 'How am I going to go about doing this?'\nLynne Neagle AM: Okay. Si\u00e2n has a supplementary. If I could ask as well, maybe you could provide the committee with a list of the new innovation schools.\nKirsty Williams AM: Yes, sure. No problem at all.",
+      "metadata": {
+        "span_range": [
+          95,
+          102
+        ]
+      },
+      "latency_ms": 1469.57,
+      "scores": {
+        "token_f1": 0.2703,
+        "rouge_l_f1_approx": 0.1757,
+        "rouge1_f1": 0.2703,
+        "rouge2_f1": 0.0411,
+        "rougeL_f1": 0.1757,
+        "bertscore_f1": 0.847
+      },
+      "provider_metadata": {
+        "model": "Hermes-4-70B"
+      }
+    }
+  ]
+}

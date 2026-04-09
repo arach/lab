@@ -1,90 +1,97 @@
 # training-lab
 
-Experiments in voice dictation to programming syntax. Teaching small models to understand spoken code.
+Experiments in voice interfaces, small models, and narrow eval design.
 
-## Domain
+The repo has two related threads:
 
-Converting spoken dictation like `"git space push space dash u space origin space main"` into actual syntax: `git push -u origin main`.
+- older dictation-to-structure work for spoken syntax and protocol cleanup
+- newer local-intelligence work around short voice notes, useful titles, and
+  tiny intent extraction
 
-The challenge: users don't always speak in perfect protocol format. They use synonyms ("minus" for "dash"), skip separator words, add conversational filler ("okay so the command is..."), and make mid-sentence corrections ("no wait, actually...").
+The current focus is the second one.
 
-## Architecture
+## Current benchmark direction
 
-```
-Raw speech transcript
-  → Protocol detector (is it already clean?)
-  → IF clean: bypass LLM → procedural processor
-  → IF messy: LLM normalizer → procedural processor
-  → Final syntax output
-```
+The clean-slate pack in this repo asks one narrow question:
 
-**Procedural processor** — deterministic token scanner. Symbol vocabulary, number words, casing directives. 93% on clean input, zero hallucination, instant.
+> Given a short voice note, can a model write a useful title and extract only
+> the clearest action intent?
 
-**LLM normalizer** — rewrites messy dictation into clean protocol format. Strips filler, resolves corrections, inserts spacing keywords. The LLM never outputs actual symbols — it only outputs protocol words.
+That pack currently lives here:
 
-## Structure
+- [`eval/local_intelligence/title_intent_v1/cards.json`](/Users/arach/dev/lab/eval/local_intelligence/title_intent_v1/cards.json)
+- [`eval/local_intelligence/title_intent_v1/TITLE_INTENT_V1_SPEC.md`](/Users/arach/dev/lab/eval/local_intelligence/title_intent_v1/TITLE_INTENT_V1_SPEC.md)
 
-```
-lib/                TypeScript ports of the core classifiers + processor
+The benchmark is intentionally small:
+
+- `12` cards
+- tiny intent set: `none | research | email | call | schedule`
+- scoring weighted toward title usefulness and restraint
+
+Model/provider inventory and billing heuristics live in:
+
+- [`MODEL_GUIDE.md`](/Users/arach/dev/lab/MODEL_GUIDE.md)
+
+Why so small:
+
+- title quality is broadly useful in voice-note products
+- intent extraction is only interesting if the model does not overreach
+- a tiny, auditable pack is easier to trust than a broad pseudo-assistant benchmark
+
+## Repo structure
+
+```text
+app/                Next.js site shell for essays, notes, and benchmark views
+blog/               Longform drafts and daily notes
+components/         Reading UI and benchmark panels
+eval/               Benchmark packs, runners, and external calibration work
+lib/                TypeScript ports plus site data helpers
+pipeline/           Model artifacts and earlier normalization work
 processor/          Canonical Python procedural processor
-pipeline/           Canonical model artifacts + zero-training normalizer
-eval/               Canonical evaluation datasets and runners
-training/
-  data/             Canonical training corpora
-  converters/       Dataset generation and conversion scripts
-  adapters/         Fine-tuned model adapters (LoRA/DoRA)
-  finetune/         Generated JSONL splits and training notes
-scripts/            Experiments, eval harnesses, and compatibility wrappers
-blog/               Writeup drafts, daily notes, and longform posts
-blog/daily/         Short TIL-style logs for runs, lessons, and results
+scripts/            Experiments, harnesses, and utility scripts
+training/           Training corpora, converters, adapters, and notes
 ```
 
-The refactor is moving the repo toward one canonical home for each kind of
-artifact: datasets in `eval/` and `training/data/`, model JSON in `pipeline/`,
-core Python runtime in `processor/`, and TypeScript ports in `lib/`.
+## What stays from the older work
 
-## Local Intelligence Evals
+The earlier dictation pipeline is still part of the repo because it matters as
+foundation work:
+
+- spoken syntax reconstruction
+- procedural token scanning
+- protocol cleanup
+- classifier gates for when to use more model help
+
+That layer still lives in:
+
+- [`lib/index.ts`](/Users/arach/dev/lab/lib/index.ts)
+- [`processor/procedural.py`](/Users/arach/dev/lab/processor/procedural.py)
+- [`scripts/test-protocol-processor.py`](/Users/arach/dev/lab/scripts/test-protocol-processor.py)
+
+It is just no longer the active front-door story.
+
+## Local benchmark work
+
+The broader local-intelligence harness is still here:
+
+- [`eval/local_intelligence/README.md`](/Users/arach/dev/lab/eval/local_intelligence/README.md)
+- [`eval/local_intelligence/v2/README.md`](/Users/arach/dev/lab/eval/local_intelligence/v2/README.md)
+
+But the current repo direction is to narrow before expanding again.
+
+## External calibration
+
+These experiments remain useful as side probes, not the main benchmark:
+
+- [`eval/news_summarization/README.md`](/Users/arach/dev/lab/eval/news_summarization/README.md)
+- [`eval/qmsum/README.md`](/Users/arach/dev/lab/eval/qmsum/README.md)
+
+## Quick checks
 
 ```bash
-# Export the 24-case Talkie local-intelligence pack for notebook use
-python3 eval/local_intelligence/push_to_hf.py --dry-run
-
-# Run the rebuilt harness against a replay file or local provider
-python3 eval/local_intelligence/run_eval.py --provider replay --replay-file /tmp/local-intelligence-replay.jsonl --limit 1
-```
-
-## Quick start
-
-```bash
-# Run the procedural processor on clean protocol input
-python3 processor/procedural.py eval/independent.json
-
-# Run the protocol processor test harness
+# Run the older procedural processor test harness
 python3 scripts/test-protocol-processor.py
 
-# Run the normalizer pipeline (requires mlx-lm)
-pip install mlx mlx-lm
-python3 pipeline/normalizer.py eval/fuzzy.json --model mlx-community/Qwen2.5-1.5B-Instruct-4bit
-
-# Generate finetune splits from the canonical training corpus
-python3 training/converters/prepare-finetune.py
+# Build the site
+bun run build
 ```
-
-## Results (zero-training, prompted only)
-
-| Model | Clean | Fuzzy | Natural | Chaotic | Overall |
-|---|---|---|---|---|---|
-| Processor only | 92% | 0% | 0% | 2% | 23.5% |
-| Qwen 2.5 1.5B | 90% | 20% | 54% | 24% | 47% |
-| Qwen 2.5 0.5B | 90% | 12% | 44% | 20% | 41.5% |
-| Llama 3.2 1B | 92% | 14% | 34% | 10% | 37.5% |
-
-## Protocol format
-
-The "space-as-a-word" protocol eliminates spacing ambiguity:
-
-- `"space"` → literal space between tokens
-- Symbol words: `dash dot slash pipe colon quote` etc.
-- Casing: `camel case`, `snake case`, `pascal case`, `kebab case`
-- Numbers: `zero` through `nineteen`, `twenty`...`ninety`, `hundred`, `thousand`
-- Capitalization: `capital X`, `all caps WORD`

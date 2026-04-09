@@ -1,0 +1,458 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4.5",
+    "pack": "title_intent_v1",
+    "cards": 12,
+    "passed": 10,
+    "pass_rate": 0.8333,
+    "average_score": 0.9299,
+    "median_latency_ms": 2381.28,
+    "exact_parse_rate": 0.0,
+    "normalized_parse_rate": 1.0,
+    "parse_failure_rate": 0.0,
+    "title_task_score": 0.9583,
+    "intent_task_score": 0.9271,
+    "restraint_score": 0.8417,
+    "intent_slice_score": 0.8521,
+    "intent_slice_pass_rate": 0.5,
+    "restraint_slice_score": 0.975,
+    "restraint_slice_pass_rate": 1.0,
+    "title_slice_score": 0.9625,
+    "title_slice_pass_rate": 1.0
+  },
+  "rows": [
+    {
+      "card_id": "title-launch-pricing-order",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2438.79,
+      "raw_text": "```json\n{\n  \"title\": \"Pricing page layout order suggestion\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Pricing page layout order suggestion' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Pricing page layout order suggestion",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-morning-routine-reflection",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 3092.06,
+      "raw_text": "```json\n{\n  \"title\": \"Phone-free first hour improves morning focus\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.85,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 0.7,
+            "details": "title='Phone-free first hour improves morning focus' overlap=0.50 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Phone-free first hour improves morning focus",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-podcast-clip-observation",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2323.76,
+      "raw_text": "```json\n{\n  \"title\": \"Interview clip quote on shared language vs process\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Interview clip quote on shared language vs process' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Interview clip quote on shared language vs process",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-travel-memory-fragment",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2163.72,
+      "raw_text": "```json\n{\n  \"title\": \"Montreal bookstore with green awning for shoot reference\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Montreal bookstore with green awning for shoot reference' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Montreal bookstore with green awning for shoot reference",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "intent-research-desk-mics",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2585.14,
+      "raw_text": "```json\n{\n  \"title\": \"Research desk microphones for small untreated office\",\n  \"intent\": \"research\",\n  \"target\": \"desk microphones\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.8862,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Research desk microphones for small untreated office' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.825,
+            "details": "intent='research' target='desk microphones' target_overlap=0.50"
+          },
+          "restraint": {
+            "score": 0.65,
+            "details": "intent='research' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Research desk microphones for small untreated office",
+          "intent": "research",
+          "target": "desk microphones"
+        }
+      }
+    },
+    {
+      "card_id": "intent-email-landlord-addendum",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2889.44,
+      "raw_text": "```json\n{\n  \"title\": \"Ask landlord about subletting in lease addendum\",\n  \"intent\": \"email\",\n  \"target\": \"landlord\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8181,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Ask landlord about subletting in lease addendum' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.7375,
+            "details": "intent='email' target='landlord' target_overlap=0.25"
+          },
+          "restraint": {
+            "score": 0.4,
+            "details": "intent='email' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Ask landlord about subletting in lease addendum",
+          "intent": "email",
+          "target": "landlord"
+        }
+      }
+    },
+    {
+      "card_id": "intent-call-mom-passport",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2061.51,
+      "raw_text": "```json\n{\n  \"title\": \"Call Mom about passport renewal forms\",\n  \"intent\": \"call\",\n  \"target\": \"Mom\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8181,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Call Mom about passport renewal forms' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.7375,
+            "details": "intent='call' target='Mom' target_overlap=0.25"
+          },
+          "restraint": {
+            "score": 0.4,
+            "details": "intent='call' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Call Mom about passport renewal forms",
+          "intent": "call",
+          "target": "Mom"
+        }
+      }
+    },
+    {
+      "card_id": "intent-schedule-dentist-cleaning",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2732.14,
+      "raw_text": "```json\n{\n  \"title\": \"Schedule dentist cleaning for next Thursday afternoon\",\n  \"intent\": \"schedule\",\n  \"target\": \"dentist\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.8862,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Schedule dentist cleaning for next Thursday afternoon' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.825,
+            "details": "intent='schedule' target='dentist' target_overlap=0.50"
+          },
+          "restraint": {
+            "score": 0.65,
+            "details": "intent='schedule' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Schedule dentist cleaning for next Thursday afternoon",
+          "intent": "schedule",
+          "target": "dentist"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-investor-update-vague",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2694.21,
+      "raw_text": "```json\n{\n  \"title\": \"Figure out investor update story\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Figure out investor update story' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Figure out investor update story",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "restraint-dentist-blocked-by-insurance",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2071.23,
+      "raw_text": "```json\n{\n  \"title\": \"Check insurance status before booking dentist\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Check insurance status before booking dentist' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Check insurance status before booking dentist",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "restraint-email-or-call-unclear",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2029.18,
+      "raw_text": "```json\n{\n  \"title\": \"Decide how to share deck with Maya\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.9,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 0.8,
+            "details": "title='Decide how to share deck with Maya' overlap=0.67 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Decide how to share deck with Maya",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "restraint-multi-thread-scene-note",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "latency_ms": 2308.8,
+      "raw_text": "```json\n{\n  \"title\": \"Cafe interview shoot - window lighting worked better\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Cafe interview shoot - window lighting worked better' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Cafe interview shoot - window lighting worked better",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 slug: what-a-small-model-cant-learn
 series: teaching-a-tiny-model-to-hear-bash
 part: 6
-date: TBD
+date: 2026-03-09
 tags: fine-tuning, model-capacity, failure-analysis, on-device-ml, voice, dictation
 author: Arach
 -->

@@ -1,0 +1,519 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 25,
+    "average_token_f1": 0.5356,
+    "average_rouge_l_f1_approx": 0.3981,
+    "average_word_count": 65.32,
+    "median_latency_ms": 2567.97,
+    "average_rouge1_f1": 0.5618,
+    "average_rouge2_f1": 0.3172,
+    "average_rougeL_f1": 0.4098,
+    "average_bertscore_f1": 0.9173
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for her documentary \"Omarsson\" which showcases her pregnancy journey and challenges as an elite footballer, highlighting the support she received from her club and family. The documentary has been hailed as an inspiration to other athletes, particularly women, who are considering starting a family while pursuing their careers in sports.",
+      "source_url": null,
+      "latency_ms": 2044.92,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.4194,
+        "rouge1_f1": 0.5556,
+        "rouge2_f1": 0.2742,
+        "rougeL_f1": 0.4444,
+        "word_count": 58,
+        "bertscore_f1": 0.9276
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "US authorities have charged Takeshi Ebisawa, a 60-year-old alleged member of the Japanese Yakuza, with conspiring to traffic nuclear materials, including uranium and plutonium, to Iran to build a nuclear bomb. Ebisawa, who is being held in a Brooklyn jail, faces life imprisonment if convicted and is accused of also seeking to acquire military-grade weapons for a rebel group in Myanmar.",
+      "source_url": null,
+      "latency_ms": 1931.41,
+      "scores": {
+        "token_f1": 0.6358,
+        "rouge_l_f1_approx": 0.5695,
+        "rouge1_f1": 0.6497,
+        "rouge2_f1": 0.4258,
+        "rougeL_f1": 0.5732,
+        "word_count": 61,
+        "bertscore_f1": 0.9307
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 6612,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "Israeli ground forces have encircled the southern Gaza Strip's largest city, Khan Younis, and are pushing deeper into the city, where they believe Hamas leaders are hiding in tunnels with hostages. Heavy fighting has broken out around the city's two main hospitals, and the Palestine Red Crescent Society says the situation is extremely dangerous, with ambulances facing significant challenges to reach wounded people and transport them to hospitals.",
+      "source_url": null,
+      "latency_ms": 4425.15,
+      "scores": {
+        "token_f1": 0.3944,
+        "rouge_l_f1_approx": 0.2113,
+        "rouge1_f1": 0.4414,
+        "rouge2_f1": 0.1399,
+        "rougeL_f1": 0.2207,
+        "word_count": 68,
+        "bertscore_f1": 0.9011
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-004",
+      "article_chars": 3452,
+      "reference_summary": "Simon Rimmer's vegetarian restaurant, Greens in Manchester, has closed after 33 years due to a rise in rent and operating costs, making the business unviable. The TV chef expressed his heartbreak over the closure on social media, thanking staff, customers, and suppliers.",
+      "prediction": "Vegetarian restaurant Greens in Manchester, run by TV chef Simon Rimmer, has closed after 33 years due to a rise in rent and running costs making the business \"unviable\". Rimmer blamed a 35% increase in rent and rising costs of raw materials, heat, light, and power for the closure, but said his \"sister restaurant\" in Sale remains open.",
+      "source_url": null,
+      "latency_ms": 6210.7,
+      "scores": {
+        "token_f1": 0.58,
+        "rouge_l_f1_approx": 0.48,
+        "rouge1_f1": 0.5941,
+        "rouge2_f1": 0.4444,
+        "rougeL_f1": 0.4752,
+        "word_count": 58,
+        "bertscore_f1": 0.9254
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-005",
+      "article_chars": 3581,
+      "reference_summary": "NASA's Artemis III mission, which aims to return astronauts to the Moon, has been delayed until September 2026 due to the need for further technology development, including a landing craft and updated spacesuits. The precursor Artemis II mission, originally planned for the end of 2022, is now scheduled for September 2025. SpaceX's Starship vehicle is set to be the human landing system for Artemis III, requiring extensive testing and demonstrations before it can be used for a lunar landing.",
+      "prediction": "NASA has pushed back the target date for astronauts to walk on the Moon to September 2026, a year later than previously planned, due to the need for further technology development, including a new landing craft and spacesuits. The delay is attributed to concerns about the electronics in the Orion capsule's life-support system, the performance of the heatshield, and the development of a human landing system based on SpaceX's Starship.",
+      "source_url": null,
+      "latency_ms": 1666.77,
+      "scores": {
+        "token_f1": 0.4966,
+        "rouge_l_f1_approx": 0.3758,
+        "rouge1_f1": 0.5325,
+        "rouge2_f1": 0.25,
+        "rougeL_f1": 0.3766,
+        "word_count": 70,
+        "bertscore_f1": 0.9077
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-006",
+      "article_chars": 5882,
+      "reference_summary": "Multiple news agencies, including PA, Getty Images, AFP, Reuters, and Associated Press, have withdrawn a photo of the Princess of Wales and her children due to concerns it may have been digitally manipulated. The image, taken by Prince William for Mother's Day and the first official photo of the princess since her surgery, was initially posted by Kensington Palace on social media. The agencies are seeking clarification from the palace, and in the absence of it, have removed the photo from their services.",
+      "prediction": "A photo of the Princess of Wales and her children, taken by Prince William for Mother's Day, has been withdrawn by several international photo agencies due to concerns that it has been manipulated, specifically an inconsistency in the alignment of Princess Charlotte's left hand. The photo was initially released by Kensington Palace and was widely used by news organizations, but the agencies have since issued \"kill notifications\" to retract the image, citing a possible digital alteration.",
+      "source_url": null,
+      "latency_ms": 2109.39,
+      "scores": {
+        "token_f1": 0.566,
+        "rouge_l_f1_approx": 0.3648,
+        "rouge1_f1": 0.5802,
+        "rouge2_f1": 0.325,
+        "rougeL_f1": 0.3704,
+        "word_count": 76,
+        "bertscore_f1": 0.9158
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-007",
+      "article_chars": 4085,
+      "reference_summary": "The death of Dragon Ball creator Akira Toriyama has been mourned by fans worldwide, with memories shared of a 2018 diplomatic incident between Japan and Mexico over unauthorized public screenings of the series. Despite copyright issues, a free screening of Dragon Ball Super's episode #130 was eventually allowed in Ciudad Juarez, attracting thousands of fans.",
+      "prediction": "Fans of the Dragon Ball series gathered in Ciudad Juarez, Mexico, for a free public screening of the series in 2018, but the event was initially threatened by copyright concerns from the Japanese Embassy and Toei Animation. The screening was eventually allowed to proceed after the mayor negotiated with the studios, and the event drew an estimated 15,000 people, and fans are now mourning the death of creator Akira Toriyama.",
+      "source_url": null,
+      "latency_ms": 2139.7,
+      "scores": {
+        "token_f1": 0.48,
+        "rouge_l_f1_approx": 0.224,
+        "rouge1_f1": 0.5039,
+        "rouge2_f1": 0.224,
+        "rougeL_f1": 0.2362,
+        "word_count": 70,
+        "bertscore_f1": 0.9138
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-008",
+      "article_chars": 3631,
+      "reference_summary": "North Korea fired over 200 artillery shells off its west coast towards South Korea's Yeonpyeong island, prompting the South to hold live fire drills and order civilians to seek shelter; no damage was reported, but the South called it a provocative act, while the North claimed it was a response to military actions by the South. This tension follows North Korea's suspension of a military deal with the South and its recent satellite launch, which led to heightened tensions along the border.",
+      "prediction": "North Korea fired over 200 artillery shells towards South Korea's Yeonpyeong island, but all landed in a buffer zone and caused no damage or casualties. The South Korean military responded with live fire drills and warned that the incident threatens peace on the Korean peninsula and raises tensions, following North Korea's recent warnings of a possible war.",
+      "source_url": null,
+      "latency_ms": 1913.71,
+      "scores": {
+        "token_f1": 0.4748,
+        "rouge_l_f1_approx": 0.3453,
+        "rouge1_f1": 0.5035,
+        "rouge2_f1": 0.2979,
+        "rougeL_f1": 0.3916,
+        "word_count": 57,
+        "bertscore_f1": 0.9146
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-009",
+      "article_chars": 4821,
+      "reference_summary": "Trainer Willie Mullins achieved a historic 100th Cheltenham Festival victory as his son Patrick won the Champion Bumper on Jasmin De Vaux, becoming the first person to reach a century of wins at the event. Mullins, with six victories this year, celebrated the milestone with a hat doff, and his success is a testament to his dedication, team, and innovative approach, outpacing second-placed Nicky Henderson's 73 wins.",
+      "prediction": "Willie Mullins achieved a historic 100th win at the Cheltenham Festival, becoming the first person to reach this milestone, and is now the leading trainer at the festival with 100 wins. Mullins' success is attributed to his ability to recruit top owners and bloodstock agents, his willingness to experiment, and his team's hard work, with his son Patrick playing a key role in the operation.",
+      "source_url": null,
+      "latency_ms": 2779.26,
+      "scores": {
+        "token_f1": 0.5455,
+        "rouge_l_f1_approx": 0.3333,
+        "rouge1_f1": 0.5778,
+        "rouge2_f1": 0.2707,
+        "rougeL_f1": 0.3407,
+        "word_count": 65,
+        "bertscore_f1": 0.9004
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-010",
+      "article_chars": 2448,
+      "reference_summary": "Cambridge University Library has acquired an archive of posters and memorabilia from the Poems On The Underground project, which since 1986 has featured literary works on London's Tube network, including a letter from Philip Larkin who never saw his poetry displayed. The archive, now open to the public, also contains a note from Seamus Heaney praising the project's impact on poetry's presence in public spaces.",
+      "prediction": "Cambridge University Library has acquired an archive of hundreds of posters and memorabilia from the public art project Poems On The Underground, which featured literary greats' words on London's Tube network from 1986. The archive includes a letter from Philip Larkin, who died before seeing his poem displayed, and a card from Seamus Heaney praising the project's impact on poetry.",
+      "source_url": null,
+      "latency_ms": 2055.38,
+      "scores": {
+        "token_f1": 0.752,
+        "rouge_l_f1_approx": 0.656,
+        "rouge1_f1": 0.7692,
+        "rouge2_f1": 0.5781,
+        "rougeL_f1": 0.6923,
+        "word_count": 60,
+        "bertscore_f1": 0.958
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-011",
+      "article_chars": 3259,
+      "reference_summary": "Actor and politician Laurence Fox lost a High Court libel case against two individuals he falsely accused of being paedophiles on social media. The judge ruled Fox's claims were \"defamatory and baseless,\" and he did not attempt to prove their truth. Fox, who also lost a counter-claim over accusations of racism, plans to appeal the decision.",
+      "prediction": "Laurence Fox, a British actor and politician, has lost a High Court libel case after being sued by two individuals he called \"paedophiles\" on social media, with a judge ruling that his labelling was \"harmful, defamatory and baseless\". Fox plans to appeal the ruling, but the two individuals, Simon Blake and Crystal, have expressed relief and hope that the outcome will help combat the demonization of queer people as \"groomers\" or \"dangerous\".",
+      "source_url": null,
+      "latency_ms": 2750.53,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.3906,
+        "rouge1_f1": 0.5077,
+        "rouge2_f1": 0.2969,
+        "rougeL_f1": 0.4,
+        "word_count": 72,
+        "bertscore_f1": 0.9086
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-012",
+      "article_chars": 6312,
+      "reference_summary": "The UK government plans to introduce legislation by the end of July to clear the names of hundreds of people wrongly convicted in the Post Office scandal, where faulty software led to false prosecutions of sub-postmasters between 1999 and 2015. The law will apply to convictions in England and Wales meeting specific criteria, potentially overturning the majority of victims' convictions, even if some genuinely guilty individuals may also be exonerated.",
+      "prediction": "The UK government plans to introduce new legislation by the end of July to clear the names of hundreds of people wrongly convicted in the Post Office scandal, which involved faulty software that led to sub-postmasters being prosecuted for theft and false accounting. The law will apply to convictions in England and Wales and is expected to clear the majority of victims, although it will not apply to convictions brought by the Department for Work and Pensions.",
+      "source_url": null,
+      "latency_ms": 7725.15,
+      "scores": {
+        "token_f1": 0.6667,
+        "rouge_l_f1_approx": 0.6531,
+        "rouge1_f1": 0.698,
+        "rouge2_f1": 0.5442,
+        "rougeL_f1": 0.6577,
+        "word_count": 77,
+        "bertscore_f1": 0.9428
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-013",
+      "article_chars": 4308,
+      "reference_summary": "Mark Drakeford, the First Minister of Wales, has defended the country's 20mph speed limit, stating that difficult decisions were necessary for public safety, despite opposition and anger. He expressed pride in the policy, believing it will save lives, particularly children's, and mentioned that his successor, either Jeremy Miles or Vaughan Gething, will be announced on Saturday. Drakeford also reflected on his handling of the COVID-19 pandemic, saying that the decisions made were reasonable given the knowledge at the time.",
+      "prediction": "Wales' First Minister Mark Drakeford has defended the country's 20mph speed limit, saying it will save lives, particularly those of children, despite opposition and anger from some. As he prepares to step down, Drakeford reflected on his five years in office, saying he chose to tackle \"difficult and challenging\" issues rather than do \"easy things\" and that he is proud of the decisions he made, including those during the Covid crisis.",
+      "source_url": null,
+      "latency_ms": 4301.47,
+      "scores": {
+        "token_f1": 0.4933,
+        "rouge_l_f1_approx": 0.3333,
+        "rouge1_f1": 0.5195,
+        "rouge2_f1": 0.2763,
+        "rougeL_f1": 0.3506,
+        "word_count": 71,
+        "bertscore_f1": 0.9032
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-014",
+      "article_chars": 3463,
+      "reference_summary": "A Palestinian refugee is suing the UK Home Office for refusing to grant visas to his family in Gaza, claiming it effectively bars them from joining him due to the unavailability of visa-application centers in the conflict-stricken region. The family, including children who have contracted hepatitis A, cannot provide fingerprints required for visa applications, and the Home Office has stated it cannot assist with entry to a third country for biometric submission.",
+      "prediction": "A Palestinian refugee is taking legal action against the Home Office after they refused to grant visas to his family in Gaza, citing the need for fingerprints and a photograph, which cannot be obtained due to the lack of visa application centers in the region. The family's lawyer says the decision puts their lives in danger, as they are unable to leave Gaza due to the conflict and restrictions on travel.",
+      "source_url": null,
+      "latency_ms": 2213.15,
+      "scores": {
+        "token_f1": 0.4476,
+        "rouge_l_f1_approx": 0.3636,
+        "rouge1_f1": 0.4932,
+        "rouge2_f1": 0.3194,
+        "rougeL_f1": 0.411,
+        "word_count": 71,
+        "bertscore_f1": 0.9099
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-015",
+      "article_chars": 3508,
+      "reference_summary": "Rishi Sunak has cautioned against political polarization and hatred after a contentious week in Westminster, which saw Tory MP Lee Anderson suspended for refusing to apologize for comments about \"Islamists\" controlling London's Mayor. Labour's Keir Starmer has called on Sunak to take control of his party, while Anderson's suspension followed criticism from both sides of the aisle for his remarks, which were labeled Islamophobic and racist by Mayor Sadiq Khan.",
+      "prediction": "Tory MP Lee Anderson was suspended from his party after refusing to apologize for saying \"Islamists\" have \"got control\" of the Mayor of London, sparking criticism from Labour and the Mayor himself, Sadiq Khan. Prime Minister Rishi Sunak warned of the dangers of polarisation and hatred in politics, but was criticized by Labour leader Sir Keir Starmer for not doing enough to address the issue within his own party.",
+      "source_url": null,
+      "latency_ms": 4388.53,
+      "scores": {
+        "token_f1": 0.5036,
+        "rouge_l_f1_approx": 0.259,
+        "rouge1_f1": 0.5352,
+        "rouge2_f1": 0.2,
+        "rougeL_f1": 0.2676,
+        "word_count": 69,
+        "bertscore_f1": 0.907
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-016",
+      "article_chars": 3423,
+      "reference_summary": "Microsoft is making four formerly exclusive games, including Sea of Thieves and Pentiment, available on Sony's PS5 and Nintendo Switch, with Grounded also coming to Switch. This move follows Microsoft's announcement in February about expanding its titles to rival platforms, aiming to grow player communities with cross-play support. During a Nintendo Direct event, other titles like Sonic Mania's spiritual successor, Penny's Big Breakaway, were revealed, indicating a resurgence of interest in 3D platformers.",
+      "prediction": "Microsoft has announced that four of its exclusive games, including Hi-Fi Rush and Sea of Thieves, will be released on rival consoles, including the PS5 and Nintendo Switch. The games, which also include Pentiment and Grounded, will allow for cross-play across platforms, and their release follows Microsoft's February announcement that it would be making some of its exclusives available on other consoles.",
+      "source_url": null,
+      "latency_ms": 1611.54,
+      "scores": {
+        "token_f1": 0.4296,
+        "rouge_l_f1_approx": 0.2815,
+        "rouge1_f1": 0.4336,
+        "rouge2_f1": 0.156,
+        "rougeL_f1": 0.2797,
+        "word_count": 62,
+        "bertscore_f1": 0.9069
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-017",
+      "article_chars": 2191,
+      "reference_summary": "Adam Sandler, known for Netflix's Murder Mystery 2, was named the best-paid actor in Hollywood in 2023 by Forbes, earning $73 million, thanks to his Netflix films and stand-up comedy gigs. Margot Robbie, the youngest in the top 10, ranked second, while Tom Cruise was third, and Jennifer Aniston, Sandler's co-star, placed sixth.",
+      "prediction": "Adam Sandler earned $73m last year, making him the best-paid actor in Hollywood, according to Forbes, thanks to his lucrative deal with Netflix and his success in films such as Murder Mystery 2 and Spaceman. Sandler's Netflix deal, which includes producing and starring in multiple films, has boosted his earnings and made him the top earner on Forbes' list for the first time since 2002.",
+      "source_url": null,
+      "latency_ms": 2028.78,
+      "scores": {
+        "token_f1": 0.4237,
+        "rouge_l_f1_approx": 0.2881,
+        "rouge1_f1": 0.48,
+        "rouge2_f1": 0.1951,
+        "rougeL_f1": 0.304,
+        "word_count": 65,
+        "bertscore_f1": 0.8892
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-018",
+      "article_chars": 4577,
+      "reference_summary": "Nicola Sturgeon has confirmed that the UK Covid Inquiry has copies of messages between her and colleagues, which were submitted last year, despite earlier criticism that she had deleted her messages. The former first minister stated she conducted most of her Covid response through formal channels, and any informal messages were limited and submitted to the inquiry.",
+      "prediction": "Nicola Sturgeon has stated that she handed over copies of her WhatsApp messages to the UK Covid Inquiry last year, despite earlier claims that she had deleted them. The inquiry had previously been told that Sturgeon had retained no messages, leading to criticism and accusations that she had deliberately deleted them.",
+      "source_url": null,
+      "latency_ms": 3472.98,
+      "scores": {
+        "token_f1": 0.5185,
+        "rouge_l_f1_approx": 0.3519,
+        "rouge1_f1": 0.5185,
+        "rouge2_f1": 0.283,
+        "rougeL_f1": 0.3519,
+        "word_count": 51,
+        "bertscore_f1": 0.9144
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-019",
+      "article_chars": 3061,
+      "reference_summary": "The justice secretary in England and Wales has announced that certain low-level prisoners may be released up to two months early to address overcrowding in jails, with the possibility of electronic monitoring for public protection. This extension from 18 days to 35-60 days comes as the prison population is projected to increase, and Labour accuses the government of failing to build enough prisons, releasing offenders secretly, and jeopardizing public safety.",
+      "prediction": "The justice secretary in England and Wales has announced that some prisoners could be released up to two months early to relieve overcrowding in jails, but only for \"certain low-level offenders\". Labour has criticized the move, saying the government has failed to build enough prisons and that the early release of prisoners puts the public at risk.",
+      "source_url": null,
+      "latency_ms": 4906.63,
+      "scores": {
+        "token_f1": 0.5984,
+        "rouge_l_f1_approx": 0.5039,
+        "rouge1_f1": 0.6462,
+        "rouge2_f1": 0.3906,
+        "rougeL_f1": 0.5077,
+        "word_count": 57,
+        "bertscore_f1": 0.9336
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-020",
+      "article_chars": 4093,
+      "reference_summary": "Over 40 households in Hirwaun, Rhondda Cynon Taff, have been advised to evacuate due to safety concerns over reinforced autoclaved aerated concrete (Raac) in their homes, with two properties deemed \"critical risk.\" Housing association Trivallis is providing temporary accommodation for affected residents, while structural engineers investigate and plan a solution, potentially involving repairs or rehousing.",
+      "prediction": "Residents in Hirwaun, Rhondda Cynon Taff, are being advised to evacuate their homes due to issues with reinforced autoclaved aerated concrete, a lightweight material used in buildings between the 1950s and 1990s. Housing association Trivallis is finding temporary accommodation for those affected and will work with residents to find a permanent solution, with structural engineers expected to visit the properties within days.",
+      "source_url": null,
+      "latency_ms": 4438.06,
+      "scores": {
+        "token_f1": 0.5641,
+        "rouge_l_f1_approx": 0.4444,
+        "rouge1_f1": 0.5641,
+        "rouge2_f1": 0.2957,
+        "rougeL_f1": 0.4444,
+        "word_count": 62,
+        "bertscore_f1": 0.9265
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-021",
+      "article_chars": 3087,
+      "reference_summary": "Singer Olly Alexander, former frontman of Years and Years, will represent the UK at the Eurovision Song Contest with an upbeat, club-friendly pop song called \"Dizzy,\" co-written with Danny L Harle. The full track will be released on March 1, and while fans are excited, expectations for a UK victory are cautious, given the country's recent Eurovision performance history.",
+      "prediction": "Singer Olly Alexander has revealed a 20-second clip of his song \"Dizzy\", which he will perform on behalf of the UK at the Eurovision song contest in May. The song is a club-friendly pop track that Alexander co-wrote with Danny L Harle, and he hopes it will help the UK improve on its disappointing performance last year and end its 25-year losing streak.",
+      "source_url": null,
+      "latency_ms": 5169.51,
+      "scores": {
+        "token_f1": 0.4918,
+        "rouge_l_f1_approx": 0.3443,
+        "rouge1_f1": 0.5271,
+        "rouge2_f1": 0.2205,
+        "rougeL_f1": 0.3566,
+        "word_count": 63,
+        "bertscore_f1": 0.913
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-022",
+      "article_chars": 5761,
+      "reference_summary": "The number of people driving under the influence of cannabis and cocaine is rising in the UK, according to Chief constable Jo Shiner of the National Police Chiefs Council, with some forces making more drug-driving arrests than drink-driving ones. The Home Office is taking action against this trend, as data shows that in December, 48.5% of drug tests were positive compared to 9.5% for alcohol breath tests. There is a call for stricter sentences to deter drug-driving, especially after incidents like the one involving Summer Mace, whose family was killed by a drug-impaired driver.",
+      "prediction": "Police in Britain are reporting a rise in the number of people driving after using cannabis and cocaine, with some forces making more arrests for drug-driving than drink-driving during recent crackdowns. The National Police Chiefs Council says there is a \"social acceptance\" of drug-driving, particularly among younger people, and is calling for tougher sentences to deter the behavior.",
+      "source_url": null,
+      "latency_ms": 2567.97,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.3289,
+        "rouge1_f1": 0.5342,
+        "rouge2_f1": 0.327,
+        "rougeL_f1": 0.3602,
+        "word_count": 58,
+        "bertscore_f1": 0.9055
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-023",
+      "article_chars": 5285,
+      "reference_summary": "Yemen's Houthis have targeted a US-owned vessel in the Gulf of Aden, claiming a direct hit with missiles, while the US military says it was struck by a drone. The attack comes after the US re-designated the Houthis as \"global terrorists,\" requiring freezing of their funds and a ban on members entering the US, in response to attacks on commercial shipping in the region. The move reverses a 2021 decision due to humanitarian concerns in Yemen, but recent Houthi attacks have led to the re-imposition of sanctions, with exemptions to ensure aid continues to flow into the war-torn country.",
+      "prediction": "The Houthis have targeted a US-owned vessel in the Gulf of Aden with missiles in response to Washington's decision to re-designate the group as \"global terrorists\", which will require US financial institutions to freeze Houthi funds and ban its members from the US. The US military says the vessel was hit by a drone, but there were no injuries and the ship remained seaworthy, while the US has defended the re-designation as a response to the group's attacks on commercial shipping in the region.",
+      "source_url": null,
+      "latency_ms": 2983.84,
+      "scores": {
+        "token_f1": 0.612,
+        "rouge_l_f1_approx": 0.3934,
+        "rouge1_f1": 0.6528,
+        "rouge2_f1": 0.377,
+        "rougeL_f1": 0.3938,
+        "word_count": 84,
+        "bertscore_f1": 0.9083
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-024",
+      "article_chars": 6076,
+      "reference_summary": "Donald Trump has won a significant victory over Nikki Haley in the South Carolina primary, moving closer to the Republican presidential nomination. Despite Haley's vow to continue her campaign, Trump focused on a potential rematch with Joe Biden in the general election, stating, \"We're going to say 'get out Joe, you're fired'.",
+      "prediction": "Donald Trump won the South Carolina primary by a 20-point margin, his fourth consecutive victory, and is now one step closer to the Republican presidential nomination. Trump immediately shifted his focus to the general election, where he will likely face a rematch with President Joe Biden, and vowed to \"say 'get out Joe, you're fired'\".",
+      "source_url": null,
+      "latency_ms": 2342.09,
+      "scores": {
+        "token_f1": 0.5981,
+        "rouge_l_f1_approx": 0.486,
+        "rouge1_f1": 0.6071,
+        "rouge2_f1": 0.3818,
+        "rougeL_f1": 0.4821,
+        "word_count": 55,
+        "bertscore_f1": 0.9324
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-025",
+      "article_chars": 4209,
+      "reference_summary": "A US-Russian citizen, reportedly named Ksenia Karelina, has been detained in Russia on suspicion of treason and fundraising for Ukraine's military. She was arrested in Yekaterinburg and faces up to life in prison if found guilty, with the US government attempting to gain consular access to her.",
+      "prediction": "A 33-year-old US-Russian citizen, identified as Ksenia Karelina, has been detained in Russia on suspicion of treason and fundraising for Ukraine's armed forces, with Russian authorities accusing her of collecting money for the Ukrainian military since February 2022. If convicted, she faces up to life in prison, and the US government is seeking consular access to her, with several other US nationals, including a journalist and a former marine, currently imprisoned in Russia.",
+      "source_url": null,
+      "latency_ms": 2106.37,
+      "scores": {
+        "token_f1": 0.6167,
+        "rouge_l_f1_approx": 0.55,
+        "rouge1_f1": 0.619,
+        "rouge2_f1": 0.4355,
+        "rougeL_f1": 0.5556,
+        "word_count": 73,
+        "bertscore_f1": 0.9373
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 3,
+    "average_token_f1": 0.5602,
+    "average_rouge_l_f1_approx": 0.4066,
+    "average_word_count": 63.33,
+    "median_latency_ms": 2239.6,
+    "average_rouge1_f1": 0.5897,
+    "average_rouge2_f1": 0.3111,
+    "average_rougeL_f1": 0.4071,
+    "average_bertscore_f1": 0.9226
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for her documentary \"Omarsson\" which showcases her pregnancy journey and challenges as an elite footballer, highlighting the support she received from her club and family. The documentary has been well-received by her teammates and fellow athletes, with many crediting Brynjarsdottir as a trailblazer for women in sports who are balancing motherhood and professional careers.",
+      "source_url": null,
+      "latency_ms": 2232.45,
+      "scores": {
+        "token_f1": 0.5625,
+        "rouge_l_f1_approx": 0.4375,
+        "rouge1_f1": 0.5954,
+        "rouge2_f1": 0.3256,
+        "rougeL_f1": 0.4275,
+        "word_count": 62,
+        "bertscore_f1": 0.9368
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "US authorities have charged Takeshi Ebisawa, a 60-year-old alleged member of the Japanese Yakuza, with conspiring to traffic nuclear materials, including uranium and plutonium, to Iran to build a nuclear bomb. Ebisawa, who is being held in a Brooklyn jail, faces life imprisonment if convicted and is accused of also seeking to acquire military-grade weapons for a rebel group in Myanmar.",
+      "source_url": null,
+      "latency_ms": 2239.6,
+      "scores": {
+        "token_f1": 0.6358,
+        "rouge_l_f1_approx": 0.5695,
+        "rouge1_f1": 0.6497,
+        "rouge2_f1": 0.4258,
+        "rougeL_f1": 0.5732,
+        "word_count": 61,
+        "bertscore_f1": 0.9307
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 6612,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "Israeli ground forces have encircled the southern Gaza Strip's largest city, Khan Younis, and are pushing deeper into the city, where they believe Hamas leaders are hiding in tunnels with hostages. Heavy fighting has been reported around the city's hospitals, including the al-Amal Hospital, which was hit by Israeli artillery and drones, and the Nasser Medical Complex, which is said to be \"overwhelmed and overcrowded\" with patients.",
+      "source_url": null,
+      "latency_ms": 3331.92,
+      "scores": {
+        "token_f1": 0.4823,
+        "rouge_l_f1_approx": 0.2128,
+        "rouge1_f1": 0.5241,
+        "rouge2_f1": 0.1818,
+        "rougeL_f1": 0.2207,
+        "word_count": 67,
+        "bertscore_f1": 0.9003
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.1-8b-instruct"
+      }
+    }
+  ]
+}

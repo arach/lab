@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "provider": "github_models",
+    "model": "openai/gpt-4.1-mini",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 3,
+    "average_token_f1": 0.5438,
+    "average_rouge_l_f1_approx": 0.3597,
+    "average_word_count": 61.0,
+    "median_latency_ms": 2034.3,
+    "average_rouge1_f1": 0.5823,
+    "average_rouge2_f1": 0.2617,
+    "average_rougeL_f1": 0.3685,
+    "average_bertscore_f1": 0.9163
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for her role in a new documentary highlighting her pregnancy journey and the challenges of being an elite footballer and mother, showcasing the club's supportive environment. Her story is inspiring teammates and athletes worldwide, demonstrating that it is possible to balance motherhood and a professional sports career.",
+      "source_url": null,
+      "latency_ms": 1942.16,
+      "scores": {
+        "token_f1": 0.562,
+        "rouge_l_f1_approx": 0.3802,
+        "rouge1_f1": 0.629,
+        "rouge2_f1": 0.2459,
+        "rougeL_f1": 0.3871,
+        "word_count": 55,
+        "bertscore_f1": 0.9225
+      },
+      "provider_metadata": {
+        "model": "openai/gpt-4.1-mini"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "Takeshi Ebisawa, a senior Yakuza figure, has been charged by US prosecutors with conspiring to traffic nuclear materials, including uranium and weapons-grade plutonium, allegedly intended for Iran to build a nuclear bomb. He and his Thai co-defendant face multiple charges, including drug and weapons trafficking, and will be arraigned in New York, with Ebisawa potentially facing life imprisonment if convicted.",
+      "source_url": null,
+      "latency_ms": 2034.3,
+      "scores": {
+        "token_f1": 0.52,
+        "rouge_l_f1_approx": 0.3467,
+        "rouge1_f1": 0.529,
+        "rouge2_f1": 0.2614,
+        "rougeL_f1": 0.3484,
+        "word_count": 60,
+        "bertscore_f1": 0.9102
+      },
+      "provider_metadata": {
+        "model": "openai/gpt-4.1-mini"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 697,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "Heavy fighting is ongoing around al-Amal Hospital in Khan Younis as Israeli ground forces have encircled the southern Gaza Strip's largest city, advancing into areas where Hamas leaders and hostages are believed to be hiding. Residents report that tanks have blocked the last escape route to the Mediterranean coast, while intense clashes continue near the city's main hospitals amid funerals for 24 Israeli soldiers killed in recent fighting.",
+      "source_url": null,
+      "latency_ms": 2193.89,
+      "scores": {
+        "token_f1": 0.5493,
+        "rouge_l_f1_approx": 0.3521,
+        "rouge1_f1": 0.589,
+        "rouge2_f1": 0.2778,
+        "rougeL_f1": 0.3699,
+        "word_count": 68,
+        "bertscore_f1": 0.9163
+      },
+      "provider_metadata": {
+        "model": "openai/gpt-4.1-mini"
+      }
+    }
+  ]
+}

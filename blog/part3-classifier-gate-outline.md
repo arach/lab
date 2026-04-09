@@ -6,7 +6,7 @@
 slug: the-40-millisecond-gate
 series: teaching-a-tiny-model-to-hear-bash
 part: 3
-date: TBD
+date: 2026-03-06
 tags: nlembedding, classifier, on-device-ml, voice, apple, accelerate
 author: Arach
 -->

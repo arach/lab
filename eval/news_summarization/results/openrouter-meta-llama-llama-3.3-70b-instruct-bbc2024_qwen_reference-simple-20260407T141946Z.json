@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 3,
+    "average_token_f1": 0.4666,
+    "average_rouge_l_f1_approx": 0.3222,
+    "average_word_count": 82.0,
+    "median_latency_ms": 4098.2,
+    "average_rouge1_f1": 0.5005,
+    "average_rouge2_f1": 0.2245,
+    "average_rougeL_f1": 0.3326,
+    "average_bertscore_f1": 0.9076
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for a new documentary that shows her pregnancy journey and the challenges she faced as an elite footballer, with teammates and fellow athletes hailing her as a role model for athletes who want to start a family. The documentary, titled \"Omarsson\", highlights the support Brynjarsdottir received from her club and family, and she hopes it will inspire other athletes to pursue their careers while also starting a family, with teammates like Katrina Gorry and Viviane Asseyi praising her as an inspiration.",
+      "source_url": null,
+      "latency_ms": 4098.2,
+      "scores": {
+        "token_f1": 0.4645,
+        "rouge_l_f1_approx": 0.3613,
+        "rouge1_f1": 0.5223,
+        "rouge2_f1": 0.2968,
+        "rougeL_f1": 0.3822,
+        "word_count": 89,
+        "bertscore_f1": 0.9194
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.3-70b-instruct"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "US authorities have charged Takeshi Ebisawa, a 60-year-old alleged member of the Japanese mafia, with conspiring to traffic nuclear materials, including uranium and plutonium, that he believed would be used to build a nuclear bomb in Iran. Ebisawa, who is being held in a Brooklyn jail, faces life imprisonment if convicted of the charges, which also include narcotics importation conspiracy, weapons trafficking, and money laundering, and is accused of being a senior figure in the Japanese organised crime syndicate known as the Yakuza.",
+      "source_url": null,
+      "latency_ms": 2956.35,
+      "scores": {
+        "token_f1": 0.5434,
+        "rouge_l_f1_approx": 0.4162,
+        "rouge1_f1": 0.5393,
+        "rouge2_f1": 0.2955,
+        "rougeL_f1": 0.4157,
+        "word_count": 83,
+        "bertscore_f1": 0.9099
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.3-70b-instruct"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 6612,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "Israeli forces have encircled the city of Khan Younis in the southern Gaza Strip, with heavy fighting reported around hospitals and residents unable to flee due to blocked roads, as the conflict between Israel and Hamas continues to escalate. The situation in Gaza is dire, with over 25,400 people killed, mostly children and women, and hospitals overwhelmed and overcrowded, prompting calls for an immediate humanitarian ceasefire and reports of potential negotiations for a truce.",
+      "source_url": null,
+      "latency_ms": 4182.34,
+      "scores": {
+        "token_f1": 0.3919,
+        "rouge_l_f1_approx": 0.1892,
+        "rouge1_f1": 0.44,
+        "rouge2_f1": 0.0811,
+        "rougeL_f1": 0.2,
+        "word_count": 74,
+        "bertscore_f1": 0.8936
+      },
+      "provider_metadata": {
+        "model": "meta-llama/llama-3.3-70b-instruct"
+      }
+    }
+  ]
+}

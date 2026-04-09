@@ -1,0 +1,2387 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4.5",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases_completed": 125,
+    "finalized": false
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary showing her pregnancy journey as an elite footballer, with the Iceland midfielder giving birth to her second son last month. The film has been celebrated by teammates including Australia's Katrina Gorry as helping to change perceptions that female footballers must choose between their careers and motherhood, with clubs becoming increasingly supportive of players starting families.",
+      "source_url": null,
+      "latency_ms": 5408.38,
+      "scores": {
+        "token_f1": 0.5152,
+        "rouge_l_f1_approx": 0.4394,
+        "rouge1_f1": 0.5481,
+        "rouge2_f1": 0.3308,
+        "rougeL_f1": 0.4593,
+        "word_count": 66
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "US prosecutors have charged Takeshi Ebisawa, a 60-year-old alleged senior member of the Japanese Yakuza, with conspiring to traffic nuclear materials including uranium and weapons-grade plutonium that he believed would be used by Iran to build a nuclear bomb. The charges stem from undercover DEA operations in which Ebisawa allegedly attempted to sell nuclear materials from Myanmar and acquire military-grade weapons, and he faces life imprisonment if convicted.",
+      "source_url": null,
+      "latency_ms": 3657.71,
+      "scores": {
+        "token_f1": 0.6203,
+        "rouge_l_f1_approx": 0.4304,
+        "rouge1_f1": 0.6424,
+        "rouge2_f1": 0.3804,
+        "rougeL_f1": 0.4121,
+        "word_count": 68
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 6612,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "Israeli ground forces have encircled Khan Younis, Gaza's largest southern city, blocking evacuation routes and intensifying operations around two main hospitals amid fierce resistance from Hamas fighters. The escalation comes as funerals were held for 24 Israeli soldiers killed Monday in the deadliest day for the IDF since the ground offensive began, while Gaza's health ministry reports at least 195 Palestinians were killed in the previous 24 hours, bringing the total death toll to over 25,400 since the war started following Hamas's October 7 attack on Israel.",
+      "source_url": null,
+      "latency_ms": 4736.53,
+      "scores": {
+        "token_f1": 0.4224,
+        "rouge_l_f1_approx": 0.2112,
+        "rouge1_f1": 0.4458,
+        "rouge2_f1": 0.1463,
+        "rougeL_f1": 0.2289,
+        "word_count": 87
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-004",
+      "article_chars": 3452,
+      "reference_summary": "Simon Rimmer's vegetarian restaurant, Greens in Manchester, has closed after 33 years due to a rise in rent and operating costs, making the business unviable. The TV chef expressed his heartbreak over the closure on social media, thanking staff, customers, and suppliers.",
+      "prediction": "Greens, a vegetarian restaurant in Manchester run by TV chef Simon Rimmer, has closed after 33 years due to a 35% rent increase and rising operational costs. Rimmer, who co-hosts Channel 4's Sunday Brunch, announced the immediate closure while thanking staff and customers, though the restaurant's sister location in Sale remains open.",
+      "source_url": null,
+      "latency_ms": 5211.19,
+      "scores": {
+        "token_f1": 0.5745,
+        "rouge_l_f1_approx": 0.4255,
+        "rouge1_f1": 0.6327,
+        "rouge2_f1": 0.2708,
+        "rougeL_f1": 0.4286,
+        "word_count": 52
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-005",
+      "article_chars": 3581,
+      "reference_summary": "NASA's Artemis III mission, which aims to return astronauts to the Moon, has been delayed until September 2026 due to the need for further technology development, including a landing craft and updated spacesuits. The precursor Artemis II mission, originally planned for the end of 2022, is now scheduled for September 2025. SpaceX's Starship vehicle is set to be the human landing system for Artemis III, requiring extensive testing and demonstrations before it can be used for a lunar landing.",
+      "prediction": "NASA has delayed its Artemis III Moon landing mission to September 2026, a year later than previously planned, due to the need for further technology development including a landing craft and spacesuits. The agency is also pushing back the Artemis II crewed lunar flyby mission to September 2025, citing safety concerns with the Orion capsule's life-support system and heat shield performance.",
+      "source_url": null,
+      "latency_ms": 3657.18,
+      "scores": {
+        "token_f1": 0.5571,
+        "rouge_l_f1_approx": 0.4143,
+        "rouge1_f1": 0.5694,
+        "rouge2_f1": 0.2394,
+        "rougeL_f1": 0.4167,
+        "word_count": 61
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-006",
+      "article_chars": 5882,
+      "reference_summary": "Multiple news agencies, including PA, Getty Images, AFP, Reuters, and Associated Press, have withdrawn a photo of the Princess of Wales and her children due to concerns it may have been digitally manipulated. The image, taken by Prince William for Mother's Day and the first official photo of the princess since her surgery, was initially posted by Kensington Palace on social media. The agencies are seeking clarification from the palace, and in the absence of it, have removed the photo from their services.",
+      "prediction": "Five major photo agencies, including PA, Getty Images, AFP, Reuters, and Associated Press, have withdrawn a Mother's Day photo of Princess Catherine and her children over concerns it was digitally manipulated, citing inconsistencies such as misalignment in Princess Charlotte's hand. The image, taken by Prince William and released by Kensington Palace as the first official photo since Catherine's abdominal surgery in January, was intended to reassure the public but instead intensified speculation about her recovery.",
+      "source_url": null,
+      "latency_ms": 4504.17,
+      "scores": {
+        "token_f1": 0.6076,
+        "rouge_l_f1_approx": 0.481,
+        "rouge1_f1": 0.6049,
+        "rouge2_f1": 0.3625,
+        "rougeL_f1": 0.4691,
+        "word_count": 75
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-007",
+      "article_chars": 4085,
+      "reference_summary": "The death of Dragon Ball creator Akira Toriyama has been mourned by fans worldwide, with memories shared of a 2018 diplomatic incident between Japan and Mexico over unauthorized public screenings of the series. Despite copyright issues, a free screening of Dragon Ball Super's episode #130 was eventually allowed in Ciudad Juarez, attracting thousands of fans.",
+      "prediction": "The death of Dragon Ball creator Akira Toriyama at age 68 has prompted fans worldwide to mourn and share how the series impacted their lives. The tributes have also revived memories of a 2018 diplomatic incident when copyright disputes over public screenings in Mexico required Japanese Embassy intervention, though Ciudad Juarez ultimately hosted a legal viewing for 15,000 fans.",
+      "source_url": null,
+      "latency_ms": 4105.72,
+      "scores": {
+        "token_f1": 0.5263,
+        "rouge_l_f1_approx": 0.4211,
+        "rouge1_f1": 0.5517,
+        "rouge2_f1": 0.2632,
+        "rougeL_f1": 0.4138,
+        "word_count": 59
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-008",
+      "article_chars": 3631,
+      "reference_summary": "North Korea fired over 200 artillery shells off its west coast towards South Korea's Yeonpyeong island, prompting the South to hold live fire drills and order civilians to seek shelter; no damage was reported, but the South called it a provocative act, while the North claimed it was a response to military actions by the South. This tension follows North Korea's suspension of a military deal with the South and its recent satellite launch, which led to heightened tensions along the border.",
+      "prediction": "North Korea fired over 200 artillery shells off its west coast toward South Korea's Yeonpyeong island, prompting Seoul to order civilian evacuations and conduct its own live fire drills in response. The shells landed in a buffer zone between the two countries causing no damage, but South Korea condemned the action as a provocative act that threatens peace on the Korean Peninsula.",
+      "source_url": null,
+      "latency_ms": 3046.57,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.3889,
+        "rouge1_f1": 0.5578,
+        "rouge2_f1": 0.3172,
+        "rougeL_f1": 0.4082,
+        "word_count": 62
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-009",
+      "article_chars": 4821,
+      "reference_summary": "Trainer Willie Mullins achieved a historic 100th Cheltenham Festival victory as his son Patrick won the Champion Bumper on Jasmin De Vaux, becoming the first person to reach a century of wins at the event. Mullins, with six victories this year, celebrated the milestone with a hat doff, and his success is a testament to his dedication, team, and innovative approach, outpacing second-placed Nicky Henderson's 73 wins.",
+      "prediction": "Willie Mullins became the first trainer to achieve 100 Cheltenham Festival victories when his son Patrick won the Champion Bumper on Jasmin De Vaux, completing a treble on Wednesday. The 67-year-old Irish trainer, who leads the all-time Festival wins list ahead of Nicky Henderson's 73 victories, has dominated the meeting with six wins at the 2024 Festival and is set to be leading trainer for the 11th time in 14 years.",
+      "source_url": null,
+      "latency_ms": 3399.42,
+      "scores": {
+        "token_f1": 0.5072,
+        "rouge_l_f1_approx": 0.3478,
+        "rouge1_f1": 0.5417,
+        "rouge2_f1": 0.2817,
+        "rougeL_f1": 0.3611,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-010",
+      "article_chars": 2448,
+      "reference_summary": "Cambridge University Library has acquired an archive of posters and memorabilia from the Poems On The Underground project, which since 1986 has featured literary works on London's Tube network, including a letter from Philip Larkin who never saw his poetry displayed. The archive, now open to the public, also contains a note from Seamus Heaney praising the project's impact on poetry's presence in public spaces.",
+      "prediction": "Cambridge University Library has received hundreds of posters and memorabilia from the Poems On The Underground project, which began displaying poetry on London's Tube network in 1986. The archive includes a letter from poet Philip Larkin, who died in 1985 before seeing his poem displayed, and correspondence from Seamus Heaney praising the project's impact on poetry's accessibility.",
+      "source_url": null,
+      "latency_ms": 2756.66,
+      "scores": {
+        "token_f1": 0.6885,
+        "rouge_l_f1_approx": 0.6066,
+        "rouge1_f1": 0.7188,
+        "rouge2_f1": 0.5397,
+        "rougeL_f1": 0.6406,
+        "word_count": 57
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-011",
+      "article_chars": 3259,
+      "reference_summary": "Actor and politician Laurence Fox lost a High Court libel case against two individuals he falsely accused of being paedophiles on social media. The judge ruled Fox's claims were \"defamatory and baseless,\" and he did not attempt to prove their truth. Fox, who also lost a counter-claim over accusations of racism, plans to appeal the decision.",
+      "prediction": "Laurence Fox has lost a High Court libel case after calling former Stonewall trustee Simon Blake and drag artist Crystal \"paedophiles\" on social media during an exchange about Sainsbury's marking Black History Month. The judge ruled Fox's allegations were \"harmful, defamatory and baseless,\" while dismissing Fox's counter-claim that being called \"a racist\" caused serious harm to his reputation.",
+      "source_url": null,
+      "latency_ms": 3207.88,
+      "scores": {
+        "token_f1": 0.4386,
+        "rouge_l_f1_approx": 0.386,
+        "rouge1_f1": 0.4667,
+        "rouge2_f1": 0.2712,
+        "rougeL_f1": 0.4167,
+        "word_count": 58
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-012",
+      "article_chars": 6312,
+      "reference_summary": "The UK government plans to introduce legislation by the end of July to clear the names of hundreds of people wrongly convicted in the Post Office scandal, where faulty software led to false prosecutions of sub-postmasters between 1999 and 2015. The law will apply to convictions in England and Wales meeting specific criteria, potentially overturning the majority of victims' convictions, even if some genuinely guilty individuals may also be exonerated.",
+      "prediction": "The UK government plans to introduce legislation by the end of July to overturn hundreds of wrongful convictions from the Post Office scandal, where over 900 sub-postmasters were prosecuted between 1999 and 2015 due to faulty Horizon software developed by Fujitsu. The law will apply to convictions in England and Wales meeting specific criteria, though officials acknowledge some genuinely guilty individuals may also be exonerated, calling it \"a price worth paying\" to clear innocent victims who were financially ruined or imprisoned.",
+      "source_url": null,
+      "latency_ms": 5773.44,
+      "scores": {
+        "token_f1": 0.6887,
+        "rouge_l_f1_approx": 0.6093,
+        "rouge1_f1": 0.719,
+        "rouge2_f1": 0.543,
+        "rougeL_f1": 0.6275,
+        "word_count": 81
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-013",
+      "article_chars": 4308,
+      "reference_summary": "Mark Drakeford, the First Minister of Wales, has defended the country's 20mph speed limit, stating that difficult decisions were necessary for public safety, despite opposition and anger. He expressed pride in the policy, believing it will save lives, particularly children's, and mentioned that his successor, either Jeremy Miles or Vaughan Gething, will be announced on Saturday. Drakeford also reflected on his handling of the COVID-19 pandemic, saying that the decisions made were reasonable given the knowledge at the time.",
+      "prediction": "Welsh First Minister Mark Drakeford defended the controversial 20mph speed limit policy days before stepping down, saying he was surprised by the opposition but proud of the measure that will save lives, particularly children's. He reflected on his five-year tenure, stating he chose to tackle difficult and challenging issues rather than easy ones, and defended his Covid-19 decisions as reasonable given the knowledge available at the time, with either Vaughan Gething or Jeremy Miles set to be announced as his successor on Saturday.",
+      "source_url": null,
+      "latency_ms": 3088.96,
+      "scores": {
+        "token_f1": 0.6173,
+        "rouge_l_f1_approx": 0.321,
+        "rouge1_f1": 0.619,
+        "rouge2_f1": 0.2892,
+        "rougeL_f1": 0.3333,
+        "word_count": 83
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-014",
+      "article_chars": 3463,
+      "reference_summary": "A Palestinian refugee is suing the UK Home Office for refusing to grant visas to his family in Gaza, claiming it effectively bars them from joining him due to the unavailability of visa-application centers in the conflict-stricken region. The family, including children who have contracted hepatitis A, cannot provide fingerprints required for visa applications, and the Home Office has stated it cannot assist with entry to a third country for biometric submission.",
+      "prediction": "A Palestinian refugee in the UK is taking legal action against the Home Office after it rejected his request to allow his wife and four children in Gaza to apply for family-reunion visas without providing fingerprints at a visa application center. The Home Office refused to exempt the family from biometric requirements or allow them to travel to Egypt to submit fingerprints, effectively blocking their visa applications despite the absence of functioning visa centers in Gaza.",
+      "source_url": null,
+      "latency_ms": 4349.74,
+      "scores": {
+        "token_f1": 0.5135,
+        "rouge_l_f1_approx": 0.2568,
+        "rouge1_f1": 0.5828,
+        "rouge2_f1": 0.2013,
+        "rougeL_f1": 0.2914,
+        "word_count": 76
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-015",
+      "article_chars": 3508,
+      "reference_summary": "Rishi Sunak has cautioned against political polarization and hatred after a contentious week in Westminster, which saw Tory MP Lee Anderson suspended for refusing to apologize for comments about \"Islamists\" controlling London's Mayor. Labour's Keir Starmer has called on Sunak to take control of his party, while Anderson's suspension followed criticism from both sides of the aisle for his remarks, which were labeled Islamophobic and racist by Mayor Sadiq Khan.",
+      "prediction": "UK Prime Minister Rishi Sunak warned against polarization and hatred in politics after Conservative MP Lee Anderson was suspended from the party for refusing to apologize for claiming \"Islamists\" have control of London Mayor Sadiq Khan. The suspension followed a contentious week in Westminster marked by heightened tensions over Gaza ceasefire debates and growing concerns about MP safety, with three female MPs reportedly receiving bodyguards due to security threats.",
+      "source_url": null,
+      "latency_ms": 3586.09,
+      "scores": {
+        "token_f1": 0.518,
+        "rouge_l_f1_approx": 0.3165,
+        "rouge1_f1": 0.5352,
+        "rouge2_f1": 0.2429,
+        "rougeL_f1": 0.3239,
+        "word_count": 69
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-016",
+      "article_chars": 3423,
+      "reference_summary": "Microsoft is making four formerly exclusive games, including Sea of Thieves and Pentiment, available on Sony's PS5 and Nintendo Switch, with Grounded also coming to Switch. This move follows Microsoft's announcement in February about expanding its titles to rival platforms, aiming to grow player communities with cross-play support. During a Nintendo Direct event, other titles like Sonic Mania's spiritual successor, Penny's Big Breakaway, were revealed, indicating a resurgence of interest in 3D platformers.",
+      "prediction": "Microsoft announced that four formerly Xbox-exclusive games\u2014Hi-Fi Rush, Sea of Thieves, Pentiment, and Grounded\u2014will be released on Sony's PS5 and Nintendo Switch, marking a significant shift in the gaming industry. During Nintendo's Direct showcase, several other upcoming titles were also revealed, including Penny's Big Breakaway from the creators of Sonic Mania and an expansion for Elden Ring set for June release.",
+      "source_url": null,
+      "latency_ms": 3813.21,
+      "scores": {
+        "token_f1": 0.4328,
+        "rouge_l_f1_approx": 0.3284,
+        "rouge1_f1": 0.5205,
+        "rouge2_f1": 0.1944,
+        "rougeL_f1": 0.3699,
+        "word_count": 61
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-017",
+      "article_chars": 2191,
+      "reference_summary": "Adam Sandler, known for Netflix's Murder Mystery 2, was named the best-paid actor in Hollywood in 2023 by Forbes, earning $73 million, thanks to his Netflix films and stand-up comedy gigs. Margot Robbie, the youngest in the top 10, ranked second, while Tom Cruise was third, and Jennifer Aniston, Sandler's co-star, placed sixth.",
+      "prediction": "Adam Sandler was Hollywood's highest-paid actor in 2023, earning $73 million primarily from appearing in and producing three Netflix films, including Murder Mystery 2, according to Forbes magazine. His earnings were also boosted by 44 stand-up comedy dates, marking his first time topping the list since 2002, ahead of Margot Robbie in second place and Tom Cruise in third.",
+      "source_url": null,
+      "latency_ms": 5165.44,
+      "scores": {
+        "token_f1": 0.5536,
+        "rouge_l_f1_approx": 0.3571,
+        "rouge1_f1": 0.6167,
+        "rouge2_f1": 0.2203,
+        "rougeL_f1": 0.3667,
+        "word_count": 59
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-018",
+      "article_chars": 4577,
+      "reference_summary": "Nicola Sturgeon has confirmed that the UK Covid Inquiry has copies of messages between her and colleagues, which were submitted last year, despite earlier criticism that she had deleted her messages. The former first minister stated she conducted most of her Covid response through formal channels, and any informal messages were limited and submitted to the inquiry.",
+      "prediction": "Former Scottish First Minister Nicola Sturgeon has stated that the UK Covid Inquiry does have copies of messages between her and colleagues, which she submitted last year after retrieving them from others' devices, despite deleting them from her own phone. The inquiry heard that Sturgeon retained no messages on her device and her then-deputy John Swinney used auto-delete for WhatsApp, prompting criticism from opposition politicians who questioned why the messages were deleted.",
+      "source_url": null,
+      "latency_ms": 3726.87,
+      "scores": {
+        "token_f1": 0.5736,
+        "rouge_l_f1_approx": 0.4031,
+        "rouge1_f1": 0.5649,
+        "rouge2_f1": 0.2791,
+        "rougeL_f1": 0.4122,
+        "word_count": 72
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-019",
+      "article_chars": 3061,
+      "reference_summary": "The justice secretary in England and Wales has announced that certain low-level prisoners may be released up to two months early to address overcrowding in jails, with the possibility of electronic monitoring for public protection. This extension from 18 days to 35-60 days comes as the prison population is projected to increase, and Labour accuses the government of failing to build enough prisons, releasing offenders secretly, and jeopardizing public safety.",
+      "prediction": "England and Wales will release certain low-level prisoners up to two months early to address severe overcrowding in jails, extending a previous policy that allowed 18-day early releases. The prison population stands at 88,220 with operational capacity just over 89,000, while Labour criticizes the government for failing to build enough prisons and secretly releasing prisoners including violent offenders.",
+      "source_url": null,
+      "latency_ms": 3778.81,
+      "scores": {
+        "token_f1": 0.5312,
+        "rouge_l_f1_approx": 0.4531,
+        "rouge1_f1": 0.5672,
+        "rouge2_f1": 0.3182,
+        "rougeL_f1": 0.4776,
+        "word_count": 58
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-020",
+      "article_chars": 4093,
+      "reference_summary": "Over 40 households in Hirwaun, Rhondda Cynon Taff, have been advised to evacuate due to safety concerns over reinforced autoclaved aerated concrete (Raac) in their homes, with two properties deemed \"critical risk.\" Housing association Trivallis is providing temporary accommodation for affected residents, while structural engineers investigate and plan a solution, potentially involving repairs or rehousing.",
+      "prediction": "More than 40 households in Hirwaun, Rhondda Cynon Taff, have been advised to evacuate after surveys found critical issues with reinforced autoclaved aerated concrete (Raac) in their properties, with two homes at \"critical risk.\" Housing association Trivallis is arranging temporary accommodation for affected residents, though many have chosen to remain in their homes despite safety warnings, while structural engineers work to assess and implement solutions.",
+      "source_url": null,
+      "latency_ms": 3270.25,
+      "scores": {
+        "token_f1": 0.6667,
+        "rouge_l_f1_approx": 0.6,
+        "rouge1_f1": 0.6833,
+        "rouge2_f1": 0.5085,
+        "rougeL_f1": 0.6167,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-021",
+      "article_chars": 3087,
+      "reference_summary": "Singer Olly Alexander, former frontman of Years and Years, will represent the UK at the Eurovision Song Contest with an upbeat, club-friendly pop song called \"Dizzy,\" co-written with Danny L Harle. The full track will be released on March 1, and while fans are excited, expectations for a UK victory are cautious, given the country's recent Eurovision performance history.",
+      "prediction": "Singer Olly Alexander has revealed a 20-second preview of \"Dizzy,\" the song he will perform for the UK at Eurovision 2025 in May, describing it as electronic and danceable. The club-friendly pop track, co-written with producer Danny L Harle, has generated excitement among fans, though the UK hasn't won Eurovision since 1997 and finished second to last in 2023.",
+      "source_url": null,
+      "latency_ms": 6134.79,
+      "scores": {
+        "token_f1": 0.4915,
+        "rouge_l_f1_approx": 0.322,
+        "rouge1_f1": 0.528,
+        "rouge2_f1": 0.1626,
+        "rougeL_f1": 0.336,
+        "word_count": 59
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-022",
+      "article_chars": 5761,
+      "reference_summary": "The number of people driving under the influence of cannabis and cocaine is rising in the UK, according to Chief constable Jo Shiner of the National Police Chiefs Council, with some forces making more drug-driving arrests than drink-driving ones. The Home Office is taking action against this trend, as data shows that in December, 48.5% of drug tests were positive compared to 9.5% for alcohol breath tests. There is a call for stricter sentences to deter drug-driving, especially after incidents like the one involving Summer Mace, whose family was killed by a drug-impaired driver.",
+      "prediction": "Drug-driving arrests are increasing in Britain, with some police forces making more drug-related arrests than drink-driving arrests during December crackdowns, as 48.5% of drug tests came back positive compared to 9.5% for alcohol. Police officials cite growing social acceptance of driving under the influence of drugs, particularly cannabis and cocaine among younger people, while victims' families are calling for tougher sentences to deter offenders.",
+      "source_url": null,
+      "latency_ms": 4396.0,
+      "scores": {
+        "token_f1": 0.4684,
+        "rouge_l_f1_approx": 0.3038,
+        "rouge1_f1": 0.5325,
+        "rouge2_f1": 0.3353,
+        "rougeL_f1": 0.355,
+        "word_count": 64
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-023",
+      "article_chars": 5285,
+      "reference_summary": "Yemen's Houthis have targeted a US-owned vessel in the Gulf of Aden, claiming a direct hit with missiles, while the US military says it was struck by a drone. The attack comes after the US re-designated the Houthis as \"global terrorists,\" requiring freezing of their funds and a ban on members entering the US, in response to attacks on commercial shipping in the region. The move reverses a 2021 decision due to humanitarian concerns in Yemen, but recent Houthi attacks have led to the re-imposition of sanctions, with exemptions to ensure aid continues to flow into the war-torn country.",
+      "prediction": "Yemen's Houthis struck the US-owned bulk carrier \"Genco Picardy\" with a drone in the Gulf of Aden, prompting Washington to re-designate the group as \"global terrorists\" with financial sanctions and travel bans. The attacks, which the Houthis say are in response to Israel's Gaza operation and recent US-UK airstrikes on Yemen, have targeted dozens of commercial vessels in the Red Sea since November, disrupting one of the world's busiest shipping lanes.",
+      "source_url": null,
+      "latency_ms": 3694.8,
+      "scores": {
+        "token_f1": 0.4706,
+        "rouge_l_f1_approx": 0.2706,
+        "rouge1_f1": 0.5304,
+        "rouge2_f1": 0.2235,
+        "rougeL_f1": 0.3094,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-024",
+      "article_chars": 6076,
+      "reference_summary": "Donald Trump has won a significant victory over Nikki Haley in the South Carolina primary, moving closer to the Republican presidential nomination. Despite Haley's vow to continue her campaign, Trump focused on a potential rematch with Joe Biden in the general election, stating, \"We're going to say 'get out Joe, you're fired'.",
+      "prediction": "Donald Trump won the South Carolina Republican primary by a 20-point margin over Nikki Haley, marking his fourth consecutive victory and moving him closer to the presidential nomination. Despite the loss in her home state, Haley vowed to continue her campaign until at least Super Tuesday on March 5, while Trump shifted focus to the general election and likely rematch with President Joe Biden.",
+      "source_url": null,
+      "latency_ms": 3143.29,
+      "scores": {
+        "token_f1": 0.6034,
+        "rouge_l_f1_approx": 0.3966,
+        "rouge1_f1": 0.6333,
+        "rouge2_f1": 0.2881,
+        "rougeL_f1": 0.4167,
+        "word_count": 64
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-025",
+      "article_chars": 4209,
+      "reference_summary": "A US-Russian citizen, reportedly named Ksenia Karelina, has been detained in Russia on suspicion of treason and fundraising for Ukraine's military. She was arrested in Yekaterinburg and faces up to life in prison if found guilty, with the US government attempting to gain consular access to her.",
+      "prediction": "A US-Russian dual citizen identified as Ksenia Karelina, 33, an amateur ballerina from Los Angeles, has been detained in Russia on suspicion of treason for allegedly fundraising for Ukraine's armed forces and attending pro-Ukraine rallies in the US. She was arrested in Yekaterinburg while visiting family in January and faces potential life imprisonment under Russia's expanded treason laws, with the US government seeking consular access to her.",
+      "source_url": null,
+      "latency_ms": 3784.28,
+      "scores": {
+        "token_f1": 0.614,
+        "rouge_l_f1_approx": 0.5789,
+        "rouge1_f1": 0.6167,
+        "rouge2_f1": 0.4237,
+        "rougeL_f1": 0.5833,
+        "word_count": 67
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-026",
+      "article_chars": 2638,
+      "reference_summary": "Ethiopia's largest commercial bank, the Commercial Bank of Ethiopia (CBE), experienced a systems glitch that allowed customers to withdraw more cash than they had in their accounts, resulting in over $40 million being withdrawn or transferred. The bank, which has over 38 million account holders, froze transactions after several hours, and while some students have returned the excess money, it is unclear how much has been recouped.",
+      "prediction": "Ethiopia's Commercial Bank experienced a systems glitch on Saturday that allowed customers to withdraw more money than they had in their accounts, resulting in over $40 million being withdrawn or transferred, primarily by university students who learned about it through messaging apps. The bank has frozen transactions and is asking customers to return the money voluntarily without facing criminal charges, while officials insist it was not a cyber-attack and customer accounts remain secure.",
+      "source_url": null,
+      "latency_ms": 3785.42,
+      "scores": {
+        "token_f1": 0.5571,
+        "rouge_l_f1_approx": 0.5143,
+        "rouge1_f1": 0.5874,
+        "rouge2_f1": 0.3688,
+        "rougeL_f1": 0.5315,
+        "word_count": 73
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-027",
+      "article_chars": 2567,
+      "reference_summary": "England's Jofra Archer is expected to return for the T20 World Cup in June, according to managing director Rob Key, who says the fast bowler is being slowly built up after a long-standing elbow injury. Key also called for dedicated windows in the cricket calendar to protect Test cricket, suggesting there should be specific periods for the longest format to ensure its survival amidst the growing popularity of franchise tournaments.",
+      "prediction": "England managing director Rob Key says fast bowler Jofra Archer is being targeted for the T20 World Cup in June after missing professional cricket since May due to a recurring elbow injury. Key emphasized a cautious approach to Archer's return, ruling out IPL participation to protect his long-term career, while also calling for dedicated windows in the global calendar to protect Test cricket.",
+      "source_url": null,
+      "latency_ms": 3294.92,
+      "scores": {
+        "token_f1": 0.5865,
+        "rouge_l_f1_approx": 0.391,
+        "rouge1_f1": 0.6277,
+        "rouge2_f1": 0.3704,
+        "rougeL_f1": 0.4088,
+        "word_count": 63
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-028",
+      "article_chars": 6120,
+      "reference_summary": "Ahmad al-Ghuferi's family of 103 members was killed in a bomb strike on their Gaza City home during the conflict between Hamas and Israel in October-December 2022. Ahmad, who was working in the West Bank, was unable to return home due to the war and military blockade, and he learned of the tragedy through a phone call with his wife just before the attack.",
+      "prediction": "Ahmad al-Ghuferi, a Palestinian construction worker trapped in the West Bank, lost 103 family members including his wife, three young daughters, mother, and four brothers when an Israeli airstrike destroyed their family home in Gaza City on December 8. He was on the phone with his wife when the attack occurred, and survivors report the strike hit without warning, killing everyone who had sheltered in the house while those who fled up the hill survived.",
+      "source_url": null,
+      "latency_ms": 3690.8,
+      "scores": {
+        "token_f1": 0.446,
+        "rouge_l_f1_approx": 0.2158,
+        "rouge1_f1": 0.4895,
+        "rouge2_f1": 0.1277,
+        "rougeL_f1": 0.2378,
+        "word_count": 75
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-029",
+      "article_chars": 4209,
+      "reference_summary": "The Duchess of Sussex, Meghan, spoke at the SXSW festival about the bullying and abuse she faced on social media during her pregnancies, emphasizing the need for empathy and humanity in the digital space. She highlighted the power of speaking up and advocacy, sharing her experience of changing a sexist advert as a child.",
+      "prediction": "The Duchess of Sussex spoke at a SXSW panel on International Women's Day, revealing she experienced severe online bullying and abuse during her pregnancies with Archie and Lilibet. Meghan criticized the \"seemingly endless toxicity\" of social media and certain media sectors, saying people have \"forgotten our humanity\" and calling the treatment she received cruel rather than merely catty.",
+      "source_url": null,
+      "latency_ms": 9568.58,
+      "scores": {
+        "token_f1": 0.4643,
+        "rouge_l_f1_approx": 0.3214,
+        "rouge1_f1": 0.4602,
+        "rouge2_f1": 0.1622,
+        "rougeL_f1": 0.3186,
+        "word_count": 58
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-030",
+      "article_chars": 4603,
+      "reference_summary": "Tax experts claim the Post Office may have underpaid over \u00a3100m in tax by deducting payments to victims of the Horizon scandal from its profits, potentially breaching the law and risking insolvency. The company disputes the assertion, stating its financial information is accurate, but HMRC is investigating the matter.",
+      "prediction": "The Post Office may have underpaid over \u00a3100 million in tax by improperly deducting compensation payments to Horizon scandal victims from its profits, according to tax experts who say this could breach the law and risk insolvency. While the company allegedly reduced its tax bill by treating these payments as business expenses, it excluded them when calculating executive bonuses, resulting in higher pay for senior staff including the CEO who received \u00a3573,000 in 2022.",
+      "source_url": null,
+      "latency_ms": 8623.62,
+      "scores": {
+        "token_f1": 0.4715,
+        "rouge_l_f1_approx": 0.4228,
+        "rouge1_f1": 0.5,
+        "rouge2_f1": 0.3115,
+        "rougeL_f1": 0.4516,
+        "word_count": 74
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-031",
+      "article_chars": 4340,
+      "reference_summary": "\u4ee5\u8272\u5217\u519b\u961f\u5728\u7ea6\u65e6\u6cb3\u897f\u5cb8\u7684\u4e00\u5bb6\u533b\u9662\u6740\u6b7b\u4e86\u4e09\u540d\u5df4\u52d2\u65af\u5766\u6b66\u88c5\u7ec4\u7ec7\u6210\u5458\uff0c\u5176\u4e2d\u4e24\u4eba\u636e\u79f0\u5c5e\u4e8e\u4f0a\u65af\u5170\u5723\u6218\u7ec4\u7ec7\u3002\u533b\u9662\u7684\u76d1\u63a7\u89c6\u9891\u663e\u793a\uff0c\u4fbf\u8863\u90e8\u961f\u6210\u5458\u88c5\u626e\u6210\u533b\u62a4\u4eba\u5458\u8fdb\u5165\u533b\u9662\u8d70\u5eca\u5e76\u4e3e\u67aa\u3002\u4ee5\u8272\u5217\u519b\u65b9\u79f0\u8fd9\u4e9b\u4eba\u5728\u533b\u9662\u5185\u85cf\u533f\uff0c\u5176\u4e2d\u4e00\u4eba\u51c6\u5907\u53d1\u52a8\u88ad\u51fb\uff0c\u800c\u5df4\u52d2\u65af\u5766\u536b\u751f\u90e8\u5219\u8c34\u8d23\u8fd9\u662f\u5bf9\u533b\u9662\u7684\u201c\u5927\u5c60\u6740\u201d\u3002",
+      "prediction": "Israeli forces killed three Palestinian militants in a hospital raid in Jenin, West Bank, with CCTV footage showing an undercover unit disguised as medics and civilians entering with raised weapons. The Palestinian Authority condemned it as a massacre, while Israel said the men were hiding in the hospital and one was planning an attack, amid heightened tensions following the October 7 Hamas attacks that killed about 1,200 Israelis and triggered Israel's military campaign in Gaza.",
+      "source_url": null,
+      "latency_ms": 5713.44,
+      "scores": {
+        "token_f1": 0.0,
+        "rouge_l_f1_approx": 0.0,
+        "rouge1_f1": 0.0,
+        "rouge2_f1": 0.0,
+        "rougeL_f1": 0,
+        "word_count": 75
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-032",
+      "article_chars": 3452,
+      "reference_summary": "An international team of investigators, including experts from 23 countries, have located eight Ukrainian children who were believed to have been abducted during Russia's invasion, using advanced digital techniques. Ukraine estimates that 19,500 children have been deported or forcibly displaced to Russia, with only 388 returning home since the invasion began in February 2022. The International Criminal Court has issued an arrest warrant for Russian President Vladimir Putin and a children's rights commissioner over the alleged unlawful deportation of children, while Russia claims it is protecting them.",
+      "prediction": "An international team of investigators has used digital open-source techniques and facial recognition to track down eight Ukrainian children believed to have been abducted during Russia's invasion, though their identities and locations remain undisclosed for safety reasons. Ukraine estimates that at least 19,500 children have been deported or forcibly displaced to Russia since February 2022, with only 388 returned, leading to an International Criminal Court arrest warrant for President Putin and Russia's Children's Rights Commissioner for alleged unlawful deportation.",
+      "source_url": null,
+      "latency_ms": 5463.51,
+      "scores": {
+        "token_f1": 0.6506,
+        "rouge_l_f1_approx": 0.5663,
+        "rouge1_f1": 0.7011,
+        "rouge2_f1": 0.4651,
+        "rougeL_f1": 0.5862,
+        "word_count": 79
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-033",
+      "article_chars": 4581,
+      "reference_summary": "Erling Haaland scored five goals, securing his eighth hat-trick for Manchester City, as they comfortably beat Luton Town 6-2 to advance to the FA Cup quarter-finals. Kevin de Bruyne provided four assists and also scored, while Luton's Jordan Clark managed two goals in a losing effort.",
+      "prediction": "Manchester City thrashed Luton to reach the FA Cup quarter-finals, with Erling Haaland scoring five goals in a dominant 6-2 victory. Kevin De Bruyne assisted the first four goals in a masterful performance, while Haaland became the first player to score five goals in a game twice for City, extending his record to 79 goals in 83 appearances for the club.",
+      "source_url": null,
+      "latency_ms": 3436.74,
+      "scores": {
+        "token_f1": 0.4486,
+        "rouge_l_f1_approx": 0.2991,
+        "rouge1_f1": 0.5133,
+        "rouge2_f1": 0.2523,
+        "rougeL_f1": 0.3009,
+        "word_count": 61
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-034",
+      "article_chars": 2500,
+      "reference_summary": "Australian police are searching for the bodies of TV presenter Luke Davies and his boyfriend Jesse Baird, who are suspected to have been murdered by a serving police officer, Senior constable Beaumont Lamarre-Condon, who has been charged with two counts of murder. The officer may have disposed of the bodies on a remote property, and police are investigating the purchase of an angle grinder and weights in connection with the case.",
+      "prediction": "Australian police are searching a remote property for the bodies of TV presenter Jesse Baird and his boyfriend Luke Davies, who are suspected to have been murdered by serving police officer Beaumont Lamarre-Condon, 28, who once dated Baird. The officer has been charged with two counts of murder after allegedly killing the pair at Baird's Sydney home, then moving their bodies in a hired van to a property 185km away.",
+      "source_url": null,
+      "latency_ms": 5392.44,
+      "scores": {
+        "token_f1": 0.6809,
+        "rouge_l_f1_approx": 0.5532,
+        "rouge1_f1": 0.6806,
+        "rouge2_f1": 0.4648,
+        "rougeL_f1": 0.5556,
+        "word_count": 70
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-035",
+      "article_chars": 3708,
+      "reference_summary": "The death of Kelsey Brown, a pregnant Liverpool woman, during labor at a Marbella hospital in 2021 is being investigated in Spain, with her family still seeking answers two years later. An inquest revealed that blood transfusion did not arrive until minutes before her death, and crucial medical documents have not been provided, limiting the investigation.",
+      "prediction": "Kelsey Brown, a 34-year-old pregnant woman from Liverpool, died during labor at a Spanish hospital in Marbella in July 2021 after bleeding for over five hours, with blood supplies arriving minutes before her death. Two-and-a-half years later, her family is still awaiting answers as a Liverpool coroner could only reach an open conclusion due to crucial medical documents being withheld by Spanish authorities.",
+      "source_url": null,
+      "latency_ms": 3722.42,
+      "scores": {
+        "token_f1": 0.5546,
+        "rouge_l_f1_approx": 0.3529,
+        "rouge1_f1": 0.5806,
+        "rouge2_f1": 0.2131,
+        "rougeL_f1": 0.371,
+        "word_count": 63
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-036",
+      "article_chars": 5545,
+      "reference_summary": "Ireland, favorites to beat England at Twickenham on Saturday, can retain their Six Nations title with a bonus-point win, aiming to become the first team to secure consecutive Grand Slams in the tournament's history. England, seeking improved cohesion after a disappointing loss to Scotland, welcome debutant Immanuel Feyi-Waboso in their lineup, hoping for a more dynamic attack to challenge the unbeaten Irish side.",
+      "prediction": "Ireland arrives at Twickenham as overwhelming favorites against England, seeking a bonus-point victory to retain their Six Nations title and become the first team to win back-to-back Grand Slams. England, coming off a defeat to Scotland, has made three changes including giving Immanuel Feyi-Waboso his first start, and must maintain near-perfect discipline and minimize errors to challenge Ireland's record-equalling 11-game Six Nations winning streak.",
+      "source_url": null,
+      "latency_ms": 3971.63,
+      "scores": {
+        "token_f1": 0.4724,
+        "rouge_l_f1_approx": 0.3622,
+        "rouge1_f1": 0.4928,
+        "rouge2_f1": 0.25,
+        "rougeL_f1": 0.3478,
+        "word_count": 64
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-037",
+      "article_chars": 3159,
+      "reference_summary": "Actor Adan Canto, known for his roles in Designated Survivor and X-Men: Days of Future Past, has passed away at age 42 due to appendiceal cancer. Tributes from co-stars and friends highlighted his kindness, spirit, and talent, with Kiefer Sutherland and Halle Berry among those expressing their grief.",
+      "prediction": "Actor Adan Canto, known for roles in Designated Survivor, X-Men: Days of Future Past, and The Cleaning Lady, has died at age 42 from appendiceal cancer. Co-stars including Kiefer Sutherland and Halle Berry paid tribute to the Mexican actor, praising his talent, kindness, and spirit, while expressing heartbreak for his wife and two young children.",
+      "source_url": null,
+      "latency_ms": 4938.44,
+      "scores": {
+        "token_f1": 0.7184,
+        "rouge_l_f1_approx": 0.5243,
+        "rouge1_f1": 0.7477,
+        "rouge2_f1": 0.4,
+        "rougeL_f1": 0.5421,
+        "word_count": 55
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-038",
+      "article_chars": 2567,
+      "reference_summary": "A police inspector, Owen Hurley, was demoted to sergeant for selling his police trousers on a second-hand app for \u00a34, admitting it was a mistake at a misconduct hearing. The trousers, though not bearing a police logo, were identified as police issue by a member of the public, leading to the investigation and punishment, with the chief constable stating it was a \"stupid mistake\" but not gross misconduct warranting dismissal.",
+      "prediction": "A Hertfordshire Police inspector, Owen Hurley, was demoted to sergeant after being found guilty of gross misconduct for selling his police-issued trousers for \u00a34 on the second-hand app Vinted. The trousers were reported by a member of the public in summer 2023, and while Hurley claimed it was a mistake to make space after redecorating, the chief constable deemed the action \"stupid\" and reduced his rank, though dismissal was considered disproportionate.",
+      "source_url": null,
+      "latency_ms": 24167.09,
+      "scores": {
+        "token_f1": 0.6099,
+        "rouge_l_f1_approx": 0.4397,
+        "rouge1_f1": 0.6389,
+        "rouge2_f1": 0.3662,
+        "rougeL_f1": 0.4583,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-039",
+      "article_chars": 4102,
+      "reference_summary": "Ex-UFC champion Francis Ngannou, who had a contentious loss to Tyson Fury in his boxing debut, is set to face Anthony Joshua for a heavyweight fight in Saudi Arabia. Ngannou expressed his intention to continue in boxing and aims for a rematch with Fury, while Joshua remained calm and focused, stating that the best man will always win. The winner of this bout could potentially face Oleksandr Usyk or Fury for the undisputed heavyweight title.",
+      "prediction": "Former UFC champion Francis Ngannou engaged in heated exchanges with Tyson Fury at a news conference ahead of his Friday heavyweight boxing match against Anthony Joshua in Saudi Arabia. Ngannou, who nearly defeated Fury in a controversial split-decision loss four months ago in his boxing debut, expressed confidence he is \"just getting started\" in boxing, while Joshua remained reserved and focused on the upcoming bout.",
+      "source_url": null,
+      "latency_ms": 5786.82,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.3286,
+        "rouge1_f1": 0.507,
+        "rouge2_f1": 0.2429,
+        "rougeL_f1": 0.338,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-040",
+      "article_chars": 3291,
+      "reference_summary": "Israel's Supreme Court has overturned a judicial reform law that would have limited its power to strike down unconstitutional laws, a move that sparked nationwide protests last year. The law, part of a broader package of reforms by the Netanyahu government, was criticized for potentially undermining the country's democracy by weakening the judiciary. The court's decision, with 8 out of 15 judges against the law, was hailed by opposition leaders but condemned by the justice minister, Yariv Levin.",
+      "prediction": "Israel's Supreme Court has struck down a controversial judicial reform law that would have limited its power to overturn government decisions deemed \"extremely unreasonable,\" a change that triggered massive nationwide protests last year. The court ruled 8-15 that the law would have caused severe damage to Israel's democracy, while the Netanyahu government criticized the decision as undemocratic and opposing the will of the people.",
+      "source_url": null,
+      "latency_ms": 6220.1,
+      "scores": {
+        "token_f1": 0.493,
+        "rouge_l_f1_approx": 0.4366,
+        "rouge1_f1": 0.5541,
+        "rouge2_f1": 0.3014,
+        "rougeL_f1": 0.4324,
+        "word_count": 64
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-041",
+      "article_chars": 6959,
+      "reference_summary": "Everton and Nottingham Forest have been charged by the Premier League for breaching financial rules, with both clubs facing independent commissions over alleged breaches of profit and sustainability regulations in their 2022-23 accounts. This comes as Everton is already appealing a 10-point deduction from a previous charge, and both clubs now have 14 days to respond to the new charges, with hearings required to be concluded within 12 weeks.",
+      "prediction": "The Premier League has charged Everton and Nottingham Forest with breaching profit and sustainability rules for the 2022-23 season, referring both clubs to an independent commission that could impose fines or points deductions. Everton are already appealing a 10-point deduction from a previous charge, while Forest's case is thought to center on the timing of Brennan Johnson's transfer to Tottenham, which occurred after the accounting deadline.",
+      "source_url": null,
+      "latency_ms": 3204.09,
+      "scores": {
+        "token_f1": 0.5185,
+        "rouge_l_f1_approx": 0.3259,
+        "rouge1_f1": 0.5532,
+        "rouge2_f1": 0.2734,
+        "rougeL_f1": 0.3546,
+        "word_count": 66
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-042",
+      "article_chars": 3134,
+      "reference_summary": "English rugby union player Manu Tuilagi is leaving Sale Sharks at the end of the season to join French club Bayonne, which likely marks the end of his international career due to the RFU's policy on overseas players. The 32-year-old center, who has played 60 times for England, has signed a two-year contract with Bayonne, following in the footsteps of other English players like Owen Farrell and Lewis Ludlam who have also moved to France.",
+      "prediction": "England centre Manu Tuilagi will leave Sale Sharks at the end of the season to join French Top 14 club Bayonne on a two-year contract, effectively ending his international career as England only selects home-based players. The 32-year-old has won 60 England caps and scored 20 tries since his 2011 debut, though injuries have caused him to miss 97 Tests during that period.",
+      "source_url": null,
+      "latency_ms": 4087.95,
+      "scores": {
+        "token_f1": 0.4493,
+        "rouge_l_f1_approx": 0.3913,
+        "rouge1_f1": 0.4932,
+        "rouge2_f1": 0.3056,
+        "rougeL_f1": 0.4247,
+        "word_count": 63
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-043",
+      "article_chars": 5444,
+      "reference_summary": "Israel has not confirmed or denied responsibility for the assassination of Hamas leader Saleh al-Arouri in Beirut, but a spokesperson referred to it as a \"surgical strike against the Hamas leadership.\" Hamas and its ally Hezbollah condemned the killing as a terrorist act and an assault on Lebanese sovereignty, with Hezbollah vowing retaliation. The incident threatens to escalate tensions between Israel, Hamas, and Hezbollah, amid ongoing violence along the Israel-Lebanon border.",
+      "prediction": "Israel conducted a drone strike in Beirut that killed Hamas deputy political leader Saleh al-Arouri and six others, though Israel has not officially confirmed responsibility while calling it a \"surgical strike\" against Hamas leadership. The assassination has prompted warnings of retaliation from Hamas and Hezbollah, with Lebanon's government expressing concern about being dragged into a regional war, though Israel insists the attack targeted Hamas specifically and not Lebanon or Hezbollah.",
+      "source_url": null,
+      "latency_ms": 3891.03,
+      "scores": {
+        "token_f1": 0.4965,
+        "rouge_l_f1_approx": 0.2837,
+        "rouge1_f1": 0.5379,
+        "rouge2_f1": 0.1818,
+        "rougeL_f1": 0.2897,
+        "word_count": 70
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-044",
+      "article_chars": 5637,
+      "reference_summary": "Jannik Sinner, 22, became the youngest player to win the Australian Open men's title since Novak Djokovic in 2008, defeating Daniil Medvedev in a thrilling five-set final. Sinner, Italy's fourth seed, overcame a two-set deficit to win 3-6 3-6 6-4 6-4 6-3, denying Medvedev, who lost his fifth major final. Sinner's victory marked his first Grand Slam title and ended a 10-year reign of Roger Federer, Rafael Nadal, or Djokovic in the Australian Open final.",
+      "prediction": "Jannik Sinner won his first Grand Slam title at the Australian Open, becoming the youngest men's champion since Novak Djokovic in 2008 after mounting an extraordinary comeback from two sets down to defeat Daniil Medvedev 3-6 3-6 6-4 6-4 6-3. The 22-year-old Italian's victory marked another heartbreaking loss for Medvedev, who also blew a two-set lead in the 2022 final against Rafael Nadal and has now lost five of his six major finals.",
+      "source_url": null,
+      "latency_ms": 4461.79,
+      "scores": {
+        "token_f1": 0.5676,
+        "rouge_l_f1_approx": 0.3243,
+        "rouge1_f1": 0.6627,
+        "rouge2_f1": 0.3832,
+        "rougeL_f1": 0.3787,
+        "word_count": 73
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-045",
+      "article_chars": 5853,
+      "reference_summary": "Actress Sarah Snook receives critical acclaim for her one-woman stage adaptation of Oscar Wilde's \"The Picture of Dorian Gray\" in London's West End, playing 26 characters and utilizing technology to interact with pre-recorded performances. While some reviews praise the production as \"astonishing\" and Snook's performance as \"virtuoso,\" others criticize the script and the show's tone, with ticket prices also drawing scrutiny.",
+      "prediction": "Sarah Snook has received widespread critical acclaim for her one-woman performance in a West End adaptation of The Picture of Dorian Gray, where she plays 26 characters using innovative camera technology and overhead screens. Most critics awarded the production four or five stars, praising Snook's virtuoso performance, though some questioned the script's effectiveness and high ticket prices of up to \u00a3250.",
+      "source_url": null,
+      "latency_ms": 5453.67,
+      "scores": {
+        "token_f1": 0.5246,
+        "rouge_l_f1_approx": 0.4098,
+        "rouge1_f1": 0.626,
+        "rouge2_f1": 0.2791,
+        "rougeL_f1": 0.458,
+        "word_count": 61
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-046",
+      "article_chars": 3243,
+      "reference_summary": "Scotland's rugby team aims for a historic win against Ireland in Dublin, needing a remarkable performance to disrupt Ireland's pursuit of a second consecutive Six Nations title. Head coach Gregor Townsend makes two changes to the starting lineup, with Stafford McDowall and Ben White coming in, acknowledging the challenge of facing an almost unbeatable Irish team at home.",
+      "prediction": "Scotland head coach Gregor Townsend says his team needs \"something special\" to beat Ireland in Dublin on Saturday, where the hosts can clinch back-to-back Six Nations titles with a draw. Townsend has made two changes to his starting lineup after Scotland's disappointing 31-29 loss to Italy, bringing in Stafford McDowall at centre and Ben White at scrum-half.",
+      "source_url": null,
+      "latency_ms": 3129.46,
+      "scores": {
+        "token_f1": 0.4696,
+        "rouge_l_f1_approx": 0.313,
+        "rouge1_f1": 0.4918,
+        "rouge2_f1": 0.2333,
+        "rougeL_f1": 0.3443,
+        "word_count": 57
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-047",
+      "article_chars": 3817,
+      "reference_summary": "A large pro-Palestinian march took place in London, with thousands of protesters calling for a ceasefire in Gaza and carrying placards. The event, part of a global day of action, included a giant puppet of a Syrian child refugee to highlight the plight of child refugees. Six people were arrested, and the police presence was significant, with warnings given about potential legal breaches.",
+      "prediction": "Thousands of people joined a pro-Palestinian march in London calling for a ceasefire in Gaza, with a giant puppet of Syrian refugee child \"Little Amal\" accompanying protesters to highlight the plight of child refugees. Over 1,700 police officers were deployed to manage the demonstration, which was part of a global day of action across 30 countries, resulting in six arrests for offenses including displaying offensive placards and violations under the Terrorism Act.",
+      "source_url": null,
+      "latency_ms": 10753.6,
+      "scores": {
+        "token_f1": 0.6667,
+        "rouge_l_f1_approx": 0.4,
+        "rouge1_f1": 0.6957,
+        "rouge2_f1": 0.3529,
+        "rougeL_f1": 0.4203,
+        "word_count": 72
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-048",
+      "article_chars": 4694,
+      "reference_summary": "Commons Speaker Sir Lindsay Hoyle is under fire for allowing a vote on a Labour motion calling for a Gaza ceasefire during an SNP debate, breaking with convention and sparking accusations of partisanship. Amidst calls for his resignation, Sir Lindsay apologized but defended his decision, citing MP safety concerns; the move prevented a potential Labour rebellion and led to a standalone vote on the SNP's motion not taking place.",
+      "prediction": "Commons Speaker Sir Lindsay Hoyle faces calls to resign after breaking convention by allowing a vote on Labour's Gaza ceasefire motion during an SNP debate, with 56 Tory and SNP MPs signing a no-confidence motion against him. He defended his decision by citing concerns for MPs' safety amid threats, but critics accuse him of playing party politics to help Labour avoid a rebellion, though both Labour and sources close to the Speaker deny undue pressure was applied.",
+      "source_url": null,
+      "latency_ms": 3864.38,
+      "scores": {
+        "token_f1": 0.5342,
+        "rouge_l_f1_approx": 0.3699,
+        "rouge1_f1": 0.5772,
+        "rouge2_f1": 0.1769,
+        "rougeL_f1": 0.3758,
+        "word_count": 77
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-049",
+      "article_chars": 5252,
+      "reference_summary": "The England women's football team, the Lionesses, have several promising young players making strides, with Grace Clinton's impressive debut against Austria highlighting the potential of the next generation. Players like Laura Blindkilde Brown, Naomi Layzell, Ella Morris, Hannah Silcock, Aggie Beever-Jones, Missy Bo Kearns, and Ruby Mace are being watched closely, with some already attracting attention for their skills and versatility.",
+      "prediction": "England's women's football team has several promising young players who could become first-team regulars, following Grace Clinton's impressive debut goal in a 7-2 victory over Austria. Key prospects include Manchester City midfielder Laura Blindkilde Brown, Bristol City defender Naomi Layzell, Chelsea striker Aggie Beever-Jones, Liverpool captain Missy Bo Kearns, and Manchester City's Ruby Mace, all of whom are currently training with the under-23s squad alongside the senior team in Spain.",
+      "source_url": null,
+      "latency_ms": 4528.27,
+      "scores": {
+        "token_f1": 0.458,
+        "rouge_l_f1_approx": 0.4122,
+        "rouge1_f1": 0.4789,
+        "rouge2_f1": 0.2714,
+        "rougeL_f1": 0.4366,
+        "word_count": 70
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-050",
+      "article_chars": 5028,
+      "reference_summary": "The conflict in the Middle East has influenced UK politics, with recent by-elections highlighting divisions within parties. The Labour Party's stance on Gaza may have contributed to a loss in Rochdale, but broader electoral impact is uncertain, and the party remains ahead in national polls. The victory of George Galloway, a pro-Palestinian campaigner, has caused concern within Labour about potential divisions and the influence of his Workers Party of Britain. However, it is not seen as a sign of widespread electoral doom for the party.",
+      "prediction": "George Galloway's victory in the Rochdale by-election has caused concern among Labour MPs, though analysts suggest it may not indicate broader electoral problems for the party, which continues to lead in national polls. The result reflects local factors including Labour's botched candidate selection and the significant Muslim population in Rochdale, while the party easily won other recent by-elections in areas where the Middle East conflict was less prominent.",
+      "source_url": null,
+      "latency_ms": 8774.36,
+      "scores": {
+        "token_f1": 0.4314,
+        "rouge_l_f1_approx": 0.2222,
+        "rouge1_f1": 0.4625,
+        "rouge2_f1": 0.2152,
+        "rougeL_f1": 0.2375,
+        "word_count": 68
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-051",
+      "article_chars": 2893,
+      "reference_summary": "A police officer is under criminal investigation for allegedly falsifying a witness statement after a car crash that killed three young people in Cardiff in March 2023, with seven Gwent Police officers now facing misconduct notices. The Independent Office for Police Conduct is investigating a range of issues, including missing person reports and officer conduct towards the victims' families.",
+      "prediction": "Seven Gwent Police officers have been served misconduct notices following an investigation into their handling of a March 2023 car crash in Cardiff that killed three people and seriously injured two others. One officer is under criminal investigation for allegedly falsifying a witness statement, while others face potential misconduct or gross misconduct charges related to missing person searches, report handling, family communications, and remarks made at the crash scene.",
+      "source_url": null,
+      "latency_ms": 3767.7,
+      "scores": {
+        "token_f1": 0.5156,
+        "rouge_l_f1_approx": 0.2656,
+        "rouge1_f1": 0.5781,
+        "rouge2_f1": 0.3175,
+        "rougeL_f1": 0.2969,
+        "word_count": 69
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-052",
+      "article_chars": 4979,
+      "reference_summary": "The mother of murdered teenager Brianna Ghey has expressed her openness to speaking with the mother of one of her daughter's killers, Scarlett Jenkinson, and is advocating for a law that would restrict under-16s from accessing social media on smartphones, emphasizing the need for parental monitoring tools and safer phone options for children. Esther Ghey believes that such safeguards could have prevented her daughter's murder, as the killers had watched violent content on the dark web and planned the crime using messaging apps.",
+      "prediction": "Esther Ghey, mother of murdered teenager Brianna Ghey, said she is open to speaking with the mother of one of her daughter's killers and does not blame her, while calling for new laws to restrict children's access to social media. She is launching a petition demanding phones for under-16s without social media apps and software that alerts parents to concerning search terms, believing such safeguards would have prevented her daughter's murder by Scarlett Jenkinson and Eddie Ratcliffe, who plotted the killing after viewing violent content online.",
+      "source_url": null,
+      "latency_ms": 6167.13,
+      "scores": {
+        "token_f1": 0.5444,
+        "rouge_l_f1_approx": 0.4142,
+        "rouge1_f1": 0.6364,
+        "rouge2_f1": 0.3333,
+        "rougeL_f1": 0.4545,
+        "word_count": 86
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-053",
+      "article_chars": 5677,
+      "reference_summary": "A video shown at the Old Bailey trial of Constance Marten and Mark Gordon shows police asking Marten repeatedly about her missing newborn child during their arrest in Brighton last year. The couple, who deny the charge of manslaughter by gross negligence of their baby girl Victoria, had been living in a tent with the infant while evading police. The baby's body was later found in a Lidl bag on allotments, and the pair also face additional charges related to the child's welfare and concealing her death.",
+      "prediction": "Jurors at the Old Bailey viewed arrest footage of Constance Marten and Mark Gordon, who repeatedly refused to tell police where their newborn baby was when apprehended in Brighton in February 2023. The couple, who had been living off-grid in a tent on the South Downs, are on trial for manslaughter by gross negligence after their baby Victoria was found dead in a shopping bag in a shed two days after their arrest.",
+      "source_url": null,
+      "latency_ms": 3953.72,
+      "scores": {
+        "token_f1": 0.5375,
+        "rouge_l_f1_approx": 0.375,
+        "rouge1_f1": 0.5399,
+        "rouge2_f1": 0.2609,
+        "rougeL_f1": 0.3681,
+        "word_count": 73
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-054",
+      "article_chars": 4995,
+      "reference_summary": "Ukraine's armed forces claim to have sunk a Russian amphibious ship, the Caesar Kunikov, off the coast of Crimea using sea drones, with reports of explosions and a rescue operation failing. The incident comes as NATO's secretary general, Jens Stoltenberg, acknowledges Ukraine's recent victories against the Russian Black Sea fleet, enabling grain exports.",
+      "prediction": "Ukraine's armed forces have sunk the Russian amphibious ship Caesar Kunikov off the coast of Crimea using Magura V5 sea drones, marking the second successful Black Sea strike this month. The attack comes as Ukraine's military situation remains \"extremely complex and tense,\" with Russian forces nearly surrounding the flashpoint town of Avdiivka and a missile strike on Selydove killing three people including a child.",
+      "source_url": null,
+      "latency_ms": 3403.68,
+      "scores": {
+        "token_f1": 0.547,
+        "rouge_l_f1_approx": 0.3932,
+        "rouge1_f1": 0.5574,
+        "rouge2_f1": 0.3167,
+        "rougeL_f1": 0.4098,
+        "word_count": 64
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-055",
+      "article_chars": 5107,
+      "reference_summary": "Labour has accused the Conservatives of having an \"unfunded pledge\" to abolish National Insurance Contributions, with the party highlighting the potential impact on pensions and public services. Labour calculates the cost of this pledge at \u00a346bn and is using it as a new dividing line with the Tories, questioning their economic competence, while the Conservatives argue that Labour is scaremongering and that National Insurance cuts would incentivize employment.",
+      "prediction": "Labour has identified National Insurance as a key dividing line with the Conservatives for the next general election, attacking the government's long-term ambition to abolish it as an \"unfunded pledge\" worth \u00a346bn that could threaten pensions and NHS funding. While Chancellor Jeremy Hunt insists abolition is only a long-term ambition dependent on economic conditions and won't harm public services, Labour aims to exploit voter confusion and concern to win over pensioners who traditionally support the Conservatives.",
+      "source_url": null,
+      "latency_ms": 5458.88,
+      "scores": {
+        "token_f1": 0.4722,
+        "rouge_l_f1_approx": 0.2222,
+        "rouge1_f1": 0.4595,
+        "rouge2_f1": 0.2055,
+        "rougeL_f1": 0.2162,
+        "word_count": 76
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-056",
+      "article_chars": 5080,
+      "reference_summary": "Alabama Senator Katie Britt, a Republican, delivered the GOP response to President Joe Biden's State of the Union address, criticizing the president for his handling of the border crisis and inflation, and claiming his policies have turned the American Dream into a nightmare. The 42-year-old's speech, given at her kitchen table, received mixed reviews, with some conservative outlets praising it while others questioned the setting and her performance.",
+      "prediction": "Alabama Senator Katie Britt, the youngest Republican woman in the US Senate, delivered her party's response to President Biden's State of the Union address from her kitchen table, criticizing him on border issues and inflation while painting a dark picture of America. The 42-year-old senator's performance received mixed reactions, with some praising her message while others questioned the unconventional setting and delivery style, though the speech elevated her national profile and sparked speculation about her as a potential vice-presidential candidate.",
+      "source_url": null,
+      "latency_ms": 3584.37,
+      "scores": {
+        "token_f1": 0.5946,
+        "rouge_l_f1_approx": 0.4459,
+        "rouge1_f1": 0.6203,
+        "rouge2_f1": 0.2949,
+        "rougeL_f1": 0.481,
+        "word_count": 80
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-057",
+      "article_chars": 2834,
+      "reference_summary": "A group of estate agents in Northern Ireland plan to stop posting listings on PropertyPal, the region's largest property website, due to a dispute over increased fees. The agents claim they could face a 25-45% hike under PropertyPal's new membership system, which they argue is coercive and would lead to higher costs for clients. PropertyPal says the changes provide enhanced value and services, with the majority of agents supporting the update.",
+      "prediction": "A group of major estate agents in Northern Ireland plans to stop posting property listings on PropertyPal, the region's largest property website, due to a dispute over a new fee structure that could increase costs by 25-45% per listing. The estate agents, represented by a steering group including major retailers like CPS and Simon Brien, claim they were not consulted about the changes and feel coerced, while PropertyPal defends the new membership system as offering competitive pricing and enhanced services.",
+      "source_url": null,
+      "latency_ms": 3967.24,
+      "scores": {
+        "token_f1": 0.5695,
+        "rouge_l_f1_approx": 0.4503,
+        "rouge1_f1": 0.6282,
+        "rouge2_f1": 0.3636,
+        "rougeL_f1": 0.4872,
+        "word_count": 80
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-058",
+      "article_chars": 6920,
+      "reference_summary": "The article reflects on the author's experiences during the EU referendum campaign and the subsequent rise in political tensions, abuse, and threats against politicians in the UK. It highlights moments like the death of MP Jo Cox and the evolving nature of protests, with some turning into intimidatory tactics, and discusses the Speaker of the House of Commons' recent decision, influenced by safety concerns, which has raised questions about the balance between protest and intimidation.",
+      "prediction": "A BBC journalist reflects on how political discourse in the UK has deteriorated since the 2016 EU referendum, tracking moments from the booing of reporters to the murder of MP Jo Cox and increasing threats against politicians. The recent chaos in the House of Commons, where the Speaker broke parliamentary rules citing concerns for MPs' safety from public anger, marks a troubling precedent where intimidation appears to be influencing parliamentary proceedings.",
+      "source_url": null,
+      "latency_ms": 4436.14,
+      "scores": {
+        "token_f1": 0.4658,
+        "rouge_l_f1_approx": 0.274,
+        "rouge1_f1": 0.4762,
+        "rouge2_f1": 0.1931,
+        "rougeL_f1": 0.2721,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-059",
+      "article_chars": 3623,
+      "reference_summary": "Science Secretary Michelle Donelan has apologized and paid an undisclosed sum, covered by taxpayers, to Professor Kate Sang after falsely accusing her of supporting Hamas. Donelan's claim, made in a letter on social media, was found to be wrong following an investigation by UK Research and Innovation, which cleared Prof. Sang of any breach of conduct.",
+      "prediction": "UK Science Secretary Michelle Donelan apologized and paid an undisclosed sum to Professor Kate Sang after falsely accusing her of supporting Hamas in a social media post, with the payment covered by taxpayers. A subsequent investigation by UK Research and Innovation found no evidence that Prof Sang or another academic, Dr Kamna Patel, had breached conduct principles or expressed extremist views, despite Ms Donelan's initial calls for their removal from an advisory group.",
+      "source_url": null,
+      "latency_ms": 3437.42,
+      "scores": {
+        "token_f1": 0.6202,
+        "rouge_l_f1_approx": 0.5271,
+        "rouge1_f1": 0.6412,
+        "rouge2_f1": 0.4496,
+        "rougeL_f1": 0.5344,
+        "word_count": 73
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-060",
+      "article_chars": 4710,
+      "reference_summary": "Former UK Prime Minister Liz Truss has urged conservatives in both the US and UK to be more assertive in countering leftist policies, warning that Western civilization is at risk if they don't. Speaking at the Conservative Political Action Conference (CPAC) in Maryland, Truss blamed her downfall on establishment antagonism and accused the left of using the court system and schools to push a woke agenda, while also criticizing the economic policies of US President Joe Biden.",
+      "prediction": "Former UK Prime Minister Liz Truss told the Conservative Political Action Conference in Maryland that conservatives need a \"bigger bazooka\" to fight the left, warning that Western civilization is doomed unless conservatives become more active. She blamed her 45-day tenure's downfall on establishment antagonism, including the Bank of England and OBR, while Labour and Liberal Democrats accused her of spreading conspiracy theories.",
+      "source_url": null,
+      "latency_ms": 5573.1,
+      "scores": {
+        "token_f1": 0.5324,
+        "rouge_l_f1_approx": 0.3453,
+        "rouge1_f1": 0.5211,
+        "rouge2_f1": 0.2714,
+        "rougeL_f1": 0.3662,
+        "word_count": 62
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-061",
+      "article_chars": 4476,
+      "reference_summary": "Scientists have analyzed half a century of data from America's Landsat spacecraft, revealing that since 2000, over a third of Antarctica's \"pinning points\" - areas where glaciers are anchored - have shrunk, indicating an acceleration in melting. This loss of ice shelves, crucial for slowing glacier movement, contributes to rising global sea levels, with the study emphasizing the weakening braking mechanism on the continent's ice.",
+      "prediction": "Scientists using 50 years of Landsat satellite imagery have tracked the melting of Antarctica's ice shelves by monitoring changes in surface bumps that mark \"pinning points\" where glaciers are anchored to the seafloor. The research shows accelerating ice loss, with only 15% of pinning points shrinking before 1990, but 37% reducing in size since 2000, weakening the natural braking mechanism that slows glacier movement and contributing to rising sea levels.",
+      "source_url": null,
+      "latency_ms": 4476.55,
+      "scores": {
+        "token_f1": 0.5263,
+        "rouge_l_f1_approx": 0.2857,
+        "rouge1_f1": 0.5693,
+        "rouge2_f1": 0.2222,
+        "rougeL_f1": 0.3358,
+        "word_count": 70
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-062",
+      "article_chars": 2404,
+      "reference_summary": "Australian Olympic equestrian Shane Rose has been temporarily stood down from competition for wearing a mankini during a fancy dress show jumping event, with Equestrian Australia reviewing the matter due to concerns raised about his attire, potentially affecting his Olympic preparation. Rose apologized if his costume offended anyone and hopes the issue will be resolved quickly, stating it was meant to be a bit of fun.",
+      "prediction": "Australian Olympic equestrian Shane Rose has been stood down from competition after wearing a mankini and other costumes at a fancy dress show jumping event near Sydney, following complaints about his attire at an event attended by children. The three-time Olympic medallist apologized if anyone was offended, saying it was meant as fun, while Equestrian Australia reviews the matter under its codes of conduct, though some Olympic competitors have criticized the governing body for over-reacting.",
+      "source_url": null,
+      "latency_ms": 5845.14,
+      "scores": {
+        "token_f1": 0.5674,
+        "rouge_l_f1_approx": 0.4397,
+        "rouge1_f1": 0.5874,
+        "rouge2_f1": 0.3546,
+        "rougeL_f1": 0.4336,
+        "word_count": 75
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-063",
+      "article_chars": 2832,
+      "reference_summary": "A man suspected of killing eight people in Joliet, Illinois, died by suicide in Texas after a cross-country manhunt; the motive remains unknown, with police stating the suspect, Romeo Nance, had an extensive criminal history and was related to most of the victims found in two houses on the same street, while two other shootings were random. The investigation is ongoing, and police are still searching for a reason behind the tragic acts.",
+      "prediction": "Romeo Nance, 23, killed himself in Texas after a manhunt following the deaths of eight people in Joliet, Illinois, including seven found in two houses on the same street who were mostly his relatives. Police say Nance also carried out two random shootings, killing one person and injuring another, but authorities have not determined a motive for the crimes.",
+      "source_url": null,
+      "latency_ms": 5959.19,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.303,
+        "rouge1_f1": 0.4962,
+        "rouge2_f1": 0.229,
+        "rougeL_f1": 0.3158,
+        "word_count": 59
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-064",
+      "article_chars": 4990,
+      "reference_summary": "Freddie Scappaticci, a former IRA member and British Army agent known as Stakeknife, lived under a new identity in a Surrey suburb after fleeing Belfast in 2003. Scappaticci, linked to multiple murders, was protected by the state and had a menacing side, as shown in a 2003 BBC footage where he threatened a camera crew. He died in 2023, taking secrets about his role as a double agent and involvement in IRA killings to his grave.",
+      "prediction": "Freddie Scappaticci, a former IRA executioner who was secretly a British Army agent codenamed Stakeknife, lived under state protection in Guildford, England after fleeing Belfast in 2003 when his double life was exposed. Operating within the IRA's internal security unit from 1978, he provided high-grade intelligence to the British while being involved in multiple murders of suspected informers, ultimately dying in 2023 without facing justice.",
+      "source_url": null,
+      "latency_ms": 9126.56,
+      "scores": {
+        "token_f1": 0.4255,
+        "rouge_l_f1_approx": 0.3121,
+        "rouge1_f1": 0.4755,
+        "rouge2_f1": 0.227,
+        "rougeL_f1": 0.3217,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-065",
+      "article_chars": 3017,
+      "reference_summary": "Celtic goalkeeper Joe Hart has announced his retirement from football at the end of the season, stating he feels physically fit but wants to go out on a high note. The 36-year-old, who has played 75 times for England and had a successful stint at Manchester City, will leave Celtic after three seasons, with manager Brendan Rodgers praising his significant contribution to the game.",
+      "prediction": "Celtic goalkeeper Joe Hart has announced he will retire at the end of the season at age 36, saying he feels physically great but wants to finish at his peak rather than let his body force retirement. The former England international, who earned 75 caps and won multiple trophies with Manchester City and Celtic, has made 690 club appearances since starting his professional career at age 16.",
+      "source_url": null,
+      "latency_ms": 5659.55,
+      "scores": {
+        "token_f1": 0.5038,
+        "rouge_l_f1_approx": 0.3969,
+        "rouge1_f1": 0.5113,
+        "rouge2_f1": 0.229,
+        "rougeL_f1": 0.406,
+        "word_count": 67
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-066",
+      "article_chars": 2520,
+      "reference_summary": "The High Court in London has ruled that former Sinn F\u00e9in president Gerry Adams can be sued by victims of IRA bomb attacks in England for symbolic damages, despite Adams consistently denying IRA membership. The court struck out the claim against the IRA itself due to it not being a legal entity, but allowed the case against Adams in a personal capacity to proceed, with a full trial to determine if he was involved in the attacks.",
+      "prediction": "The High Court in London has ruled that former Sinn F\u00e9in president Gerry Adams can be sued in a personal capacity by three victims of IRA bomb attacks in England from 1973 and 1996, who are seeking symbolic damages of \u00a31. The court struck out claims against the IRA itself as an unincorporated association, and ruled that Adams, who denies being an IRA member, cannot have the victims pay his legal costs exceeding \u00a3120,000.",
+      "source_url": null,
+      "latency_ms": 3406.02,
+      "scores": {
+        "token_f1": 0.5828,
+        "rouge_l_f1_approx": 0.4901,
+        "rouge1_f1": 0.6104,
+        "rouge2_f1": 0.4474,
+        "rougeL_f1": 0.5065,
+        "word_count": 74
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-067",
+      "article_chars": 2972,
+      "reference_summary": "Dr Ruth Gottesman, a 93-year-old former professor, has donated $1 billion to New York's Albert Einstein College of Medicine, enabling the school to offer free tuition to all students. This historic gift, the largest ever to a US medical school, aims to alleviate financial burdens on students and support those committed to the school's mission, regardless of their financial background.",
+      "prediction": "Albert Einstein College of Medicine in the Bronx will offer free tuition to all students following a $1 billion donation from Dr. Ruth Gottesman, a 93-year-old former professor whose late husband was a major Wall Street investor. The gift, one of the largest ever to a U.S. school and the largest to a medical school, will eliminate the nearly $59,000 annual tuition and reimburse current final-year students, aiming to attract students committed to serving communities regardless of their financial means.",
+      "source_url": null,
+      "latency_ms": 4861.06,
+      "scores": {
+        "token_f1": 0.6,
+        "rouge_l_f1_approx": 0.4143,
+        "rouge1_f1": 0.6174,
+        "rouge2_f1": 0.381,
+        "rougeL_f1": 0.3893,
+        "word_count": 80
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-068",
+      "article_chars": 2664,
+      "reference_summary": "Sweden's path to joining NATO has been cleared after Hungary's parliament ratified the bid, ending Budapest's delay over concerns about Sweden's stance towards Hungary. The move, which comes amid Russia's invasion of Ukraine, will make NATO stronger and safer, according to Secretary General Jens Stoltenberg, with Sweden set to abandon its 200 years of neutrality.",
+      "prediction": "Hungary's parliament has voted to ratify Sweden's bid to join NATO, clearing the final obstacle for the Nordic nation's membership after a 21-month delay. Sweden applied to join the defense alliance following Russia's 2022 invasion of Ukraine, abandoning 200 years of neutrality, and will become the 32nd member once the president signs the approval.",
+      "source_url": null,
+      "latency_ms": 5690.63,
+      "scores": {
+        "token_f1": 0.4404,
+        "rouge_l_f1_approx": 0.2569,
+        "rouge1_f1": 0.5378,
+        "rouge2_f1": 0.188,
+        "rougeL_f1": 0.3529,
+        "word_count": 54
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-069",
+      "article_chars": 3472,
+      "reference_summary": "A solitary male orca has been filmed swiftly hunting and killing a great white shark off South Africa's coast, consuming the shark's liver in under two minutes, an unprecedented and astonishing display of the orca's predatory skills. This solo attack by the orca, named Starboard, adds to previous observations of orcas working in pairs to hunt great whites, raising questions about the impact of such behavior on shark populations and the marine ecosystem.",
+      "prediction": "A solitary male killer whale named Starboard was filmed hunting and killing a juvenile great white shark in under two minutes off South Africa's coast, consuming its liver in what scientists called an \"unprecedented\" solo attack. While orcas have previously been observed hunting sharks in pairs, this swift individual kill demonstrates exceptional predatory skills and raises questions about how such behavior might affect shark populations and ocean ecosystems.",
+      "source_url": null,
+      "latency_ms": 4616.86,
+      "scores": {
+        "token_f1": 0.6099,
+        "rouge_l_f1_approx": 0.4539,
+        "rouge1_f1": 0.6621,
+        "rouge2_f1": 0.3636,
+        "rougeL_f1": 0.4966,
+        "word_count": 68
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-070",
+      "article_chars": 4753,
+      "reference_summary": "Due to financial worries and a desire for instant gratification, single people are becoming more ruthless in their dating lives, ending dates early if there's no immediate spark, according to research firm Opinium. With the rising cost of living, almost half of UK adults surveyed said they're more likely to end things early to avoid wasting money on uncertain dates, a trend more prominent among younger generations.",
+      "prediction": "Research shows single people are becoming more \"ruthless\" in their dating habits, with 47% of UK adults more likely to end dates early if they're unsure, rising to 56% among Gen-Z. Financial pressures and the desire for instant gratification are driving daters to choose shorter, cheaper first dates like coffee instead of dinner, and to quickly move on if there's no immediate spark.",
+      "source_url": null,
+      "latency_ms": 4398.62,
+      "scores": {
+        "token_f1": 0.6308,
+        "rouge_l_f1_approx": 0.3077,
+        "rouge1_f1": 0.637,
+        "rouge2_f1": 0.3759,
+        "rougeL_f1": 0.2963,
+        "word_count": 63
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-071",
+      "article_chars": 4296,
+      "reference_summary": "Top Swedish defence officials have warned citizens to prepare for the possibility of war, sparking concern and debate. Civil Defence Minister Carl-Oskar Bohlin and military commander-in-chief Gen Micael Byden emphasized the need for mental preparation, while opposition politicians and children's rights groups criticized the alarmist tone. The warnings come as Sweden awaits approval for its NATO membership and increases military spending.",
+      "prediction": "Sweden's top defense officials have warned citizens to prepare mentally for the possibility of war, prompting concern and accusations of alarmism, particularly after children's helplines reported increased worried calls from youngsters. The warnings are seen as a wake-up call to accelerate civil and military defense preparations as Sweden awaits NATO membership, though opposition politicians argue the security situation, while serious, does not indicate imminent war.",
+      "source_url": null,
+      "latency_ms": 4056.24,
+      "scores": {
+        "token_f1": 0.4603,
+        "rouge_l_f1_approx": 0.3492,
+        "rouge1_f1": 0.4962,
+        "rouge2_f1": 0.2595,
+        "rougeL_f1": 0.3459,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-072",
+      "article_chars": 4687,
+      "reference_summary": "Former sub-postmaster Jo Hamilton has mixed feelings about her compensation settlement over the Post Office's Horizon IT scandal, which saw her prosecution for a faulty accounting system-related shortfall overturned in 2021. Hamilton, who received less than she hoped for but enough to pay off her mortgage and debts, calls for faster compensation for other victims as the government announces new measures to speed up payments.",
+      "prediction": "Former sub-postmaster Jo Hamilton has settled with the Post Office over the Horizon IT scandal for an undisclosed sum that will pay off her mortgage and debts, though she received less than hoped for and feels \"survivor's guilt\" as many colleagues remain uncompensated. Hamilton, whose story was featured in the ITV drama about the scandal, was among over 700 sub-postmasters wrongly prosecuted due to a faulty accounting system, with her 2006 conviction overturned in 2021.",
+      "source_url": null,
+      "latency_ms": 3622.54,
+      "scores": {
+        "token_f1": 0.5143,
+        "rouge_l_f1_approx": 0.3,
+        "rouge1_f1": 0.5753,
+        "rouge2_f1": 0.3194,
+        "rougeL_f1": 0.3151,
+        "word_count": 75
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-073",
+      "article_chars": 4261,
+      "reference_summary": "Ukrainian President Volodymyr Zelensky revealed that 31,000 Ukrainian soldiers have been killed since the start of Russia's full-scale invasion, countering Moscow's higher estimates, and criticized the delay in Western aid, which he says has cost lives and territory. The Ukrainian military death toll is rarely disclosed, and other estimates are higher, with US officials in August suggesting 70,000 deaths. Zelensky also accused Russia of leaking information about Ukraine's counter-offensive plans.",
+      "prediction": "Ukrainian President Volodymyr Zelensky announced that 31,000 Ukrainian soldiers have been killed since Russia's full-scale invasion, countering Russia's inflated casualty estimates, though other sources suggest higher numbers. The disclosure came as Ukraine's defense minister revealed that half of all Western military aid has been delayed, contributing to recent setbacks including the loss of Avdiivka and hampering Ukraine's military operations.",
+      "source_url": null,
+      "latency_ms": 4066.33,
+      "scores": {
+        "token_f1": 0.4651,
+        "rouge_l_f1_approx": 0.3721,
+        "rouge1_f1": 0.5352,
+        "rouge2_f1": 0.2571,
+        "rougeL_f1": 0.4085,
+        "word_count": 59
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-074",
+      "article_chars": 5603,
+      "reference_summary": "Lee Anderson, a former Conservative Party deputy chairman, has defected to the Reform Party, becoming their first MP. Known for his controversial statements, Anderson was previously expelled from the Tory benches by Prime Minister Rishi Sunak over false claims about London's mayor and Labour leaders. Anderson, who represents Ashfield, is popular with some for his connection to \"Red Wall\" voters, having worked in the area's mines and overcome personal challenges.",
+      "prediction": "Lee Anderson, former Conservative deputy chairman, has defected to become Reform Party's first MP after being suspended from the Tory party for falsely claiming London Mayor Sadiq Khan is \"controlled by Islamists.\" The outspoken former coal miner, known for controversial statements on issues like food banks and immigration, previously quit his deputy role to rebel against the government's Rwanda bill and is seen as a voice for \"red wall\" voters despite frequently creating media storms.",
+      "source_url": null,
+      "latency_ms": 6007.59,
+      "scores": {
+        "token_f1": 0.4828,
+        "rouge_l_f1_approx": 0.331,
+        "rouge1_f1": 0.5638,
+        "rouge2_f1": 0.2041,
+        "rougeL_f1": 0.3624,
+        "word_count": 75
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-075",
+      "article_chars": 5130,
+      "reference_summary": "Democrats are defending President Joe Biden's mental fitness after a report on his handling of classified documents described him as a \"well-meaning, elderly man with a poor memory\". Vice-President Kamala Harris criticized the description as politically motivated and inaccurate, while some Democratic allies expressed concern about the special counsel's remarks straying from the investigation's scope. Despite this, Democrats remain supportive of Biden's capabilities, with Senator Jon Ossoff highlighting his sharpness and effectiveness. The issue of Biden's age continues to be a concern for some, particularly in light of the recent report.",
+      "prediction": "Democrats are defending President Biden after a special counsel report on his handling of classified documents described him as a \"well-meaning, elderly man with a poor memory,\" with Vice President Harris and Democratic lawmakers calling the characterization politically motivated and inappropriate. While Biden will not face charges, the report's comments about his memory have intensified concerns about the 81-year-old president's mental fitness, though Democratic allies who have spent time with him insist he remains sharp and focused.",
+      "source_url": null,
+      "latency_ms": 4274.24,
+      "scores": {
+        "token_f1": 0.4881,
+        "rouge_l_f1_approx": 0.4048,
+        "rouge1_f1": 0.6,
+        "rouge2_f1": 0.3596,
+        "rougeL_f1": 0.4667,
+        "word_count": 77
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-076",
+      "article_chars": 4033,
+      "reference_summary": "The Conroys, a couple from Armagh, have transformed their garden into a haven for wildlife in memory of their late son, Stan. Their story is part of a new four-part documentary series called \"The Chronicles of Armagh,\" narrated by Colin Morgan, which showcases the county's diversity, from the Armagh Observatory to Gosford Forest Park. The series highlights the couple's activities, including an outdoor pool used for ice swimming championships, and how they use their land to grieve and connect with others.",
+      "prediction": "A new four-part documentary series narrated by actor Colin Morgan showcases life in County Armagh through the seasons, featuring diverse stories including the Conroy family who transformed their garden into a wildlife haven and community space to honor their late son Stan, who died at 13 in 2020. The Chronicles of Armagh, beginning February 19 on BBC One Northern Ireland, highlights locations from Armagh Observatory to Gosford Forest Park and follows various residents including astronomers, pigeon racers, and triathletes throughout the year.",
+      "source_url": null,
+      "latency_ms": 6627.98,
+      "scores": {
+        "token_f1": 0.5153,
+        "rouge_l_f1_approx": 0.3067,
+        "rouge1_f1": 0.5629,
+        "rouge2_f1": 0.2909,
+        "rougeL_f1": 0.2994,
+        "word_count": 82
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-077",
+      "article_chars": 2481,
+      "reference_summary": "The UK government has introduced new rules that require a license to keep primates, such as chimpanzees and lemurs, as pets from April 2026, but critics argue this falls short of a promised ban. Those found keeping primates without a license could face jail time, fines, or both, and while the legislation aims to improve animal welfare, some, including animal charities, express disappointment that it doesn't fully prohibit private ownership.",
+      "prediction": "New regulations in England will require private owners of primates like chimpanzees, lemurs, and monkeys to obtain a license from local authorities starting April 2026, with violators facing up to six months in jail or unlimited fines. Critics argue the licensing system falls short of the outright ban on keeping primates as pets promised in the Conservative party's 2019 manifesto, though a government minister maintains the strict requirements effectively end the practice of keeping primates as household pets.",
+      "source_url": null,
+      "latency_ms": 4104.19,
+      "scores": {
+        "token_f1": 0.4459,
+        "rouge_l_f1_approx": 0.2432,
+        "rouge1_f1": 0.48,
+        "rouge2_f1": 0.1081,
+        "rougeL_f1": 0.24,
+        "word_count": 78
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-078",
+      "article_chars": 4323,
+      "reference_summary": "Ukrainian President Volodymyr Zelensky has urgently appealed for more weapons at the Munich Security Conference, warning of a \"catastrophic\" situation in Europe due to an ammunition shortage affecting Ukrainian troops. US President Joe Biden assured Zelensky of continued support, but aid packages face opposition in Congress, with Ukrainian forces recently forced to withdraw from Avdiivka due to ammunition rationing.",
+      "prediction": "Ukrainian President Volodymyr Zelensky has made an urgent appeal for more weapons at an international conference in Germany, warning that an \"artificial deficit of weapons\" could lead to a \"catastrophic\" situation in Europe and only help Russia. The plea comes as vital US military aid remains stalled in Congress due to opposition from Trump supporters, forcing Ukrainian troops to ration ammunition and resulting in their withdrawal from Avdiivka, Russia's first notable gains in months.",
+      "source_url": null,
+      "latency_ms": 6744.67,
+      "scores": {
+        "token_f1": 0.4962,
+        "rouge_l_f1_approx": 0.3759,
+        "rouge1_f1": 0.5821,
+        "rouge2_f1": 0.2727,
+        "rougeL_f1": 0.4179,
+        "word_count": 74
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-079",
+      "article_chars": 4933,
+      "reference_summary": "Northern Ireland's Police Service risks damaging its relationship with the LGBT community after deciding not to allow officers to march in uniform at the 2023 Belfast Pride parade, a Stormont minister has said. The PSNI cited impartiality obligations for the decision, but Minister Andrew Muir, who is gay, expressed concern, stating that progress made in the past could be undone and that there is still work to address institutional homophobia within the police force.",
+      "prediction": "A Stormont minister has warned that the Police Service of Northern Ireland risks damaging its relationship with the LGBT community after banning officers from wearing uniforms at the 2023 Belfast Pride parade. The comments came during a BBC Spotlight investigation into the 1997 murder of RUC officer Darren Bradshaw, who was killed by paramilitaries while socializing at Belfast's first openly gay venue, highlighting historical tensions between police and the LGBT community.",
+      "source_url": null,
+      "latency_ms": 4949.58,
+      "scores": {
+        "token_f1": 0.4414,
+        "rouge_l_f1_approx": 0.331,
+        "rouge1_f1": 0.4762,
+        "rouge2_f1": 0.2759,
+        "rougeL_f1": 0.3401,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-080",
+      "article_chars": 3620,
+      "reference_summary": "A fire at a five-storey building in London's South Kensington led to the evacuation of about 160 people, with 11, including eight police officers, hospitalized for smoke inhalation. The London Fire Brigade, which received the call at 00:31 GMT, had the blaze under control by 05:30, rescuing several people from the building, and the cause of the fire is currently unknown.",
+      "prediction": "A fire broke out at a five-storey building in South Kensington, London, just after midnight, leading to the evacuation of about 160 people and hospitalizing 11 people, including eight police officers, for smoke inhalation. About 100 firefighters with 15 fire engines brought the blaze under control by 05:30 GMT after it spread from a ground-floor flat to the roof, causing significant damage to the building.",
+      "source_url": null,
+      "latency_ms": 5295.06,
+      "scores": {
+        "token_f1": 0.6349,
+        "rouge_l_f1_approx": 0.5397,
+        "rouge1_f1": 0.6617,
+        "rouge2_f1": 0.3817,
+        "rougeL_f1": 0.5564,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-081",
+      "article_chars": 2670,
+      "reference_summary": "A fake robocall impersonating US President Joe Biden has urged New Hampshire voters to skip the primary election, with the voice in the message appearing to be artificially generated. The Trump campaign has denied involvement, and the state's attorney general's office is investigating the calls as potential election disruption.",
+      "prediction": "A fake robocall using an artificially generated voice impersonating President Joe Biden urged New Hampshire voters to skip Tuesday's primary election, falsely claiming they should \"save\" their vote for November's general election. The New Hampshire attorney general has opened an investigation into the unlawful robocalls, which were placed thousands of times and falsely appeared to come from a former state Democratic chairwoman's phone number.",
+      "source_url": null,
+      "latency_ms": 3341.79,
+      "scores": {
+        "token_f1": 0.4425,
+        "rouge_l_f1_approx": 0.3186,
+        "rouge1_f1": 0.5254,
+        "rouge2_f1": 0.2241,
+        "rougeL_f1": 0.3559,
+        "word_count": 64
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-082",
+      "article_chars": 3978,
+      "reference_summary": "A Georgia judge has dismissed some criminal charges against Donald Trump and his co-defendants, including Rudy Giuliani, in an election interference case, but allowed most to remain. Judge Scott McAfee ruled that six counts lacked detail, but can be refiled, while the remaining charges, related to a conspiracy to overturn the 2020 election results, still stand. Trump faces up to 20 years in prison if convicted of the most severe charge of racketeering.",
+      "prediction": "A Georgia judge dismissed six counts from the 41-count election interference indictment against Donald Trump and co-defendants including Rudy Giuliani, citing insufficient detail, though the charges can be refiled and most remain in place. Three of Trump's 13 charges were affected, relating to his call with Georgia's Secretary of State where he asked to \"find 11,780 votes,\" with the judge ruling the indictment didn't specify what illegal actions Trump allegedly solicited.",
+      "source_url": null,
+      "latency_ms": 4797.87,
+      "scores": {
+        "token_f1": 0.4861,
+        "rouge_l_f1_approx": 0.2917,
+        "rouge1_f1": 0.5033,
+        "rouge2_f1": 0.1879,
+        "rougeL_f1": 0.3179,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-083",
+      "article_chars": 4584,
+      "reference_summary": "A major fire near Southampton's St Mary's Stadium led to the cancellation of their Championship match against Preston, with one person treated for smoke inhalation. Over 100 personnel worked to tackle the blaze involving four industrial units, one of which collapsed, and emergency services expect to be on site overnight.",
+      "prediction": "A major fire at industrial units near Southampton's St Mary's Stadium led to the postponement of the Championship match between Southampton and Preston North End. Over 100 firefighters with 18 fire engines tackled the blaze that caused one building to collapse, resulted in one person being treated for smoke inhalation, and prompted road closures and evacuation of the stadium area.",
+      "source_url": null,
+      "latency_ms": 13913.41,
+      "scores": {
+        "token_f1": 0.5818,
+        "rouge_l_f1_approx": 0.4182,
+        "rouge1_f1": 0.6491,
+        "rouge2_f1": 0.3571,
+        "rougeL_f1": 0.4386,
+        "word_count": 60
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-084",
+      "article_chars": 5705,
+      "reference_summary": "The Crooked House, a historic and iconic pub in the West Midlands known for its leaning structure, was destroyed by a fire believed to be arson and subsequently demolished, causing anger and grief in the local community. The pub, which had a unique charm and personal connections for many, is now the subject of a campaign to rebuild it, with over 13,000 people joining a Facebook group in support.",
+      "prediction": "The Crooked House, a beloved 18th-century pub in the West Midlands known for its 15-degree lean caused by mining subsidence, was destroyed by suspected arson and then mysteriously demolished within 48 hours. The loss has sparked widespread grief and anger in the community, with many sharing personal memories of the unique pub where objects appeared to roll uphill, and over 13,000 people have joined a campaign to rebuild it.",
+      "source_url": null,
+      "latency_ms": 3983.62,
+      "scores": {
+        "token_f1": 0.6087,
+        "rouge_l_f1_approx": 0.4348,
+        "rouge1_f1": 0.6479,
+        "rouge2_f1": 0.3143,
+        "rougeL_f1": 0.4507,
+        "word_count": 69
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-085",
+      "article_chars": 2573,
+      "reference_summary": "During a beach clean-up in Monifieth, Jenny Smith found messages in a bottle written by three Wormit Primary School pupils from 1984, which have now been tracked down to the now-adult women. The messages, protected by wax crayon wrapping, will be returned to the school 40 years after they were set adrift on a six-mile journey.",
+      "prediction": "Three messages in a bottle written by Fife schoolchildren in 1984 have been discovered on a beach in Angus, Scotland, 40 years after being sent as part of a school project. Jenny Smith found the well-preserved notes during a beach clean-up in Monifieth and successfully tracked down the three women, now in their late 40s, through Facebook.",
+      "source_url": null,
+      "latency_ms": 3474.7,
+      "scores": {
+        "token_f1": 0.5487,
+        "rouge_l_f1_approx": 0.2301,
+        "rouge1_f1": 0.5593,
+        "rouge2_f1": 0.2931,
+        "rougeL_f1": 0.2203,
+        "word_count": 57
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-086",
+      "article_chars": 3623,
+      "reference_summary": "Science Secretary Michelle Donelan has apologized and paid an undisclosed sum, covered by taxpayers, to Professor Kate Sang after falsely accusing her of supporting Hamas. Donelan's claim, made in a letter on social media, was found to be wrong following an investigation by UK Research and Innovation, which cleared Prof. Sang of any breach of conduct.",
+      "prediction": "UK Science Secretary Michelle Donelan apologized and paid an undisclosed sum to Professor Kate Sang after falsely accusing her of supporting Hamas in a social media post, with the payment covered by taxpayers. A subsequent investigation by UK Research and Innovation found no evidence that Prof Sang or another academic, Dr Kamna Patel, had breached conduct principles or expressed extremist views, despite Ms Donelan's earlier calls for their removal from an advisory group.",
+      "source_url": null,
+      "latency_ms": 3743.27,
+      "scores": {
+        "token_f1": 0.6202,
+        "rouge_l_f1_approx": 0.5271,
+        "rouge1_f1": 0.6412,
+        "rouge2_f1": 0.4496,
+        "rougeL_f1": 0.5344,
+        "word_count": 73
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-087",
+      "article_chars": 3118,
+      "reference_summary": "Chancellor Jeremy Hunt has indicated that he is considering tax cuts in the spring Budget, stating that lower taxes can lead to more dynamic and faster-growing economies. He hinted at potential income tax reductions, though details will depend on the upcoming Office for Budget Responsibility forecast. The government is hoping for lower inflation and interest rates to create room for tax cuts, with the overall tax burden currently set to reach a historic high due to frozen tax thresholds.",
+      "prediction": "Chancellor Jeremy Hunt has strongly hinted at potential tax cuts in the spring Budget, arguing that lower-tax economies are more dynamic and faster-growing, though he provided no specific details pending forecasts. While inflation unexpectedly rose to 4% in December, Hunt remains confident it will continue falling, which could enable interest rate cuts and provide fiscal room for tax reductions worth up to \u00a315bn, despite the UK's recession risk.",
+      "source_url": null,
+      "latency_ms": 4972.44,
+      "scores": {
+        "token_f1": 0.4626,
+        "rouge_l_f1_approx": 0.3129,
+        "rouge1_f1": 0.5166,
+        "rouge2_f1": 0.2685,
+        "rougeL_f1": 0.3709,
+        "word_count": 68
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-088",
+      "article_chars": 6434,
+      "reference_summary": "A 25-year-old US Air Force member, Aaron Bushnell, set himself on fire outside the Israeli Embassy in Washington, DC, protesting against what he called \"genocide\" and shouting \"Free Palestine\" before dying in hospital. His extreme act, live-streamed and widely shared on social media, has sparked vigils in support of Gaza and raised concerns about the potential for\u6a21\u4eff, while his friends in San Antonio, Texas, where he was stationed, are grappling with the loss and the attention his death has brought.",
+      "prediction": "Aaron Bushnell, a 25-year-old US Air Force serviceman, set himself on fire outside the Israeli Embassy in Washington, DC on Sunday in protest against Israel's military actions in Gaza, live-streaming the act before dying in hospital. Friends in San Antonio, Texas, where he was previously stationed, described him as a quiet, friendly volunteer and activist who helped the homeless and held strong pro-Palestinian views, though his self-immolation shocked those closest to him.",
+      "source_url": null,
+      "latency_ms": 4003.0,
+      "scores": {
+        "token_f1": 0.5395,
+        "rouge_l_f1_approx": 0.4342,
+        "rouge1_f1": 0.5714,
+        "rouge2_f1": 0.3648,
+        "rougeL_f1": 0.4472,
+        "word_count": 72
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-089",
+      "article_chars": 5849,
+      "reference_summary": "Ivory Coast won the 2023 Africa Cup of Nations final by coming from behind to beat Nigeria 2-1 on home soil, with Sebastien Haller scoring the winning goal. The match saw a dramatic second-half comeback, with William Troost-Ekong giving Nigeria the lead before Franck Kessie equalized and Haller secured the victory. This is Ivory Coast's third continental title, and they become the first tournament hosts to win since 2006.",
+      "prediction": "Ivory Coast won the 2023 Africa Cup of Nations final by defeating Nigeria 2-1 on home soil, with Sebastien Haller scoring the winning goal nine minutes from time to complete a comeback after William Troost-Ekong had given Nigeria the lead. The victory, which came just 13 months after Haller's return from testicular cancer, marked Ivory Coast's third continental title and made them the first host nation to win the tournament since Egypt in 2006, following a remarkable turnaround after losing their coach following two group stage defeats.",
+      "source_url": null,
+      "latency_ms": 4724.56,
+      "scores": {
+        "token_f1": 0.6154,
+        "rouge_l_f1_approx": 0.5641,
+        "rouge1_f1": 0.6463,
+        "rouge2_f1": 0.4321,
+        "rougeL_f1": 0.5854,
+        "word_count": 87
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-090",
+      "article_chars": 2563,
+      "reference_summary": "The news covers a range of topics, including Yulia Navalnaya's protest against Putin's re-election in Germany, rumors of a leadership challenge in the UK Conservative Party with Rishi Sunak and Penny Mordaunt as key figures, concerns over a \"cover-up culture\" in hospitals leading to avoidable deaths, a dental care crisis in the UK, Fujitsu's continued management of a British military computer system despite losing the contract, and the Princess of Wales dispelling health rumors by being seen at a farm shop.",
+      "prediction": "UK Prime Minister Rishi Sunak is urging Conservative MPs to support him amid speculation about a leadership challenge, with some colleagues reportedly positioning Penny Mordaunt as a potential replacement. Other major stories include Yulia Navalnaya defacing her ballot in protest of Putin's re-election, NHS hospitals accused of covering up poor care, and concerns about Britain's dental care crisis prompting a parliamentary protest.",
+      "source_url": null,
+      "latency_ms": 3613.71,
+      "scores": {
+        "token_f1": 0.3776,
+        "rouge_l_f1_approx": 0.1958,
+        "rouge1_f1": 0.4503,
+        "rouge2_f1": 0.1745,
+        "rougeL_f1": 0.2119,
+        "word_count": 62
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-091",
+      "article_chars": 5261,
+      "reference_summary": "Israel has revised its Eurovision Song Contest entry, replacing the original song \"October Rain\" with \"Hurricane\" due to perceived political references to the Hamas attacks on Israel. The new lyrics now focus on a personal crisis rather than the conflict, following the European Broadcasting Union's rejection of the initial entry. Eden Golan will represent Israel at the contest in Sweden, amid calls from some politicians and musicians to ban the country over the war in Gaza.",
+      "prediction": "Israel has unveiled a revised Eurovision entry called \"Hurricane\" after the original song \"October Rain\" was rejected for perceived political references to the 7 October Hamas attacks. The new version maintains the same melody but features rewritten lyrics that tell a more general story of personal crisis, removing phrases that were seen as references to attack victims and the ongoing Gaza conflict.",
+      "source_url": null,
+      "latency_ms": 8378.87,
+      "scores": {
+        "token_f1": 0.4493,
+        "rouge_l_f1_approx": 0.3768,
+        "rouge1_f1": 0.4748,
+        "rouge2_f1": 0.1752,
+        "rougeL_f1": 0.3741,
+        "word_count": 62
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-092",
+      "article_chars": 5722,
+      "reference_summary": "During a civil defamation trial, Judge Lewis Kaplan threatened to remove Donald Trump from court after he criticized E Jean Carroll's testimony. Trump's lawyers accused Carroll of seeking publicity, while Carroll claimed her reputation was ruined following Trump's sexual assault allegations. The jury previously found Trump liable for sexual abuse and defamation, and this trial will determine additional damages for his 2019 defamatory comments. Trump is expected to testify on Monday.",
+      "prediction": "During the second day of E Jean Carroll's civil defamation trial against Donald Trump, Judge Lewis Kaplan threatened to remove Trump from court after he was overheard criticizing Carroll's testimony and calling the case a \"witch hunt.\" Carroll testified that Trump's denials of her sexual assault allegations shattered her reputation, while Trump's lawyers accused her of seeking publicity, and the judge denied requests to delay the trial for Trump to attend his mother-in-law's funeral.",
+      "source_url": null,
+      "latency_ms": 6986.32,
+      "scores": {
+        "token_f1": 0.6207,
+        "rouge_l_f1_approx": 0.3862,
+        "rouge1_f1": 0.6581,
+        "rouge2_f1": 0.3268,
+        "rougeL_f1": 0.4129,
+        "word_count": 74
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-093",
+      "article_chars": 6044,
+      "reference_summary": "The Panama Canal is facing its second-lowest water levels in 110 years, threatening global trade worth $270bn annually, as drought and the El Nino phenomenon affect the freshwater Lake Gat\u00fan that feeds it. The Panama Canal Authority has introduced water-saving measures, reducing the number of ships passing through daily and imposing weight restrictions, and is planning $8.5bn in sustainability projects over the next five years, including potential reservoirs and desalination plants, to ensure the canal's long-term viability.",
+      "prediction": "The Panama Canal is experiencing its second-driest year in 110 years due to reduced rainfall and El Ni\u00f1o, forcing authorities to cut daily ship transits from 36 to 24 and impose weight restrictions. The Panama Canal Authority is developing an $8.5 billion sustainability plan over five years, including potential reservoirs, desalination plants, and water-saving measures to ensure the canal's viability amid climate change impacts on global trade.",
+      "source_url": null,
+      "latency_ms": 4052.95,
+      "scores": {
+        "token_f1": 0.5278,
+        "rouge_l_f1_approx": 0.4028,
+        "rouge1_f1": 0.5935,
+        "rouge2_f1": 0.3137,
+        "rougeL_f1": 0.4387,
+        "word_count": 67
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-094",
+      "article_chars": 4541,
+      "reference_summary": "Farmers are using concrete blocks and security fencing to deter fly-tippers, as the latest government data shows that local councils in England dealt with over 1 million fly-tipping incidents in 2022-23, costing \u00a313.2 million to clean up. The Country Land and Business Association (CLA) asserts that private landowners are heavily impacted, with many unrecorded incidents, and calls for better support and resources to combat the issue.",
+      "prediction": "Fly-tipping in England required 1.08 million clean-ups by local councils in 2022-23, costing \u00a313.2 million for the largest illegal dumps, while court fines dropped 17% to just \u00a3785,000. Private landowners, particularly farmers, say they face even worse unreported fly-tipping problems, spending up to \u00a3100,000 in extreme cases to clear waste and resorting to concrete blocks and security fencing to protect their fields, though they face prosecution if they don't remove the dumped waste.",
+      "source_url": null,
+      "latency_ms": 8940.94,
+      "scores": {
+        "token_f1": 0.3885,
+        "rouge_l_f1_approx": 0.2158,
+        "rouge1_f1": 0.4342,
+        "rouge2_f1": 0.2133,
+        "rougeL_f1": 0.25,
+        "word_count": 73
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-095",
+      "article_chars": 2065,
+      "reference_summary": "Ian Lavender, best known for his role as Private Pike in the classic TV sitcom Dad's Army, has passed away at the age of 77. He was the last surviving main cast member of the series and had a career spanning across other TV comedies and stage performances, including a role in EastEnders.",
+      "prediction": "Ian Lavender, who played Private Pike in the beloved BBC sitcom Dad's Army, has died at the age of 77. He was the last surviving main cast member of the series, which ran from 1968 to 1977 and made him a household name when he was cast at just 22 years old.",
+      "source_url": null,
+      "latency_ms": 4771.26,
+      "scores": {
+        "token_f1": 0.5333,
+        "rouge_l_f1_approx": 0.5333,
+        "rouge1_f1": 0.5421,
+        "rouge2_f1": 0.4381,
+        "rougeL_f1": 0.5421,
+        "word_count": 52
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-096",
+      "article_chars": 3556,
+      "reference_summary": "Jimmy Kimmel will host the Oscars on March 10 in Los Angeles, and starting from 2026, a new award for best casting will be introduced, marking the first new competitive category since 2002. The Academy acknowledges the essential role of casting directors in filmmaking but will not decide until closer to the time if the category will be included in the telecast.",
+      "prediction": "The Academy Awards will introduce a new Oscar for best casting starting in 2026, marking the first new competitive category since best animated feature was added in 2002. The decision recognizes casting directors' essential role in filmmaking after years of campaigning, though the category won't debut until 2026 due to advance awards campaign planning.",
+      "source_url": null,
+      "latency_ms": 6671.09,
+      "scores": {
+        "token_f1": 0.5517,
+        "rouge_l_f1_approx": 0.3621,
+        "rouge1_f1": 0.5983,
+        "rouge2_f1": 0.2609,
+        "rougeL_f1": 0.359,
+        "word_count": 54
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-097",
+      "article_chars": 6011,
+      "reference_summary": "Apple has allowed other companies to create app stores on iPhones following pressure from EU politicians over market monopoly concerns. However, strict new rules and fees, such as a \u20ac1 million reserve requirement and a 50 cent fee per download, are facing criticism from developers and businesses, with some likening them to \"extortion.\" Alternative app marketplace entrepreneur Colton Adamski is among those attempting to navigate these hurdles to launch a legitimate app store in the EU.",
+      "prediction": "Apple has opened iPhones to alternative app stores in the EU following regulatory pressure, but its strict requirements including a \u20ac1 million reserve and 50-cent fee per download after one million are being criticized as prohibitive. Colton Adamski, a 22-year-old entrepreneur who has run an unofficial iPhone app store for six years, is attempting to launch a legitimate alternative marketplace but faces significant financial and operational hurdles under Apple's new terms.",
+      "source_url": null,
+      "latency_ms": 9318.53,
+      "scores": {
+        "token_f1": 0.5306,
+        "rouge_l_f1_approx": 0.3401,
+        "rouge1_f1": 0.5828,
+        "rouge2_f1": 0.255,
+        "rougeL_f1": 0.3709,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-098",
+      "article_chars": 2457,
+      "reference_summary": "The Pittsburgh Steelers have traded for Chicago Bears' quarterback Justin Fields, adding him to their roster just after signing Russell Wilson. Fields, known for his athleticism, was the Bears' starter since 2021, but Chicago, with the first pick in this year's draft, decided to move on from him, potentially signaling a focus on selecting a new quarterback.",
+      "prediction": "The Pittsburgh Steelers have acquired quarterback Justin Fields from the Chicago Bears, just one day after signing Russell Wilson. Fields, 25, spent three seasons with Chicago after being drafted in the first round in 2021, showing athleticism but inconsistent results before the Bears decided to move on and use their first overall draft pick on a new quarterback.",
+      "source_url": null,
+      "latency_ms": 4384.87,
+      "scores": {
+        "token_f1": 0.6435,
+        "rouge_l_f1_approx": 0.4348,
+        "rouge1_f1": 0.6379,
+        "rouge2_f1": 0.2982,
+        "rougeL_f1": 0.431,
+        "word_count": 58
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-099",
+      "article_chars": 4678,
+      "reference_summary": "President Joe Biden faces the challenge of responding to a deadly attack on a US military base in Jordan without escalating tensions with Iran and its allies. The US has various military options, including precision strikes on militia bases or targeting IRGC commanders, but a full-scale conflict with Iran is unlikely. The decision will need to balance deterrence and avoiding escalation, considering the potential responses from Iran and the broader implications for the region.",
+      "prediction": "President Biden faces a difficult balancing act in responding to a deadly attack on a US military base in Jordan, needing to deter future attacks without triggering escalation with Iran and its allies. Options range from striking Iran-backed militia bases in Iraq and Syria to targeting senior Iranian commanders, though both Washington and Tehran want to avoid full-scale war that could have devastating economic and political consequences.",
+      "source_url": null,
+      "latency_ms": 6284.43,
+      "scores": {
+        "token_f1": 0.4681,
+        "rouge_l_f1_approx": 0.3972,
+        "rouge1_f1": 0.5417,
+        "rouge2_f1": 0.2676,
+        "rougeL_f1": 0.4306,
+        "word_count": 67
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-100",
+      "article_chars": 3180,
+      "reference_summary": "A man is on trial for allegedly using a surveillance app to watch a married couple die after poisoning them with fentanyl. Stephen and Carol Baxter were found dead in their Essex home, and their employee, Luke D'Wit, is accused of monitoring them through a camera on his phone and being the last person to see them alive.",
+      "prediction": "Luke D'Wit is accused of poisoning Stephen Baxter, 61, and Carol Baxter, 64, with fentanyl at their Essex home in April, allegedly watching them die via a surveillance app on his phone. The prosecution claims D'Wit, their employee and friend, rewrote their will and stole jewelry to benefit from their deaths, with the couple found unresponsive in their conservatory two days after he was last seen at their home.",
+      "source_url": null,
+      "latency_ms": 5999.61,
+      "scores": {
+        "token_f1": 0.5512,
+        "rouge_l_f1_approx": 0.2677,
+        "rouge1_f1": 0.5692,
+        "rouge2_f1": 0.25,
+        "rougeL_f1": 0.2615,
+        "word_count": 69
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-101",
+      "article_chars": 5565,
+      "reference_summary": "\u4ee5\u8272\u5217\u8b66\u65b9\u4e0e\u53cd\u653f\u5e9c\u793a\u5a01\u8005\u5728Tel Aviv\u53d1\u751f\u51b2\u7a81\uff0c\u800c\u4ee5\u8272\u5217\u6218\u4e89\u5185\u9601\u5f97\u77e5\u52a0\u6c99\u505c\u706b\u534f\u8bae\u7684\u8c08\u5224\u8fdb\u5c55\u3002\u5df4\u9ece\u4f1a\u8c08\u6d89\u53ca\u505c\u706b\u548c\u88ab\u4fd8\u4eba\u5458\u91ca\u653e\uff0c\u4ee5\u8272\u5217\u5c06\u6d3e\u4ee3\u8868\u56e2\u524d\u5f80\u5361\u5854\u5c14\u7ee7\u7eed\u8c08\u5224\uff0c\u4f46\u5185\u653f\u90e8\u957f\u8868\u793a\u8fd9\u5e76\u4e0d\u610f\u5473\u7740\u6218\u4e89\u7ed3\u675f\u3002\u540c\u65f6\uff0c\u56fd\u9645\u793e\u4f1a\u5bf9\u52a0\u6c99\u98df\u54c1\u5371\u673a\u7684\u538b\u529b\u589e\u52a0\uff0c\u4eba\u9053\u4e3b\u4e49\u63f4\u52a9\u56e0\u6218\u6597\u800c\u53d7\u963b\u3002",
+      "prediction": "Israel's war cabinet was briefed on ceasefire and hostage release negotiations held in Paris, with reports of progress leading to further talks in Qatar, though a senior Palestinian official disputed claims of advancement. Meanwhile, riot police on horseback violently dispersed anti-government protesters in Tel Aviv calling for Prime Minister Netanyahu's resignation, marking the first use of such forceful measures since the October 7 Hamas attacks.",
+      "source_url": null,
+      "latency_ms": 10175.8,
+      "scores": {
+        "token_f1": 0.0597,
+        "rouge_l_f1_approx": 0.0597,
+        "rouge1_f1": 0.0571,
+        "rouge2_f1": 0.0294,
+        "rougeL_f1": 0.0571,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-102",
+      "article_chars": 3699,
+      "reference_summary": "Abdul Shokoor Ezedi, 35, is wanted by the police for the attempted murder of a woman and injuring her two daughters with a corrosive liquid in Clapham, London. The attack is believed to have been motivated by a recent relationship breakdown with the victim. Ezedi, who has a previous sexual assault conviction, is thought to have arranged a meeting with the woman before the assault and has been missing since January 31st. A \u00a320,000 reward has been offered for information leading to his capture.",
+      "prediction": "Abdul Shokoor Ezedi, 35, is wanted for attempted murder after allegedly attacking his former partner and her two young daughters with a corrosive liquid in Clapham, south London, leaving the woman sedated in hospital and at risk of losing sight in one eye. Police believe the breakdown of their relationship was his motive, and despite a \u00a320,000 reward and extensive search efforts, Ezedi has not been seen since January 31st and may have sustained fatal injuries if left untreated.",
+      "source_url": null,
+      "latency_ms": 5938.43,
+      "scores": {
+        "token_f1": 0.4785,
+        "rouge_l_f1_approx": 0.3558,
+        "rouge1_f1": 0.5212,
+        "rouge2_f1": 0.2331,
+        "rougeL_f1": 0.3636,
+        "word_count": 79
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-103",
+      "article_chars": 4125,
+      "reference_summary": "Alan Bates, a former sub-postmaster whose story inspired an ITV drama, criticized the slow compensation payouts for the Post Office scandal in a letter to the government, calling for a faster process. Business Secretary Kemi Badenoch has pledged to investigate Bates' complaint after he received what he considered a \"cruel\" offer, with the government promising \"full and fair compensation\" to those affected by the IT scandal.",
+      "prediction": "Alan Bates, the former sub-postmaster whose story inspired an ITV drama about the Post Office scandal, criticized the government for slow compensation payouts in a letter days before receiving what he called a \"cruel\" and \"derisory\" offer worth about one-sixth of his claim. Business Secretary Kemi Badenoch has promised to personally investigate his complaint, as hundreds of wrongly prosecuted sub-postmasters continue to wait for compensation following the faulty Horizon IT system scandal that led to 700 prosecutions between 1999 and 2015.",
+      "source_url": null,
+      "latency_ms": 10498.35,
+      "scores": {
+        "token_f1": 0.6259,
+        "rouge_l_f1_approx": 0.4218,
+        "rouge1_f1": 0.6623,
+        "rouge2_f1": 0.3356,
+        "rougeL_f1": 0.4371,
+        "word_count": 81
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-104",
+      "article_chars": 4013,
+      "reference_summary": "Alexei Navalny's mother has been unable to retrieve his body after his death in a Russian Arctic jail, with authorities stating a post-mortem examination must first be completed. Navalny's team suspects he was murdered on President Putin's orders, and his death has led to over 400 arrests in Russia as mourners pay tributes, while Western governments blame Russian authorities and G7 foreign ministers call for an explanation.",
+      "prediction": "Alexei Navalny's mother has been unable to recover his body after the Russian opposition leader's death in an Arctic prison, with authorities citing the need for post-mortem examinations while his team alleges deliberate withholding to \"cover traces.\" More than 400 people have been arrested across Russia for laying tributes to Navalny, while Western leaders blame Russian authorities for his death and G7 foreign ministers have called on Russia to clarify the circumstances.",
+      "source_url": null,
+      "latency_ms": 9540.73,
+      "scores": {
+        "token_f1": 0.5324,
+        "rouge_l_f1_approx": 0.4317,
+        "rouge1_f1": 0.6027,
+        "rouge2_f1": 0.2778,
+        "rougeL_f1": 0.4795,
+        "word_count": 72
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-105",
+      "article_chars": 3211,
+      "reference_summary": "Met Police officer Martyn Blake has pleaded not guilty to the murder of Chris Kaba, a 24-year-old who died from a single gunshot wound during a police operation in Streatham, London, in September 2022. Blake, previously known as NX121 due to safety concerns, had his anonymity lifted by a judge, allowing his name to be publicized ahead of his trial set to begin in October.",
+      "prediction": "Metropolitan Police firearms officer Martyn Blake, 40, has pleaded not guilty to murdering Chris Kaba, who died from a gunshot wound during a police operation in Streatham, south London, in September 2022. A judge lifted the anonymity order protecting Blake's identity, ruling there was no real and immediate threat to his life, with his trial set to begin in October.",
+      "source_url": null,
+      "latency_ms": 3634.47,
+      "scores": {
+        "token_f1": 0.656,
+        "rouge_l_f1_approx": 0.592,
+        "rouge1_f1": 0.6719,
+        "rouge2_f1": 0.4286,
+        "rougeL_f1": 0.5937,
+        "word_count": 60
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-106",
+      "article_chars": 3310,
+      "reference_summary": "The release of a photo of the Princess of Wales with her children on Mother's Day sparked controversy as news agencies withdrew it due to concerns it was digitally altered. The princess apologized for any confusion, acknowledging she had made \"minor adjustments\" as an amateur photographer, but the incident has raised questions about trust and transparency in the relationship between the monarchy and the public.",
+      "prediction": "The Princess of Wales apologized after news agencies withdrew an official Mother's Day photo of her with her children due to concerns it had been digitally altered, causing controversy instead of calming speculation about her health following surgery. The incident has raised questions about trust, transparency, and the balance between royal privacy and public expectations in the modern era.",
+      "source_url": null,
+      "latency_ms": 6279.43,
+      "scores": {
+        "token_f1": 0.6452,
+        "rouge_l_f1_approx": 0.4032,
+        "rouge1_f1": 0.6508,
+        "rouge2_f1": 0.3548,
+        "rougeL_f1": 0.3968,
+        "word_count": 59
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-107",
+      "article_chars": 2897,
+      "reference_summary": "The UK's major political parties, particularly the Conservatives, Parliament, and Labour, are embroiled in controversies related to the Israel-Gaza conflict, with disputes over Islamophobia, the Speaker of the Commons, and antisemitism. The Conservative Party is dealing with a row over remarks made by a former deputy chairman, while Parliament faces a loss of confidence from the SNP over the Speaker's actions. Labour is grappling with an antisemitism scandal ahead of a by-election in Rochdale. These issues are intensifying tensions and raising questions about acceptable discourse and election strategies.",
+      "prediction": "The Israel-Gaza war has created major controversies for Britain's main political parties and Parliament, including a Conservative row over Islamophobia involving Lee Anderson, a crisis for Commons Speaker Lindsay Hoyle over parliamentary procedure on a ceasefire debate, and Labour's disavowal of its Rochdale by-election candidate over antisemitism accusations. These conflicts center on questions about acceptable discourse regarding religious communities and whether political parties will seek to calm or inflame tensions in this election year.",
+      "source_url": null,
+      "latency_ms": 7483.99,
+      "scores": {
+        "token_f1": 0.4198,
+        "rouge_l_f1_approx": 0.2469,
+        "rouge1_f1": 0.4824,
+        "rouge2_f1": 0.119,
+        "rougeL_f1": 0.2471,
+        "word_count": 74
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-108",
+      "article_chars": 4869,
+      "reference_summary": "Rangers extended their lead at the top of the Scottish Premiership by defeating Hearts 5-0, ending the visitors' 12-game unbeaten run. Manager Philippe Clement praised the team's performance, with goals from Mohamed Diomande, Oscar Cortes, Cyriel Dessers, and Fabio Silva, solidifying their position five points clear of Celtic.",
+      "prediction": "Rangers extended their lead at the top of the Scottish Premiership to five points with a dominant 5-0 victory over Hearts, ending the visitors' 12-game unbeaten run. Goals from Mohamed Diomande, Oscar Cortes, Cyriel Dessers (2), and Fabio Silva secured what manager Philippe Clement called \"one of the best\" performances of his tenure.",
+      "source_url": null,
+      "latency_ms": 4421.19,
+      "scores": {
+        "token_f1": 0.7525,
+        "rouge_l_f1_approx": 0.5941,
+        "rouge1_f1": 0.7736,
+        "rouge2_f1": 0.5577,
+        "rougeL_f1": 0.6038,
+        "word_count": 53
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-109",
+      "article_chars": 4844,
+      "reference_summary": "SpaceX's Starship rocket successfully completed many objectives in its third test flight, reaching orbit and re-entering the Earth's atmosphere, though contact was lost towards the end and both the booster and Ship were lost during re-entry. The launch marks significant progress in the development of the world's most powerful rocket, with Elon Musk expressing delight and promising more test flights this year, as Starship is crucial for SpaceX's Starlink satellite network and future Mars colonization plans.",
+      "prediction": "SpaceX's Starship rocket completed its most successful test flight yet on Thursday, with its upper stage traveling around the globe before radio contact was lost during re-entry over the Indian Ocean. While the vehicle didn't achieve all objectives and both stages were ultimately lost, the mission marked major progress compared to previous attempts that exploded shortly after launch, demonstrating the rocket's potential for NASA's Artemis moon program and Elon Musk's Mars ambitions.",
+      "source_url": null,
+      "latency_ms": 7147.98,
+      "scores": {
+        "token_f1": 0.4054,
+        "rouge_l_f1_approx": 0.2973,
+        "rouge1_f1": 0.4875,
+        "rouge2_f1": 0.1392,
+        "rougeL_f1": 0.325,
+        "word_count": 72
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-110",
+      "article_chars": 3835,
+      "reference_summary": "The suspect in a corrosive substance attack on a mother and her daughters in Clapham, London, has been identified as Abdul Shokoor Ezedi, who was last seen on the Victoria line train at King's Cross. The mother remains in critical condition with life-changing injuries, while her daughters' injuries are not as severe as initially thought. Police have recovered significant evidence, including empty containers with corrosive warnings, and are urging Ezedi, who has facial injuries, to surrender.",
+      "prediction": "Police are searching for Abdul Shokoor Ezedi, the suspect in a corrosive-substance attack on a mother and her two daughters in Clapham, south London, who was last seen boarding a southbound Victoria line train at King's Cross station. The mother remains in critical condition with life-changing injuries, while the daughters' injuries are less severe than initially feared, and police have recovered empty containers with corrosive warnings from an address in Newcastle.",
+      "source_url": null,
+      "latency_ms": 5530.41,
+      "scores": {
+        "token_f1": 0.7211,
+        "rouge_l_f1_approx": 0.6395,
+        "rouge1_f1": 0.75,
+        "rouge2_f1": 0.56,
+        "rougeL_f1": 0.6711,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-111",
+      "article_chars": 4297,
+      "reference_summary": "TikTok has removed music from popular artists like Taylor Swift, The Weeknd, and Olivia Rodrigo after a licensing agreement with Universal Music Group (UMG) expired without a new deal being reached. UMG accused TikTok of offering a fraction of the rate paid by other social media platforms for access to its songs, leading to the muting of affected videos and restrictions on new content creation with those tracks.",
+      "prediction": "TikTok has removed music from Universal Music Group artists including Taylor Swift, The Weeknd, and Olivia Rodrigo after their licensing agreement expired on January 31 and negotiations for a new deal failed. UMG claims TikTok wanted to pay only a fraction of what other platforms pay for music rights and raised concerns about AI-generated content and platform moderation, while TikTok accused UMG of prioritizing greed over artists' interests.",
+      "source_url": null,
+      "latency_ms": 4305.67,
+      "scores": {
+        "token_f1": 0.5588,
+        "rouge_l_f1_approx": 0.4412,
+        "rouge1_f1": 0.5547,
+        "rouge2_f1": 0.2667,
+        "rougeL_f1": 0.438,
+        "word_count": 68
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-112",
+      "article_chars": 5716,
+      "reference_summary": "A cold weather alert has been issued in the UK, with temperatures set to drop and over 180 flood warnings in place, mainly in central and southern England, following a week of heavy rainfall causing significant flooding. The UK Health Security Agency warns of icy conditions, and the Environment Agency expects river flooding to continue over the next few days, particularly in areas like the River Thames, River Trent, and River Severn.",
+      "prediction": "The UK Health Security Agency has issued a cold weather alert for England lasting from Saturday through Friday, as the country faces over 180 flood warnings following a week of heavy rainfall, including from Storm Henk. Significant river flooding is expected along the Thames, Trent, and Severn rivers, with hundreds of homes already devastated and temperatures set to drop below average with potential snow showers in southern England.",
+      "source_url": null,
+      "latency_ms": 7019.58,
+      "scores": {
+        "token_f1": 0.5714,
+        "rouge_l_f1_approx": 0.3286,
+        "rouge1_f1": 0.6,
+        "rouge2_f1": 0.3043,
+        "rougeL_f1": 0.3286,
+        "word_count": 68
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-113",
+      "article_chars": 4110,
+      "reference_summary": "Michael Gove, the UK's Levelling Up Secretary, has criticized insulation company Kingspan for not taking enough responsibility after the Grenfell Tower fire tragedy, stating that the company \"gives capitalism a bad name.\" Kingspan, whose products were used in the Grenfell Tower, has been accused of evading responsibility and attempting to minimize its involvement, with Gove urging the company to \"own up to its responsibility.\" Ulster Rugby has announced it will end its association with Kingspan by June 2025.",
+      "prediction": "Levelling Up Secretary Michael Gove has accused Cavan-based insulation company Kingspan of evading responsibility for its role in the 2017 Grenfell Tower fire that killed 72 people, saying the company \"gives capitalism a bad name.\" Kingspan, whose insulation products were used at Grenfell despite lacking proper fire safety testing, says it has offered to contribute to remediation costs and restorative justice projects, but Gove dismissed these as \"weasel words\" while welcoming Ulster Rugby's decision to end its sponsorship deal with the company.",
+      "source_url": null,
+      "latency_ms": 5060.04,
+      "scores": {
+        "token_f1": 0.5875,
+        "rouge_l_f1_approx": 0.4125,
+        "rouge1_f1": 0.6012,
+        "rouge2_f1": 0.2857,
+        "rougeL_f1": 0.4172,
+        "word_count": 82
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-114",
+      "article_chars": 2677,
+      "reference_summary": "Emma Raducanu, the 2021 US Open champion, was knocked out of the Indian Wells tournament in the third round by world number two Aryna Sabalenka, losing 6-3 7-5. Despite the loss, Raducanu expressed positivity about her performance and progress in her comeback from injuries.",
+      "prediction": "Britain's Emma Raducanu lost 6-3 7-5 to world number two Aryna Sabalenka in the third round at Indian Wells, continuing her comeback from an eight-month injury absence. The 21-year-old, currently ranked 250th, showed improvement despite the defeat and expressed satisfaction with her performance and positive mindset during the tournament.",
+      "source_url": null,
+      "latency_ms": 2974.52,
+      "scores": {
+        "token_f1": 0.5806,
+        "rouge_l_f1_approx": 0.2796,
+        "rouge1_f1": 0.6139,
+        "rouge2_f1": 0.3434,
+        "rougeL_f1": 0.2574,
+        "word_count": 49
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-115",
+      "article_chars": 3864,
+      "reference_summary": "The chief inspector of probation has highlighted \"serious failings\" in the supervision of Joshua Jacques, a quadruple murderer who killed his girlfriend and her family while on probation and under the influence of cannabis. The Probation Service failed to provide a drug abuse intervention for Jacques, despite it being a condition of his release, and inconsistent enforcement allowed him to remain free despite repeated non-compliance with his license conditions.",
+      "prediction": "A review found serious failings in the probation supervision of Joshua Jacques, who murdered his girlfriend Samantha Drummonds and three of her family members in south London in April 2022 while on probation and intoxicated with cannabis. The Probation Service failed to organize required drug abuse intervention, inconsistently enforced his licence conditions, and missed opportunities to recall him to custody despite his high-risk assessment and repeated non-compliance.",
+      "source_url": null,
+      "latency_ms": 5786.68,
+      "scores": {
+        "token_f1": 0.5882,
+        "rouge_l_f1_approx": 0.5,
+        "rouge1_f1": 0.6331,
+        "rouge2_f1": 0.3212,
+        "rougeL_f1": 0.5036,
+        "word_count": 67
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-116",
+      "article_chars": 5232,
+      "reference_summary": "The World Health Organization (WHO) reports that Gaza's Nasser hospital has stopped functioning after an Israeli raid, with around 200 patients still inside and around 20 in urgent need of transfer to other facilities. The Israeli military says it was a precise operation to address Hamas activity, providing supplies, but the WHO claims it was denied access to assess the situation and patients' needs.",
+      "prediction": "The World Health Organization says Gaza's Nasser hospital has ceased functioning after an Israeli raid, with about 200 patients still inside and at least 20 requiring urgent transfer, though the WHO has been denied access to assess conditions. The raid follows weeks of fighting around the hospital, which Israel claims Hamas uses as an operational base, while ceasefire negotiations in Cairo have shown little progress and Israel plans to extend its ground invasion to Rafah despite international concerns.",
+      "source_url": null,
+      "latency_ms": 3955.96,
+      "scores": {
+        "token_f1": 0.5493,
+        "rouge_l_f1_approx": 0.4225,
+        "rouge1_f1": 0.5694,
+        "rouge2_f1": 0.2817,
+        "rougeL_f1": 0.4306,
+        "word_count": 78
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-117",
+      "article_chars": 4906,
+      "reference_summary": "Japan's space agency Jaxa has successfully landed its Smart Lander for Investigating Moon (Slim) on the lunar surface, making it the fifth country to achieve a soft landing on the Moon. However, the mission is in jeopardy as the lander's solar cells are not generating electricity, leaving it reliant on batteries that will eventually run out, potentially ending the mission prematurely. Despite the issue, Jaxa officials consider the landing a success as the craft is still transmitting data, and they remain hopeful that the solar cells might become functional again with changes in sunlight.",
+      "prediction": "Japan's Smart Lander for Investigating Moon (Slim) successfully soft-landed on the lunar surface, making Japan the fifth country to achieve this feat after the US, Soviet Union, China, and India. However, the mission faces a critical power crisis as its solar cells are not generating electricity, leaving it dependent on batteries that will eventually discharge, though engineers are working to retrieve data and images before the craft potentially goes silent.",
+      "source_url": null,
+      "latency_ms": 4433.72,
+      "scores": {
+        "token_f1": 0.5244,
+        "rouge_l_f1_approx": 0.4634,
+        "rouge1_f1": 0.5476,
+        "rouge2_f1": 0.3735,
+        "rougeL_f1": 0.4643,
+        "word_count": 70
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-118",
+      "article_chars": 3857,
+      "reference_summary": "Denise Patrick, a terminally ill woman who had to leave her defective apartment at Victoria Square in Belfast, is calling for a change in Northern Ireland's law to allow her to have her day in court for compensation, as the current six-year limit has expired. Owners of the apartments, evacuated in 2019 due to structural issues, had their compensation claim struck out last week, prompting calls for legislative change similar to the 30-year limit in England and Wales.",
+      "prediction": "Denise Patrick, a 68-year-old woman with terminal cancer, is calling for urgent legislative change in Northern Ireland after her compensation claim for a defective apartment at Belfast's Victoria Square was struck out due to a six-year limitation period. Residents were forced to evacuate the building in 2019 due to structural defects but continue paying rates and other costs, while Northern Ireland's Communities Minister has agreed to take responsibility for updating the legislation to extend the claims period similar to England and Wales' 30-year limit.",
+      "source_url": null,
+      "latency_ms": 10432.04,
+      "scores": {
+        "token_f1": 0.5556,
+        "rouge_l_f1_approx": 0.3086,
+        "rouge1_f1": 0.6082,
+        "rouge2_f1": 0.3077,
+        "rougeL_f1": 0.3392,
+        "word_count": 84
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-119",
+      "article_chars": 4209,
+      "reference_summary": "The Duchess of Sussex, Meghan, spoke at the SXSW festival about the bullying and abuse she faced on social media during her pregnancies, emphasizing the need for empathy and humanity in the digital space. She highlighted the power of speaking up and advocacy, sharing her experience of changing a sexist advert as a child.",
+      "prediction": "The Duchess of Sussex spoke at a SXSW panel on International Women's Day, revealing she experienced severe online bullying and abuse during her pregnancies with Archie and Lilibet. Meghan criticized the \"seemingly endless toxicity\" of social media and certain media sectors, saying people have \"forgotten our humanity\" and calling the treatment she received cruel rather than merely catty.",
+      "source_url": null,
+      "latency_ms": 3991.87,
+      "scores": {
+        "token_f1": 0.4643,
+        "rouge_l_f1_approx": 0.3214,
+        "rouge1_f1": 0.4602,
+        "rouge2_f1": 0.1622,
+        "rougeL_f1": 0.3186,
+        "word_count": 58
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-120",
+      "article_chars": 2541,
+      "reference_summary": "Bangladesh's court sentences Nobel laureate Muhammad Yunus to six months in jail for violating labor laws, a ruling his supporters claim is politically motivated. Yunus and three colleagues from Grameen Telecom face charges of not establishing a welfare fund for workers, but they deny any wrongdoing and have been granted bail while they appeal.",
+      "prediction": "A Bangladeshi court has sentenced Nobel laureate Muhammad Yunus to six months in jail for violating labor laws by failing to create a welfare fund for workers at Grameen Telecom, though he has been granted bail pending appeal. Yunus and his supporters claim the case is politically motivated, citing over 100 other charges against him and tensions with Prime Minister Sheikh Hasina, who has previously criticized him and his microfinance work.",
+      "source_url": null,
+      "latency_ms": 5500.48,
+      "scores": {
+        "token_f1": 0.576,
+        "rouge_l_f1_approx": 0.368,
+        "rouge1_f1": 0.5873,
+        "rouge2_f1": 0.4032,
+        "rougeL_f1": 0.381,
+        "word_count": 71
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-121",
+      "article_chars": 6133,
+      "reference_summary": "Israel has threatened to launch a ground operation in Rafah, Gaza, unless all hostages are freed by March 10, escalating tensions in the region, especially with Ramadan approaching. Arab leaders and humanitarian groups express concern over the potential consequences for civilians if Israel carries out the offensive, while indirect negotiations between Israel and Hamas, involving the US, Egypt, and Qatar, are struggling to bridge wide gaps, particularly over the release of hostages and prisoners.",
+      "prediction": "Israel has threatened to launch a ground operation in Rafah, southern Gaza, by March 10 unless all hostages are freed, intensifying pressure on stalled negotiations between Israel and Hamas. Arab and Western officials warn that the situation is extremely dangerous, particularly with Ramadan approaching, as more than one million displaced Palestinians are crammed into Rafah and tensions in the occupied West Bank continue to escalate.",
+      "source_url": null,
+      "latency_ms": 9927.66,
+      "scores": {
+        "token_f1": 0.5324,
+        "rouge_l_f1_approx": 0.3453,
+        "rouge1_f1": 0.5468,
+        "rouge2_f1": 0.3358,
+        "rougeL_f1": 0.3453,
+        "word_count": 65
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-122",
+      "article_chars": 6761,
+      "reference_summary": "Manchester City came from behind to beat Manchester United 3-1 in a Premier League match, with Phil Foden scoring twice and being praised by Pep Guardiola as the \"best player in the league right now.\" Foden's goals, including a controversial equalizer, helped City close the gap with leaders Liverpool to one point ahead of their clash at Anfield. Manchester United, who took the lead through Marcus Rashford's stunning strike, suffered their 11th league defeat of the season and remain in sixth place.",
+      "prediction": "Manchester City came from behind to beat Manchester United 3-1 at the Etihad Stadium, with Phil Foden scoring twice after Marcus Rashford's spectacular early strike gave United the lead. Pep Guardiola praised Foden as \"the best player in the Premier League right now,\" and the victory moved City to within one point of league leaders Liverpool ahead of their upcoming match at Anfield.",
+      "source_url": null,
+      "latency_ms": 3581.98,
+      "scores": {
+        "token_f1": 0.7034,
+        "rouge_l_f1_approx": 0.4828,
+        "rouge1_f1": 0.72,
+        "rouge2_f1": 0.4189,
+        "rougeL_f1": 0.48,
+        "word_count": 63
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-123",
+      "article_chars": 3165,
+      "reference_summary": "The UK's General Medical Council has apologized for its past homophobia, acknowledging that it contributed to the harm suffered by gay doctors whose careers were ended due to disciplinary actions resulting from convictions for consensual same-sex relationships, which were then illegal. The regulator admits that at least eight doctors were struck off the register between the 1940s and 1966, with the last erasure occurring a year before the decriminalization of homosexuality in England and Wales.",
+      "prediction": "The UK's General Medical Council has apologized for its past homophobia and disciplinary actions that ended the careers of gay doctors, including striking at least eight off the register for consensual same-sex activity, with the last erasure occurring in 1966. The GMC acknowledged that while it was legally required to investigate such offenses at the time, it now recognizes these actions were wrong and caused considerable personal and professional harm to affected doctors and their families.",
+      "source_url": null,
+      "latency_ms": 3232.69,
+      "scores": {
+        "token_f1": 0.6225,
+        "rouge_l_f1_approx": 0.3709,
+        "rouge1_f1": 0.6452,
+        "rouge2_f1": 0.3268,
+        "rougeL_f1": 0.3742,
+        "word_count": 76
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-124",
+      "article_chars": 2668,
+      "reference_summary": "In Shoreditch, east London, two separate but linked crossbow attacks have left residents terrified, with a 44-year-old woman and a 20-year-old man injured. The police have increased their presence in the area and are appealing for information, as locals express concern, especially due to the proximity to a primary school.",
+      "prediction": "Two people were shot with crossbow bolts in separate but linked attacks in Shoreditch, east London, on March 4 and 14, leaving residents terrified. A 44-year-old woman was struck in the head and a 20-year-old man was hit in the neck in incidents occurring about 200 feet apart, prompting increased police presence as investigators urgently work to identify a suspect.",
+      "source_url": null,
+      "latency_ms": 4105.2,
+      "scores": {
+        "token_f1": 0.5455,
+        "rouge_l_f1_approx": 0.3636,
+        "rouge1_f1": 0.5763,
+        "rouge2_f1": 0.2759,
+        "rougeL_f1": 0.4068,
+        "word_count": 60
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-125",
+      "article_chars": 5459,
+      "reference_summary": "UK leaders, including Prime Minister Rishi Sunak, have reaffirmed their commitment to supporting Ukraine on the second anniversary of Russia's invasion, with Sunak pledging almost \u00a3250m for artillery shells and stating that Britain is prepared to do \"whatever it takes\" for Ukraine's victory. Western leaders, including former Prime Minister Boris Johnson, have visited Kyiv to show solidarity, while new sanctions against Russia have been announced and military aid continues to be provided.",
+      "prediction": "On the second anniversary of Russia's full-scale invasion of Ukraine, UK Prime Minister Rishi Sunak pledged almost \u00a3250 million for artillery shells and reaffirmed Britain's commitment to do \"whatever it takes\" to support Ukraine's victory. Political leaders across the UK and Western allies expressed solidarity with Ukraine, while urging continued military and economic support as the war remains largely at a stalemate with recent Russian advances.",
+      "source_url": null,
+      "latency_ms": 3850.74,
+      "scores": {
+        "token_f1": 0.5072,
+        "rouge_l_f1_approx": 0.3478,
+        "rouge1_f1": 0.5694,
+        "rouge2_f1": 0.3239,
+        "rougeL_f1": 0.3889,
+        "word_count": 66
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    }
+  ]
+}

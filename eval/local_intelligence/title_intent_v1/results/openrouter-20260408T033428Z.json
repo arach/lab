@@ -1,0 +1,458 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it",
+    "pack": "title_intent_v1",
+    "cards": 12,
+    "passed": 5,
+    "pass_rate": 0.4167,
+    "average_score": 0.772,
+    "median_latency_ms": 2092.9,
+    "exact_parse_rate": 0.0,
+    "normalized_parse_rate": 1.0,
+    "parse_failure_rate": 0.0,
+    "title_task_score": 0.9583,
+    "intent_task_score": 0.6188,
+    "restraint_score": 0.5083,
+    "intent_slice_score": 0.8521,
+    "intent_slice_pass_rate": 0.5,
+    "restraint_slice_score": 0.6756,
+    "restraint_slice_pass_rate": 0.25,
+    "title_slice_score": 0.7881,
+    "title_slice_pass_rate": 0.5
+  },
+  "rows": [
+    {
+      "card_id": "title-launch-pricing-order",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 1220.08,
+      "raw_text": "```json\n{\n  \"title\": \"Reorder pricing page sections\",\n  \"intent\": \"none\",\n  \"target\": \"pricing page\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8025,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Reorder pricing page sections' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.65,
+            "details": "intent='none' target='pricing page' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.5,
+            "details": "intent='none' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Reorder pricing page sections",
+          "intent": "none",
+          "target": "pricing page"
+        }
+      }
+    },
+    {
+      "card_id": "title-morning-routine-reflection",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 1575.28,
+      "raw_text": "```json\n{\n  \"title\": \"Morning phone usage habit\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.85,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 0.7,
+            "details": "title='Morning phone usage habit' overlap=0.50 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Morning phone usage habit",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-podcast-clip-observation",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 2173.89,
+      "raw_text": "```json\n{\n  \"title\": \"Interview clip: shared language quote\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Interview clip: shared language quote' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Interview clip: shared language quote",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-travel-memory-fragment",
+      "slice": "title",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 1142.91,
+      "raw_text": "```json\n{\n  \"title\": \"Montreal bookstore with green awning\",\n  \"intent\": \"research\",\n  \"target\": \"tiny bookstore in Montreal\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.5,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Montreal bookstore with green awning' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.0,
+            "details": "intent='research' target='tiny bookstore in Montreal' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.0,
+            "details": "intent='research' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Montreal bookstore with green awning",
+          "intent": "research",
+          "target": "tiny bookstore in Montreal"
+        }
+      }
+    },
+    {
+      "card_id": "intent-research-desk-mics",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 1135.94,
+      "raw_text": "```json\n{\n  \"title\": \"Research desk microphones for small office\",\n  \"intent\": \"research\",\n  \"target\": \"desk microphones\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.8862,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Research desk microphones for small office' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.825,
+            "details": "intent='research' target='desk microphones' target_overlap=0.50"
+          },
+          "restraint": {
+            "score": 0.65,
+            "details": "intent='research' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Research desk microphones for small office",
+          "intent": "research",
+          "target": "desk microphones"
+        }
+      }
+    },
+    {
+      "card_id": "intent-email-landlord-addendum",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 2011.91,
+      "raw_text": "```json\n{\n  \"title\": \"Email landlord about lease addendum and subletting\",\n  \"intent\": \"email\",\n  \"target\": \"landlord\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8181,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Email landlord about lease addendum and subletting' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.7375,
+            "details": "intent='email' target='landlord' target_overlap=0.25"
+          },
+          "restraint": {
+            "score": 0.4,
+            "details": "intent='email' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Email landlord about lease addendum and subletting",
+          "intent": "email",
+          "target": "landlord"
+        }
+      }
+    },
+    {
+      "card_id": "intent-call-mom-passport",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 11473.42,
+      "raw_text": "```json\n{\n  \"title\": \"Call Mom about passport renewal forms\",\n  \"intent\": \"call\",\n  \"target\": \"Mom\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8181,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Call Mom about passport renewal forms' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.7375,
+            "details": "intent='call' target='Mom' target_overlap=0.25"
+          },
+          "restraint": {
+            "score": 0.4,
+            "details": "intent='call' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Call Mom about passport renewal forms",
+          "intent": "call",
+          "target": "Mom"
+        }
+      }
+    },
+    {
+      "card_id": "intent-schedule-dentist-cleaning",
+      "slice": "intent",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 922.02,
+      "raw_text": "```json\n{\n  \"title\": \"Schedule dentist cleaning\",\n  \"intent\": \"schedule\",\n  \"target\": \"dentist\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.8862,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Schedule dentist cleaning' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.825,
+            "details": "intent='schedule' target='dentist' target_overlap=0.50"
+          },
+          "restraint": {
+            "score": 0.65,
+            "details": "intent='schedule' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Schedule dentist cleaning",
+          "intent": "schedule",
+          "target": "dentist"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-investor-update-vague",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 2251.62,
+      "raw_text": "```json\n{\n  \"title\": \"Refine investor update story\",\n  \"intent\": \"research\",\n  \"target\": \"investor update\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.5,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Refine investor update story' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.0,
+            "details": "intent='research' target='investor update' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.0,
+            "details": "intent='research' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Refine investor update story",
+          "intent": "research",
+          "target": "investor update"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-dentist-blocked-by-insurance",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 4110.76,
+      "raw_text": "```json\n{\n  \"title\": \"Check new insurance status\",\n  \"intent\": \"research\",\n  \"target\": \"insurance\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.5,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Check new insurance status' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.0,
+            "details": "intent='research' target='insurance' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.0,
+            "details": "intent='research' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Check new insurance status",
+          "intent": "research",
+          "target": "insurance"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-email-or-call-unclear",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 3596.05,
+      "raw_text": "```json\n{\n  \"title\": \"Discuss or send deck to Maya\",\n  \"intent\": \"none\",\n  \"target\": \"Maya\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8025,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Discuss or send deck to Maya' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.65,
+            "details": "intent='none' target='Maya' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.5,
+            "details": "intent='none' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Discuss or send deck to Maya",
+          "intent": "none",
+          "target": "Maya"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-multi-thread-scene-note",
+      "slice": "restraint",
+      "provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "latency_ms": 4751.79,
+      "raw_text": "```json\n{\n  \"title\": \"Interview shoot lighting and guest positioning\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}\n```",
+      "metadata": {
+        "model": "google/gemma-4-26b-a4b-it"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.9,
+        "parse_error": null,
+        "parse_mode": "normalized",
+        "dimensions": {
+          "title_task": {
+            "score": 0.8,
+            "details": "title='Interview shoot lighting and guest positioning' overlap=0.67 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Interview shoot lighting and guest positioning",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    }
+  ]
+}

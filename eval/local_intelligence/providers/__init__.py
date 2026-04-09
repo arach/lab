@@ -6,6 +6,7 @@ from pathlib import Path
 from .apple import AppleProvider
 from .base import BaseProvider, ProviderResponse
 from .github_models import GitHubModelsProvider
+from .groq import GroqProvider
 from .hf import HuggingFaceProvider
 from .mlx import MLXProvider
 from .mlx_vlm import MLXVLMProvider
@@ -51,6 +52,8 @@ def create_provider(args) -> BaseProvider:
         return NousProvider(model_name=args.model, timeout_seconds=args.timeout)
     if args.provider == "hf":
         return HuggingFaceProvider(model_name=args.model, token=args.hf_token, timeout_seconds=args.timeout)
+    if args.provider == "groq":
+        return GroqProvider(model_name=args.model, timeout_seconds=args.timeout)
     if args.provider == "github_models":
         return GitHubModelsProvider(model_name=args.model, timeout_seconds=args.timeout)
     raise ValueError(f"Unsupported provider: {args.provider}")

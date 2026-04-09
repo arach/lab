@@ -1,0 +1,219 @@
+{
+  "summary": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4.5",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 10,
+    "average_token_f1": 0.5559,
+    "average_rouge_l_f1_approx": 0.4265,
+    "average_word_count": 65.9,
+    "median_latency_ms": 4688.33,
+    "average_rouge1_f1": 0.5927,
+    "average_rouge2_f1": 0.3269,
+    "average_rougeL_f1": 0.4358,
+    "average_bertscore_f1": 0.9225
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary showing her pregnancy journey as an elite footballer, with the Iceland midfielder giving birth to her second son last month. The film has been celebrated by teammates including Australia's Katrina Gorry as helping to change perceptions that female footballers must choose between their careers and motherhood, with clubs becoming increasingly supportive of players starting families.",
+      "source_url": null,
+      "latency_ms": 4688.33,
+      "scores": {
+        "token_f1": 0.5152,
+        "rouge_l_f1_approx": 0.4394,
+        "rouge1_f1": 0.5481,
+        "rouge2_f1": 0.3308,
+        "rougeL_f1": 0.4593,
+        "word_count": 66,
+        "bertscore_f1": 0.9154
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "US prosecutors have charged Takeshi Ebisawa, a 60-year-old alleged senior member of the Japanese Yakuza, with conspiring to traffic nuclear materials including uranium and weapons-grade plutonium that he believed would be used by Iran to build a nuclear bomb. The charges stem from undercover DEA operations in which Ebisawa allegedly attempted to sell nuclear materials from Myanmar and acquire military-grade weapons, and he faces life imprisonment if convicted.",
+      "source_url": null,
+      "latency_ms": 3409.41,
+      "scores": {
+        "token_f1": 0.6203,
+        "rouge_l_f1_approx": 0.4304,
+        "rouge1_f1": 0.6424,
+        "rouge2_f1": 0.3804,
+        "rougeL_f1": 0.4121,
+        "word_count": 68,
+        "bertscore_f1": 0.9197
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-003",
+      "article_chars": 6612,
+      "reference_summary": "Heavy fighting has erupted around al-Amal Hospital in Khan Younis, Gaza, as Israeli ground forces encircle the city, with reports of troops advancing and intense clashes near medical facilities. At least 195 Palestinians and 24 Israeli soldiers have been killed in the recent escalation, with the Israeli military targeting Hamas leaders believed to be hiding in tunnels. The World Health Organization expresses concern over attacks on hospitals, while residents face difficulties fleeing the area.",
+      "prediction": "Israeli ground forces have encircled Khan Younis, Gaza's largest southern city, blocking evacuation routes and intensifying operations around two main hospitals amid fierce resistance from Hamas fighters. The escalation comes as funerals were held for 24 Israeli soldiers killed Monday in the deadliest day for the IDF since the ground offensive began, while Gaza's health ministry reports at least 195 Palestinians were killed in the previous 24 hours, bringing the total death toll to over 25,400 since the war started following Hamas's October 7 attack on Israel.",
+      "source_url": null,
+      "latency_ms": 11941.71,
+      "scores": {
+        "token_f1": 0.4224,
+        "rouge_l_f1_approx": 0.2112,
+        "rouge1_f1": 0.4458,
+        "rouge2_f1": 0.1463,
+        "rougeL_f1": 0.2289,
+        "word_count": 87,
+        "bertscore_f1": 0.8885
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-004",
+      "article_chars": 3452,
+      "reference_summary": "Simon Rimmer's vegetarian restaurant, Greens in Manchester, has closed after 33 years due to a rise in rent and operating costs, making the business unviable. The TV chef expressed his heartbreak over the closure on social media, thanking staff, customers, and suppliers.",
+      "prediction": "Greens, a vegetarian restaurant in Manchester run by TV chef Simon Rimmer, has closed after 33 years due to a 35% rent increase and rising operational costs. Rimmer announced the immediate closure, thanking staff and customers, while noting that the restaurant's sister location in Sale remains open.",
+      "source_url": null,
+      "latency_ms": 8186.12,
+      "scores": {
+        "token_f1": 0.6067,
+        "rouge_l_f1_approx": 0.4494,
+        "rouge1_f1": 0.6813,
+        "rouge2_f1": 0.2921,
+        "rougeL_f1": 0.4615,
+        "word_count": 47,
+        "bertscore_f1": 0.9313
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-005",
+      "article_chars": 3581,
+      "reference_summary": "NASA's Artemis III mission, which aims to return astronauts to the Moon, has been delayed until September 2026 due to the need for further technology development, including a landing craft and updated spacesuits. The precursor Artemis II mission, originally planned for the end of 2022, is now scheduled for September 2025. SpaceX's Starship vehicle is set to be the human landing system for Artemis III, requiring extensive testing and demonstrations before it can be used for a lunar landing.",
+      "prediction": "NASA has delayed its Artemis III mission to return astronauts to the Moon until September 2026, a year later than previously planned, due to ongoing technology development needs including a landing craft and spacesuits. The agency is also pushing back the Artemis II crewed lunar flyby mission to September 2025, citing safety concerns with the Orion capsule's life-support system and heatshield performance.",
+      "source_url": null,
+      "latency_ms": 3498.74,
+      "scores": {
+        "token_f1": 0.5532,
+        "rouge_l_f1_approx": 0.4397,
+        "rouge1_f1": 0.5793,
+        "rouge2_f1": 0.2517,
+        "rougeL_f1": 0.4414,
+        "word_count": 62,
+        "bertscore_f1": 0.9174
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-006",
+      "article_chars": 5882,
+      "reference_summary": "Multiple news agencies, including PA, Getty Images, AFP, Reuters, and Associated Press, have withdrawn a photo of the Princess of Wales and her children due to concerns it may have been digitally manipulated. The image, taken by Prince William for Mother's Day and the first official photo of the princess since her surgery, was initially posted by Kensington Palace on social media. The agencies are seeking clarification from the palace, and in the absence of it, have removed the photo from their services.",
+      "prediction": "Five major photo agencies, including PA, Getty Images, AFP, Reuters, and Associated Press, have withdrawn a Mother's Day photo of Princess Catherine and her children over concerns it was digitally manipulated, citing inconsistencies such as misalignment in Princess Charlotte's hand. The image, taken by Prince William and released by Kensington Palace as the first official photo since Catherine's abdominal surgery in January, was intended to reassure the public but instead intensified speculation about her recovery.",
+      "source_url": null,
+      "latency_ms": 3638.44,
+      "scores": {
+        "token_f1": 0.6076,
+        "rouge_l_f1_approx": 0.481,
+        "rouge1_f1": 0.6049,
+        "rouge2_f1": 0.3625,
+        "rougeL_f1": 0.4691,
+        "word_count": 75,
+        "bertscore_f1": 0.93
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-007",
+      "article_chars": 4085,
+      "reference_summary": "The death of Dragon Ball creator Akira Toriyama has been mourned by fans worldwide, with memories shared of a 2018 diplomatic incident between Japan and Mexico over unauthorized public screenings of the series. Despite copyright issues, a free screening of Dragon Ball Super's episode #130 was eventually allowed in Ciudad Juarez, attracting thousands of fans.",
+      "prediction": "The death of Dragon Ball creator Akira Toriyama at age 68 has prompted fans worldwide to mourn and share how the series impacted their lives. The news has also revived memories of a 2018 diplomatic incident between Japan and Mexico over unauthorized public screenings, which was resolved when Ciudad Juarez's mayor negotiated with the studio to allow 15,000 fans to watch an episode together.",
+      "source_url": null,
+      "latency_ms": 3571.22,
+      "scores": {
+        "token_f1": 0.5378,
+        "rouge_l_f1_approx": 0.4706,
+        "rouge1_f1": 0.6066,
+        "rouge2_f1": 0.3667,
+        "rougeL_f1": 0.4754,
+        "word_count": 64,
+        "bertscore_f1": 0.9297
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-008",
+      "article_chars": 3631,
+      "reference_summary": "North Korea fired over 200 artillery shells off its west coast towards South Korea's Yeonpyeong island, prompting the South to hold live fire drills and order civilians to seek shelter; no damage was reported, but the South called it a provocative act, while the North claimed it was a response to military actions by the South. This tension follows North Korea's suspension of a military deal with the South and its recent satellite launch, which led to heightened tensions along the border.",
+      "prediction": "North Korea fired over 200 artillery shells off its west coast toward South Korea's Yeonpyeong island, prompting Seoul to order civilian evacuations and conduct its own live fire drills in response. The shells landed in a buffer zone between the two countries causing no damage, but South Korea condemned the action as a provocative act that threatens peace on the Korean Peninsula.",
+      "source_url": null,
+      "latency_ms": 3137.23,
+      "scores": {
+        "token_f1": 0.5,
+        "rouge_l_f1_approx": 0.3889,
+        "rouge1_f1": 0.5578,
+        "rouge2_f1": 0.3172,
+        "rougeL_f1": 0.4082,
+        "word_count": 62,
+        "bertscore_f1": 0.9279
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-009",
+      "article_chars": 4821,
+      "reference_summary": "Trainer Willie Mullins achieved a historic 100th Cheltenham Festival victory as his son Patrick won the Champion Bumper on Jasmin De Vaux, becoming the first person to reach a century of wins at the event. Mullins, with six victories this year, celebrated the milestone with a hat doff, and his success is a testament to his dedication, team, and innovative approach, outpacing second-placed Nicky Henderson's 73 wins.",
+      "prediction": "Willie Mullins became the first trainer to achieve 100 Cheltenham Festival victories when his son Patrick won the Champion Bumper on Jasmin De Vaux, completing a treble on Wednesday. The 67-year-old Irish trainer, who leads the all-time Festival wins list ahead of Nicky Henderson's 73 victories, has dominated the meeting with six wins at the 2024 Festival and is set to be leading trainer for the 11th time in 14 years.",
+      "source_url": null,
+      "latency_ms": 5058.14,
+      "scores": {
+        "token_f1": 0.5072,
+        "rouge_l_f1_approx": 0.3478,
+        "rouge1_f1": 0.5417,
+        "rouge2_f1": 0.2817,
+        "rougeL_f1": 0.3611,
+        "word_count": 71,
+        "bertscore_f1": 0.9094
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    },
+    {
+      "case_id": "news-010",
+      "article_chars": 2448,
+      "reference_summary": "Cambridge University Library has acquired an archive of posters and memorabilia from the Poems On The Underground project, which since 1986 has featured literary works on London's Tube network, including a letter from Philip Larkin who never saw his poetry displayed. The archive, now open to the public, also contains a note from Seamus Heaney praising the project's impact on poetry's presence in public spaces.",
+      "prediction": "Cambridge University Library has received hundreds of posters and memorabilia from the Poems On The Underground project, which began displaying poetry on London's Tube network in 1986. The archive includes a letter from poet Philip Larkin, who died in 1985 before seeing his poem displayed, and correspondence from Seamus Heaney praising the project's impact on poetry's accessibility.",
+      "source_url": null,
+      "latency_ms": 5072.93,
+      "scores": {
+        "token_f1": 0.6885,
+        "rouge_l_f1_approx": 0.6066,
+        "rouge1_f1": 0.7188,
+        "rouge2_f1": 0.5397,
+        "rougeL_f1": 0.6406,
+        "word_count": 57,
+        "bertscore_f1": 0.9562
+      },
+      "provider_metadata": {
+        "model": "anthropic/claude-sonnet-4.5"
+      }
+    }
+  ]
+}

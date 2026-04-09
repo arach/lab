@@ -1,0 +1,458 @@
+{
+  "summary": {
+    "provider": "nous",
+    "model": "Hermes-4-70B",
+    "pack": "title_intent_v1",
+    "cards": 12,
+    "passed": 6,
+    "pass_rate": 0.5,
+    "average_score": 0.8415,
+    "median_latency_ms": 1038.35,
+    "exact_parse_rate": 1.0,
+    "normalized_parse_rate": 0.0,
+    "parse_failure_rate": 0.0,
+    "title_task_score": 0.9833,
+    "intent_task_score": 0.7208,
+    "restraint_score": 0.65,
+    "intent_slice_score": 0.8256,
+    "intent_slice_pass_rate": 0.25,
+    "restraint_slice_score": 0.6987,
+    "restraint_slice_pass_rate": 0.25,
+    "title_slice_score": 1.0,
+    "title_slice_pass_rate": 1.0
+  },
+  "rows": [
+    {
+      "card_id": "title-launch-pricing-order",
+      "slice": "title",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 1444.49,
+      "raw_text": "{\n  \"title\": \"Adjust pricing page order\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Adjust pricing page order' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Adjust pricing page order",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-morning-routine-reflection",
+      "slice": "title",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 1174.32,
+      "raw_text": "{\n  \"title\": \"Leave phone in kitchen for first hour to avoid morning distractions\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Leave phone in kitchen for first hour to avoid morning distractions' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Leave phone in kitchen for first hour to avoid morning distractions",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-podcast-clip-observation",
+      "slice": "title",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 1153.86,
+      "raw_text": "{\n  \"title\": \"Key quote: small teams need shared language before more process\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Key quote: small teams need shared language before more process' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Key quote: small teams need shared language before more process",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "title-travel-memory-fragment",
+      "slice": "title",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 1559.75,
+      "raw_text": "{\n  \"title\": \"Remember Montreal bookstore with green awning for shoot mood\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Remember Montreal bookstore with green awning for shoot mood' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Remember Montreal bookstore with green awning for shoot mood",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "intent-research-desk-mics",
+      "slice": "intent",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 818.58,
+      "raw_text": "{\n  \"title\": \"Research desk microphones for small office\",\n  \"intent\": \"research\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.78,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Research desk microphones for small office' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.65,
+            "details": "intent='research' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.35,
+            "details": "intent='research' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Research desk microphones for small office",
+          "intent": "research",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "intent-email-landlord-addendum",
+      "slice": "intent",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 922.84,
+      "raw_text": "{\n  \"title\": \"Email landlord about lease addendum and subletting\",\n  \"intent\": \"email\",\n  \"target\": \"landlord\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8181,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Email landlord about lease addendum and subletting' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.7375,
+            "details": "intent='email' target='landlord' target_overlap=0.25"
+          },
+          "restraint": {
+            "score": 0.4,
+            "details": "intent='email' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Email landlord about lease addendum and subletting",
+          "intent": "email",
+          "target": "landlord"
+        }
+      }
+    },
+    {
+      "card_id": "intent-call-mom-passport",
+      "slice": "intent",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 813.51,
+      "raw_text": "{\n  \"title\": \"Call Mom about passport renewal forms\",\n  \"intent\": \"call\",\n  \"target\": \"Mom\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.8181,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Call Mom about passport renewal forms' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.7375,
+            "details": "intent='call' target='Mom' target_overlap=0.25"
+          },
+          "restraint": {
+            "score": 0.4,
+            "details": "intent='call' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Call Mom about passport renewal forms",
+          "intent": "call",
+          "target": "Mom"
+        }
+      }
+    },
+    {
+      "card_id": "intent-schedule-dentist-cleaning",
+      "slice": "intent",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 1497.28,
+      "raw_text": "{\n  \"title\": \"Schedule dentist cleaning next Thursday afternoon\",\n  \"intent\": \"schedule\",\n  \"target\": \"dentist\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": true,
+        "score": 0.8862,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Schedule dentist cleaning next Thursday afternoon' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.825,
+            "details": "intent='schedule' target='dentist' target_overlap=0.50"
+          },
+          "restraint": {
+            "score": 0.65,
+            "details": "intent='schedule' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Schedule dentist cleaning next Thursday afternoon",
+          "intent": "schedule",
+          "target": "dentist"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-investor-update-vague",
+      "slice": "restraint",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 826.45,
+      "raw_text": "{\n  \"title\": \"Investor update story still muddy\",\n  \"intent\": \"research\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.6975,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Investor update story still muddy' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.35,
+            "details": "intent='research' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.5,
+            "details": "intent='research' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Investor update story still muddy",
+          "intent": "research",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "restraint-dentist-blocked-by-insurance",
+      "slice": "restraint",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 1469.82,
+      "raw_text": "{\n  \"title\": \"Check if new insurance is active before booking dentist\",\n  \"intent\": \"research\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.6975,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Check if new insurance is active before booking dentist' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 0.35,
+            "details": "intent='research' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.5,
+            "details": "intent='research' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Check if new insurance is active before booking dentist",
+          "intent": "research",
+          "target": ""
+        }
+      }
+    },
+    {
+      "card_id": "restraint-email-or-call-unclear",
+      "slice": "restraint",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 920.96,
+      "raw_text": "{\n  \"title\": \"Discuss deck with Maya\",\n  \"intent\": \"call\",\n  \"target\": \"Maya\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": false,
+        "score": 0.4,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 0.8,
+            "details": "title='Discuss deck with Maya' overlap=0.67 usable=True"
+          },
+          "intent_task": {
+            "score": 0.0,
+            "details": "intent='call' target='Maya' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 0.0,
+            "details": "intent='call' target_empty=False"
+          }
+        },
+        "parsed": {
+          "title": "Discuss deck with Maya",
+          "intent": "call",
+          "target": "Maya"
+        }
+      }
+    },
+    {
+      "card_id": "restraint-multi-thread-scene-note",
+      "slice": "restraint",
+      "provider": "nous",
+      "model": "Hermes-4-70B",
+      "latency_ms": 921.63,
+      "raw_text": "{\n  \"title\": \"Cafe lighting and guest positioning for interview shoot\",\n  \"intent\": \"none\",\n  \"target\": \"\"\n}",
+      "metadata": {
+        "model": "Hermes-4-70B"
+      },
+      "grade": {
+        "passed": true,
+        "score": 1.0,
+        "parse_error": null,
+        "parse_mode": "exact",
+        "dimensions": {
+          "title_task": {
+            "score": 1.0,
+            "details": "title='Cafe lighting and guest positioning for interview shoot' overlap=1.00 usable=True"
+          },
+          "intent_task": {
+            "score": 1.0,
+            "details": "intent='none' target='' target_overlap=0.00"
+          },
+          "restraint": {
+            "score": 1.0,
+            "details": "intent='none' target_empty=True"
+          }
+        },
+        "parsed": {
+          "title": "Cafe lighting and guest positioning for interview shoot",
+          "intent": "none",
+          "target": ""
+        }
+      }
+    }
+  ]
+}

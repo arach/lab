@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "provider": "github_models",
+    "model": "openai/gpt-4.1-mini",
+    "dataset": "bbc2024_qwen_reference",
+    "prompt_style": "simple",
+    "cases": 2,
+    "average_token_f1": 0.5462,
+    "average_rouge_l_f1_approx": 0.3628,
+    "average_word_count": 64.5,
+    "median_latency_ms": 2855.57,
+    "average_rouge1_f1": 0.5862,
+    "average_rouge2_f1": 0.2647,
+    "average_rougeL_f1": 0.3727,
+    "average_bertscore_f1": 0.9161
+  },
+  "rows": [
+    {
+      "case_id": "news-001",
+      "article_chars": 4019,
+      "reference_summary": "West Ham captain Dagny Brynjarsdottir has been praised for a documentary that showcases her pregnancy journey as an elite footballer, with the Iceland midfielder's film 'Omarsson' highlighting the challenges and joys of balancing motherhood and sport. The documentary, released by West Ham, is being seen as a milestone for female athletes, with Brynjarsdottir's story inspiring others and demonstrating the support now available for players starting families.",
+      "prediction": "West Ham captain Dagny Brynjarsdottir has been praised for her role in a documentary highlighting her pregnancy journey and the challenges of being an elite footballer and mother, showcasing the club's supportive environment. Her story, along with endorsements from teammates and fellow athletes, is inspiring a shift in attitudes towards motherhood in professional sports, demonstrating that women can successfully balance family life and high-level athletic careers.",
+      "source_url": null,
+      "latency_ms": 2544.39,
+      "scores": {
+        "token_f1": 0.5303,
+        "rouge_l_f1_approx": 0.3333,
+        "rouge1_f1": 0.6029,
+        "rouge2_f1": 0.209,
+        "rougeL_f1": 0.3529,
+        "word_count": 66,
+        "bertscore_f1": 0.9153
+      },
+      "provider_metadata": {
+        "model": "openai/gpt-4.1-mini"
+      }
+    },
+    {
+      "case_id": "news-002",
+      "article_chars": 2779,
+      "reference_summary": "US authorities have charged Takeshi Ebisawa, alleged to be a senior member of the Japanese Yakuza crime syndicate, with conspiring to traffic nuclear materials, attempting to sell uranium and plutonium to what he believed were Iranian agents for a nuclear bomb. Ebisawa and a Thai co-defendant, Somphop Singhasiri, face life imprisonment if convicted, with Ebisawa also accused of seeking to acquire military-grade weapons for a Myanmar rebel group. The nuclear materials, sourced from Myanmar, were seized in Thailand and confirmed to contain uranium and weapons-grade plutonium by a US laboratory.",
+      "prediction": "Takeshi Ebisawa, a senior member of the Japanese Yakuza, has been charged by US prosecutors with conspiring to traffic nuclear materials, including uranium and weapons-grade plutonium, allegedly intended for Iran to build a nuclear bomb. He and his Thai co-defendant face multiple charges, including drug and weapons trafficking, and will be arraigned in New York, with Ebisawa potentially facing life imprisonment if convicted.",
+      "source_url": null,
+      "latency_ms": 2855.57,
+      "scores": {
+        "token_f1": 0.5621,
+        "rouge_l_f1_approx": 0.3922,
+        "rouge1_f1": 0.5696,
+        "rouge2_f1": 0.3205,
+        "rougeL_f1": 0.3924,
+        "word_count": 63,
+        "bertscore_f1": 0.9169
+      },
+      "provider_metadata": {
+        "model": "openai/gpt-4.1-mini"
+      }
+    }
+  ]
+}

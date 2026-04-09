@@ -6,7 +6,7 @@
 slug: splitting-the-stream
 series: teaching-a-tiny-model-to-hear-bash
 part: 4
-date: TBD
+date: 2026-03-07
 tags: classifier, segmentation, on-device-ml, voice, dictation, logistic-regression
 author: Arach
 -->

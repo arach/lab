@@ -25,45 +25,52 @@ export default function IdeasIndexPage({ ideas }) {
       </header>
 
       <section className="hero-wrap">
-        <div className="hero">
-          <p className="eyebrow">Ideas</p>
-          <h1>Experiments worth reading twice.</h1>
-          <p>
-            Longform writeups, benchmark notes, and day-by-day TILs from the same
-            bench where the models are being tested.
-          </p>
+        <div className="ideas-frame">
+          <div className="hero ideas-hero">
+            <p className="eyebrow">Ideas</p>
+            <h1>Essays, notes, and benchmark drafts.</h1>
+            <p>
+              Longform writeups, benchmark notes, and day-by-day TILs from the same
+              bench where the title-plus-intent pack is being built, with older
+              dictation work still in the background.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="ideas-list">
-        <div className="ideas-grid">
-          {safeIdeas.map((idea) => (
-            <Link key={idea.slug} href={`/ideas/${idea.slug}`} className="idea-card">
-              <div>
-                <div className="idea-meta-row">
-                  <span className="section-chip section-chip-strong">{idea.sectionLabel}</span>
-                  <span className="date-chip">{formatDate(idea.date)}</span>
-                  {idea.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="tag-chip">
-                      {tag}
-                    </span>
-                  ))}
+        <div className="ideas-frame">
+          <div className="ideas-grid">
+            {safeIdeas.map((idea) => (
+              <Link key={idea.slug} href={`/ideas/${idea.slug}`} className="idea-card">
+                <div>
+                  <div className="idea-meta-row">
+                    <span className="section-chip section-chip-strong">{idea.sectionLabel}</span>
+                    <span className="date-chip">{formatDate(idea.date)}</span>
+                    {idea.tags.slice(0, 3).map((tag) => (
+                      <span key={tag} className="tag-chip">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2>{idea.title}</h2>
+                  {idea.description ? <p>{idea.description}</p> : null}
                 </div>
-                <h2>{idea.title}</h2>
-                {idea.description ? <p>{idea.description}</p> : null}
-              </div>
-              <div className="arrow-wrap">
-                <div className="arrow">↗</div>
-              </div>
-            </Link>
-          ))}
+                <div className="arrow-wrap">
+                  <div className="arrow">↗</div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <footer className="site-footer">
-        <span className="brand">Training Lab</span>
-        <span className="nav-link">Built from markdown, not a CMS</span>
-      </footer>
+      <div className="ideas-frame">
+        <footer className="site-footer ideas-footer">
+          <span className="brand">Training Lab</span>
+          <span className="nav-link">Essays, notes, and drafts</span>
+        </footer>
+      </div>
     </div>
   )
 }

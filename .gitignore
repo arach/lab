@@ -41,3 +41,7 @@ eval/local_intelligence/results/*.json
 
 out/
 .vercel
+
+# Local browser/debug artifacts
+.playwright-cli/
+output/

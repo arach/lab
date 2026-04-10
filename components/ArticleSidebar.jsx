@@ -1,9 +1,12 @@
 'use client'
 
+import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 export default function ArticleSidebar({ headings = [] }) {
   const [activeHeading, setActiveHeading] = useState(headings[0]?.id || null)
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
     if (!headings.length) return
@@ -53,6 +56,18 @@ export default function ArticleSidebar({ headings = [] }) {
       window.removeEventListener('scroll', onScroll)
     }
   }, [headings])
+
+  useEffect(() => {
+    if (!activeHeading || !pathname) return
+
+    const query = searchParams?.toString()
+    const nextUrl = `${pathname}${query ? `?${query}` : ''}#${activeHeading}`
+    const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`
+
+    if (currentUrl !== nextUrl) {
+      window.history.replaceState(null, '', nextUrl)
+    }
+  }, [activeHeading, pathname, searchParams])
 
   return (
     <aside className="article-sidebar">

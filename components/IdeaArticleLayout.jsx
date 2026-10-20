@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import SiteHeader from './SiteHeader'
+import SiteFooter from './SiteFooter'
 
 function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString('en-US', {
@@ -26,41 +28,34 @@ export default function IdeaArticleLayout({
   const layoutClassName = aside ? 'article-main-grid' : 'article-content-single'
 
   return (
-    <div className="site-shell">
-      <header className="topbar">
-        <div className="topbar-inner">
-          <Link href="/ideas" className="brand">
-            ← All Ideas
-          </Link>
-          <Link href="/" className="nav-link">
-            Training Lab
-          </Link>
-        </div>
-      </header>
+    <div className="site-shell lab lab-article">
+      <SiteHeader current="ideas" />
 
       <section className="article-hero-wrap">
         <div className="article-hero">
           <div className="article-hero-inner">
             <div className="article-hero-copy">
-              <div className="hero-meta">
-                <span className="meta-pill">{sectionLabel}</span>
-                {status ? <span className="meta-pill">{status}</span> : null}
-                {tags.map((tag) => (
-                  <span key={tag} className="meta-pill">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h1>{title}</h1>
-              {description ? <p>{description}</p> : null}
-              {date ? (
-                <div className="article-meta">
-                  <span className="date-chip">{formatDate(date)}</span>
-                  {readingTime ? (
-                    <span className="date-chip">{readingTime} min read</span>
-                  ) : null}
-                </div>
+              <p className="lab-kicker lab-rise" style={{ '--d': 0 }}>
+                <Link href="/ideas" className="lab-kicker-back">Ideas</Link>
+                <span className="lab-kicker-rule" aria-hidden="true" />
+                {sectionLabel ? <span>{sectionLabel}</span> : null}
+                {status ? <span className="lab-kicker-status">{status}</span> : null}
+              </p>
+              <h1 className="lab-rise" style={{ '--d': 1 }}>{title}</h1>
+              {description ? (
+                <p className="lab-rise" style={{ '--d': 2 }}>{description}</p>
               ) : null}
+              <div className="article-meta lab-rise" style={{ '--d': 3 }}>
+                {date ? <time dateTime={date}>{formatDate(date)}</time> : null}
+                {readingTime ? <span>{readingTime} min read</span> : null}
+                {tags.length ? (
+                  <span className="article-meta-tags">
+                    {tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </span>
+                ) : null}
+              </div>
               {seriesNav ? <div className="article-hero-series">{seriesNav}</div> : null}
             </div>
           </div>
@@ -85,12 +80,7 @@ export default function IdeaArticleLayout({
         </div>
       </main>
 
-      <footer className="site-footer">
-        <Link href="/ideas" className="brand">
-          ← Back to index
-        </Link>
-        <span className="nav-link">Training Lab</span>
-      </footer>
+      <SiteFooter note="Back to the bench" />
     </div>
   )
 }

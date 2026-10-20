@@ -1,76 +1,81 @@
 import Link from 'next/link'
+import SiteHeader from './SiteHeader'
+import SiteFooter from './SiteFooter'
 
 function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   })
+}
+
+function groupByYear(ideas) {
+  const groups = new Map()
+  for (const idea of ideas) {
+    const year = new Date(idea.date).getFullYear()
+    if (!groups.has(year)) groups.set(year, [])
+    groups.get(year).push(idea)
+  }
+  return [...groups.entries()]
 }
 
 export default function IdeasIndexPage({ ideas }) {
   const safeIdeas = (ideas || []).filter(
     (idea) => idea && idea.slug && idea.title && Array.isArray(idea.tags)
   )
+  const sections = new Set(safeIdeas.map((idea) => idea.sectionLabel).filter(Boolean))
 
   return (
-    <div className="site-shell">
-      <header className="topbar">
-        <div className="topbar-inner">
-          <Link href="/" className="brand">
-            Training Lab
-          </Link>
-          <span className="nav-link">Ideas</span>
-        </div>
-      </header>
+    <div className="site-shell lab">
+      <SiteHeader current="ideas" />
 
-      <section className="hero-wrap">
-        <div className="ideas-frame">
-          <div className="hero ideas-hero">
-            <p className="eyebrow">Ideas</p>
-            <h1>Essays, notes, and benchmark drafts.</h1>
-            <p>
-              Longform writeups, benchmark notes, and day-by-day TILs from the same
-              bench where the title-plus-intent pack is being built, with older
-              dictation work still in the background.
-            </p>
-          </div>
+      <section className="lab-page-hero">
+        <div className="lab-shell">
+          <p className="lab-kicker lab-rise" style={{ '--d': 0 }}>
+            <span>Ideas</span>
+            <span className="lab-kicker-rule" aria-hidden="true" />
+            <span>{safeIdeas.length} entries{sections.size > 1 ? ` · ${sections.size} kinds` : ''}</span>
+          </p>
+          <h1 className="lab-rise" style={{ '--d': 1 }}>
+            Essays, notes, <em>and benchmark drafts.</em>
+          </h1>
+          <p className="lab-lede lab-rise" style={{ '--d': 2 }}>
+            Longform writeups, benchmark notes, and day-by-day TILs from the same
+            bench where the title-plus-intent pack is being built.
+          </p>
         </div>
       </section>
 
-      <section className="ideas-list">
-        <div className="ideas-frame">
-          <div className="ideas-grid">
-            {safeIdeas.map((idea) => (
-              <Link key={idea.slug} href={`/ideas/${idea.slug}`} className="idea-card">
-                <div>
-                  <div className="idea-meta-row">
-                    <span className="section-chip section-chip-strong">{idea.sectionLabel}</span>
-                    <span className="date-chip">{formatDate(idea.date)}</span>
-                    {idea.tags.slice(0, 3).map((tag) => (
-                      <span key={tag} className="tag-chip">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2>{idea.title}</h2>
-                  {idea.description ? <p>{idea.description}</p> : null}
-                </div>
-                <div className="arrow-wrap">
-                  <div className="arrow">↗</div>
-                </div>
-              </Link>
-            ))}
-          </div>
+      <section className="lab-section lab-ideas">
+        <div className="lab-shell">
+          {groupByYear(safeIdeas).map(([year, items]) => (
+            <div key={year} className="lab-year">
+              <p className="lab-year-label">{year}</p>
+              <div className="lab-log">
+                {items.map((idea) => (
+                  <Link key={idea.slug} href={`/ideas/${idea.slug}`} className="lab-log-row">
+                    <time dateTime={idea.date}>{formatDate(idea.date)}</time>
+                    <div className="lab-log-main">
+                      <h3>{idea.title}</h3>
+                      {idea.description ? <p>{idea.description}</p> : null}
+                      {idea.tags.length ? (
+                        <p className="lab-log-tags">
+                          {idea.tags.slice(0, 4).map((tag) => (
+                            <span key={tag}>{tag}</span>
+                          ))}
+                        </p>
+                      ) : null}
+                    </div>
+                    <span className="lab-log-type">{idea.sectionLabel}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      <div className="ideas-frame">
-        <footer className="site-footer ideas-footer">
-          <span className="brand">Training Lab</span>
-          <span className="nav-link">Essays, notes, and drafts</span>
-        </footer>
-      </div>
+      <SiteFooter note="Essays, notes, and drafts" />
     </div>
   )
 }

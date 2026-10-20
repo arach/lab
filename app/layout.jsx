@@ -1,22 +1,17 @@
-import { Fraunces, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { createLabMetadata } from '../lib/site-metadata'
 import './globals.css'
+import './lab.css'
 
-const grotesk = Space_Grotesk({
+const sans = Geist({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 })
 
-const jetmono = JetBrains_Mono({
+const mono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  display: 'swap',
-})
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-display',
   display: 'swap',
 })
 
@@ -31,10 +26,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${grotesk.variable} ${jetmono.variable} ${fraunces.variable}`}
+      className={`${sans.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
-      <body className={grotesk.className}>{children}</body>
+      <body className={sans.className}>{children}</body>
     </html>
   )
 }

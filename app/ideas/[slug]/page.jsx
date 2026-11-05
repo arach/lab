@@ -96,6 +96,7 @@ export async function generateMetadata({ params, searchParams }) {
     pathname: `/ideas/${slug}`,
     imagePath: getIdeaOgImagePath(idea.slug),
     type: 'article',
+    canonical: idea.canonical,
   })
 }
 
@@ -247,6 +248,8 @@ export default async function IdeaPage({ params, searchParams }) {
       sectionLabel={idea.sectionLabel}
       status={idea.status}
       readingTime={idea.readingTime}
+      canonical={idea.canonical}
+      originalSource={idea.originalSource}
       showEvalPanels={showEvalPanels || showRepairPanel || showSemanticPanel}
       seriesNav={
         articlePages.length ? (

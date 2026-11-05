@@ -980,6 +980,20 @@
   color: var(--muted);
 }
 
+.lab-article .article-hero p.lab-origin {
+  margin-top: 1rem;
+}
+
+.lab-origin a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lab-origin a:hover {
+  color: var(--ink);
+}
+
 .lab-kicker a.lab-kicker-back {
   color: var(--accent);
 }
@@ -1403,4 +1417,32 @@
   .lab-section-aside {
     text-align: left;
   }
+}
+
+/* Figures carried in from other posts: a captioned image or table */
+.lab-article .article-prose figure.lab-figure {
+  margin: 2rem 0;
+}
+
+.lab-article .article-prose figure.lab-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lab-article .article-prose figure.lab-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lab-article .article-prose figure.lab-figure figcaption a {
+  color: var(--accent);
 }

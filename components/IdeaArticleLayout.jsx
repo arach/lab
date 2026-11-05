@@ -7,6 +7,7 @@ function formatDate(dateString) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   })
 }
 
@@ -18,6 +19,8 @@ export default function IdeaArticleLayout({
   sectionLabel,
   status,
   readingTime,
+  canonical,
+  originalSource,
   evalPanels,
   postArticleNav,
   afterContent,
@@ -57,6 +60,14 @@ export default function IdeaArticleLayout({
                   </span>
                 ) : null}
               </div>
+              {canonical ? (
+                <p className="lab-fig lab-origin lab-rise" style={{ '--d': 4 }}>
+                  Originally published on{' '}
+                  <a href={canonical} rel="noopener">
+                    {originalSource || new URL(canonical).hostname.replace(/^www\./, '')} ↗
+                  </a>
+                </p>
+              ) : null}
               {seriesNav ? <div className="article-hero-series">{seriesNav}</div> : null}
             </div>
           </div>

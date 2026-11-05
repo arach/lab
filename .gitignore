@@ -45,3 +45,4 @@ out/
 # Local browser/debug artifacts
 .playwright-cli/
 output/
+.env*.local

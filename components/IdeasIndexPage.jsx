@@ -31,11 +31,10 @@ export default function IdeasIndexPage({ ideas }) {
 
       <section className="lab-page-hero">
         <div className="lab-shell">
-          <p className="lab-kicker lab-rise" style={{ '--d': 0 }}>
-            <span>Ideas</span>
-            <span className="lab-kicker-rule" aria-hidden="true" />
-            <span>{safeIdeas.length} entries{sections.size > 1 ? ` · ${sections.size} kinds` : ''}</span>
-          </p>
+          <div className="lab-head-bar lab-rise" style={{ '--d': 0 }}>
+            <p className="lab-fig">( 00 ) Training lab · ideas</p>
+            <p className="lab-fig">{safeIdeas.length} entries{sections.size > 1 ? ` · ${sections.size} kinds` : ''}</p>
+          </div>
           <h1 className="lab-rise" style={{ '--d': 1 }}>
             Essays, notes, <em>and benchmark drafts.</em>
           </h1>
@@ -75,7 +74,7 @@ export default function IdeasIndexPage({ ideas }) {
         </div>
       </section>
 
-      <SiteFooter note="Essays, notes, and drafts" />
+      <SiteFooter />
     </div>
   )
 }

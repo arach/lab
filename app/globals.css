@@ -1,35 +1,44 @@
+/* Tokens match arach.dev: cyanotype paper (default) and warm graphite (dark).
+   The theme follows arach.dev's saved choice (localStorage "site-theme"). */
 :root {
-  --bg: #f5f4ef;
-  --surface: rgba(255, 255, 255, 0.82);
-  --surface-strong: rgba(255, 255, 255, 0.96);
-  --ink: #191610;
-  --muted: #62584b;
-  --line: rgba(38, 30, 19, 0.12);
-  --accent: #0c8a63;
-  --accent-soft: rgba(12, 138, 99, 0.12);
-  --shadow: 0 16px 50px rgba(26, 20, 12, 0.08);
-  --display: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --body: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono: var(--font-mono), "SF Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
-  --shell-width: 96rem;
-  --shell-pad: 2rem;
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-strong: #ffffff;
+  --ink: #0b1640;
+  --muted: rgba(11, 22, 64, 0.72);
+  --faint: rgba(11, 22, 64, 0.42);
+  --line: rgba(11, 22, 64, 0.12);
+  --rule-strong: rgba(11, 22, 64, 0.85);
+  --grid: rgba(35, 64, 240, 0.07);
+  --accent: #2340f0;
+  --accent-soft: rgba(35, 64, 240, 0.08);
+  --header-bg: rgba(244, 245, 247, 0.86);
+  --shadow: none;
+  --display: var(--font-sans), system-ui, sans-serif;
+  --body: var(--font-sans), system-ui, sans-serif;
+  --mono: var(--font-mono), ui-monospace, monospace;
+  --shell-width: 64rem;
+  --shell-pad: 1.5rem;
   --article-measure: 94ch;
   --article-rail-width: 280px;
   --article-grid-gap: 2.75rem;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #11100d;
-    --surface: rgba(22, 20, 16, 0.86);
-    --surface-strong: rgba(17, 16, 13, 0.98);
-    --ink: #f6f0e7;
-    --muted: #b9ad9d;
-    --line: rgba(255, 247, 234, 0.12);
-    --accent: #47c79c;
-    --accent-soft: rgba(71, 199, 156, 0.14);
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
-  }
+:root[data-theme="dark"] {
+  --bg: #0b0a09;
+  --surface: #141311;
+  --surface-strong: #141311;
+  --ink: #eee8dc;
+  --muted: rgba(238, 232, 220, 0.7);
+  --faint: rgba(238, 232, 220, 0.38);
+  --line: rgba(238, 232, 220, 0.1);
+  --rule-strong: rgba(238, 232, 220, 0.2);
+  --grid: rgba(242, 172, 62, 0.05);
+  --accent: #f2ac3e;
+  --accent-soft: rgba(242, 172, 62, 0.1);
+  --header-bg: rgba(11, 10, 9, 0.86);
+  color-scheme: dark;
 }
 
 * {
@@ -40,10 +49,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background:
-    radial-gradient(circle at top left, rgba(12, 138, 99, 0.08), transparent 30%),
-    radial-gradient(circle at top right, rgba(179, 111, 61, 0.08), transparent 26%),
-    var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
   -webkit-font-smoothing: antialiased;
@@ -111,8 +117,7 @@ img {
 .article-hero-wrap {
   border-bottom: 1px solid var(--line);
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 55%, transparent), transparent),
-    linear-gradient(90deg, rgba(12, 138, 99, 0.06), transparent 28%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 55%, transparent), transparent);
 }
 
 .hero,
@@ -293,7 +298,7 @@ img {
   gap: 0.35rem;
   padding: 0.45rem 0.75rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   background: var(--accent-soft);
   color: var(--ink);
   font-family: var(--mono);
@@ -346,10 +351,9 @@ img {
   gap: 1.25rem;
   padding: 1.55rem 1.6rem;
   border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
-  border-radius: 28px;
+  border-radius: 0;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 66%, transparent), var(--surface)),
-    radial-gradient(circle at top right, rgba(12, 138, 99, 0.05), transparent 30%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 66%, transparent), var(--surface));
   box-shadow: var(--shadow);
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
@@ -358,8 +362,7 @@ img {
   transform: translateY(-2px);
   border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 84%, transparent), color-mix(in srgb, var(--surface) 96%, transparent)),
-    radial-gradient(circle at top right, rgba(12, 138, 99, 0.08), transparent 32%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 84%, transparent), color-mix(in srgb, var(--surface) 96%, transparent));
 }
 
 .idea-card h2 {
@@ -398,7 +401,7 @@ img {
   color: var(--ink);
   background: var(--accent-soft);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   padding: 0.28rem 0.55rem;
 }
 
@@ -547,7 +550,7 @@ img {
 
 .article-sidebar-card {
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 0;
   padding: 1rem;
   background: color-mix(in srgb, var(--surface-strong) 78%, transparent);
 }
@@ -585,7 +588,7 @@ img {
   flex: 1 1 0;
   padding: 0.7rem 0.95rem;
   border: 1px solid color-mix(in srgb, var(--line) 90%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
   transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
 }
@@ -639,7 +642,7 @@ img {
   text-decoration: none;
   color: var(--ink);
   padding: 0.5rem 0.6rem;
-  border-radius: 12px;
+  border-radius: 0;
   transition: background 140ms ease, color 140ms ease;
 }
 
@@ -672,7 +675,7 @@ img {
   top: 0.6rem;
   bottom: 0.6rem;
   width: 2px;
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--line) 88%, transparent);
 }
 
@@ -710,10 +713,9 @@ img {
   width: 100%;
   margin: 0 0 1.6rem;
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 0;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 76%, transparent), var(--surface)),
-    radial-gradient(circle at top right, rgba(12, 138, 99, 0.08), transparent 32%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 76%, transparent), var(--surface));
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -746,9 +748,7 @@ img {
 
 .repair-band {
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 84%, transparent), var(--surface)),
-    radial-gradient(circle at top right, rgba(12, 138, 99, 0.12), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(184, 115, 51, 0.08), transparent 28%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 84%, transparent), var(--surface));
 }
 
 .repair-hero-grid {
@@ -763,7 +763,7 @@ img {
   gap: 0.45rem;
   padding: 1rem 1rem 1.1rem;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 0;
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 82%, transparent), transparent);
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
@@ -779,7 +779,7 @@ img {
 .repair-delta-card {
   padding: 1.05rem 1.1rem 1.15rem;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 76%, transparent);
 }
 
@@ -793,7 +793,7 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.3rem 0.58rem;
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--accent) 10%, transparent);
   color: var(--accent);
   font-family: var(--mono);
@@ -894,7 +894,7 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.2rem 0.55rem;
-  border-radius: 6px;
+  border-radius: 0;
   font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
@@ -929,7 +929,7 @@ img {
 .metric-card {
   padding: 1rem 1rem 1.1rem;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
 }
 
@@ -948,7 +948,7 @@ img {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   padding: 0.32rem 0.58rem;
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -968,7 +968,7 @@ img {
 
 .repair-band .scores-table {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 0;
   overflow: hidden;
   background: color-mix(in srgb, var(--surface-strong) 74%, transparent);
 }
@@ -980,19 +980,16 @@ img {
 
 .semantic-band {
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 82%, transparent), var(--surface)),
-    radial-gradient(circle at top left, rgba(205, 133, 63, 0.09), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(12, 138, 99, 0.09), transparent 32%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 82%, transparent), var(--surface));
 }
 
 .semantic-band-compact {
   margin: 0;
-  border-radius: 24px;
+  border-radius: 0;
   box-shadow: none;
   border: 1px solid color-mix(in srgb, var(--line) 92%, transparent);
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 94%, transparent)),
-    radial-gradient(circle at top left, rgba(12, 138, 99, 0.05), transparent 34%);
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 94%, transparent));
 }
 
 .semantic-band-detail .data-band-header {
@@ -1049,7 +1046,7 @@ img {
 .semantic-card-list {
   padding: 1rem 1rem 1.1rem;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 76%, transparent);
 }
 
@@ -1075,7 +1072,7 @@ img {
   margin: 0 1.35rem 1.35rem;
   padding: 1.05rem 1.05rem 1.15rem;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 0;
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 82%, transparent), transparent),
     color-mix(in srgb, var(--accent) 3%, var(--surface-strong));
@@ -1106,7 +1103,7 @@ img {
 
 .semantic-table-wrap {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 78%, transparent);
 }
 
@@ -1127,7 +1124,7 @@ img {
 
 .semantic-model-note {
   padding: 0.85rem 0.95rem;
-  border-radius: 16px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 68%, transparent);
   border: 1px solid color-mix(in srgb, var(--line) 84%, transparent);
 }
@@ -1167,7 +1164,7 @@ img {
 .article-context-toggle {
   margin-top: 0.75rem;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 0;
   background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
   overflow: hidden;
 }
@@ -1339,27 +1336,20 @@ img {
   width: max-content;
   min-width: min(100%, 32rem);
   padding: 1rem 1.15rem;
-  border-radius: 14px;
-  border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
-  background: #16150f;
-  color: #e8e2d5;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  color: var(--ink);
   font-size: 0.84rem;
   line-height: 1.58;
   margin: 1.4rem 0;
   white-space: pre;
 }
 
-@media (prefers-color-scheme: dark) {
-  .article-prose pre {
-    background: #0c0b09;
-    border-color: color-mix(in srgb, var(--line) 40%, transparent);
-  }
-}
-
 .article-prose code:not(pre code) {
   background: color-mix(in srgb, var(--accent) 9%, var(--surface-strong));
   border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
-  border-radius: 6px;
+  border-radius: 0;
   padding: 0.1rem 0.38rem;
   font-size: 0.875em;
   color: var(--ink);
@@ -1417,7 +1407,7 @@ img {
   margin: 1.2rem 0;
   padding: 0.9rem 1.1rem;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 0;
   background: var(--surface);
 }
 
@@ -1468,7 +1458,7 @@ img {
   padding-top: 5rem;
   padding-bottom: 5rem;
   border: 1px solid var(--line);
-  border-radius: 34px;
+  border-radius: 0;
   background: var(--surface);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -1486,7 +1476,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 0;
   padding: 0.9rem 1.2rem;
   font-family: var(--mono);
   font-size: 0.76rem;
@@ -1509,7 +1499,7 @@ img {
 
 .stat-card {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 0;
   padding: 1rem;
   background: var(--surface);
 }

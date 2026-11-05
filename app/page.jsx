@@ -96,14 +96,14 @@ export default function HomePage() {
       <SiteHeader />
 
       <section className="lab-hero">
+        <div className="lab-shell">
+          <div className="lab-head-bar lab-rise" style={{ '--d': 0 }}>
+            <p className="lab-fig">( 00 ) Notebook · models and training</p>
+            <p className="lab-fig">NB.01</p>
+          </div>
+        </div>
         <div className="lab-shell lab-hero-grid">
           <div className="lab-hero-copy">
-            <p className="lab-kicker lab-rise" style={{ '--d': 0 }}>
-              <span>NB.01</span>
-              <span>Notebook</span>
-              <span className="lab-kicker-rule" aria-hidden="true" />
-              <span>Models · training</span>
-            </p>
             <h1 className="lab-rise" style={{ '--d': 1 }}>
               Experiments with models <em>and training.</em>
             </h1>
@@ -155,14 +155,13 @@ export default function HomePage() {
       <section className="lab-section" id="bench">
         <div className="lab-shell">
           <div className="lab-section-head">
-            <p className="lab-section-index">01</p>
-            <div>
-              <p className="lab-section-kicker">On the bench</p>
-              <h2>Semantic eval v1, first local runs</h2>
+            <div className="lab-head-bar">
+              <p className="lab-fig">( 01 ) On the bench</p>
+              <p className="lab-fig lab-section-aside">
+                {totalCards} app-moment cards · MLX · 4-bit · on-device
+              </p>
             </div>
-            <p className="lab-section-aside">
-              {totalCards} app-moment cards · MLX · 4-bit · on-device
-            </p>
+            <h2>Semantic eval v1, first local runs</h2>
           </div>
 
           <div className="lab-bench">
@@ -207,11 +206,10 @@ export default function HomePage() {
       <section className="lab-section">
         <div className="lab-shell">
           <div className="lab-section-head">
-            <p className="lab-section-index">02</p>
-            <div>
-              <p className="lab-section-kicker">Threads</p>
-              <h2>Two threads that keep feeding each other</h2>
+            <div className="lab-head-bar">
+              <p className="lab-fig">( 02 ) Threads</p>
             </div>
+            <h2>Two threads that keep feeding each other</h2>
           </div>
 
           <div className="lab-threads">
@@ -235,12 +233,11 @@ export default function HomePage() {
       <section className="lab-section" id="next">
         <div className="lab-shell">
           <div className="lab-section-head">
-            <p className="lab-section-index">03</p>
-            <div>
-              <p className="lab-section-kicker">Next on the bench</p>
-              <h2>Experiments I want to run next</h2>
+            <div className="lab-head-bar">
+              <p className="lab-fig">( 03 ) Next on the bench</p>
+              <p className="lab-fig lab-section-aside">Queued, not done. Small enough to finish on a Mac.</p>
             </div>
-            <p className="lab-section-aside">Queued, not done. Small enough to finish on a Mac.</p>
+            <h2>Experiments I want to run next</h2>
           </div>
 
           <ol className="lab-queue">
@@ -261,12 +258,11 @@ export default function HomePage() {
       <section className="lab-section">
         <div className="lab-shell">
           <div className="lab-section-head">
-            <p className="lab-section-index">04</p>
-            <div>
-              <p className="lab-section-kicker">Log</p>
-              <h2>Recent notes and writeups</h2>
+            <div className="lab-head-bar">
+              <p className="lab-fig">( 04 ) Log</p>
+              <Link href="/ideas" className="lab-fig lab-section-aside">All ideas →</Link>
             </div>
-            <Link href="/ideas" className="lab-section-aside lab-link">All ideas →</Link>
+            <h2>Recent notes and writeups</h2>
           </div>
 
           <div className="lab-log">

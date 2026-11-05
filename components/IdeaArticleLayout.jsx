@@ -35,12 +35,13 @@ export default function IdeaArticleLayout({
         <div className="article-hero">
           <div className="article-hero-inner">
             <div className="article-hero-copy">
-              <p className="lab-kicker lab-rise" style={{ '--d': 0 }}>
-                <Link href="/ideas" className="lab-kicker-back">Ideas</Link>
-                <span className="lab-kicker-rule" aria-hidden="true" />
-                {sectionLabel ? <span>{sectionLabel}</span> : null}
-                {status ? <span className="lab-kicker-status">{status}</span> : null}
-              </p>
+              <div className="lab-head-bar lab-rise" style={{ '--d': 0 }}>
+                <p className="lab-fig">
+                  <Link href="/ideas">← Ideas</Link>
+                  {sectionLabel ? <> · {sectionLabel}</> : null}
+                </p>
+                {status ? <p className="lab-fig lab-fig-accent">{status}</p> : null}
+              </div>
               <h1 className="lab-rise" style={{ '--d': 1 }}>{title}</h1>
               {description ? (
                 <p className="lab-rise" style={{ '--d': 2 }}>{description}</p>
@@ -80,7 +81,7 @@ export default function IdeaArticleLayout({
         </div>
       </main>
 
-      <SiteFooter note="Back to the bench" />
+      <SiteFooter />
     </div>
   )
 }

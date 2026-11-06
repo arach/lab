@@ -4,7 +4,7 @@ const LINKS = [
   { href: 'https://arach.io', label: 'arach.io' },
   { href: 'https://github.com/arach', label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/arach/', label: 'LinkedIn' },
-  { href: 'mailto:arach@tchoupani.com', label: 'Email' },
+  { href: 'https://x.com/arach', label: 'X' },
 ]
 
 export default function SiteFooter() {

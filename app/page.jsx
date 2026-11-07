@@ -95,7 +95,8 @@ export default function HomePage() {
               <Link href={`/ideas/${featured.slug}`} className="lab-button lab-button-primary">
                 Read the build recipe <span aria-hidden="true">→</span>
               </Link>
-              <Link href="/ideas" className="lab-button">All lab notes</Link>
+              <a href="https://huggingface.co/arach/parakeet-tdt-0.6b-v3-coreml" className="lab-button">Parakeet weights</a>
+              <a href="https://huggingface.co/arach/parakeet-coreml-recipe" className="lab-button">Build scripts</a>
             </div>
           </div>
 
@@ -127,6 +128,21 @@ export default function HomePage() {
               <dd>Talkie, through Vox</dd>
             </div>
           </dl>
+
+          <section className="lab-cleanup" aria-labelledby="cleanup-title">
+            <h2 id="cleanup-title">Transcript cleanup pilot</h2>
+            <div>
+              <p>
+                A 4.37M-parameter KEEP/DELETE model for optional cleanup of completed transcripts.
+                Trained and evaluated on synthetic examples; app integration is still ahead.
+              </p>
+              <ul className="lab-artifact-links" aria-label="Published cleanup resources">
+                <li><a href="https://huggingface.co/arach/transcript-cleanup-tiny">Cleanup weights</a></li>
+                <li><a href="https://huggingface.co/arach/parakeet-coreml-recipe/tree/main/cleanup">Runtime + training recipe</a></li>
+                <li><a href="https://huggingface.co/arach/parakeet-coreml-recipe/blob/main/cleanup/experiment/TAGGER.md">Results + limitations</a></li>
+              </ul>
+            </div>
+          </section>
         </div>
       </section>
 

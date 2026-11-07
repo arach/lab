@@ -6,10 +6,9 @@ import { nextExperiments } from '../lib/lab-bench'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 
-
 export const metadata = createLabMetadata({
   title: 'Training Lab',
-  description: 'Experiments with models and training: evals, notes, and local runs.',
+  description: 'Building Parakeet for Core ML, small-model evals, and notes from the training lab.',
   pathname: '',
   imagePath: '/og/lab/index.png',
 })
@@ -23,13 +22,17 @@ function formatDate(dateString) {
   })
 }
 
-// Line lengths for the input note in the schematic, as fractions of the column.
-const NOTE = [0.92, 0.78, 0.96, 0.64, 0.88, 0.71, 0.84, 0.42]
+const BUILD_STEPS = [
+  { title: 'Trace', script: 'export.py', detail: 'NVIDIA checkpoint to PyTorch traces.' },
+  { title: 'Build', script: 'build.py', detail: 'Core ML conversion and a six-bit encoder.' },
+  { title: 'Check', script: 'check.py', detail: 'Compare each piece with NVIDIA’s outputs.' },
+  { title: 'Score', script: 'score.py', detail: 'Measure word error rate on LibriSpeech.' },
+]
 
 const THREADS = [
   {
     id: 'A',
-    status: 'Current thread',
+    status: 'Eval thread',
     title: 'Small-model extraction',
     body: "Turning short, messy notes into cleaner, more usable artifacts without pretending a tiny model knows more than it does.",
     items: ['Auto-title and tiny intent extraction', 'Evaluation for restraint and review behavior', 'Hosted and local model comparisons'],
@@ -43,52 +46,29 @@ const THREADS = [
   },
 ]
 
-function Schematic() {
-  const mid = 92
+function BuildSequence() {
   return (
-    <svg className="lab-schematic-svg" viewBox="0 0 560 196" role="img" aria-label="A short note goes into a 0.5B model, which returns a title, intent none, and no target">
-      <g className="sx-crop">
-        <path d="M8 40v-8h8M184 40v-8h-8M8 144v8h8M184 144v8h-8" />
-      </g>
-      <text className="sx-label" x="16" y="24">note.txt</text>
-      <text className="sx-label" x="176" y="24" textAnchor="end">41 tok</text>
-      <g className="sx-text">
-        {NOTE.map((w, i) => (
-          <line key={i} x1="24" x2={24 + w * 144} y1={mid - 42 + i * 12} y2={mid - 42 + i * 12} />
-        ))}
-      </g>
-      <line className="sx-axis" x1="16" x2="16" y1={mid - 48} y2={mid + 48} />
-
-      <path className="sx-line" d={`M192 ${mid}H236`} />
-      <path className="sx-line" d={`M231 ${mid - 4}l5 4l-5 4`} />
-
-      <rect className="sx-box" x="236.5" y={mid - 30.5} width="96" height="61" />
-      <text className="sx-model" x="284.5" y={mid - 3} textAnchor="middle">qwen2.5</text>
-      <text className="sx-label" x="284.5" y={mid + 15} textAnchor="middle">0.5B · 4-bit</text>
-
-      <path className="sx-line" d={`M332.5 ${mid}H356.5M356.5 ${mid - 50}V${mid + 50}M356.5 ${mid - 50}H380M356.5 ${mid}H380M356.5 ${mid + 50}H380`} />
-      {[
-        ['title', 'Share deck with Maya', ''],
-        ['intent', 'none', ' sx-hit'],
-        ['target', '—', ''],
-      ].map(([key, value, cls], i) => (
-        <g key={key} className={`sx-out${cls}`}>
-          <circle cx="382.5" cy={mid - 50 + i * 50} r="2.5" />
-          <text className="sx-label" x="394" y={mid - 54 + i * 50}>{key}</text>
-          <text className="sx-value" x="394" y={mid - 40 + i * 50}>{value}</text>
-        </g>
+    <ol className="lab-build-flow" aria-label="Four steps to build and verify Parakeet">
+      {BUILD_STEPS.map((step, index) => (
+        <li key={step.script}>
+          <span className="lab-build-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <div>
+            <div className="lab-build-step">
+              <strong>{step.title}</strong>
+              <code>{step.script}</code>
+            </div>
+            <p>{step.detail}</p>
+          </div>
+        </li>
       ))}
-
-      <path className="sx-dim" d={`M16 172H176M16 168v8M176 168v8`} />
-      <text className="sx-label" x="96" y="190" textAnchor="middle">input</text>
-      <path className="sx-dim" d={`M380 172H548M380 168v8M548 168v8`} />
-      <text className="sx-label" x="464" y="190" textAnchor="middle">extraction</text>
-    </svg>
+    </ol>
   )
 }
 
 export default function HomePage() {
-  const ideas = getAllIdeas().slice(0, 6)
+  const allIdeas = getAllIdeas()
+  const featured = allIdeas.find((idea) => idea.slug === 'parakeet-recipe')
+  const ideas = allIdeas.slice(0, 6)
   const { results } = getSemanticEvalSummary()
   const totalCards = Number(results[0]?.pass.split('/')[1] ?? 9)
 
@@ -99,34 +79,31 @@ export default function HomePage() {
       <section className="lab-hero">
         <div className="lab-shell">
           <div className="lab-head-bar lab-rise" style={{ '--d': 0 }}>
-            <p className="lab-fig">( 00 ) Notebook · models and training</p>
-            <p className="lab-fig">NB.01</p>
+            <p className="lab-fig">( 00 ) Latest build · Parakeet</p>
+            <time className="lab-fig" dateTime={featured.date}>{formatDate(featured.date)}</time>
           </div>
         </div>
         <div className="lab-shell lab-hero-grid">
           <div className="lab-hero-copy">
             <h1 className="lab-rise" style={{ '--d': 1 }}>
-              Experiments with models <em>and training.</em>
+              {featured.title}
             </h1>
             <p className="lab-lede lab-rise" style={{ '--d': 2 }}>
-              A running home for training experiments, eval ideas, half-finished
-              notes, and small models doing narrow jobs on-device. Mostly DIY
-              learning in public: trying things, getting
-              them wrong, and writing down what changed.
+              {featured.description}
             </p>
             <div className="lab-actions lab-rise" style={{ '--d': 3 }}>
-              <Link href="/ideas" className="lab-button lab-button-primary">
-                Read the writing <span aria-hidden="true">→</span>
+              <Link href={`/ideas/${featured.slug}`} className="lab-button lab-button-primary">
+                Read the build recipe <span aria-hidden="true">→</span>
               </Link>
-              <a href="#bench" className="lab-button">Latest run</a>
+              <Link href="/ideas" className="lab-button">All lab notes</Link>
             </div>
           </div>
 
           <figure className="lab-schematic lab-rise" style={{ '--d': 2 }}>
-            <Schematic />
+            <BuildSequence />
             <figcaption>
               <span>Fig. 1</span>
-              An undecided note. The right intent is <em>none</em>, and restraint is the thing being measured.
+              A Core ML build checked against NVIDIA’s outputs and scored on LibriSpeech.
             </figcaption>
           </figure>
         </div>
@@ -134,22 +111,47 @@ export default function HomePage() {
         <div className="lab-shell">
           <dl className="lab-spec lab-rise" style={{ '--d': 4 }}>
             <div>
-              <dt>Eval</dt>
-              <dd>semantic v1 · {totalCards} cards</dd>
+              <dt>Source model</dt>
+              <dd>Parakeet TDT 0.6B v3</dd>
             </div>
             <div>
-              <dt>Best local</dt>
-              <dd>{results[0]?.model} · {results[0]?.pass}</dd>
+              <dt>Built artifact</dt>
+              <dd>477 MB · Core ML</dd>
             </div>
             <div>
-              <dt>Runtime</dt>
-              <dd>MLX · 4-bit · on-device</dd>
+              <dt>Encoder</dt>
+              <dd>Six-bit palettes</dd>
             </div>
             <div>
-              <dt>Up next</dt>
-              <dd>{nextExperiments[0].id} · {nextExperiments[0].size}</dd>
+              <dt>Used in</dt>
+              <dd>Talkie, through Vox</dd>
             </div>
           </dl>
+        </div>
+      </section>
+
+      <section className="lab-section" id="log">
+        <div className="lab-shell">
+          <div className="lab-section-head">
+            <div className="lab-head-bar">
+              <p className="lab-fig">( 01 ) Log</p>
+              <Link href="/ideas" className="lab-fig lab-section-aside">All ideas →</Link>
+            </div>
+            <h2>Recent notes and writeups</h2>
+          </div>
+
+          <div className="lab-log">
+            {ideas.map((idea) => (
+              <Link key={idea.slug} href={`/ideas/${idea.slug}`} className="lab-log-row">
+                <time dateTime={idea.date}>{formatDate(idea.date)}</time>
+                <div className="lab-log-main">
+                  <h3>{idea.title}</h3>
+                  <p>{idea.description}</p>
+                </div>
+                <span className="lab-log-type">{idea.sectionLabel}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -157,7 +159,7 @@ export default function HomePage() {
         <div className="lab-shell">
           <div className="lab-section-head">
             <div className="lab-head-bar">
-              <p className="lab-fig">( 01 ) On the bench</p>
+              <p className="lab-fig">( 02 ) On the bench</p>
               <p className="lab-fig lab-section-aside">
                 {totalCards} app-moment cards · MLX · 4-bit · on-device
               </p>
@@ -208,7 +210,7 @@ export default function HomePage() {
         <div className="lab-shell">
           <div className="lab-section-head">
             <div className="lab-head-bar">
-              <p className="lab-fig">( 02 ) Threads</p>
+              <p className="lab-fig">( 03 ) Threads</p>
             </div>
             <h2>Two threads that keep feeding each other</h2>
           </div>
@@ -235,7 +237,7 @@ export default function HomePage() {
         <div className="lab-shell">
           <div className="lab-section-head">
             <div className="lab-head-bar">
-              <p className="lab-fig">( 03 ) Next on the bench</p>
+              <p className="lab-fig">( 04 ) Next on the bench</p>
               <p className="lab-fig lab-section-aside">Queued, not done. Small enough to finish on a Mac.</p>
             </div>
             <h2>Experiments I want to run next</h2>
@@ -253,31 +255,6 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="lab-section">
-        <div className="lab-shell">
-          <div className="lab-section-head">
-            <div className="lab-head-bar">
-              <p className="lab-fig">( 04 ) Log</p>
-              <Link href="/ideas" className="lab-fig lab-section-aside">All ideas →</Link>
-            </div>
-            <h2>Recent notes and writeups</h2>
-          </div>
-
-          <div className="lab-log">
-            {ideas.map((idea) => (
-              <Link key={idea.slug} href={`/ideas/${idea.slug}`} className="lab-log-row">
-                <time dateTime={idea.date}>{formatDate(idea.date)}</time>
-                <div className="lab-log-main">
-                  <h3>{idea.title}</h3>
-                  <p>{idea.description}</p>
-                </div>
-                <span className="lab-log-type">{idea.sectionLabel}</span>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 

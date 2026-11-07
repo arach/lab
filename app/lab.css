@@ -482,6 +482,50 @@
   font-variant-numeric: tabular-nums;
 }
 
+.lab-cleanup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 1rem 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.lab-cleanup h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.lab-cleanup p {
+  margin: 0;
+  max-width: 65ch;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.lab-artifact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.lab-artifact-links a {
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 0.2em;
+}
+
+.lab-artifact-links a:hover {
+  text-decoration-color: currentColor;
+}
+
 /* Sections */
 
 .lab-section {
@@ -1253,6 +1297,7 @@
   }
 
   .lab-hero-grid,
+  .lab-cleanup,
   .lab-threads,
   .lab-queue {
     grid-template-columns: minmax(0, 1fr);
